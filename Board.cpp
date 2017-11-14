@@ -31,7 +31,7 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
         boardArr[i] = pTokenFactory.Create(dimensions);
     }
 
-
+    //this is a random comment
 
     for(int i = 0; i < 4; i++) {
         //set values to the initial cells
