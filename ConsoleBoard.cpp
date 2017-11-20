@@ -46,3 +46,55 @@ void ConsoleBoard :: draw (Token** tokenArr) const {
         cout << endl;
     }
 }
+
+void ConsoleBoard :: printSpecialSituation(Situation message) const{
+    if (message==Next){
+        char temp;
+        cout<<"No possible moves.Play passes back to the other player.press any key to continue."<<endl;
+        cin>>temp;
+    }else if (message==NoMovesForAll){
+        cout<<"No possible moves."<<endl;
+    }else if(message==IllegelMove) {
+        cout<<"Illegal move.Please try again."<<endl<<endl;
+    }else{
+        cout<<endl<<"Please enter your move row,col:";
+    }
+}
+
+void ConsoleBoard :: printWhosMove(Player *player) const{
+    player->drawValue();
+    cout << " ,It's your move" << endl;
+}
+
+void ConsoleBoard :: printMoves(vector<Coordinate> validCoordinates) const{
+    int i = 0;
+    cout << "Your possible moves:";
+    while (i != validCoordinates.size()) {
+        cout << "(" << validCoordinates[i].row << "," << validCoordinates[i].col << ") ";
+        i++;
+    }
+    cout << endl;
+
+
+}
+
+void ConsoleBoard::drawStatus(int black, int white)const{
+    if (black > white)
+    {
+        cout << "Black wins!";
+    }
+    else if (white > black)
+    {
+        cout << "White wins!";
+    }
+    else
+    {
+        cout << "It's a tie!";
+    }
+}
+
+void ConsoleBoard :: printThePlayersChoice(Coordinate coordinate, Player *player) const {
+    player->drawValue();
+    cout << ", played" << "(" <<  coordinate.row << "," << coordinate.col << ")" << endl << endl;
+
+}

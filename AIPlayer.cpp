@@ -41,6 +41,7 @@ void AIPlayer :: doOneTurn(GameRules *gameRules, Board &board,
         }
     }
 //    this->togglePlayer(tv);
+
 }
 
 
