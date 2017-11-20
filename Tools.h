@@ -11,7 +11,12 @@ enum TokenValue {
     Empty,
     NumTokenValues
 };
-
+enum Status {
+    WhiteWin,Tie,BlackWin
+};
+enum Situation{
+    IllegelMove,NoMovesForAll,Next,AskForRowAndCol
+};
 class Tools {
 
 };

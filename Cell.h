@@ -12,6 +12,7 @@ struct Coordinate {
     int col;
 };
 
+
 struct Cell {
     Coordinate coordinate;
     TokenValue tv;

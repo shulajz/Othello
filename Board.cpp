@@ -23,7 +23,8 @@ using namespace std;
  * @param initialCells - the cells we need to init in the beginning.
  */
 Board::Board(int dimensions, TokenFactory &pTokenFactory,
-             BoardGraphic &boardGraphic, Cell* initialCells): m_boardGraphic(boardGraphic){
+             BoardGraphic &boardGraphic, Cell* initialCells): m_boardGraphic(boardGraphic),
+                                                              pTokenFactory(pTokenFactory){
     this->dimensions = dimensions;
 
     boardArr = new Token*[dimensions];
@@ -40,6 +41,21 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
     }
     delete[] initialCells;
 
+}
+
+Board :: Board(Board &oldBoard): m_boardGraphic(oldBoard.m_boardGraphic),
+                                 pTokenFactory(oldBoard.pTokenFactory){
+    this->dimensions = oldBoard.dimensions;
+    boardArr = new Token*[dimensions];
+
+    for (int i = 0; i < dimensions; i++) {
+        boardArr[i] = pTokenFactory.Create(dimensions);
+    }
+    for (int i = 1; i < dimensions; i++) {
+        for (int j = 1; j < dimensions; j++) {
+            boardArr[i][j] = oldBoard.boardArr[i][j];
+        }
+    }
 }
 /**
  * the destructor.
@@ -92,4 +108,20 @@ Token** Board :: getTokens() const{
  */
 void Board ::updateValue(Coordinate coordinate, TokenValue tv) {
     boardArr[coordinate.row][coordinate.col].setValue(tv);
+}
+/**
+ * calculates who wins the game.
+ */
+void Board:: calcResults(int &black, int &white) {
+    for(int i = 1; i < dimensions; i ++) {
+        for (int j = 1; j < dimensions; j++) {
+            if (boardArr[i][j].getValue() == Black) {
+                black++;
+            } else if (boardArr[i][j].getValue() == White) {
+                white++;
+            } else if ((boardArr[i][j].getValue() == Empty)) {
+                continue;
+            }
+        }
+    }
 }

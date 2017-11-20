@@ -103,42 +103,81 @@ void ClassicRules :: getLegalCoordinates
         }
     }
 }
+
+void ClassicRules :: checkEightOptions(Coordinate inputCoordinate,
+                                       Board &board, Player *player,
+                                       vector<Coordinate> &coordinatesToFlip) {
+    checkIfToFlipCell(
+            inputCoordinate, -1, -1, coordinatesToFlip,
+            board.getDimensions(), board.getTokens(), player);
+
+    checkIfToFlipCell(
+            inputCoordinate, 0, -1, coordinatesToFlip,
+            board.getDimensions(), board.getTokens(),player);
+
+    checkIfToFlipCell(
+            inputCoordinate, 1, -1, coordinatesToFlip,
+            board.getDimensions(), board.getTokens(),player);
+
+    checkIfToFlipCell(
+            inputCoordinate, -1, 0, coordinatesToFlip,
+            board.getDimensions(), board.getTokens(),player);
+
+    checkIfToFlipCell(
+            inputCoordinate, 1, 0, coordinatesToFlip,
+            board.getDimensions(), board.getTokens(),player);
+
+    checkIfToFlipCell(
+            inputCoordinate, -1, 1, coordinatesToFlip,
+            board.getDimensions(), board.getTokens(),player);
+
+    checkIfToFlipCell(
+            inputCoordinate, 0, 1, coordinatesToFlip,
+            board.getDimensions(), board.getTokens(),player);
+
+    checkIfToFlipCell(inputCoordinate, 1, 1, coordinatesToFlip,
+                      board.getDimensions(), board.getTokens(),player);
+
+}
 /**
  * flips the tokens of the player playing
  */
 void ClassicRules :: flipTokens(Coordinate inputCoordinate, Board &board, Player *player) {
     vector<Coordinate> coordinatesToFlip;
-    TokenValue oppositeValue = getOppositeValue(player);
-    checkIfToFlipCell(
-            inputCoordinate, -1, -1, coordinatesToFlip,
-            board.getDimensions(), board.getTokens(),oppositeValue);
-
-    checkIfToFlipCell(
-            inputCoordinate, 0, -1, coordinatesToFlip,
-            board.getDimensions(), board.getTokens(),oppositeValue);
-
-    checkIfToFlipCell(
-            inputCoordinate, 1, -1, coordinatesToFlip,
-            board.getDimensions(), board.getTokens(),oppositeValue);
-
-    checkIfToFlipCell(
-            inputCoordinate, -1, 0, coordinatesToFlip,
-            board.getDimensions(), board.getTokens(),oppositeValue);
-
-    checkIfToFlipCell(
-            inputCoordinate, 1, 0, coordinatesToFlip,
-            board.getDimensions(), board.getTokens(),oppositeValue);
-
-    checkIfToFlipCell(
-            inputCoordinate, -1, 1, coordinatesToFlip,
-            board.getDimensions(), board.getTokens(),oppositeValue);
-
-    checkIfToFlipCell(
-            inputCoordinate, 0, 1, coordinatesToFlip,
-            board.getDimensions(), board.getTokens(),oppositeValue);
-
-    checkIfToFlipCell(inputCoordinate, 1, 1, coordinatesToFlip,
-                      board.getDimensions(), board.getTokens(),oppositeValue);
+    checkEightOptions(inputCoordinate,
+            board, player,
+            coordinatesToFlip);
+//    TokenValue oppositeValue = getOppositeValue(player);
+//    checkIfToFlipCell(
+//            inputCoordinate, -1, -1, coordinatesToFlip,
+//            board.getDimensions(), board.getTokens(), player);
+//
+//    checkIfToFlipCell(
+//            inputCoordinate, 0, -1, coordinatesToFlip,
+//            board.getDimensions(), board.getTokens(),player);
+//
+//    checkIfToFlipCell(
+//            inputCoordinate, 1, -1, coordinatesToFlip,
+//            board.getDimensions(), board.getTokens(),player);
+//
+//    checkIfToFlipCell(
+//            inputCoordinate, -1, 0, coordinatesToFlip,
+//            board.getDimensions(), board.getTokens(),player);
+//
+//    checkIfToFlipCell(
+//            inputCoordinate, 1, 0, coordinatesToFlip,
+//            board.getDimensions(), board.getTokens(),player);
+//
+//    checkIfToFlipCell(
+//            inputCoordinate, -1, 1, coordinatesToFlip,
+//            board.getDimensions(), board.getTokens(),player);
+//
+//    checkIfToFlipCell(
+//            inputCoordinate, 0, 1, coordinatesToFlip,
+//            board.getDimensions(), board.getTokens(),player);
+//
+//    checkIfToFlipCell(inputCoordinate, 1, 1, coordinatesToFlip,
+//                      board.getDimensions(), board.getTokens(),player);
 
     int i = 0;
     while (i != coordinatesToFlip.size()) {
@@ -153,9 +192,10 @@ void ClassicRules :: flipTokens(Coordinate inputCoordinate, Board &board, Player
  */
 void ClassicRules :: checkIfToFlipCell(Coordinate inputCoordinate, int rowDir, int colDir,
                                        vector<Coordinate> &coordinatesToFlip, int dim,
-                                       Token** tokens, TokenValue oppositeValue) {
+                                       Token** tokens, Player *player) {
     vector<Coordinate> tempCoordinates;
     bool isValid = false;
+    TokenValue oppositeValue = getOppositeValue(player);
 
     int paramRow = inputCoordinate.row + rowDir;
     int paramCol = inputCoordinate.col + colDir;

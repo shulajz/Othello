@@ -4,6 +4,8 @@
 #include <iostream>
 using namespace std;
 #include "ConsoleBoard.h"
+#include "Player.h"
+
 #define SPACE "  "
 
 ConsoleBoard :: ConsoleBoard(int dimensions) {

@@ -6,10 +6,19 @@
 #define OTHELLO_BOARDGRAPHIC_H
 
 #include "Token.h"
+#include "Player.h"
 
 class BoardGraphic {
 public:
     virtual void draw(Token** tokenArr) const = 0;
+    virtual void printSpecialSituation(Situation message) const = 0;
+    virtual void printWhosMove(Player *player) const = 0;
+    virtual void printMoves(vector<Coordinate> validCoordinates) const;
+    virtual void drawStatus(int black, int white) const = 0;
+    virtual void printThePlayersChoice(Coordinate coordinate, Player *player) const;
+
+
+
 };
 
 #endif //OTHELLO_BOARDGRAPHIC_H

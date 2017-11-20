@@ -10,6 +10,7 @@
 #include "ConsoleTokenFactory.h"
 
 #include "ConsoleBoard.h"
+#include "AIPlayer.h"
 
 #define DIM 9
 //using namespace std;
@@ -21,10 +22,10 @@ int main() {
     ClassicRules classicRules;
     Board board (DIM, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(DIM));
     RealPlayer p1(Black);
-    RealPlayer p2(White);
+    AIPlayer p2(White);
     Player* players[2];
     players[Black] = &p1;
     players[White] = &p2;
-    GameFlow gameFlow(classicRules, players, board);
+    GameFlow gameFlow(classicRules, players, board, consoleBoard);
     gameFlow.run();
 }

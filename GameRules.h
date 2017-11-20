@@ -23,7 +23,7 @@ public:
                                   int dim, TokenValue opposite) = 0;
     virtual void checkIfToFlipCell(Coordinate inputCoordinate, int rowDir, int colDir,
                                    vector<Coordinate> &coordinatesToFlip, int dim, Token** tokens,
-                                   TokenValue oppositeValue) = 0;
+                                   Player *player) = 0;
     virtual void flipTokens(Coordinate inputCoordinate, Board &board, Player *player) = 0;
     virtual ~GameRules(){};
 

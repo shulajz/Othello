@@ -20,15 +20,19 @@ private:
 //    Cell* initialCells;
     BoardGraphic &m_boardGraphic;
     int dimensions;
+    TokenFactory &pTokenFactory;
+
 public:
     Board(int dimensions, TokenFactory &pTokenFactory,
           BoardGraphic &boardGraphic, Cell* initialCells);
+    Board (Board &oldBoard);
     Token** getTokens() const;
 
     void draw() const;
     int getDimensions() const;
     bool isFullOfTokens() const; // checks if the board is full of tokens
     void updateValue(Coordinate coordinate, TokenValue tv);
+    void calcResults(int &black, int &white);
     virtual ~Board();
 
 };

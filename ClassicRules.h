@@ -26,8 +26,11 @@ public:
     virtual TokenValue getOppositeValue(Player* player) const;
     virtual void checkIfToFlipCell(Coordinate inputCoordinate, int rowDir, int colDir,
                            vector<Coordinate> &coordinatesToFlip,
-                                   int dim, Token** tokens, TokenValue oppositeValue);
+                                   int dim, Token** tokens, Player *player);
     virtual void flipTokens(Coordinate inputCoordinate, Board &board, Player *player );
+    void checkEightOptions(Coordinate inputCoordinate,
+                           Board &board, Player *player,
+                           vector<Coordinate> &coordinatesToFlip);
 
 };
 

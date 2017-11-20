@@ -2,6 +2,7 @@
 // Created by shulamit on 07/11/17.
 //
 
+#include <iostream>
 #include "Tools.h"
 #include "Player.h"
 
@@ -19,6 +20,18 @@ bool Player :: isWhitePlayer() const {
     }
 }
 /**
+ * draws the value of the player
+ */
+void Player :: drawValue() const {
+    if(tv == White) {
+        cout << "O";
+    } else if (tv == Black){
+        cout << "X";
+    } else {
+        cout << " ";
+    }
+}
+/**
  * switches between the players
  */
 void Player :: togglePlayer(TokenValue &tokenValue) {
@@ -29,4 +42,8 @@ void Player :: togglePlayer(TokenValue &tokenValue) {
     {
         tokenValue = White;
     }
+}
+
+void Player :: printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic) {
+
 }

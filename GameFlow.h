@@ -16,12 +16,13 @@ private:
     GameRules &m_gameRules;
     Board &m_board;
     TokenValue currentTurn;
+    BoardGraphic &m_boardGraphic;
 public:
-    GameFlow(GameRules &gameRules, Player **players, Board &board);
+    GameFlow(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic);
     //the game flow
     void run();
     //calculates who wins
-    void calcResults(int &black, int &white);
+//    void calcResults(int &black, int &white);
 };
 
 
