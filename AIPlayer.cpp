@@ -64,3 +64,7 @@ void AIPlayer :: calcTheMaxScoreForOneTurn(GameRules *gameRules, Board &tempBoar
         }
     }
 }
+
+void AIPlayer :: printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic) {
+    boardGraphic->printThePlayersChoice(coordinate, this);
+}
