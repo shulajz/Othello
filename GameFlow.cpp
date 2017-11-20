@@ -23,14 +23,17 @@ void GameFlow :: run () {
     Coordinate inputCoordinate;
     inputCoordinate.row = 0;
     inputCoordinate.col = 0;
-
+    bool first_move=true;
     while (true) {
         if(m_board.isFullOfTokens()) {
             m_board.draw();
             break;
         }
         m_board.draw();
-
+        if (!first_move) {
+            players[!currentTurn]->printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
+        }
+        first_move=false;
         cout << endl;
         vector<Coordinate> validCoordinates;
         m_gameRules.getLegalCoordinates(m_board, players[currentTurn],
@@ -50,6 +53,7 @@ void GameFlow :: run () {
                 m_boardGraphic.printSpecialSituation(Next); //no possible moves for one player
             }
         } else {
+            players[currentTurn]->printAfterTheRealPlayerMove(&m_boardGraphic);
             players[currentTurn]->doOneTurn(&m_gameRules, m_board,
                                             validCoordinates, inputCoordinate, &m_boardGraphic,
                                             players[currentTurn]);
@@ -57,7 +61,7 @@ void GameFlow :: run () {
             m_gameRules.flipTokens(inputCoordinate, m_board, players[currentTurn]);
 
         }
-        players[currentTurn]->printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
+        //players[currentTurn]->printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
         players[currentTurn]->togglePlayer(currentTurn);
 
     }

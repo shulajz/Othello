@@ -95,6 +95,12 @@ void ConsoleBoard::drawStatus(int black, int white)const{
 
 void ConsoleBoard :: printThePlayersChoice(Coordinate coordinate, Player *player) const {
     player->drawValue();
-    cout << ", played" << "(" <<  coordinate.row << "," << coordinate.col << ")" << endl << endl;
+    cout << ", played" << "(" <<  coordinate.row << "," << coordinate.col << ")" << endl;
 
+}
+
+void ConsoleBoard :: printAfterRealPlayer() const {
+    char temp;
+    cout << "you played your turn, please enter any key to display computers turn " << endl;
+    cin>>temp;
 }

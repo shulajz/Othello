@@ -20,6 +20,7 @@ class AIPlayer : public Player{
     virtual void printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic);
     void calcTheMaxScoreForOneTurn(GameRules *gameRules, Board &tempBoard,
                                    vector<Coordinate> &validCoordinates, int &maxLocal);
+    void printAfterTheRealPlayerMove(BoardGraphic *boardGraphic) const;
 };
 
 

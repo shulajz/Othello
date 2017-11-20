@@ -47,3 +47,7 @@ void Player :: togglePlayer(TokenValue &tokenValue) {
 void Player :: printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic) {
 
 }
+
+void Player ::printAfterTheRealPlayerMove(BoardGraphic *boardGraphic) const {
+
+}

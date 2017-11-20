@@ -11,3 +11,7 @@ void BoardGraphic :: printMoves(vector<Coordinate> validCoordinates) const {
 void BoardGraphic :: printThePlayersChoice(Coordinate coordinate, Player *player) const {
 
 }
+void BoardGraphic :: printAfterRealPlayer() const {
+
+
+}

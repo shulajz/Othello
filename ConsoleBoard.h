@@ -22,6 +22,7 @@ public:
     void printMoves(vector<Coordinate> validCoordinates) const;
     virtual void drawStatus(int black, int white)const;
     virtual void printThePlayersChoice(Coordinate coordinate, Player *player) const;
+    void printAfterRealPlayer() const;
 
 };
 
