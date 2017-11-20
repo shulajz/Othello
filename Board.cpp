@@ -33,7 +33,7 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
     }
 
     //one teo three
-
+//
     for(int i = 0; i < 4; i++) {
         //set values to the initial cells
         boardArr[initialCells[i].coordinate.row][initialCells[i].coordinate.col].
