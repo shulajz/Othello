@@ -44,5 +44,23 @@ void AIPlayer :: doOneTurn(GameRules *gameRules, Board &board,
 
 }
 
+void AIPlayer :: calcTheMaxScoreForOneTurn(GameRules *gameRules, Board &tempBoard,
+                                           vector<Coordinate> &validCoordinates, int &maxLocal) {
+    int maxOfOneTurn = 0;
 
-
+    gameRules->getLegalCoordinates(tempBoard, this, validCoordinates);
+    for(int j = 0; j < validCoordinates.size(); j++) {
+        Coordinate realPlayerMove;
+        realPlayerMove.row = validCoordinates[j].row;
+        realPlayerMove.col = validCoordinates[j].col;
+        tempBoard.updateValue(realPlayerMove,tv);
+        gameRules->flipTokens(realPlayerMove, tempBoard, this);
+        int numOfRealPlayerTokens = 0;
+        int numOfComputerTokens = 0;
+        tempBoard.calcResults(numOfRealPlayerTokens, numOfComputerTokens);
+        maxOfOneTurn = numOfRealPlayerTokens - numOfComputerTokens;
+        if(maxLocal < maxOfOneTurn) {
+            maxLocal = maxOfOneTurn;
+        }
+    }
+}
