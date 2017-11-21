@@ -22,17 +22,19 @@ int main() {
     ConsoleBoard consoleBoard(DIM);
     ConsoleTokenFactory consoleTokenFactory;
     ClassicRules classicRules;
-    Menu* menu =new ConsoleMenu();
+    ConsoleMenu consoleMenu;
     Board board (DIM, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(DIM));
-    RealPlayer p1(Black);
-    menu->printOptionsMenu();
-    Player* p2=menu->choosePlayer();
+    RealPlayer realPlayer(Black);
+    consoleMenu.printOptionsMenu();
+    Player* p2 = consoleMenu.choosePlayer();
     Player* players[2];
-    players[Black] = &p1;
+    players[Black] = &realPlayer;
     players[White] = p2;
     GameFlow gameFlow(classicRules, players, board, consoleBoard);
     gameFlow.run();
     delete(players[1]);
-    delete(menu);
-
+    //אהבתי !:)
+//המניו לא צריך להיות ניו, אל תשכחי לשים פאבליק לפני המתודות כי אז אי אפשר לגשת אליהם:)
+    // לא הצלחתי להוריד את הNEW מהשחקנים באמת
+    //
 }

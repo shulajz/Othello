@@ -7,7 +7,8 @@
 
 #include "Menu.h"
 class ConsoleMenu: public Menu {
-    virtual void printWrongChose()const;
+public:
+    virtual void printWrongChoice()const;
     virtual void printOptionsMenu() const;
     virtual char getSelection() const;
 };

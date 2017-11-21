@@ -8,20 +8,19 @@ Menu::~Menu(){};
 Menu::Menu(){};
 Player* Menu:: choosePlayer() const{
     Player* p;
-
     while (true) {
-        char selection =getSelection();
+        char selection = getSelection();
         //H for Human Player
-        if (selection== 'H') {
-            p=new RealPlayer (White);
+        if (selection == 'H') {
+            p = new RealPlayer (White);
             return  p;
         //A for AIPlayer
-        }else if (selection== 'A') {
-            p=new AIPlayer (White);
+        } else if (selection == 'A') {
+            p = new AIPlayer (White);
             return p;
-        }else {
+        } else {
             //illegal option
-            printWrongChose();
+            printWrongChoice();
         }
     }
 }

@@ -12,10 +12,10 @@ class Menu {
 public:
     Menu();
     void run();
-    virtual void printOptionsMenu() const =0;
+    virtual void printOptionsMenu() const = 0;
     Player* choosePlayer()const;
-    virtual void printWrongChose()const=0;
-    virtual char getSelection() const=0;
+    virtual void printWrongChoice()const = 0;
+    virtual char getSelection() const = 0;
     ~Menu();
 
 };
