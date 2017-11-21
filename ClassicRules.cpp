@@ -144,40 +144,7 @@ void ClassicRules :: checkEightOptions(Coordinate inputCoordinate,
  */
 void ClassicRules :: flipTokens(Coordinate inputCoordinate, Board &board, Player *player) {
     vector<Coordinate> coordinatesToFlip;
-    checkEightOptions(inputCoordinate,
-            board, player,
-            coordinatesToFlip);
-//    TokenValue oppositeValue = getOppositeValue(player);
-//    checkIfToFlipCell(
-//            inputCoordinate, -1, -1, coordinatesToFlip,
-//            board.getDimensions(), board.getTokens(), player);
-//
-//    checkIfToFlipCell(
-//            inputCoordinate, 0, -1, coordinatesToFlip,
-//            board.getDimensions(), board.getTokens(),player);
-//
-//    checkIfToFlipCell(
-//            inputCoordinate, 1, -1, coordinatesToFlip,
-//            board.getDimensions(), board.getTokens(),player);
-//
-//    checkIfToFlipCell(
-//            inputCoordinate, -1, 0, coordinatesToFlip,
-//            board.getDimensions(), board.getTokens(),player);
-//
-//    checkIfToFlipCell(
-//            inputCoordinate, 1, 0, coordinatesToFlip,
-//            board.getDimensions(), board.getTokens(),player);
-//
-//    checkIfToFlipCell(
-//            inputCoordinate, -1, 1, coordinatesToFlip,
-//            board.getDimensions(), board.getTokens(),player);
-//
-//    checkIfToFlipCell(
-//            inputCoordinate, 0, 1, coordinatesToFlip,
-//            board.getDimensions(), board.getTokens(),player);
-//
-//    checkIfToFlipCell(inputCoordinate, 1, 1, coordinatesToFlip,
-//                      board.getDimensions(), board.getTokens(),player);
+    checkEightOptions(inputCoordinate, board, player,coordinatesToFlip);
 
     int i = 0;
     while (i != coordinatesToFlip.size()) {

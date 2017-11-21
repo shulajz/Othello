@@ -20,7 +20,7 @@ protected:
 public:
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates,
-                           Coordinate &input, BoardGraphic *boardGraphic, Player *player) = 0;
+                           Coordinate &input, BoardGraphic *boardGraphic, Player *player) =0;
     //draws the value
     virtual void drawValue() const;
     virtual TokenValue getValue() const;

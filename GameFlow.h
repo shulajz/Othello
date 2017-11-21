@@ -21,8 +21,6 @@ public:
     GameFlow(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic);
     //the game flow
     void run();
-    //calculates who wins
-//    void calcResults(int &black, int &white);
 };
 
 
