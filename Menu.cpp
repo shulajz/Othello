@@ -11,13 +11,16 @@ Player* Menu:: choosePlayer() const{
 
     while (true) {
         char selection =getSelection();
+        //H for Human Player
         if (selection== 'H') {
             p=new RealPlayer (White);
             return  p;
+        //A for AIPlayer
         }else if (selection== 'A') {
             p=new AIPlayer (White);
             return p;
         }else {
+            //illegal option
             printWrongChose();
         }
     }

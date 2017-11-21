@@ -24,12 +24,15 @@ void GameFlow :: run () {
     inputCoordinate.row = 0;
     inputCoordinate.col = 0;
     bool first_move=true;
+    bool needToPrint=true;
     while (true) {
         if(m_board.isFullOfTokens()) {
             m_board.draw();
             break;
         }
+
         m_board.draw();
+
         if (!first_move) {
             players[!currentTurn]->printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
         }
@@ -51,17 +54,18 @@ void GameFlow :: run () {
                 players[currentTurn]->togglePlayer(currentTurn);
                 m_boardGraphic.printWhosMove(players[currentTurn]);
                 m_boardGraphic.printSpecialSituation(Next); //no possible moves for one player
+                needToPrint=false;
             }
         } else {
-            players[currentTurn]->printAfterTheRealPlayerMove(&m_boardGraphic);
+            players[currentTurn]->printAfterTheRealPlayerMove(&m_boardGraphic,needToPrint);
             players[currentTurn]->doOneTurn(&m_gameRules, m_board,
                                             validCoordinates, inputCoordinate, &m_boardGraphic,
                                             players[currentTurn]);
             m_board.updateValue(inputCoordinate, currentTurn);
             m_gameRules.flipTokens(inputCoordinate, m_board, players[currentTurn]);
+            needToPrint=true;
 
         }
-        //players[currentTurn]->printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
         players[currentTurn]->togglePlayer(currentTurn);
 
     }

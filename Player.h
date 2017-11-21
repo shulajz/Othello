@@ -28,7 +28,7 @@ public:
     virtual bool isWhitePlayer() const;
     virtual void printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic);
 //    virtual TokenValue getOppositeValue(TokenValue tv) = 0;
-    virtual void printAfterTheRealPlayerMove(BoardGraphic *boardGraphic) const;
+    virtual void printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const;
 
 };
 

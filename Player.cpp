@@ -50,6 +50,6 @@ void Player :: printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boa
 
 }
 
-void Player ::printAfterTheRealPlayerMove(BoardGraphic *boardGraphic) const {
+void Player ::printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const {
 
 }

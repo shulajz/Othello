@@ -69,6 +69,8 @@ void AIPlayer :: printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *b
     boardGraphic->printThePlayersChoice(coordinate, this);
 }
 
-void AIPlayer :: printAfterTheRealPlayerMove(BoardGraphic *boardGraphic) const{
-    boardGraphic->printAfterRealPlayer();
+void AIPlayer :: printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const {
+    if (need_to_print){
+        boardGraphic->printAfterRealPlayer();
+    }
 }
