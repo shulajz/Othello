@@ -33,8 +33,4 @@ int main() {
     GameFlow gameFlow(classicRules, players, board, consoleBoard);
     gameFlow.run();
     delete(players[1]);
-    //אהבתי !:)
-//המניו לא צריך להיות ניו, אל תשכחי לשים פאבליק לפני המתודות כי אז אי אפשר לגשת אליהם:)
-    // לא הצלחתי להוריד את הNEW מהשחקנים באמת
-    //
 }

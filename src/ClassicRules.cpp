@@ -265,6 +265,4 @@ void ClassicRules :: checkIfCellValid(Token **token, int row, int col,
             }
         }
     }
-
-
 }

@@ -18,7 +18,7 @@ enum Situation{
     IllegelMove,NoMovesForAll,Next,AskForRowAndCol
 };
 class Tools {
-
+//
 };
 
 
