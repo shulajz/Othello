@@ -12,8 +12,10 @@
 
 TEST(BoardTest,FullOfTokens){
 
-    ConsoleBoard consoleBoard(DIM);
+    ConsoleBoard consoleBoard(3);
     ConsoleTokenFactory consoleTokenFactory;
     ClassicRules classicRules;
-    Board board (DIM, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(DIM));
+    Board board (3, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(3));
+    EXPECT_TRUE(board.isFullOfTokens()) << "the full of tokens test failed";
+
 }

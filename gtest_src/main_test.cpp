@@ -10,6 +10,6 @@ using namespace testing;
 
 int main(int argc, char *argv[]) {
     InitGoogleTest(&argc, argv);
-    //RUN_ALL_TESTS();
-    return RUN_ALL_TESTS();
+//    RUN_ALL_TESTS();
+//    return 0;
 }
