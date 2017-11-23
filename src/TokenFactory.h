@@ -10,7 +10,7 @@
 
 class TokenFactory {
 public:
- //   virtual Token* Create() = 0;
+    //   virtual Token* Create() = 0;
     virtual Token* Create(int) = 0;
     //
 };
