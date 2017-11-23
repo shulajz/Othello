@@ -9,7 +9,7 @@ include_directories(lib/googletest-release-1.8.0/googlemock/include)
 
 
 
-set(SOURCE_TEST_FILES gtest_src/main_test.cpp gtest_src/test_Borad.cpp)
+set(SOURCE_TEST_FILES gtest_src/main_test.cpp gtest_src/test_Board.cpp)
 
 set(SOURCE_FILES src/main.cpp src/Board.cpp
         src/ClassicRules.cpp
@@ -19,7 +19,7 @@ set(SOURCE_FILES src/main.cpp src/Board.cpp
         src/RealPlayer.cpp
         src/Token.cpp
         src/Player.cpp src/AIPlayer.cpp src/BoardGraphic.cpp
-        src/Menu.cpp src/ConsoleMenu.cpp src/Cell.h src/TokenFactory.h)
+        src/Menu.cpp src/ConsoleMenu.cpp src/Cell.h src/GameRules.h src/TokenFactory.h src/Tools.h)
 
 
 add_executable(Othello ${SOURCE_FILES})
