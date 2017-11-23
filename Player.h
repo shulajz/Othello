@@ -29,6 +29,8 @@ public:
     virtual void printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic);
 //    virtual TokenValue getOppositeValue(TokenValue tv) = 0;
     virtual void printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const;
+    virtual bool isRealPlayer()const=0;
+
 
 };
 
