@@ -21,6 +21,7 @@ public:
     bool isBlack();
     bool isEmpty() const;
     virtual ~Token(){};
+
 };
 
 

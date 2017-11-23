@@ -27,6 +27,7 @@ public:
     virtual void flipTokens(Coordinate inputCoordinate, Board &board, Player *player) = 0;
     virtual ~GameRules(){};
 
+
 };
 
 

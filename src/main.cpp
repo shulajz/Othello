@@ -14,7 +14,7 @@
 #include "ConsoleMenu.h"
 
 
-#define DIM 4
+#define DIM 9
 //using namespace std;
 
 int main() {
