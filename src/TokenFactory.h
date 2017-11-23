@@ -17,6 +17,6 @@ public:
 };
 
 
-
+//
 
 #endif //OTHELLO_TOKENFACTORY_H

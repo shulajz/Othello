@@ -21,6 +21,6 @@ class Tools {
 
 };
 
-
+//
 
 #endif //OTHELLO_TOOLS_H
