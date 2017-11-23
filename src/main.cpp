@@ -2,6 +2,7 @@
 // Created by shulamit on 11/1/17.
 //
 
+#include "Tools.h"
 
 #include "Board.h"
 #include "GameFlow.h"
