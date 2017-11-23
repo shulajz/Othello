@@ -19,7 +19,7 @@ set(SOURCE_FILES src/main.cpp src/Board.cpp
         src/RealPlayer.cpp
         src/Token.cpp
         src/Player.cpp src/AIPlayer.cpp src/BoardGraphic.cpp
-        src/Menu.cpp src/ConsoleMenu.cpp)
+        src/Menu.cpp src/ConsoleMenu.cpp src/Cell.h src/TokenFactory.h)
 
 
 add_executable(Othello ${SOURCE_FILES})
