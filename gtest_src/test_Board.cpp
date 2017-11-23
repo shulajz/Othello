@@ -7,8 +7,8 @@
 #include "../src/ConsoleBoard.h"
 #include "../src/ConsoleTokenFactory.h"
 #include "../src/ClassicRules.h"
-#include "../src/ConsoleMenu.h"
 
+//#include "../src/Tools.h"
 
 TEST(BoardTest,FullOfTokens){
 
