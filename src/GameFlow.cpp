@@ -26,13 +26,13 @@ void GameFlow :: run () {
     bool first_move=true;
     bool needToPrint=true;
     while (true) {
-        if(m_board.isFullOfTokens()) {
+        if (m_board.isFullOfTokens()) {
             m_board.draw();
             break;
         }
-
-        m_board.draw();
-
+        if (needToPrint ||players[!currentTurn]->isRealPlayer()) {
+            m_board.draw();
+        }
         if (!first_move) {
             players[!currentTurn]->printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
         }

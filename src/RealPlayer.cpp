@@ -14,6 +14,7 @@ RealPlayer :: RealPlayer(TokenValue tv) {
 }
 
 
+
 /**
  * the turn of one of the players.
  */
@@ -50,5 +51,8 @@ void RealPlayer :: doOneTurn(GameRules *gameRules, Board &board,
 }
 
 
+bool RealPlayer :: isRealPlayer()const{
+    return true;
+}
 
 

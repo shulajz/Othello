@@ -13,6 +13,7 @@
 class AIPlayer : public Player{
 
     public:
+    bool isRealPlayer()const;
     AIPlayer(TokenValue tv);
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates, Coordinate &input,

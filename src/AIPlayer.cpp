@@ -74,3 +74,7 @@ void AIPlayer :: printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool nee
         boardGraphic->printAfterRealPlayer();
     }
 }
+
+bool AIPlayer:: isRealPlayer()const{
+    return true;
+}
