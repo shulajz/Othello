@@ -31,6 +31,8 @@ public:
     virtual void printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const;
     virtual bool isRealPlayer()const=0;
 
+    virtual void printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,
+                                             bool need_to_print) const;
 
 };
 
