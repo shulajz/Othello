@@ -19,7 +19,8 @@ public:
     RealPlayer(TokenValue tv);
     //the turn of one of the players
     virtual void doOneTurn(GameRules *gameRules, Board &board,
-                   vector<Coordinate> &coordinates, Coordinate &input, BoardGraphic *boardGraphic, Player *player);
+                   vector<Coordinate> &coordinates, Coordinate &input,
+                           BoardGraphic *boardGraphic, Player *player);
 };
 
 

@@ -6,7 +6,31 @@
 #define OTHELLO_TEST_CLASSICRULES_H
 
 
-class Test_classicRules {
+#include <gtest/gtest.h>
+#include "../src/ConsoleBoard.h"
+#include "../src/Board.h"
+#include "../src/ConsoleTokenFactory.h"
+#include "../src/ClassicRules.h"
+
+class Test_classicRules : public testing::Test {
+    public:
+        virtual void SetUp() {
+
+            ConsoleBoard consoleBoard(3);
+            ConsoleTokenFactory consoleTokenFactory;
+            board_8x8 =new Board (9, consoleTokenFactory,
+                                  consoleBoard, classicRules.getInitialValues(9));
+//            Board board_8x8(9, consoleTokenFactory,
+//                            consoleBoard, classicRules.getInitialValues(9));
+
+        }
+        virtual void TearDown() {
+            delete(board_8x8);
+        }
+
+    protected:
+        Board* board_8x8;
+        ClassicRules classicRules;
 
 };
 
