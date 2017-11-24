@@ -9,7 +9,7 @@ include_directories(lib/googletest-release-1.8.0/googlemock/include)
 
 
 
-set(SOURCE_TEST_FILES gtest_src/main_test.cpp gtest_src/Test_board.cpp gtest_src/Test_board.h gtest_src/testing.cpp)
+set(SOURCE_TEST_FILES gtest_src/main_test.cpp gtest_src/Test_board.cpp gtest_src/Test_board.h)
 
 set(OTHELLO_MAIN src/main)
 set(SOURCE_FILES src/Board.cpp src/Board.h

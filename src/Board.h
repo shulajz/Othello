@@ -34,6 +34,7 @@ public:
     void updateValue(Coordinate coordinate, TokenValue tv);
     void calcResults(int &black, int &white);
     virtual ~Board();
+//    Board& operator=(const Board& copyBoard);
 
 };
 

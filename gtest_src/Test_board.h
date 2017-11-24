@@ -18,15 +18,18 @@ public:
         ConsoleBoard consoleBoard(3);
         ConsoleTokenFactory consoleTokenFactory;
         ClassicRules classicRules;
-        Board board (3, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(3));;
+        board_2x2 =new Board (3, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(3));;
+        board_8x8 =new Board (9, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(9));;
 
     }
     virtual void TearDown() {
-        cout << "Tearing down" << endl;
+       delete(board_2x2);
+       delete(board_8x8);
     }
 
 protected:
-//    Board board;
+     Board* board_2x2;
+     Board* board_8x8;
 };
 
 #endif //OTHELLO_TEST_BOARD_H
