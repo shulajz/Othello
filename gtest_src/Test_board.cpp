@@ -8,5 +8,5 @@
 
 TEST_F(Test_board,FullOfTokens){
 
-//    EXPECT_TRUE(board.isFullOfTokens()) << "the full of tokens test failed";
+   // EXPECT_TRUE(board.isFullOfTokens()) << "the full of tokens test failed";
 }

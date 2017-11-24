@@ -11,8 +11,8 @@ include_directories(lib/googletest-release-1.8.0/googlemock/include)
 
 set(SOURCE_TEST_FILES gtest_src/main_test.cpp gtest_src/Test_board.cpp gtest_src/Test_board.h gtest_src/testing.cpp)
 
-
-set(SOURCE_FILES src/main.cpp src/Board.cpp src/Board.h
+set(OTHELLO_MAIN src/main)
+set(SOURCE_FILES src/Board.cpp src/Board.h
         src/Cell.h src/ClassicRules.cpp src/ClassicRules.h
         src/ConsoleBoard.cpp src/ConsoleBoard.h src/ConsoleToken.cpp
         src/ConsoleToken.h src/ConsoleTokenFactory.cpp
@@ -24,7 +24,7 @@ set(SOURCE_FILES src/main.cpp src/Board.cpp src/Board.h
 
 
 add_test(runTests runTests)
-add_executable(Othello ${SOURCE_FILES})
+add_executable(Othello ${SOURCE_FILES} ${OTHELLO_MAIN})
 add_executable(runTests ${SOURCE_TEST_FILES} ${SOURCE_FILES})
 target_link_libraries(runTests gtest gtest_main pthread)
 

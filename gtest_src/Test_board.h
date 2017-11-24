@@ -18,7 +18,7 @@ public:
         ConsoleBoard consoleBoard(3);
         ConsoleTokenFactory consoleTokenFactory;
         ClassicRules classicRules;
-      Board board (3, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(3));;
+        Board board (3, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(3));;
 
     }
     virtual void TearDown() {
