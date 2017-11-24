@@ -1,26 +1,32 @@
-////
-//// Created by shulamit on 23/11/17.
-////
 //
-//#ifndef OTHELLO_TEST_BOARD_H
-//#define OTHELLO_TEST_BOARD_H
+// Created by shulamit on 23/11/17.
 //
-//#include <gtest/gtest.h>
-//#include "../src/Board.h"
-//
-//class Test_board : public testing::Test {
-////public:
-////    PointTest(): p1(1,2), p2(3,4) {}
-////    virtual void SetUp() {
-////        cout << "Setting up" << endl;
-////        p3 = p1 + p2;
-////    }
-////    virtual void TearDown() {
-////        cout << "Tearing down" << endl;
-////    }
-////
-////protected:
-//////    Board board;
-//};
-//
-//#endif //OTHELLO_TEST_BOARD_H
+
+#ifndef OTHELLO_TEST_BOARD_H
+#define OTHELLO_TEST_BOARD_H
+
+#include <gtest/gtest.h>
+#include "../src/Board.h"
+#include "../src/ConsoleBoard.h"
+#include "../src/ConsoleTokenFactory.h"
+#include "../src/ClassicRules.h"
+
+class Test_board : public testing::Test {
+public:
+    virtual void SetUp() {
+
+        ConsoleBoard consoleBoard(3);
+        ConsoleTokenFactory consoleTokenFactory;
+        ClassicRules classicRules;
+      Board board (3, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(3));;
+
+    }
+    virtual void TearDown() {
+        cout << "Tearing down" << endl;
+    }
+
+protected:
+//    Board board;
+};
+
+#endif //OTHELLO_TEST_BOARD_H
