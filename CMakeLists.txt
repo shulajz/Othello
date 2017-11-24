@@ -9,7 +9,7 @@ include_directories(lib/googletest-release-1.8.0/googlemock/include)
 
 
 
-set(SOURCE_TEST_FILES gtest_src/main_test.cpp gtest_src/Test_board.cpp gtest_src/Test_board.h)
+set(SOURCE_TEST_FILES gtest_src/main_test.cpp gtest_src/Test_board.cpp gtest_src/Test_board.h gtest_src/testing.cpp)
 
 
 set(SOURCE_FILES src/main.cpp src/Board.cpp src/Board.h
@@ -23,5 +23,12 @@ set(SOURCE_FILES src/main.cpp src/Board.cpp src/Board.h
         src/Menu.cpp src/Menu.h src/ConsoleMenu.cpp src/ConsoleMenu.h)
 
 
+#target_link_libraries(ReversiTests gtest gtest_main pthread)
+#add_test(ReversiTests ReversiTests)
+add_test(runTests runTests)
 add_executable(Othello ${SOURCE_FILES})
 add_executable(runTests ${SOURCE_TEST_FILES})
+target_link_libraries(runTests gtest gtest_main pthread)
+
+#target_link_libraries(runUnitTests gtest gtest_main gmock)
+#add_test(runUnitTests runUnitTests)
