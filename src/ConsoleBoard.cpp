@@ -79,6 +79,7 @@ void ConsoleBoard :: printMoves(vector<Coordinate> validCoordinates) const{
 }
 
 void ConsoleBoard::drawStatus(int black, int white)const{
+    cout <<"Black: "<<black<<", "<<"White: "<<white<<endl;
     if (black > white)
     {
         cout << "Black wins!";

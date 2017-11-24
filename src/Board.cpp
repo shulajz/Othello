@@ -126,17 +126,3 @@ void Board:: calcResults(int &black, int &white) {
     }
 }
 
-//Board& operator=(const Board& copyBoard){
-//    dimensions = copyBoard.dimensions;
-//    boardArr = new Token*[dimensions];
-//
-//    for (int i = 0; i < dimensions; i++) {
-//        boardArr[i] = pTokenFactory.Create(dimensions);
-//    }
-//    for (int i = 1; i < dimensions; i++) {
-//        for (int j = 1; j < dimensions; j++) {
-//            boardArr[i][j] = copyBoard.boardArr[i][j];
-//        }
-//    }
-//    return *this;
-//}
