@@ -18,8 +18,8 @@ public:
         ConsoleBoard consoleBoard(3);
         ConsoleTokenFactory consoleTokenFactory;
         ClassicRules classicRules;
-        board_2x2 =new Board (3, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(3));;
-        board_8x8 =new Board (9, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(9));;
+        board_2x2 = new Board (3, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(3));;
+        board_8x8 = new Board (9, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(9));;
 
     }
     virtual void TearDown() {

@@ -29,7 +29,7 @@ public:
                                    consoleBoard, classicRules.getInitialValues(9));
             realPlayer = new RealPlayer(Black);
             board_2x2 = new Board (3, consoleTokenFactory, consoleBoard,
-                                  classicRules.getInitialValues(3));;
+                                  classicRules.getInitialValues(3));
 
 
         }
