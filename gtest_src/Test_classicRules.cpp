@@ -5,8 +5,7 @@
 #include "Test_classicRules.h"
 #include "../src/RealPlayer.h"
 
-TEST_F(Test_classicRules, getlegalCoordinates){
-
+TEST_F(Test_classicRules, getlegalCoordinatesForEmptyBoard){
     vector<Coordinate> validCoordinates;
     classicRules.getLegalCoordinates(*board_8x8, realPlayer,
                                     validCoordinates);
@@ -14,10 +13,19 @@ TEST_F(Test_classicRules, getlegalCoordinates){
                 && validCoordinates[1].row ==  4 && validCoordinates[1].col == 3
                 && validCoordinates[2].row ==  5 && validCoordinates[2].col == 6
                 && validCoordinates[3].row ==  6 && validCoordinates[3].col == 5)
-                                << "getLegalCorrdinates test failed";
+                                << "getLegalCoordinates for empty board test failed";
 }
 
-TEST_F(Test_classicRules,getDimensions) {
+TEST_F(Test_classicRules, getlegalCoordinatesForFullBoard){
+    vector<Coordinate> validCoordinates;
+    classicRules.getLegalCoordinates(*board_2x2, realPlayer,
+                                     validCoordinates);
+    ASSERT_TRUE(validCoordinates.empty())
+                                << "getLegalCorrdinates for full board test failed";
+}
+
+
+TEST_F(Test_classicRules,checkIfCellValid) {
     TokenValue oppositeValue = classicRules.getOppositeValue(realPlayer);
     vector<Coordinate> validCoordinates;
     Token** tokens = board_8x8->getTokens();

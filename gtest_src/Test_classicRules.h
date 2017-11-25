@@ -14,20 +14,27 @@
 #include "../src/RealPlayer.h"
 
 class Test_classicRules : public testing::Test {
-    public:
+public:
+//    Test_classicRules() :
+//            ClassicRules classicRules;
+//    ConsoleBoard consoleBoard(3),
+//                          board_8x8(9, consoleTokenFactory,
+//                                    consoleBoard, classicRules.getInitialValues(9));,
+//                          board_2x2,
         virtual void SetUp() {
 
             ConsoleBoard consoleBoard(3);
             ConsoleTokenFactory consoleTokenFactory;
             board_8x8 = new Board (9, consoleTokenFactory,
-                                  consoleBoard, classicRules.getInitialValues(9));
+                                   consoleBoard, classicRules.getInitialValues(9));
             realPlayer = new RealPlayer(Black);
+            board_2x2 = new Board (3, consoleTokenFactory, consoleBoard,
+                                  classicRules.getInitialValues(3));;
 
-//            Board board_8x8(9, consoleTokenFactory,
-//                            consoleBoard, classicRules.getInitialValues(9));
 
         }
         virtual void TearDown() {
+            delete(board_2x2);
             delete(board_8x8);
             delete(realPlayer);
         }
@@ -36,6 +43,7 @@ class Test_classicRules : public testing::Test {
 
         Player *realPlayer;
         Board* board_8x8;
+        Board* board_2x2;
         ClassicRules classicRules;
 
 };
