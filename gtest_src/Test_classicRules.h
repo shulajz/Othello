@@ -18,7 +18,7 @@ class Test_classicRules : public testing::Test {
 
             ConsoleBoard consoleBoard(3);
             ConsoleTokenFactory consoleTokenFactory;
-            board_8x8 =new Board (9, consoleTokenFactory,
+            board_8x8 = new Board (9, consoleTokenFactory,
                                   consoleBoard, classicRules.getInitialValues(9));
 //            Board board_8x8(9, consoleTokenFactory,
 //                            consoleBoard, classicRules.getInitialValues(9));
