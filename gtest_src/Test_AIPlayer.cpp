@@ -12,7 +12,7 @@
 
 TEST_F(Test_AIPlayer, calcTheMaxScoreForOneTurn){
     vector<Coordinate> validCoordinates;
-    RealPlayer* realPlayer = new RealPlayer(Black);
+    Player* realPlayer = new RealPlayer(Black);
     int maxLocal = 0;
     Coordinate testingCoordinate = {0};
     testingCoordinate.row = 3;
@@ -21,4 +21,5 @@ TEST_F(Test_AIPlayer, calcTheMaxScoreForOneTurn){
     classicRules.flipTokens(testingCoordinate, *board_8x8, realPlayer);
     aiPlayer->calcTheMaxScoreForOneTurn(&classicRules, *board_8x8, validCoordinates, maxLocal);
     ASSERT_EQ(maxLocal, 5) << "calcTheMaxScoreForOneTurn test failed";
+    delete(realPlayer);
 }

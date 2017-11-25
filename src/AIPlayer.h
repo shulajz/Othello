@@ -19,7 +19,7 @@ class AIPlayer : public Player{
                            vector<Coordinate> &coordinates, Coordinate &input,
                            BoardGraphic *boardGraphic, Player *player);
     virtual void printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic);
-    void calcTheMaxScoreForOneTurn(GameRules *gameRules, Board &tempBoard,
+    virtual void calcTheMaxScoreForOneTurn(GameRules *gameRules, Board &tempBoard,
                                    vector<Coordinate> &validCoordinates, int &maxLocal);
     void printAfterTheRealPlayerMove(BoardGraphic *boardGraphic, bool need_to_print) const;
 };
