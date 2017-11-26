@@ -29,7 +29,7 @@ public:
     }
     virtual void TearDown() {
         delete(board_8x8);
-        delete(aiPlayer);
+//        delete(aiPlayer);
     }
 
 protected:
