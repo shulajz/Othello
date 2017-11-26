@@ -20,7 +20,7 @@ public:
         ConsoleBoard consoleBoard(9);
         ConsoleTokenFactory consoleTokenFactory;
         ClassicRules classicRules;
-        Player *aiPlayer = new AIPlayer(White);
+        aiPlayerWhite = new AIPlayer(White);
 
         board_8x8=new Board (9, consoleTokenFactory, consoleBoard,
                               classicRules.getInitialValues(9));
@@ -29,11 +29,11 @@ public:
     }
     virtual void TearDown() {
         delete(board_8x8);
-        delete(aiPlayer);
+        delete(aiPlayerWhite);
     }
 
 protected:
-    Player* aiPlayer;
+    Player* aiPlayerWhite;
     ClassicRules classicRules;
     Board* board_8x8;
 };
