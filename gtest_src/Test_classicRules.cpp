@@ -47,7 +47,7 @@ TEST_F(Test_classicRules, noValidMovesOnBoard){
     classicRules.getLegalCoordinates(*board_8x8, realPlayer,
                                      validCoordinates);
     ASSERT_TRUE(validCoordinates.empty())
-                                << "noValidMovesOnBoard for full board test failed";
+                                << "noValidMovesOnBoard test failed";
 }
 
 
