@@ -49,7 +49,6 @@ TEST_F(Test_classicRules, noValidMovesOnBoard){
                                 << "noValidMovesOnBoard test failed";
 }
 
-
 TEST_F(Test_classicRules,checkIfCellValid) {
     TokenValue oppositeValue = classicRules.getOppositeValue(realPlayer);
     vector<Coordinate> validCoordinates;
@@ -97,25 +96,24 @@ TEST_F(Test_classicRules, flipTokens) {
                                 << "flipTokens test failed(2)";
 }
 
-
-TEST_F(Test_classicRules, getlegalCoordinatesForASimpleMove){
-    Player* whitePlayer = new RealPlayer(White);
+TEST_F(Test_classicRules, getlegalCoordinates){
+    Player* whitePlayer =new RealPlayer(White);
     vector<Coordinate> validCoordinates;
     Coordinate coordinate;
     coordinate.row=5;
     coordinate.col=6;
     board_8x8->updateValue(coordinate, Black);
     classicRules.flipTokens(coordinate,*board_8x8,realPlayer);
-    classicRules.getLegalCoordinates(*board_8x8, whitePlayer,
+    classicRules.getLegalCoordinates(*board_8x8,whitePlayer ,
                                      validCoordinates);
     ASSERT_TRUE(validCoordinates[0].row ==  4 && validCoordinates[0].col == 6
                 && validCoordinates[1].row ==  6 && validCoordinates[1].col == 4
                 && validCoordinates[2].row ==  6 && validCoordinates[2].col == 6)
-                                << "getlegalCoordinatesForASimpleMove test failed";
+                                << "getLegalCoordinates test failed";
 }
 
-TEST_F(Test_classicRules, getlegalCoordinateWithOneOptionAvailable){
-    Player* whitePlayer = new RealPlayer(White);
+TEST_F(Test_classicRules, getlegalCoordinate){
+    Player* whitePlayer =new RealPlayer(White);
     vector<Coordinate> validCoordinates;
     Coordinate coordinate;
     coordinate.row=5;
@@ -130,8 +128,7 @@ TEST_F(Test_classicRules, getlegalCoordinateWithOneOptionAvailable){
     coordinate.col=2;
     board_8x8->updateValue(coordinate, White);
     classicRules.flipTokens(coordinate,*board_8x8,whitePlayer);
-    classicRules.getLegalCoordinates(*board_8x8,whitePlayer ,
-                                     validCoordinates);
+    classicRules.getLegalCoordinates(*board_8x8,whitePlayer, validCoordinates);
     ASSERT_TRUE(validCoordinates[0].row ==  4 && validCoordinates[0].col == 6)
-                                << "getlegalCoordinateWithOneOptionAvailable test failed";
+                                << "getLegalCoordinate test failed";
 }
