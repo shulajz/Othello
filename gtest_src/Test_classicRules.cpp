@@ -113,7 +113,7 @@ TEST_F(Test_classicRules, getlegalCoordinates){
                 && validCoordinates[2].row ==  6 && validCoordinates[2].col == 6)
                                 << "getLegalCoordinates test failed";
 }
-
+//
 TEST_F(Test_classicRules, getlegalCoordinate){
     Player* whitePlayer =new RealPlayer(White);
     vector<Coordinate> validCoordinates;
