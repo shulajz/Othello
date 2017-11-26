@@ -49,7 +49,6 @@ TEST_F(Test_classicRules, noValidMovesOnBoard){
                                 << "noValidMovesOnBoard test failed";
 }
 
-
 TEST_F(Test_classicRules,checkIfCellValid) {
     TokenValue oppositeValue = classicRules.getOppositeValue(realPlayer);
     vector<Coordinate> validCoordinates;
