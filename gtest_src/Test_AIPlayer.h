@@ -24,7 +24,7 @@ public:
 
         board_8x8=new Board (9, consoleTokenFactory, consoleBoard,
                               classicRules.getInitialValues(9));
-
+//
 
     }
     virtual void TearDown() {
