@@ -1,6 +1,11 @@
-//
-// Created by shulamit on 16/11/17.
-//
+/*
+ * ex3.c
+ *
+ *  Created on: Nov 25, 2017
+ *      Author:  Shulamit & Or Sha'ashua
+ *      ID-Or:311148811
+ *      ID-Shulamit:
+*/
 
 #ifndef OTHELLO_AIPLAYER_H
 #define OTHELLO_AIPLAYER_H

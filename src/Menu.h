@@ -1,7 +1,11 @@
-//
-// Created by or on 11/20/17.
-//
-
+/*
+ * ex3.c
+ *
+ *  Created on: Nov 25, 2017
+ *      Author:  Shulamit & Or Sha'ashua
+ *      ID-Or:311148811
+ *      ID-Shulamit:
+*/
 #ifndef OTHELLO_MENU_H
 #define OTHELLO_MENU_H
 #include <iostream>

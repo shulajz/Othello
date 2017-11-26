@@ -27,13 +27,12 @@ public:
           BoardGraphic &boardGraphic, Cell* initialCells);
     Board (Board &oldBoard);
     Token** getTokens() const;
-
+    BoardGraphic& getBoardGraphic()const;
     void draw() const;
     int getDimensions() const;
     bool isFullOfTokens() const; // checks if the board is full of tokens
     void updateValue(Coordinate coordinate, TokenValue tv);
     void calcResults(int &black, int &white);
-    Board& operator=(const Board&);
 
     virtual ~Board();
 

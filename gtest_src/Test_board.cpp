@@ -1,7 +1,11 @@
-//
-// Created by or on 11/23/17.
-//
-
+/*
+ * ex3.c
+ *
+ *  Created on: Nov 25, 2017
+ *      Author:  Shulamit & Or Sha'ashua
+ *      ID-Or:311148811
+ *      ID-Shulamit:
+*/
 
 #include "Test_board.h"
 
@@ -27,4 +31,3 @@ TEST_F(Test_board,getDimensions) {
     EXPECT_EQ(board_8x8->getDimensions(), 9) << "the getDimensions test failed(1)";
     EXPECT_EQ(board_2x2->getDimensions(), 3) << "the getDimensions test failed(2)";
 }
-
