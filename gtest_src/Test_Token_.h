@@ -10,5 +10,4 @@ class Test_Token_ {
 
 };
 
-
 #endif //OTHELLO_TEST_TOKEN_H

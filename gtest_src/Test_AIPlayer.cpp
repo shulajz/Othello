@@ -5,6 +5,41 @@
 #include "Test_AIPlayer.h"
 #include "Test_classicRules.h"
 
+TEST_F(Test_AIPlayer, doOneTurn1){
+    ClassicRules classicRules;
+    Player* realPlayer= new RealPlayer(Black);
+    Coordinate coordinate;
+    Coordinate inputCoordinate;
+    coordinate.row = 3;
+    coordinate.col = 4;
+    board_8x8->updateValue(coordinate,Black);
+    classicRules.flipTokens(coordinate,*board_8x8,realPlayer);
+    vector<Coordinate> possibleCoordinates;
+    classicRules.getLegalCoordinates(*board_8x8, aiPlayer, possibleCoordinates);
+    aiPlayer->doOneTurn(&classicRules,*board_8x8,possibleCoordinates,inputCoordinate,&board_8x8->getBoardGraphic(),aiPlayer);
+    board_8x8->updateValue(inputCoordinate, White);
+    classicRules.flipTokens(inputCoordinate,*board_8x8, aiPlayer);
+    ASSERT_TRUE(board_8x8->getTokens()[3][3].isWhite())<<"doOneTurn test failed(1)";
+    delete(realPlayer);
+}
+
+TEST_F(Test_AIPlayer, doOneTurn2){
+    ClassicRules classicRules;
+    Player* realPlayer= new RealPlayer(Black);
+    Coordinate coordinate;
+    Coordinate inputCoordinate;
+    coordinate.row = 5;
+    coordinate.col = 6;
+    board_8x8->updateValue(coordinate,Black);
+    classicRules.flipTokens(coordinate,*board_8x8,realPlayer);
+    vector<Coordinate> possibleCoordinates;
+    classicRules.getLegalCoordinates(*board_8x8, aiPlayer, possibleCoordinates);
+    aiPlayer->doOneTurn(&classicRules,*board_8x8,possibleCoordinates,inputCoordinate,&board_8x8->getBoardGraphic(),aiPlayer);
+    board_8x8->updateValue(inputCoordinate, White);
+    classicRules.flipTokens(inputCoordinate,*board_8x8, aiPlayer);
+    ASSERT_TRUE(board_8x8->getTokens()[6][4].isWhite())<<"doOneTurn test failed(1)";
+    delete(realPlayer);
+}
 
 //calcTheMaxScoreForOneTurn(GameRules *gameRules, Board &tempBoard,
 //        vector<Coordinate> &validCoordinates, int &maxLocal)
@@ -12,6 +47,7 @@
 
 TEST_F(Test_AIPlayer, calcTheMaxScoreForOneTurn){
     vector<Coordinate> validCoordinates;
+    ClassicRules classicRules;
     Player* realPlayer = new RealPlayer(Black);
     int maxLocal = 0;
     Player *aiPlayer1 = new AIPlayer(White);
@@ -29,8 +65,7 @@ TEST_F(Test_AIPlayer, calcTheMaxScoreForOneTurn){
     board_8x8->updateValue(testingCoordinate, White);
     classicRules.flipTokens(testingCoordinate, *board_8x8, aiPlayer1);
 
-
     aiPlayer1->calcTheMaxScoreForOneTurn(&classicRules, *board_8x8, validCoordinates, maxLocal);
-    ASSERT_EQ(maxLocal, 5) << "calcTheMaxScoreForOneTurn test failed";
+    ASSERT_EQ(maxLocal, 3) << "calcTheMaxScoreForOneTurn test failed";
     delete(realPlayer);
 }
