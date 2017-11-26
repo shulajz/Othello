@@ -34,7 +34,6 @@ public:
 
 protected:
     Player* aiPlayerWhite;
-    ClassicRules classicRules;
     Board* board_8x8;
 };
 
