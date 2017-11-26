@@ -59,6 +59,7 @@ TEST_F(Test_AIPlayer, doOneTurn1){
 }
 
 TEST_F(Test_AIPlayer, doOneTurn2){
+
     ClassicRules classicRules;
     Player* realPlayer= new RealPlayer(Black);
     Coordinate coordinate;
