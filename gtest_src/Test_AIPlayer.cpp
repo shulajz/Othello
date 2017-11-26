@@ -38,6 +38,9 @@ TEST_F(Test_AIPlayer, calcTheMaxScoreForOneTurn){
 
     aiPlayerBlack->calcTheMaxScoreForOneTurn(&classicRules, board_8x8, validCoordinates, maxLocal);
     ASSERT_EQ(maxLocal, 3) << "calcTheMaxScoreForOneTurn test failed";
+    delete(aiPlayerWhite);
+    delete(aiPlayerBlack);
+
 }
 
 TEST_F(Test_AIPlayer, doOneTurn1){

@@ -34,7 +34,7 @@ void RealPlayer :: doOneTurn(GameRules *gameRules, Board &board,
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
             boardGraphic->printSpecialSituation(IllegelMove);
         }
-        for (int i = 0; i < board.getDimensions(); i++) {
+        for (int i = 0; i < coordinates.size(); i++) {
            //checks if the input is one of the legal coordinates
             if (input.row == coordinates[i].row && input.col == coordinates[i].col) {
                 inputValid = true;

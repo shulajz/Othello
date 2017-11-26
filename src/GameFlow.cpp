@@ -55,7 +55,9 @@ void GameFlow :: run () {
                 m_boardGraphic.printSpecialSituation(Next); //no possible moves for one player
                 needToPrint=false;
             }
-        } else {
+        }
+        else
+        {
             players[currentTurn]->printAfterTheRealPlayerMove(&m_boardGraphic,needToPrint);
             players[currentTurn]->doOneTurn(&m_gameRules, m_board,
                                             validCoordinates, inputCoordinate, &m_boardGraphic,

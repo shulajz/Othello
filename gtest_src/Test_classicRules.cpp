@@ -112,6 +112,7 @@ TEST_F(Test_classicRules, getlegalCoordinatesForASimpleMove){
                 && validCoordinates[1].row ==  6 && validCoordinates[1].col == 4
                 && validCoordinates[2].row ==  6 && validCoordinates[2].col == 6)
                                 << "getlegalCoordinatesForASimpleMove test failed";
+    delete(whitePlayer);
 }
 
 TEST_F(Test_classicRules, getlegalCoordinateWithOneOptionAvailable){
@@ -134,4 +135,6 @@ TEST_F(Test_classicRules, getlegalCoordinateWithOneOptionAvailable){
                                      validCoordinates);
     ASSERT_TRUE(validCoordinates[0].row ==  4 && validCoordinates[0].col == 6)
                                 << "getlegalCoordinateWithOneOptionAvailable test failed";
+    delete(whitePlayer);
+
 }
