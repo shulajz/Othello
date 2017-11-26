@@ -37,7 +37,6 @@ void GameFlow :: run () {
             players[!currentTurn]->printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
         }
         first_move=false;
-        cout << endl;
         vector<Coordinate> validCoordinates;
         m_gameRules.getLegalCoordinates(m_board, players[currentTurn],
                                         validCoordinates);
