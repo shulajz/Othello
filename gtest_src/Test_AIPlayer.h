@@ -20,7 +20,7 @@ public:
         ConsoleBoard consoleBoard(9);
         ConsoleTokenFactory consoleTokenFactory;
         ClassicRules classicRules;
-        Player *aiPlayer = new AIPlayer(White);
+//        Player *aiPlayer = new AIPlayer(White);
 
         board_8x8=new Board (9, consoleTokenFactory, consoleBoard,
                               classicRules.getInitialValues(9));
@@ -33,7 +33,7 @@ public:
     }
 
 protected:
-    Player* aiPlayer;
+//    Player* aiPlayer;
     ClassicRules classicRules;
     Board* board_8x8;
 };
