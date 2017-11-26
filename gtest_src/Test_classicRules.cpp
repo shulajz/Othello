@@ -29,6 +29,27 @@ TEST_F(Test_classicRules, getlegalCoordinatesForFullBoard){
                                 << "getLegalCorrdinates for full board test failed";
 }
 
+TEST_F(Test_classicRules, noValidMovesOnBoard){
+    vector<Coordinate> validCoordinates;
+    Coordinate testingCoordinate1 = {0};
+    testingCoordinate1.row = 5;
+    testingCoordinate1.col = 6;
+    board_8x8->updateValue(testingCoordinate1, Black);
+    classicRules.flipTokens(testingCoordinate1, *board_8x8, realPlayer);
+
+    Coordinate testingCoordinate2 = {0};
+    testingCoordinate1.row = 3;
+    testingCoordinate1.col = 4;
+    board_8x8->updateValue(testingCoordinate2, Black);
+    classicRules.flipTokens(testingCoordinate1, *board_8x8, realPlayer);
+
+
+    classicRules.getLegalCoordinates(*board_8x8, realPlayer,
+                                     validCoordinates);
+    ASSERT_TRUE(validCoordinates.empty())
+                                << "noValidMovesOnBoard for full board test failed";
+}
+
 
 TEST_F(Test_classicRules,checkIfCellValid) {
     TokenValue oppositeValue = classicRules.getOppositeValue(realPlayer);

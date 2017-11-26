@@ -48,7 +48,7 @@ TEST_F(Test_AIPlayer, doOneTurn1){
     Board board_8x8(9, consoleTokenFactory, consoleBoard,
                     classicRules.getInitialValues(9));
 //    ClassicRules classicRules;
-    Player* realPlayer= new RealPlayer(Black);
+    Player* realPlayer = new RealPlayer(Black);
     Coordinate coordinate;
     Coordinate inputCoordinate;
     coordinate.row = 3;
@@ -72,8 +72,6 @@ TEST_F(Test_AIPlayer, doOneTurn2){
 
     Board board_8x8(9, consoleTokenFactory, consoleBoard,
                     classicRules.getInitialValues(9));
-///////////
-    //
 //    ClassicRules classicRules;
     Player* realPlayer= new RealPlayer(Black);
     Coordinate coordinate;
