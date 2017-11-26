@@ -17,19 +17,19 @@ class Test_AIPlayer : public testing::Test {
 public:
     virtual void SetUp() {
 
-        ConsoleBoard consoleBoard(3);
+        ConsoleBoard consoleBoard(9);
         ConsoleTokenFactory consoleTokenFactory;
         ClassicRules classicRules;
-        Player *aiPlayer = new AIPlayer(Black);
+        Player *aiPlayer = new AIPlayer(White);
 
-        board_8x8 = new Board (9, consoleTokenFactory, consoleBoard,
+        board_8x8=new Board (9, consoleTokenFactory, consoleBoard,
                               classicRules.getInitialValues(9));
+
 
     }
     virtual void TearDown() {
-//        delete(board_2x2);
-        delete(aiPlayer);
         delete(board_8x8);
+        delete(aiPlayer);
     }
 
 protected:

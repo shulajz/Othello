@@ -40,7 +40,6 @@ void AIPlayer :: doOneTurn(GameRules *gameRules, Board &board,
 
         }
     }
-//    this->togglePlayer(tv);
 
 }
 
@@ -78,3 +77,4 @@ void AIPlayer :: printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool nee
 bool AIPlayer:: isRealPlayer()const{
     return true;
 }
+

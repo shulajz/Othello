@@ -23,12 +23,13 @@ public:
 //                          board_2x2,
         virtual void SetUp() {
 
-            ConsoleBoard consoleBoard(3);
+            ConsoleBoard consoleBoard1(3);
+            ConsoleBoard consoleBoard2(9);
             ConsoleTokenFactory consoleTokenFactory;
             board_8x8 = new Board (9, consoleTokenFactory,
-                                   consoleBoard, classicRules.getInitialValues(9));
+                                   consoleBoard2, classicRules.getInitialValues(9));
             realPlayer = new RealPlayer(Black);
-            board_2x2 = new Board (3, consoleTokenFactory, consoleBoard,
+            board_2x2 = new Board (3, consoleTokenFactory, consoleBoard1,
                                   classicRules.getInitialValues(3));
 
 

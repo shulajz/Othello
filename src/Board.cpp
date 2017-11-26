@@ -125,4 +125,22 @@ void Board:: calcResults(int &black, int &white) {
         }
     }
 }
-
+//
+//Board& Board::operator=(const Board& board){
+//    m_boardGraphic=board.m_boardGraphic;
+//            pTokenFactory=board.pTokenFactory;
+//        this->dimensions = board.dimensions;
+//        boardArr = new Token*[dimensions];
+//
+//        for (int i = 0; i < dimensions; i++) {
+//            boardArr[i] = pTokenFactory.Create(dimensions);
+//        }
+//        for (int i = 1; i < dimensions; i++) {
+//            for (int j = 1; j < dimensions; j++) {
+//                boardArr[i][j] = board.boardArr[i][j];
+//            }
+//        }
+//    return *this;
+//}
+//
+//

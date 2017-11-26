@@ -30,7 +30,7 @@ void GameFlow :: run () {
             m_board.draw();
             break;
         }
-        if (needToPrint ||players[!currentTurn]->isRealPlayer()) {
+        if (needToPrint||players[!currentTurn]->isRealPlayer()) {
             m_board.draw();
         }
         if (!first_move) {

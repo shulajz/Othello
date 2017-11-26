@@ -33,6 +33,8 @@ public:
     bool isFullOfTokens() const; // checks if the board is full of tokens
     void updateValue(Coordinate coordinate, TokenValue tv);
     void calcResults(int &black, int &white);
+    Board& operator=(const Board&);
+
     virtual ~Board();
 
 };
