@@ -41,39 +41,53 @@ TEST_F(Test_AIPlayer, calcTheMaxScoreForOneTurn){
 }
 
 TEST_F(Test_AIPlayer, doOneTurn1){
+    ConsoleBoard consoleBoard(9);
+    ConsoleTokenFactory consoleTokenFactory;
     ClassicRules classicRules;
+
+    Board board_8x8(9, consoleTokenFactory, consoleBoard,
+                    classicRules.getInitialValues(9));
+//    ClassicRules classicRules;
     Player* realPlayer= new RealPlayer(Black);
     Coordinate coordinate;
     Coordinate inputCoordinate;
     coordinate.row = 3;
     coordinate.col = 4;
-    board_8x8->updateValue(coordinate,Black);
-    classicRules.flipTokens(coordinate,*board_8x8,realPlayer);
+    board_8x8.updateValue(coordinate,Black);
+    classicRules.flipTokens(coordinate,board_8x8,realPlayer);
     vector<Coordinate> possibleCoordinates;
-    classicRules.getLegalCoordinates(*board_8x8, aiPlayerWhite, possibleCoordinates);
-    aiPlayerWhite->doOneTurn(&classicRules,*board_8x8,possibleCoordinates,inputCoordinate,&board_8x8->getBoardGraphic(),aiPlayerWhite);
-    board_8x8->updateValue(inputCoordinate, White);
-    classicRules.flipTokens(inputCoordinate,*board_8x8, aiPlayerWhite);
-    ASSERT_TRUE(board_8x8->getTokens()[3][3].isWhite())<<"doOneTurn test failed(1)";
+    classicRules.getLegalCoordinates(board_8x8, aiPlayerWhite, possibleCoordinates);
+    aiPlayerWhite->doOneTurn(&classicRules,board_8x8,possibleCoordinates,
+                             inputCoordinate, &consoleBoard, aiPlayerWhite);
+    board_8x8.updateValue(inputCoordinate, White);
+    classicRules.flipTokens(inputCoordinate,board_8x8, aiPlayerWhite);
+    ASSERT_TRUE(board_8x8.getTokens()[3][3].isWhite())<<"doOneTurn test failed(1)";
     delete(realPlayer);
 }
 
 TEST_F(Test_AIPlayer, doOneTurn2){
+    ConsoleBoard consoleBoard(9);
+    ConsoleTokenFactory consoleTokenFactory;
+    ClassicRules classicRules;
+
+    Board board_8x8(9, consoleTokenFactory, consoleBoard,
+                    classicRules.getInitialValues(9));
 ///////////
     //
-    ClassicRules classicRules;
+//    ClassicRules classicRules;
     Player* realPlayer= new RealPlayer(Black);
     Coordinate coordinate;
     Coordinate inputCoordinate;
     coordinate.row = 5;
     coordinate.col = 6;
-    board_8x8->updateValue(coordinate,Black);
-    classicRules.flipTokens(coordinate,*board_8x8,realPlayer);
+    board_8x8.updateValue(coordinate,Black);
+    classicRules.flipTokens(coordinate,board_8x8,realPlayer);
     vector<Coordinate> possibleCoordinates;
-    classicRules.getLegalCoordinates(*board_8x8, aiPlayerWhite, possibleCoordinates);
-    aiPlayerWhite->doOneTurn(&classicRules,*board_8x8,possibleCoordinates,inputCoordinate,&board_8x8->getBoardGraphic(),aiPlayerWhite);
-    board_8x8->updateValue(inputCoordinate, White);
-    classicRules.flipTokens(inputCoordinate,*board_8x8, aiPlayerWhite);
-    ASSERT_TRUE(board_8x8->getTokens()[6][4].isWhite())<<"doOneTurn test failed(1)";
+    classicRules.getLegalCoordinates(board_8x8, aiPlayerWhite, possibleCoordinates);
+    aiPlayerWhite->doOneTurn(&classicRules,board_8x8,possibleCoordinates,inputCoordinate,
+                             &consoleBoard,aiPlayerWhite);
+    board_8x8.updateValue(inputCoordinate, White);
+    classicRules.flipTokens(inputCoordinate,board_8x8, aiPlayerWhite);
+    ASSERT_TRUE(board_8x8.getTokens()[6][4].isWhite())<<"doOneTurn test failed(1)";
     delete(realPlayer);
 }
