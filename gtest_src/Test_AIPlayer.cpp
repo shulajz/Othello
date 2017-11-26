@@ -29,7 +29,7 @@ TEST_F(Test_AIPlayer, calcTheMaxScoreForOneTurn){
     testingCoordinate1.col = 4;
     board_8x8.updateValue(testingCoordinate1, Black);
     classicRules.flipTokens(testingCoordinate1, board_8x8, aiPlayerBlack);
-// one turn of the white
+// one turn of the white.
     Coordinate testingCoordinate = {0};
     testingCoordinate.row = 3;
     testingCoordinate.col = 3;
