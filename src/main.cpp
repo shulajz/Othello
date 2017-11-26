@@ -15,13 +15,8 @@
 #include "ClassicRules.h"
 #include "ConsoleTokenFactory.h"
 #include "ConsoleBoard.h"
-#include "AIPlayer.h"
 #include "Menu.h"
 #include "ConsoleMenu.h"
-
-
-
-//using namespace std;
 
 int main() {
 

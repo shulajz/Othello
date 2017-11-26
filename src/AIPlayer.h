@@ -69,5 +69,4 @@ class AIPlayer : public Player{
     void printAfterTheRealPlayerMove(BoardGraphic *boardGraphic, bool need_to_print) const;
 };
 
-
 #endif //OTHELLO_AIPLAYER_H

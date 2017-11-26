@@ -8,9 +8,11 @@
 */
 #include <iostream>
 #include "AIPlayer.h"
+
 AIPlayer :: AIPlayer(TokenValue tv) {
     this->tv = tv;
 }
+
 void AIPlayer :: doOneTurn(GameRules *gameRules, Board &board,
                    vector<Coordinate> &coordinates, Coordinate &input,
                            BoardGraphic *boardGraphic, Player *player)  {
@@ -80,6 +82,5 @@ void AIPlayer :: printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool nee
 }
 
 bool AIPlayer:: isRealPlayer()const{
-    return true;
+    return false;
 }
-

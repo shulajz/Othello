@@ -26,14 +26,16 @@ void GameFlow :: run () {
     bool first_move=true;
     bool needToPrint=true;
     while (true) {
+        //if the board full print and break.
         if (m_board.isFullOfTokens()) {
             m_board.draw();
             break;
         }
-        if (needToPrint||players[!currentTurn]->isRealPlayer()) {
+        if (needToPrint||players[currentTurn]->isRealPlayer()) {
             m_board.draw();
         }
-        if (!first_move) {
+        //print what the computer played only if Player is AIPlayer and this is not the first move and the computer have moves
+        if (!first_move&&(needToPrint||players[!currentTurn]->isRealPlayer())) {
             players[!currentTurn]->printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
         }
         first_move=false;
@@ -46,7 +48,7 @@ void GameFlow :: run () {
             players[currentTurn]->togglePlayer(currentTurn);
             m_gameRules.getLegalCoordinates(m_board, players[currentTurn],validCoordinates);
             if (validCoordinates.empty()) // checking if the other player has any legal moves
-            { // theres no options for either of the players
+            { // there is no options for either of the players
                 m_boardGraphic.printSpecialSituation(NoMovesForAll);
                 break;
             } else {

@@ -28,7 +28,6 @@ void RealPlayer :: doOneTurn(GameRules *gameRules, Board &board,
         boardGraphic->printMoves(coordinates);
         boardGraphic->printSpecialSituation(AskForRowAndCol);
 
-
         while(!(cin>>input.row>>input.col)){
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
