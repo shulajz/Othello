@@ -1,7 +1,11 @@
-//
-// Created by shulamit on 23/11/17.
-//
-
+/*
+ * ex3.c
+ *
+ *  Created on: Nov 25, 2017
+ *      Author:  Shulamit & Or Sha'ashua
+ *      ID-Or:311148811
+ *      ID-Shulamit:
+*/
 #ifndef OTHELLO_TEST_BOARD_H
 #define OTHELLO_TEST_BOARD_H
 

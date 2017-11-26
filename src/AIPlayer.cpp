@@ -1,7 +1,11 @@
-//
-// Created by shulamit on 16/11/17.
-//
-
+/*
+ * ex3.c
+ *
+ *  Created on: Nov 16, 2017
+ *      Author:  Shulamit & Or Sha'ashua
+ *      ID-Or:311148811
+ *      ID-Shulamit:
+*/
 #include <iostream>
 #include "AIPlayer.h"
 AIPlayer :: AIPlayer(TokenValue tv) {

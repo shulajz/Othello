@@ -1,6 +1,11 @@
-//
-// Created by shulamit on 24/11/17.
-//
+/*
+ * ex3.c
+ *
+ *  Created on: Nov 25, 2017
+ *      Author:  Shulamit & Or Sha'ashua
+ *      ID-Or:311148811
+ *      ID-Shulamit:
+*/
 
 #include "Test_classicRules.h"
 #include "../src/RealPlayer.h"
