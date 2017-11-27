@@ -7,6 +7,7 @@
 
 #include "Token.h"
 #include "Player.h"
+#include "Tools.h"
 
 class BoardGraphic {
 public:

@@ -8,6 +8,7 @@
 
 #include "BoardGraphic.h"
 #include "Player.h"
+#include "Tools.h"
 
 class ConsoleBoard : public BoardGraphic{
 

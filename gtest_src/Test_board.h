@@ -14,17 +14,20 @@
 #include "../src/ConsoleBoard.h"
 #include "../src/ConsoleTokenFactory.h"
 #include "../src/ClassicRules.h"
-
+#define DIM_3 3
+#define DIM_9 9
 class Test_board : public testing::Test {
 public:
     virtual void SetUp() {
 
-        ConsoleBoard consoleBoard1(3);
-        ConsoleBoard consoleBoard2(9);
+        ConsoleBoard consoleBoard1(DIM_3);
+        ConsoleBoard consoleBoard2(DIM_9);
         ConsoleTokenFactory consoleTokenFactory;
         ClassicRules classicRules;
-        board_2x2 = new Board (3, consoleTokenFactory, consoleBoard1, classicRules.getInitialValues(3));;
-        board_8x8 = new Board (9, consoleTokenFactory, consoleBoard2, classicRules.getInitialValues(9));;
+        board_2x2 = new Board (DIM_3, consoleTokenFactory, consoleBoard1,
+                               classicRules.getInitialValues(DIM_3));;
+        board_8x8 = new Board (DIM_9, consoleTokenFactory, consoleBoard2,
+                               classicRules.getInitialValues(DIM_9));;
     }
     virtual void TearDown() {
        delete(board_2x2);

@@ -8,7 +8,9 @@
 */
 
 #include "Test_classicRules.h"
-
+/**
+ * Testing getLegalCoordinates method for an empty board.
+ */
 TEST_F(Test_classicRules, getlegalCoordinatesForEmptyBoard){
     vector<Coordinate> validCoordinates;
     classicRules.getLegalCoordinates(*board_8x8, realPlayer,
@@ -19,7 +21,9 @@ TEST_F(Test_classicRules, getlegalCoordinatesForEmptyBoard){
                 && validCoordinates[3].row ==  6 && validCoordinates[3].col == 5)
                                 << "getLegalCoordinates for empty board test failed";
 }
-
+/**
+ * Testing getLegalCoordinates method for a full board
+ */
 TEST_F(Test_classicRules, getlegalCoordinatesForFullBoard){
     vector<Coordinate> validCoordinates;
     classicRules.getLegalCoordinates(*board_2x2, realPlayer,
@@ -27,7 +31,10 @@ TEST_F(Test_classicRules, getlegalCoordinatesForFullBoard){
     ASSERT_TRUE(validCoordinates.empty())
                                 << "getLegalCoordinates for full board test failed";
 }
-
+/**
+ * Testing the method getLegalCoordinates when there are
+ * no valid moves left.
+ */
 TEST_F(Test_classicRules, noValidMovesOnBoard){
     vector<Coordinate> validCoordinates;
     Coordinate testingCoordinate1 = {0};
@@ -48,7 +55,9 @@ TEST_F(Test_classicRules, noValidMovesOnBoard){
     ASSERT_TRUE(validCoordinates.empty())
                                 << "noValidMovesOnBoard test failed";
 }
-
+/**
+ * Testing the method of checkIfCellValid.
+ */
 TEST_F(Test_classicRules,checkIfCellValid) {
     TokenValue oppositeValue = classicRules.getOppositeValue(realPlayer);
     vector<Coordinate> validCoordinates;
@@ -66,7 +75,9 @@ TEST_F(Test_classicRules,checkIfCellValid) {
     ASSERT_TRUE(validCoordinates[0].row == 3 && validCoordinates[0].col == 4)
                                 << "checkIfCellValid test failed";
 }
-
+/**
+ * Testing the method of checkIfToFlipCell.
+ */
 TEST_F(Test_classicRules,checkIfToFlipCell) {
     vector<Coordinate> validCoordinates;
     Token** tokens = board_8x8->getTokens();
@@ -81,7 +92,9 @@ TEST_F(Test_classicRules,checkIfToFlipCell) {
     ASSERT_TRUE(validCoordinates[0].row == 4 && validCoordinates[0].col == 4)
                                 << "checkIfToFlipCell test failed";
 }
-
+/**
+ * Testing the method of flipTokens.
+ */
 TEST_F(Test_classicRules, flipTokens) {
 
     ASSERT_TRUE(board_8x8->getTokens()[4][4].isWhite())
@@ -95,7 +108,9 @@ TEST_F(Test_classicRules, flipTokens) {
                                 << "flipTokens test failed(2)";
 }
 
-
+/**
+ * Testing getlegalCoordinate method after a simple move.
+ */
 TEST_F(Test_classicRules, getlegalCoordinatesForASimpleMove){
     Player* whitePlayer = new RealPlayer(White);
     vector<Coordinate> validCoordinates;
@@ -113,6 +128,10 @@ TEST_F(Test_classicRules, getlegalCoordinatesForASimpleMove){
     delete(whitePlayer);
 }
 
+/**
+ * Testing getlegalCoordinate method when theres only one option
+ * available for the player.
+ */
 TEST_F(Test_classicRules, getlegalCoordinateWithOneOptionAvailable){
     Player* whitePlayer = new RealPlayer(White);
     vector<Coordinate> validCoordinates;
