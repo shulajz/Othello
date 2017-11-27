@@ -4,7 +4,7 @@
  *  Created on: Nov 25, 2017
  *      Author:  Shulamit & Or Sha'ashua
  *      ID-Or:311148811
- *      ID-Shulamit:
+ *      ID-Shulamit:313485690
 */
 
 #ifndef OTHELLO_AIPLAYER_H
@@ -45,14 +45,15 @@ class AIPlayer : public Player{
                            BoardGraphic *boardGraphic, Player *player);
 
     /**
-     * Print the move the AIPlayer do.
+     * Print the move the AIPlayer did.
      * @param coordinate
      * @param boardGraphic
      */
     virtual void printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic);
 
     /**
-     * This function calculate the score for one move turn.
+     * This function calculate the max score of the real player
+     * for one move turn of the AI player.
      * @param gameRules
      * @param tempBoard
      * @param validCoordinates

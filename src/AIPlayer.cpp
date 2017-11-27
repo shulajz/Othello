@@ -4,7 +4,7 @@
  *  Created on: Nov 16, 2017
  *      Author:  Shulamit & Or Sha'ashua
  *      ID-Or:311148811
- *      ID-Shulamit:
+ *      ID-Shulamit:313485690
 */
 #include <iostream>
 #include "AIPlayer.h"
@@ -35,6 +35,8 @@ void AIPlayer :: doOneTurn(GameRules *gameRules, Board &board,
         minOfAllMoves.push_back(maxLocal);
         this->togglePlayer(tv); //now its the computers turn
     }
+    //we want to get now the minimum score of the real
+    //player and play accordingly
     int minOfAllMovesParam = minOfAllMoves[0];
     input.row = coordinates[0].row;
     input.col = coordinates[0].col;

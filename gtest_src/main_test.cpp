@@ -4,7 +4,7 @@
  *  Created on: Nov 16, 2017
  *      Author:  Shulamit & Or Sha'ashua
  *      ID-Or:311148811
- *      ID-Shulamit:
+ *      ID-Shulamit:313485690
 */
 
 #include <iostream>
@@ -15,6 +15,5 @@ using namespace testing;
 
 int main(int argc, char *argv[]) {
     InitGoogleTest(&argc, argv);
-    RUN_ALL_TESTS();
-       return 0;
+    return RUN_ALL_TESTS();
 }

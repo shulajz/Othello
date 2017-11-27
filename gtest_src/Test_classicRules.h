@@ -4,7 +4,7 @@
  *  Created on: Nov 25, 2017
  *      Author:  Shulamit & Or Sha'ashua
  *      ID-Or:311148811
- *      ID-Shulamit:
+ *      ID-Shulamit:313485690
 */
 
 #ifndef OTHELLO_TEST_CLASSICRULES_H
@@ -20,12 +20,6 @@
 
 class Test_classicRules : public testing::Test {
 public:
-//    Test_classicRules() :
-//            ClassicRules classicRules;
-//    ConsoleBoard consoleBoard(3),
-//                          board_8x8(9, consoleTokenFactory,
-//                                    consoleBoard, classicRules.getInitialValues(9));,
-//                          board_2x2,
         virtual void SetUp() {
 
             ConsoleBoard consoleBoard1(3);

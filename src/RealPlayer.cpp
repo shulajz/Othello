@@ -43,12 +43,10 @@ void RealPlayer :: doOneTurn(GameRules *gameRules, Board &board,
         if (inputValid) {
             break;
         } else {
-
             boardGraphic->printSpecialSituation(IllegelMove);
         }
     }
 }
-
 
 bool RealPlayer :: isRealPlayer()const{
     return true;
