@@ -5,11 +5,11 @@
 #ifndef OTHELLO_TOOLS_H
 #define OTHELLO_TOOLS_H
 #define DIM 9
+
 enum TokenValue {
     Black,
     White,
     Empty,
-    NumTokenValues
 };
 enum Situation {
     IllegelMove,NoMovesForAll,Next,AskForRowAndCol
