@@ -10,7 +10,9 @@
 #include "Test_AIPlayer.h"
 #include "Test_classicRules.h"
 
-
+/**
+ * testing the calcTheMaxScoreForOneTurn method.
+ */
 TEST_F(Test_AIPlayer, calcTheMaxScoreForOneTurn){
     vector<Coordinate> validCoordinates;
     int maxLocal = 0;

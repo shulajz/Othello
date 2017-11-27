@@ -4,17 +4,21 @@
  *  Created on: Nov 25, 2017
  *      Author:  Shulamit & Or Sha'ashua
  *      ID-Or:311148811
- *      ID-Shulamit:
+ *      ID-Shulamit:313485690
 */
 
 #include "Test_board.h"
 
-
+/**
+ * Testing the FullOfTokens method
+ */
 TEST_F(Test_board,FullOfTokens){
 
     EXPECT_TRUE(board_2x2->isFullOfTokens()) << "the full of tokens test of 2x2 board failed";
 }
-
+/**
+ * Testing the calcResults method
+ */
 TEST_F(Test_board,calcResults) {
     Coordinate coordinate;
     coordinate.col = 3;
