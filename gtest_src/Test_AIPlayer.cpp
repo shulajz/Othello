@@ -44,7 +44,11 @@ TEST_F(Test_AIPlayer, calcTheMaxScoreForOneTurn){
     delete(aiPlayerBlack);
 
 }
-
+/**
+ * Testing of do one turn.
+ * check if in the regular board 8x8 with adding black coordinate
+ * (3,4) to the board ,the AIPlayer choose the wright coordinate in this case (3,3).
+ */
 TEST_F(Test_AIPlayer, doOneTurn1){
     ConsoleBoard consoleBoard(9);
     ConsoleTokenFactory consoleTokenFactory;
@@ -67,7 +71,11 @@ TEST_F(Test_AIPlayer, doOneTurn1){
     ASSERT_TRUE(board_8x8.getTokens()[3][3].isWhite())<<"doOneTurn test failed(1)";
     delete(realPlayer);
 }
-
+/**
+ * Testing of do one turn.
+ * check if in the regular board 8x8 with adding black coordinate
+ * (5,6) to the board ,the AIPlayer choose the wright coordinate in this case (6,4).
+ */
 TEST_F(Test_AIPlayer, doOneTurn2){
     ConsoleBoard consoleBoard(9);
     ConsoleTokenFactory consoleTokenFactory;

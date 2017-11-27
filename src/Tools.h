@@ -15,9 +15,8 @@ enum Situation {
     IllegelMove,NoMovesForAll,Next,AskForRowAndCol
 };
 class Tools {
-//
+
 };
 
-//
 
 #endif //OTHELLO_TOOLS_H
