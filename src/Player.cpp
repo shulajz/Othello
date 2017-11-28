@@ -5,7 +5,7 @@
 #include <iostream>
 #include "Tools.h"
 #include "Player.h"
-
+#include "BoardGraphic.h"
 
 
 TokenValue Player :: getValue() const {
@@ -22,16 +22,10 @@ bool Player :: isWhitePlayer() const {
     }
 }
 /**
- * draws the value of the player
+ * @return the value of the current player.
  */
-void Player :: drawValue() const {
-    if(tv == White) {
-        cout << "O";
-    } else if (tv == Black){
-        cout << "X";
-    } else {
-        cout << " ";
-    }
+TokenValue Player :: getIdentity() {
+    return tv;
 }
 /**
  * switches between the players

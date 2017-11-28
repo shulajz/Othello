@@ -15,7 +15,7 @@ class BoardGraphic {
 public:
     virtual void draw(Token** tokenArr) const = 0;
     virtual void printSpecialSituation(Situation message) const = 0;
-    virtual void printWhosMove(Player *player) const = 0;
+    virtual void printWhosMove(TokenValue tv)const = 0;
     /**
      * print the valid moves of the player.
      * @param validCoordinates
@@ -27,7 +27,7 @@ public:
      * @param white
      */
     virtual void drawStatus(int black, int white) const = 0;
-    virtual void printThePlayersChoice(Coordinate coordinate, Player *player) const;
+    virtual void printThePlayersChoice(TokenValue tv, Coordinate coordinate) const;
     virtual void printAfterRealPlayer() const;
     virtual void receivePlayersAnswer(Coordinate &input) = 0;
 };

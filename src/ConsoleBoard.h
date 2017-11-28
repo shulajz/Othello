@@ -19,10 +19,10 @@ public:
     //draws the board
     virtual void draw(Token** tokenArr) const;
     virtual void printSpecialSituation(Situation message) const;
-    virtual void printWhosMove(Player *player) const;
+    virtual void printWhosMove(TokenValue tv) const;
     void printMoves(vector<Coordinate> validCoordinates) const;
     virtual void drawStatus(int black, int white)const;
-    virtual void printThePlayersChoice(Coordinate coordinate, Player *player) const;
+    virtual void printThePlayersChoice(TokenValue tv, Coordinate coordinate) const;
     void printAfterRealPlayer() const;
     virtual void receivePlayersAnswer(Coordinate &input);
 

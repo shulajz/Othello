@@ -17,6 +17,7 @@ using namespace std;
 class ConsoleToken: public Token{
 
 public:
+    static void drawTokenValue(TokenValue tv);
     ConsoleToken();
     ~ConsoleToken(){};
     //draws the token

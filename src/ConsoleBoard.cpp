@@ -6,6 +6,7 @@
 
 using namespace std;
 #include "ConsoleBoard.h"
+#include "ConsoleToken.h"
 
 
 #define SPACE "  "
@@ -52,7 +53,8 @@ void ConsoleBoard :: draw (Token** tokenArr) const {
 void ConsoleBoard :: printSpecialSituation(Situation message) const{
     if (message==Next){
         char temp;
-        cout<<"No possible moves.Play passes back to the other player.press any key to continue."<<endl;
+        cout<<"No possible moves.Play passes back to the other player."
+                "press any key to continue."<<endl;
         cin>>temp;
     }else if (message==NoMovesForAll){
         cout<<"No possible moves."<<endl;
@@ -63,8 +65,8 @@ void ConsoleBoard :: printSpecialSituation(Situation message) const{
     }
 }
 
-void ConsoleBoard :: printWhosMove(Player *player) const{
-    player->drawValue();
+void ConsoleBoard :: printWhosMove(TokenValue tv) const{
+    ConsoleToken :: drawTokenValue(tv);
     cout << " ,It's your move" << endl;
 }
 
@@ -96,8 +98,9 @@ void ConsoleBoard::drawStatus(int black, int white)const{
     }
 }
 
-void ConsoleBoard :: printThePlayersChoice(Coordinate coordinate, Player *player) const {
-    player->drawValue();
+void ConsoleBoard :: printThePlayersChoice(TokenValue tv,
+                                           Coordinate coordinate) const {
+    ConsoleToken :: drawTokenValue(tv);
     cout << ", played" << "(" <<  coordinate.row << "," << coordinate.col << ")" << endl;
 
 }

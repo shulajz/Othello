@@ -14,7 +14,6 @@ RealPlayer :: RealPlayer(TokenValue tv) {
 }
 
 
-
 /**
  * the turn of one of the players.
  */
@@ -24,7 +23,7 @@ void RealPlayer :: doOneTurn(GameRules *gameRules, Board &board,
                              Coordinate &input, BoardGraphic *boardGraphic, Player *player) {
     bool inputValid = false;
     while (!inputValid) {
-        boardGraphic->printWhosMove(player);
+        boardGraphic->printWhosMove(player->getIdentity());
         boardGraphic->printMoves(coordinates);
         boardGraphic->printSpecialSituation(AskForRowAndCol);
 
