@@ -24,6 +24,8 @@ public:
     virtual void drawStatus(int black, int white)const;
     virtual void printThePlayersChoice(Coordinate coordinate, Player *player) const;
     void printAfterRealPlayer() const;
+    virtual void receivePlayersAnswer(Coordinate &input);
+
 
 };
 

@@ -2,6 +2,8 @@
 // Created by shulamit on 10/31/17.
 //
 #include <iostream>
+#include <limits>
+
 using namespace std;
 #include "ConsoleBoard.h"
 
@@ -104,4 +106,15 @@ void ConsoleBoard :: printAfterRealPlayer() const {
     char temp;
     cout << "you played your turn, please enter any key to display computers turn " << endl;
     cin>>temp;
+}
+/**
+ * receives coordinate input from the user.
+ * @param input
+ */
+void ConsoleBoard :: receivePlayersAnswer(Coordinate &input) {
+    while(!(cin>>input.row>>input.col)){
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(),'\n');
+        printSpecialSituation(IllegelMove);
+    }
 }

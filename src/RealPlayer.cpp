@@ -28,11 +28,7 @@ void RealPlayer :: doOneTurn(GameRules *gameRules, Board &board,
         boardGraphic->printMoves(coordinates);
         boardGraphic->printSpecialSituation(AskForRowAndCol);
 
-        while(!(cin>>input.row>>input.col)){
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            boardGraphic->printSpecialSituation(IllegelMove);
-        }
+        boardGraphic->receivePlayersAnswer(input);
         for (int i = 0; i < coordinates.size(); i++) {
            //checks if the input is one of the legal coordinates
             if (input.row == coordinates[i].row && input.col == coordinates[i].col) {

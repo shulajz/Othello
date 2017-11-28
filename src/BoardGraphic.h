@@ -29,6 +29,7 @@ public:
     virtual void drawStatus(int black, int white) const = 0;
     virtual void printThePlayersChoice(Coordinate coordinate, Player *player) const;
     virtual void printAfterRealPlayer() const;
+    virtual void receivePlayersAnswer(Coordinate &input) = 0;
 };
 
 #endif //OTHELLO_BOARDGRAPHIC_H
