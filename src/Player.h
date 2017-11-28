@@ -21,17 +21,15 @@ public:
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates,
                            Coordinate &input, BoardGraphic *boardGraphic, Player *player) =0;
-    //draws the value
-    virtual void drawValue() const;
     virtual TokenValue getValue() const;
     virtual void togglePlayer(TokenValue &tokenValue);
     virtual bool isWhitePlayer() const;
     virtual void printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic);
-//    virtual TokenValue getOppositeValue(TokenValue tv) = 0;
     virtual void printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const;
     virtual bool isRealPlayer()const=0;
     virtual void calcTheMaxScoreForOneTurn(GameRules *gameRules, Board &tempBoard,
                                    vector<Coordinate> &validCoordinates, int &maxLocal){};
+    TokenValue getIdentity();
 
 };
 

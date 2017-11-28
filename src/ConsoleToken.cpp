@@ -17,10 +17,10 @@ ConsoleToken::ConsoleToken() {
     tv = Empty;
 }
 
-/**
- * draws the token
- */
-void ConsoleToken :: draw() const{
+
+
+void ConsoleToken :: drawTokenValue(TokenValue tv)
+{
     if(tv == Black) {
         cout << "X";
     }
@@ -29,4 +29,13 @@ void ConsoleToken :: draw() const{
     } else {
         cout << SPACES;
     }
+
+}
+/**
+ * draws the token
+ */
+void ConsoleToken :: draw() const{
+
+    drawTokenValue(tv);
+
 }

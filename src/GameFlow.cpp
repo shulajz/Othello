@@ -20,7 +20,6 @@ GameFlow ::GameFlow(GameRules &gameRules, Player **players, Board &board, BoardG
  * where the game runs
  */
 void GameFlow :: run () {
-//    m_board.draw();
     Coordinate inputCoordinate;
     inputCoordinate.row = 0;
     inputCoordinate.col = 0;
@@ -35,11 +34,13 @@ void GameFlow :: run () {
         if (needToPrint||players[currentTurn]->isRealPlayer()) {
             m_board.draw();
         }
-        //print what the computer played only if Player is AIPlayer and this is not the first move and the computer have moves
-        if (!first_move&&(needToPrint||players[!currentTurn]->isRealPlayer())) {
-            players[!currentTurn]->printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
+        //print what the computer played only if Player is AIPlayer
+        // and this is not the first move and the computer have moves
+        if (!first_move && (needToPrint || players[!currentTurn]->isRealPlayer())) {
+            players[!currentTurn]->printWhatThePlayerPlayed(inputCoordinate,
+                                                            &m_boardGraphic);
         }
-        first_move=false;
+        first_move = false;
         vector<Coordinate> validCoordinates;
         m_gameRules.getLegalCoordinates(m_board, players[currentTurn],
                                         validCoordinates);
@@ -54,7 +55,7 @@ void GameFlow :: run () {
                 break;
             } else {
                 players[currentTurn]->togglePlayer(currentTurn);
-                m_boardGraphic.printWhosMove(players[currentTurn]);
+                m_boardGraphic.printWhosMove(currentTurn);
                 m_boardGraphic.printSpecialSituation(Next); //no possible moves for one player
                 needToPrint=false;
             }

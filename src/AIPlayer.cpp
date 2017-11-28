@@ -44,10 +44,8 @@ void AIPlayer :: doOneTurn(GameRules *gameRules, Board &board,
             minOfAllMovesParam = minOfAllMoves[k];
             input.row = coordinates[k].row;
             input.col = coordinates[k].col;
-
         }
     }
-
 }
 
 void AIPlayer :: calcTheMaxScoreForOneTurn(GameRules *gameRules, Board &tempBoard,
@@ -72,8 +70,9 @@ void AIPlayer :: calcTheMaxScoreForOneTurn(GameRules *gameRules, Board &tempBoar
     }
 }
 
-void AIPlayer :: printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic) {
-    boardGraphic->printThePlayersChoice(coordinate, this);
+void AIPlayer :: printWhatThePlayerPlayed(Coordinate coordinate,
+                                          BoardGraphic *boardGraphic) {
+    boardGraphic->printThePlayersChoice(tv, coordinate);
 }
 
 void AIPlayer :: printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const {
