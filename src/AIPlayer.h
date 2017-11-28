@@ -3,8 +3,6 @@
  *
  *  Created on: Nov 25, 2017
  *      Author:  Shulamit & Or Sha'ashua
- *      ID-Or:311148811
- *      ID-Shulamit:313485690
 */
 
 #ifndef OTHELLO_AIPLAYER_H
@@ -20,7 +18,6 @@ class AIPlayer : public Player{
     public:
 
     /**
-     * Return true if is real player, false otherwise.
      * @return true if is real player, false otherwise.
      */
     bool isRealPlayer()const;
@@ -63,7 +60,7 @@ class AIPlayer : public Player{
                                    vector<Coordinate> &validCoordinates, int &maxLocal);
 
     /**
-     * Print massage after the real player move.
+     * Print message after the real player move.
      * @param boardGraphic
      * @param need_to_print
      */

@@ -3,8 +3,6 @@
  *
  *  Created on: Nov 25, 2017
  *      Author:  Shulamit & Or Sha'ashua
- *      ID-Or:311148811
- *      ID-Shulamit:313485690
 */
 
 #include "Test_classicRules.h"
@@ -89,7 +87,8 @@ TEST_F(Test_classicRules,checkIfToFlipCell) {
             testingCoordinate, 1, 0, validCoordinates,
             DIM, tokens, realPlayer);
 
-    ASSERT_TRUE(validCoordinates[0].row == 4 && validCoordinates[0].col == 4)
+    ASSERT_TRUE(validCoordinates[0].row == 4
+                && validCoordinates[0].col == 4)
                                 << "checkIfToFlipCell test failed";
 }
 /**

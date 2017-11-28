@@ -3,8 +3,6 @@
  *
  *  Created on: Nov 25, 2017
  *      Author:  Shulamit & Or Sha'ashua
- *      ID-Or:311148811
- *      ID-Shulamit:313485690
 */
 #ifndef OTHELLO_TEST_BOARD_H
 #define OTHELLO_TEST_BOARD_H

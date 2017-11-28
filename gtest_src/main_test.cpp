@@ -3,8 +3,6 @@
  *
  *  Created on: Nov 16, 2017
  *      Author:  Shulamit & Or Sha'ashua
- *      ID-Or:311148811
- *      ID-Shulamit:313485690
 */
 
 #include <iostream>
