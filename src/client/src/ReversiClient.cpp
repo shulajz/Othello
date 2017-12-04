@@ -24,7 +24,7 @@ void ReversiClient::connectToServer() {
     if (clientSocket == -1) {
         throw "Error opening socket";
     }
-    // Convert the ip string to a network address
+    /// Convert the ip string to a network address
     struct in_addr address;
     if (!inet_aton(serverIP, &address)) {
         throw "Can't parse IP address";
