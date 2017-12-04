@@ -9,14 +9,15 @@
 #include "Cell.h"
 
 class ReversiClient {
-    public:
+public:
     ReversiClient(const char *serverIP, int serverPort);
-        void connectToServer();
-        Coordinate sendMove(int row, int col);
-    private:
-        const char *serverIP;
-        int serverPort;
-        int clientSocket;
+    void connectToServer();
+    Coordinate sendMove(int row, int col);
+private:
+    const char *serverIP;
+    int serverPort;
+    int clientSocket;
+    bool sendIfFirstMove;
 };
 
 

@@ -8,11 +8,11 @@
 using namespace std;
 
 int main() {
- ReversiServer server(8000);
- try {
-    server.start();
- } catch (const char *msg) {
-    cout << "Cannot start server. Reason: " << msg << endl;
-    exit(-1);
- }
+    ReversiServer server(8000);
+    try {
+        server.start();
+    } catch (const char *msg) {
+        cout << "Cannot start server. Reason: " << msg << endl;
+        exit(-1);
+    }
 }

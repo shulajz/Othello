@@ -24,12 +24,12 @@ void ReversiClient::connectToServer() {
     if (clientSocket == -1) {
         throw "Error opening socket";
     }
-    // Convert the ip string to a network address
+    /// Convert the ip string to a network address
     struct in_addr address;
     if (!inet_aton(serverIP, &address)) {
         throw "Can't parse IP address";
     }
-    // Get a hostent structure for the given host address
+    /// Get a hostent structure for the given host address
     struct hostent *server;
     server = gethostbyaddr((const void *)&address, sizeof
             address, AF_INET);
@@ -49,6 +49,12 @@ void ReversiClient::connectToServer() {
     *)&serverAddress, sizeof(serverAddress)) == -1) {
         throw "Error connecting to server";
     }
+//    int i;
+//    int n = read(clientSocket, &i, sizeof(i));
+//    if (n == -1) {
+//        throw "Error reading result from socket";
+//    }
+//    cout << n << "shulaaaaaa" << endl;
     cout << "Connected to server" << endl;
 }
 

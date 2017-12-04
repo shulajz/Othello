@@ -36,19 +36,33 @@ void ReversiServer::start() {
     // Start listening to incoming connections
     listen(serverSocket, MAX_CONNECTED_CLIENTS);
     // Define the client socket's structures
-    struct sockaddr_in clientAddress;
-    socklen_t clientAddressLen;
+    struct sockaddr_in clientAddress1;
+    socklen_t clientAddressLen1;
+    struct sockaddr_in clientAddress2;
+    socklen_t clientAddressLen2;
     while (true) {
         cout << "Waiting for client connections..." << endl;
         // Accept a new client connection
-        int clientSocket = accept(serverSocket, (struct
-                sockaddr *)&clientAddress, &clientAddressLen);
+        int clientSocket1 = accept(serverSocket, (struct
+                sockaddr *)&clientAddress1, &clientAddressLen1);
         cout << "Client connected" << endl;
-        if (clientSocket == -1)
+        if (clientSocket1 == -1)
             throw "Error on accept";
-        handleClient(clientSocket);
+
+
+        //accept client 2
+        int clientSocket2 = accept(serverSocket, (struct
+                sockaddr *)&clientAddress2, &clientAddressLen2);
+        cout << "Client connected" << endl;
+        if (clientSocket2 == -1)
+            throw "Error on accept";
+
+
+
+        handleClient(clientSocket1);
         // Close communication with the client
-        close(clientSocket);
+        close(clientSocket1);
+        close(clientSocket2);
     }
 }
 // Handle requests from a specific client

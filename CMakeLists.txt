@@ -33,4 +33,3 @@ add_executable(Server ${OTHELLO_FILES} ${SERVER})
 add_executable(Othello ${SOURCE_FILES} ${OTHELLO_MAIN})
 add_executable(runTests ${SOURCE_TEST_FILES} ${SOURCE_FILES})
 target_link_libraries(runTests gtest gtest_main pthread)
-
