@@ -51,7 +51,7 @@ void ReversiClient::connectToServer() {
     }
     cout << "Connected to server" << endl;
 }
-
+//
 Coordinate ReversiClient::sendMove(int row,int col) {
     // Write the exercise arguments to the socket
     int n = write(clientSocket, &row, sizeof(row));
