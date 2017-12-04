@@ -29,7 +29,7 @@ void ReversiClient::connectToServer() {
     if (!inet_aton(serverIP, &address)) {
         throw "Can't parse IP address";
     }
-    // Get a hostent structure for the given host address
+    /// Get a hostent structure for the given host address
     struct hostent *server;
     server = gethostbyaddr((const void *)&address, sizeof
             address, AF_INET);
