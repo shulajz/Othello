@@ -15,6 +15,7 @@
 #include "ConsoleBoard.h"
 #include "Menu.h"
 #include "ConsoleMenu.h"
+#include "RemotePlayer.h"
 
 int main() {
 
@@ -23,11 +24,17 @@ int main() {
     ClassicRules classicRules;
     ConsoleMenu consoleMenu;
     Board board (DIM, consoleTokenFactory, consoleBoard, classicRules.getInitialValues(DIM));
-    RealPlayer realPlayer(Black);
+    //RealPlayer realPlayer(Black);
     consoleMenu.printOptionsMenu();
     Player* p2 = consoleMenu.choosePlayer();
     Player* players[2];
-    players[Black] = &realPlayer;
+    Player* p1;
+    if(p2->isRemotePlayer()){
+        p1=new RemotePlayer(Black);
+    }else{
+        p1= new RealPlayer (Black);
+    }
+    players[Black] = p1;
     players[White] = p2;
     GameFlow gameFlow(classicRules, players, board, consoleBoard);
     gameFlow.run();

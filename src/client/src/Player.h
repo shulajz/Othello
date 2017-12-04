@@ -26,10 +26,11 @@ public:
     virtual bool isWhitePlayer() const;
     virtual void printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic);
     virtual void printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const;
-    virtual bool isRealPlayer()const=0;
+    virtual bool isRealPlayer()const;
     virtual void calcTheMaxScoreForOneTurn(GameRules *gameRules, Board &tempBoard,
                                    vector<Coordinate> &validCoordinates, int &maxLocal){};
     TokenValue getIdentity();
+    virtual bool isRemotePlayer() const;
 
 };
 

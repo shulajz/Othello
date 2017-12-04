@@ -47,3 +47,11 @@ void Player :: printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boa
 void Player ::printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const {
 
 }
+
+bool Player ::isRealPlayer() const {
+    return false;
+}
+
+bool Player ::isRemotePlayer() const {
+    return false;
+}

@@ -6,6 +6,7 @@
 */
 
 #include "Menu.h"
+#include "RemotePlayer.h"
 
 Menu::~Menu(){};
 Menu::Menu(){};
@@ -17,9 +18,12 @@ Player* Menu:: choosePlayer() const{
         if (selection == 'H') {
             p = new RealPlayer (White);
             return  p;
-        //A for AIPlayer
+            //A for AIPlayer
         } else if (selection == 'A') {
-            p = new AIPlayer (White);
+            p = new AIPlayer(White);
+            return p;
+        }else if(selection == 'R'){
+            p= new RemotePlayer(White);
             return p;
         } else {
             //illegal option
@@ -27,4 +31,3 @@ Player* Menu:: choosePlayer() const{
         }
     }
 }
-
