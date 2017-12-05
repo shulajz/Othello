@@ -19,7 +19,20 @@ RemotePlayer::RemotePlayer(TokenValue tv):haveTwoPlayers(false){
     do{
         this->tv=client->getTokenValueOfPlayer();
     }while(this->tv!=Black&&this->tv!=White);
+
+
 }
+
+ReversiClient* RemotePlayer :: getClient()const{
+    return this->client;
+
+}
+
+bool RemotePlayer :: isMyTurn() {
+    return client->isMyTurn();
+}
+
+
 
 void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
                              vector<Coordinate> &coordinates,
@@ -29,7 +42,8 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
     boardGraphic->printMoves(coordinates);
     boardGraphic->printSpecialSituation(AskForRowAndCol);
     while (!inputValid) {
-        cin >> input.row >> input.col;
+        char temp;
+        cin >> input.row>>temp >> input.col;
         cout << "Sending Move: " << input.row << ", "<<input.col << endl;
         for (int i = 0; i < coordinates.size(); i++) {
             //checks if the input is one of the legal coordinates
@@ -55,3 +69,6 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
 bool RemotePlayer:: isRemotePlayer()const{
     return true;
 }
+
+
+

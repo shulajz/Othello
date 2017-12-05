@@ -7,6 +7,7 @@
 
 #include "Menu.h"
 #include "RemotePlayer.h"
+#include "DemoPlayer.h"
 
 Menu::~Menu(){};
 Menu::Menu(){};

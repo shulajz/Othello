@@ -6,6 +6,7 @@
 #define OTHELLO_PLAYER_H
 
 #include "Cell.h"
+#include "ReversiClient.h"
 //#include "Board.h"
 //#include "BoardGraphic.h"
 #include <vector>
@@ -31,6 +32,8 @@ public:
                                    vector<Coordinate> &validCoordinates, int &maxLocal){};
     TokenValue getIdentity();
     virtual bool isRemotePlayer() const;
+    virtual ReversiClient* getClient()const;
+    virtual bool isMyTurn();
 
 };
 

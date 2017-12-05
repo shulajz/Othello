@@ -19,7 +19,7 @@ ConsoleBoard :: ConsoleBoard(int dimensions) {
  * @param tokenArr the board
  */
 void ConsoleBoard :: draw (Token** tokenArr) const {
-
+    cout<<endl<<"Current board:"<<endl<<endl;
     for ( int i = 0; i < dimensions; i++ ) {
         for ( int j = 0; j < dimensions; j++ ) {
             if (j != 0){
@@ -115,7 +115,8 @@ void ConsoleBoard :: printAfterRealPlayer() const {
  * @param input
  */
 void ConsoleBoard :: receivePlayersAnswer(Coordinate &input) {
-    while(!(cin>>input.row>>input.col)){
+    char temp;
+    while(!(cin>>input.row>>temp>>input.col)){
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(),'\n');
         printSpecialSituation(IllegelMove);

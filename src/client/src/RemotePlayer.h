@@ -17,6 +17,8 @@ public:
                            Coordinate &input, BoardGraphic *boardGraphic, Player *player);
 //    virtual bool isRealPlayer()const;
     bool isRemotePlayer() const;
+    ReversiClient* getClient() const;
+    bool isMyTurn();
 
 private:
     ReversiClient* client;

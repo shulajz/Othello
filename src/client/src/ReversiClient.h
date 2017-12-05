@@ -13,11 +13,16 @@ public:
     ReversiClient(const char *serverIP, int serverPort);
     void connectToServer();
     Coordinate sendMove(int row, int col);
+    Coordinate receiveMove();
+
     TokenValue getTokenValueOfPlayer();
+    TokenValue getOppositeTv()const;
+    bool isMyTurn();
 private:
     const char *serverIP;
     int serverPort;
     int clientSocket;
+    TokenValue tv;
 
 };
 

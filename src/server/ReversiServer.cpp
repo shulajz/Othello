@@ -60,18 +60,26 @@ void ReversiServer::start() {
             throw "Error on accept";
         }
         sendValueOfClient(clientSocket1,clientSocket2);
-        handleClient(clientSocket1);
+        cout<<"000";
+        int count=0;
+        while(count<=10000){
+         sendWhoNeedToPlay (clientSocket1, clientSocket2);
+         handleClient(clientSocket1, clientSocket2);
+         sendWhoNeedToPlay(clientSocket2, clientSocket1);
+         handleClient(clientSocket2, clientSocket1);
+         count++;
+        }
         // Close communication with the client
         close(clientSocket1);
         close(clientSocket2);
     }
 }
 // Handle requests from a specific client
-void ReversiServer::handleClient(int clientSocket) {
+void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
     int row, col;
-    while (true) {
         // Read new exercise arguments
-        int n = read(clientSocket, &row, sizeof(row));
+        int n = read(clientSocket1, &row, sizeof(row));
+        cout<<row<<endl;
         if (n == -1) {
             cout << "Error reading row" << endl;
             return;
@@ -80,7 +88,8 @@ void ReversiServer::handleClient(int clientSocket) {
             cout << "Client disconnected" << endl;
             return;
         }
-        n = read(clientSocket, &col, sizeof(col));
+        n = read(clientSocket1, &col, sizeof(col));
+        cout<<col<<endl;
         if (n == -1) {
             cout << "Error reading col" << endl;
             return;
@@ -88,13 +97,33 @@ void ReversiServer::handleClient(int clientSocket) {
         cout << "Got Move: " << row << ", " << col <<
              endl;
         Coordinate result = getMove(row, col);
-        // Write the result back to the client
-        n = write(clientSocket, &result, sizeof(result));
+//         //Write the result back to the client
+    cout<< "flag reversi server"<<endl;
+    cout<<"row:"<<result.row<<endl<<"col:"<<result.col<<endl;
+
+    n = write(clientSocket2, &result, sizeof(result));
+        cout<<n<<endl;
+
         if (n == -1) {
             cout << "Error writing to socket" << endl;
             return;
         }
-    }
+
+//        n = write(clientSocket2, &result.row, sizeof(result.row));
+//        cout<<n<<endl;
+//        if (n == -1) {
+//            cout << "Error writing to socket" << endl;
+//            return;
+//        }
+//
+//        n = write(clientSocket2, &result.col, sizeof(result.col));
+//        cout<<n<<endl;
+//        if (n == -1) {
+//            cout << "Error writing to socket" << endl;
+//            return;
+//        }
+
+
 }
 void ReversiServer::stop() {
     close(serverSocket);
@@ -117,6 +146,23 @@ void ReversiServer::sendValueOfClient(int clientSocket1, int clientSocket2) {
         return;
     }
     n = write(clientSocket2, &player2, sizeof(player2));
+    cout << "Write on ClientSocket2" << endl;
+    if (n == -1) {
+        cout << "Error writing to socket" << endl;
+        return;
+    }
+}
+
+void ReversiServer::sendWhoNeedToPlay(int clientSocket1, int clientSocket2){
+    int needToPlay = 1;
+    int n = write(clientSocket1, &needToPlay, sizeof(needToPlay));
+    cout << "Write on ClientSocket1" << endl;
+    if (n == -1) {
+        cout << "Error writing to socket" << endl;
+        return;
+    }
+    needToPlay=0;
+    n = write(clientSocket2, &needToPlay, sizeof(needToPlay));
     cout << "Write on ClientSocket2" << endl;
     if (n == -1) {
         cout << "Error writing to socket" << endl;

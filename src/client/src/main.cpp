@@ -16,6 +16,7 @@
 #include "Menu.h"
 #include "ConsoleMenu.h"
 #include "RemotePlayer.h"
+#include "DemoPlayer.h"
 
 int main() {
 
@@ -31,11 +32,12 @@ int main() {
     Player* p1;
     if(p2==NULL){
         p1=new RemotePlayer(Black);
+        p2=new DemoPlayer(White,p1->getClient());
     }else{
         p1= new RealPlayer (Black);
     }
     players[Black] = p1;
-    //players[White] = p2;
+    players[White] = p2;
     GameFlow gameFlow(classicRules, players, board, consoleBoard);
     gameFlow.run();
     delete(players[1]);
