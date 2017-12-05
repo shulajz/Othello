@@ -17,7 +17,8 @@ private:
     int port;
     int serverSocket; // the socket's file descriptor
     void handleClient(int clientSocket);
-    Coordinate getMove(int row, int col) ;
+    Coordinate getMove(int row, int col);
+    void sendValueOfClient(int clientSocket1, int clientSocket2);
 
 };
 

@@ -11,13 +11,14 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <string.h>
+#include <cstdlib>
 #include <unistd.h>
 using namespace std;
 ReversiClient::ReversiClient(const char *serverIP, int serverPort):
         serverIP(serverIP), serverPort(serverPort),
         clientSocket(0) {
-    cout << "Client" << endl;
 }
+
 void ReversiClient::connectToServer() {
     // Create a socket point
     clientSocket = socket(AF_INET, SOCK_STREAM, 0);
@@ -49,13 +50,8 @@ void ReversiClient::connectToServer() {
     *)&serverAddress, sizeof(serverAddress)) == -1) {
         throw "Error connecting to server";
     }
-//    int i;
-//    int n = read(clientSocket, &i, sizeof(i));
-//    if (n == -1) {
-//        throw "Error reading result from socket";
-//    }
-//    cout << n << "shulaaaaaa" << endl;
-    cout << "Connected to server" << endl;
+
+    cout <<"Waiting for the other client connection..." << endl;
 }
 
 Coordinate ReversiClient::sendMove(int row,int col) {
@@ -75,4 +71,21 @@ Coordinate ReversiClient::sendMove(int row,int col) {
         throw "Error reading result from socket";
     }
     return coor;
+}
+
+TokenValue ReversiClient::getTokenValueOfPlayer(){
+    char type;
+    int n = read(clientSocket, &type, sizeof(type));
+    if (n == -1) {
+        return Empty;
+    }
+    if (type == '1'){
+        cout<<"You play Black('X')"<<endl;
+        return Black;
+    }else if(type == '2'){
+        cout<<"You play White('O')"<<endl;
+        return White;
+    }else{
+        return Empty;
+    }
 }

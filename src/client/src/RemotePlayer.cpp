@@ -8,22 +8,23 @@
 #include <iostream>
 using namespace std;
 
-RemotePlayer::RemotePlayer(TokenValue tv){
-    this->tv = tv;
+RemotePlayer::RemotePlayer(TokenValue tv):haveTwoPlayers(false){
 
+    client= new ReversiClient("127.0.0.1", 8000);
+    try {
+        client->connectToServer();
+    } catch (const char *msg) {
+        cout << "Failed to connect to server. Reason:" << msg << endl;
+    }
+    do{
+        this->tv=client->getTokenValueOfPlayer();
+    }while(this->tv!=Black&&this->tv!=White);
 }
 
 void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
                              vector<Coordinate> &coordinates,
                              Coordinate &input, BoardGraphic *boardGraphic, Player *player){
     bool inputValid = false;
-    ReversiClient client("127.0.0.1", 8000);
-    try {
-        client.connectToServer();
-    } catch (const char *msg) {
-        cout << "Failed to connect to server. Reason:" << msg << endl;
-    }
-
     boardGraphic->printWhosMove(player->getIdentity());
     boardGraphic->printMoves(coordinates);
     boardGraphic->printSpecialSituation(AskForRowAndCol);
@@ -39,7 +40,7 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
         }
         if (inputValid) {
             try {
-                Coordinate coor = client.sendMove(input.row, input.col);
+                Coordinate coor = client->sendMove(input.row, input.col);
                 cout << "row input: " << coor.row <<endl<<"col input: "<< coor.col<< endl;
             } catch (const char *msg) {
                 cout << "Failed to send exercise to server. Reason: " << msg << endl;
@@ -49,7 +50,6 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
             boardGraphic->printSpecialSituation(IllegelMove);
         }
     }
-
 }
 
 bool RemotePlayer:: isRemotePlayer()const{

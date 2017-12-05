@@ -31,6 +31,7 @@ void ReversiServer::start() {
     serverAddress.sin_addr.s_addr = INADDR_ANY;
     serverAddress.sin_port = htons(port);
     if (bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) == -1) {
+        stop();
         throw "Error on binding";
     }
     // Start listening to incoming connections
@@ -45,20 +46,20 @@ void ReversiServer::start() {
         // Accept a new client connection
         int clientSocket1 = accept(serverSocket, (struct
                 sockaddr *)&clientAddress1, &clientAddressLen1);
-        cout << "Client connected" << endl;
-        if (clientSocket1 == -1)
+        cout << "Client connected1" << endl;
+        if (clientSocket1 == -1){
+            stop();
             throw "Error on accept";
-
-
+        }
         //accept client 2
         int clientSocket2 = accept(serverSocket, (struct
                 sockaddr *)&clientAddress2, &clientAddressLen2);
-        cout << "Client connected" << endl;
-        if (clientSocket2 == -1)
+        cout << "Client connected2" << endl;
+        if (clientSocket2 == -1) {
+            stop();
             throw "Error on accept";
-
-
-
+        }
+        sendValueOfClient(clientSocket1,clientSocket2);
         handleClient(clientSocket1);
         // Close communication with the client
         close(clientSocket1);
@@ -104,4 +105,21 @@ Coordinate ReversiServer::getMove(int row, int col) {
     coor.col=col;
     coor.row=row;
     return coor;
+}
+
+void ReversiServer::sendValueOfClient(int clientSocket1, int clientSocket2) {
+    char player1 = '1';
+    char player2 = '2';
+    int n = write(clientSocket1, &player1, sizeof(player1));
+    cout << "Write on ClientSocket1" << endl;
+    if (n == -1) {
+        cout << "Error writing to socket" << endl;
+        return;
+    }
+    n = write(clientSocket2, &player2, sizeof(player2));
+    cout << "Write on ClientSocket2" << endl;
+    if (n == -1) {
+        cout << "Error writing to socket" << endl;
+        return;
+    }
 }

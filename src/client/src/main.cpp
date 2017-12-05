@@ -29,13 +29,13 @@ int main() {
     Player* p2 = consoleMenu.choosePlayer();
     Player* players[2];
     Player* p1;
-    if(p2->isRemotePlayer()){
+    if(p2==NULL){
         p1=new RemotePlayer(Black);
     }else{
         p1= new RealPlayer (Black);
     }
     players[Black] = p1;
-    players[White] = p2;
+    //players[White] = p2;
     GameFlow gameFlow(classicRules, players, board, consoleBoard);
     gameFlow.run();
     delete(players[1]);

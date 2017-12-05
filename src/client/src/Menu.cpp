@@ -23,8 +23,7 @@ Player* Menu:: choosePlayer() const{
             p = new AIPlayer(White);
             return p;
         }else if(selection == 'R'){
-            p= new RemotePlayer(White);
-            return p;
+            return NULL;
         } else {
             //illegal option
             printWrongChoice();

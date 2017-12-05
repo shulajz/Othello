@@ -6,6 +6,7 @@
 #define OTHELLO_REMOTEPLAYER_H
 
 #include "Player.h"
+#include "ReversiClient.h"
 
 
 class RemotePlayer: public Player {
@@ -16,6 +17,10 @@ public:
                            Coordinate &input, BoardGraphic *boardGraphic, Player *player);
 //    virtual bool isRealPlayer()const;
     bool isRemotePlayer() const;
+
+private:
+    ReversiClient* client;
+    bool haveTwoPlayers;
 };
 
 
