@@ -27,14 +27,15 @@ void GameFlow :: run () {
     bool first_move=true;
     bool needToPrint=true;
     while (true) {
-        players[currentTurn]->isMyTurn();
-//        bool wroteAlready = false;
-//        while(!players[currentTurn]->isMyTurn()) {
-//            if(!wroteAlready) {
-//               // cout << "waiting for opponents turn (:";
-//            }
-//            wroteAlready = true;
-//        }
+//        players[currentTurn]->isMyTurn();
+        bool wroteAlready = false;
+        while(!players[currentTurn]->isMyTurn()) {
+            if(!wroteAlready) {
+                cout << "waiting for opponents turn (:";
+                cout << "waiting for opponents turn (:";
+            }
+            wroteAlready = true;
+        }
         //if the board full print and break.
         if (m_board.isFullOfTokens()) {
             m_board.draw();

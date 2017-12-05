@@ -54,11 +54,14 @@ void ReversiClient::connectToServer() {
 
 Coordinate ReversiClient::receiveMove() {
     // Write the exercise arguments to the socket
-    Coordinate coordinate;
-    int n = read(clientSocket, &coordinate, sizeof(coordinate));
+    int buffer[2] ;
+    int n = read(clientSocket, &buffer, sizeof(buffer));
     if (n == -1) {
         throw "Error writing row to socket";
     }
+    Coordinate coordinate;
+    coordinate.row=buffer[0];
+    coordinate.col=buffer[1];
     return coordinate;
 }
 
@@ -77,8 +80,8 @@ Coordinate ReversiClient::sendMove(int row,int col) {
         throw "Error writing col to socket";
     }
     // Read the result from the server
-    Coordinate coor;
-    n = read(clientSocket, &coor, sizeof(coor));
+    int buffer[2];
+    n = read(clientSocket, &buffer, sizeof(buffer));
     if (n == -1) {
         throw "Error reading result from socket";
     }
@@ -97,7 +100,10 @@ Coordinate ReversiClient::sendMove(int row,int col) {
 //        throw "Error writing col to socket";
 //    }
 
-    cout<<"row:"<<coor.row<<endl<<"col:"<<coor.col<<endl;
+    cout<<"row:"<<buffer[0]<<endl<<"col:"<<buffer[1]<<endl;
+    Coordinate coor;
+    coor.row=buffer[0];
+    coor.col=buffer[1];
     return coor;
 }
 
@@ -120,19 +126,20 @@ TokenValue ReversiClient::getTokenValueOfPlayer(){
     }
 }
 bool ReversiClient::isMyTurn(){
-    int isMyTurn=2;
+    int isMyTurn=0;
     int n = read(clientSocket, &isMyTurn, sizeof(isMyTurn));
     if (n == -1) {
        cout<<"isMyTurn can't read";
     }
     bool wroteAlready = false;
-    while(isMyTurn == 0){
-        if(!wroteAlready) {
-            cout<< "waiting for opponents turn (:" << endl;
-            wroteAlready = true;
-        }
+//    while(isMyTurn == 0){
+//        if(!wroteAlready) {
+//            cout<< "waiting for opponents turn (:" << endl;
+//            wroteAlready = true;
+//        }
+//    }
+    return isMyTurn == 1;
 
-    }
 }
 
 TokenValue ReversiClient::getOppositeTv()const{

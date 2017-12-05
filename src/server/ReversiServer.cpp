@@ -96,10 +96,10 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
         }
         cout << "Got Move: " << row << ", " << col <<
              endl;
-        Coordinate result = getMove(row, col);
+        int* result = getMove(row, col);
 //         //Write the result back to the client
     cout<< "flag reversi server"<<endl;
-    cout<<"row:"<<result.row<<endl<<"col:"<<result.col<<endl;
+    cout<<"row:"<<result[0]<<endl<<"col:"<<result[1]<<endl;
 
     n = write(clientSocket2, &result, sizeof(result));
         cout<<n<<endl;
@@ -129,11 +129,11 @@ void ReversiServer::stop() {
     close(serverSocket);
 }
 
-Coordinate ReversiServer::getMove(int row, int col) {
-    Coordinate coor;
-    coor.col=col;
-    coor.row=row;
-    return coor;
+int* ReversiServer::getMove(int row, int col) {
+    int buffer[2];
+    buffer[0]=row;
+    buffer[1]=col;
+    return buffer;
 }
 
 void ReversiServer::sendValueOfClient(int clientSocket1, int clientSocket2) {
