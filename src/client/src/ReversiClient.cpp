@@ -82,10 +82,10 @@ TokenValue ReversiClient::getTokenValueOfPlayer(){
     if (type == '1'){
         cout<<"You play Black('X')"<<endl;
         return Black;
-    }else if(type == '2'){
+    } else if (type == '2'){
         cout<<"You play White('O')"<<endl;
         return White;
-    }else{
+    } else {
         return Empty;
     }
 }

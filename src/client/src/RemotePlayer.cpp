@@ -10,15 +10,15 @@ using namespace std;
 
 RemotePlayer::RemotePlayer(TokenValue tv):haveTwoPlayers(false){
 
-    client= new ReversiClient("127.0.0.1", 8000);
+    client = new ReversiClient("127.0.0.1", 8000);
     try {
         client->connectToServer();
     } catch (const char *msg) {
         cout << "Failed to connect to server. Reason:" << msg << endl;
     }
     do{
-        this->tv=client->getTokenValueOfPlayer();
-    }while(this->tv!=Black&&this->tv!=White);
+        this->tv = client->getTokenValueOfPlayer();
+    }while(this->tv != Black && this->tv != White);
 }
 
 void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,

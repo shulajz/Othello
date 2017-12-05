@@ -29,10 +29,10 @@ int main() {
     Player* p2 = consoleMenu.choosePlayer();
     Player* players[2];
     Player* p1;
-    if(p2==NULL){
-        p1=new RemotePlayer(Black);
-    }else{
-        p1= new RealPlayer (Black);
+    if(p2 == NULL){
+        p1 = new RemotePlayer(Black);
+    } else {
+        p1 = new RealPlayer (Black);
     }
     players[Black] = p1;
     //players[White] = p2;
