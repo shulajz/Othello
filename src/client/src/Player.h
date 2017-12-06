@@ -34,6 +34,7 @@ public:
     virtual bool isRemotePlayer() const;
     virtual ReversiClient* getClient()const;
     virtual bool isMyTurn();
+    virtual bool isDemoPlayer();
 
 };
 

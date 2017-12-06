@@ -14,7 +14,7 @@ using namespace std;
 
 #define MAX_CONNECTED_CLIENTS 2
 
-ReversiServer::ReversiServer(int port): port(port), serverSocket(0) {
+ReversiServer::ReversiServer(int port): port(port), serverSocket(0) ,receiveMove(false){
     cout << "Server" << endl;
 }
 void ReversiServer::start() {
@@ -63,23 +63,27 @@ void ReversiServer::start() {
         cout<<"000";
         int count=0;
         while(count<=10000){
-         sendWhoNeedToPlay (clientSocket1, clientSocket2);
-         handleClient(clientSocket1, clientSocket2);
-         sendWhoNeedToPlay(clientSocket2, clientSocket1);
-         handleClient(clientSocket2, clientSocket1);
-         count++;
+            sendWhoNeedToPlay (clientSocket1, clientSocket2);
+            while(!receiveMove){}
+            handleClient(clientSocket1, clientSocket2);
+            sendWhoNeedToPlay(clientSocket2, clientSocket1);
+            while(!receiveMove){}
+            handleClient(clientSocket2, clientSocket1);
+            count++;
         }
         // Close communication with the client
         close(clientSocket1);
         close(clientSocket2);
     }
 }
+
 // Handle requests from a specific client
 void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
-    int row, col;
-        // Read new exercise arguments
-        int n = read(clientSocket1, &row, sizeof(row));
-        cout<<row<<endl;
+        string coordinate;
+        // Read row
+        cout<<coordinate;
+        int n = read(clientSocket1, &coordinate, sizeof(coordinate));
+        cout<<coordinate<<endl;
         if (n == -1) {
             cout << "Error reading row" << endl;
             return;
@@ -88,52 +92,19 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
             cout << "Client disconnected" << endl;
             return;
         }
-        n = read(clientSocket1, &col, sizeof(col));
-        cout<<col<<endl;
-        if (n == -1) {
-            cout << "Error reading col" << endl;
-            return;
-        }
-        cout << "Got Move: " << row << ", " << col <<
+        cout << "Got Move: " << coordinate <<
              endl;
-        int* result = getMove(row, col);
-//         //Write the result back to the client
+         //Write the result back to the client
     cout<< "flag reversi server"<<endl;
-    cout<<"row:"<<result[0]<<endl<<"col:"<<result[1]<<endl;
-
-    n = write(clientSocket2, &result, sizeof(result));
-        cout<<n<<endl;
-
+    n = write(clientSocket2, &coordinate, sizeof(coordinate));
         if (n == -1) {
             cout << "Error writing to socket" << endl;
             return;
         }
 
-//        n = write(clientSocket2, &result.row, sizeof(result.row));
-//        cout<<n<<endl;
-//        if (n == -1) {
-//            cout << "Error writing to socket" << endl;
-//            return;
-//        }
-//
-//        n = write(clientSocket2, &result.col, sizeof(result.col));
-//        cout<<n<<endl;
-//        if (n == -1) {
-//            cout << "Error writing to socket" << endl;
-//            return;
-//        }
-
-
 }
 void ReversiServer::stop() {
     close(serverSocket);
-}
-
-int* ReversiServer::getMove(int row, int col) {
-    int buffer[2];
-    buffer[0]=row;
-    buffer[1]=col;
-    return buffer;
 }
 
 void ReversiServer::sendValueOfClient(int clientSocket1, int clientSocket2) {
@@ -156,14 +127,14 @@ void ReversiServer::sendValueOfClient(int clientSocket1, int clientSocket2) {
 void ReversiServer::sendWhoNeedToPlay(int clientSocket1, int clientSocket2){
     int needToPlay = 1;
     int n = write(clientSocket1, &needToPlay, sizeof(needToPlay));
-    cout << "Write on ClientSocket1" << endl;
+    cout << "Write How need to play 1" << endl;
     if (n == -1) {
         cout << "Error writing to socket" << endl;
         return;
     }
     needToPlay=0;
     n = write(clientSocket2, &needToPlay, sizeof(needToPlay));
-    cout << "Write on ClientSocket2" << endl;
+    cout << "Write How need to play 2" << endl;
     if (n == -1) {
         cout << "Error writing to socket" << endl;
         return;

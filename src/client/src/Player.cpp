@@ -62,3 +62,8 @@ bool Player :: isMyTurn() {
     return true;
 }
 
+bool Player::isDemoPlayer(){
+    return false;
+}
+
+

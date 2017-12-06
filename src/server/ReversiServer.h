@@ -14,10 +14,10 @@ public:
     void start();
     void stop();
 private:
+    bool receiveMove;
     int port;
-    int serverSocket; // the socket's file descriptor
+    int serverSocket; // the socket's file descriptor;
     void handleClient(int clientSocket1, int clientSocket2);
-    int* getMove(int row, int col);
     void sendValueOfClient(int clientSocket1, int clientSocket2);
     void sendWhoNeedToPlay(int clientSocket1, int clientSocket2);
 

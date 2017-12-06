@@ -3,18 +3,16 @@
 //
 
 #include "ReversiClient.h"
-#include <iostream>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
-#include <string.h>
 #include <cstdlib>
 #include <unistd.h>
-using namespace std;
+
 ReversiClient::ReversiClient(const char *serverIP, int serverPort):
         serverIP(serverIP), serverPort(serverPort),
-        clientSocket(0) {
+        clientSocket(0), canPlay(false) {
 }
 
 void ReversiClient::connectToServer() {
@@ -52,58 +50,33 @@ void ReversiClient::connectToServer() {
     cout <<"Waiting for other player to join..." << endl;
 }
 
-Coordinate ReversiClient::receiveMove() {
+string ReversiClient::receiveMove() {
     // Write the exercise arguments to the socket
-    int buffer[2] ;
+    string buffer="0,0" ;
     int n = read(clientSocket, &buffer, sizeof(buffer));
     if (n == -1) {
         throw "Error writing row to socket";
     }
-    Coordinate coordinate;
-    coordinate.row=buffer[0];
-    coordinate.col=buffer[1];
-    return coordinate;
-}
-
-
-Coordinate ReversiClient::sendMove(int row,int col) {
-    // Write the exercise arguments to the socket
-    int n = write(clientSocket, &row, sizeof(row));
-    cout <<"flag1 " << row << endl;
+    bool receiveMove=true;
+    n = write(clientSocket, &receiveMove, sizeof(receiveMove));
     if (n == -1) {
         throw "Error writing row to socket";
     }
-    n = write(clientSocket, &col, sizeof(col));
-    cout << "flag2 " <<col << endl;
+    cout<<"receive :"<<buffer;
+    return buffer;
+}
 
+Coordinate ReversiClient::sendMove(string string) {
+    // Write the exercise arguments to the socket
+    int n = write(clientSocket, &string, sizeof(string));
+    cout <<"flag1 " << string << endl;
     if (n == -1) {
-        throw "Error writing col to socket";
+        throw "Error writing row to socket";
     }
-    // Read the result from the server
-    int buffer[2];
-    n = read(clientSocket, &buffer, sizeof(buffer));
-    if (n == -1) {
-        throw "Error reading result from socket";
-    }
- //   int row1,col1;
-
-//    n = read(clientSocket, &row1, sizeof(row1));
-//    cout << "flag3 " << row1 << endl;
-//
-//    if (n == -1) {
-//        throw "Error writing row to socket";
-//    }
-//    n = read(clientSocket, &col1, sizeof(col1));
-//    cout << "flag4 " << col1 << endl;
-//
-//    if (n == -1) {
-//        throw "Error writing col to socket";
-//    }
-
-    cout<<"row:"<<buffer[0]<<endl<<"col:"<<buffer[1]<<endl;
     Coordinate coor;
-    coor.row=buffer[0];
-    coor.col=buffer[1];
+    int pos = string.find_first_of(',');
+    coor.row = atoi(string.substr(pos+1).c_str());
+    coor.col = atoi(string.substr(0, pos).c_str());
     return coor;
 }
 
@@ -125,21 +98,23 @@ TokenValue ReversiClient::getTokenValueOfPlayer(){
         return Empty;
     }
 }
+
 bool ReversiClient::isMyTurn(){
     int isMyTurn=0;
     int n = read(clientSocket, &isMyTurn, sizeof(isMyTurn));
     if (n == -1) {
        cout<<"isMyTurn can't read";
     }
-    bool wroteAlready = false;
-//    while(isMyTurn == 0){
-//        if(!wroteAlready) {
-//            cout<< "waiting for opponents turn (:" << endl;
-//            wroteAlready = true;
-//        }
-//    }
-    return isMyTurn == 1;
+    if (isMyTurn == 1) {
+        canPlay = true;
+        return true;
+    }else {
+        return false;
+    }
+}
 
+bool ReversiClient::getIfCanPlay()const{
+    return canPlay;
 }
 
 TokenValue ReversiClient::getOppositeTv()const{

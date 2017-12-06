@@ -15,6 +15,8 @@ public:
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates,
                            Coordinate &input, BoardGraphic *boardGraphic, Player *player);
+    bool isDemoPlayer();
+    ReversiClient* getClient() const;
 private:
     ReversiClient* client;
     

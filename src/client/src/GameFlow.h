@@ -17,6 +17,7 @@ private:
     Board &m_board;
     TokenValue currentTurn;
     BoardGraphic &m_boardGraphic;
+    bool printBoardIfNeed(bool& needToPrint);
 public:
     GameFlow(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic);
     //the game flow

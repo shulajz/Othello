@@ -43,26 +43,31 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
     boardGraphic->printSpecialSituation(AskForRowAndCol);
     while (!inputValid) {
         char temp;
-        cin >> input.row>>temp >> input.col;
-        cout << "Sending Move: " << input.row << ", "<<input.col << endl;
-        for (int i = 0; i < coordinates.size(); i++) {
-            //checks if the input is one of the legal coordinates
-            if (input.row == coordinates[i].row && input.col == coordinates[i].col) {
-                inputValid = true;
-                break;
-            }
-        }
-        if (inputValid) {
-            try {
-                Coordinate coor = client->sendMove(input.row, input.col);
+        string string;
+        cin>>string;
+        //cin >> input.row>>temp >> input.col;
+        cout << "Sending Move: " <<string;
+        //cout << "Sending Move: " << input.row << ", "<<input.col << endl;
+//        for (int i = 0; i < coordinates.size(); i++) {
+//            //checks if the input is one of the legal coordinates
+//            if (input.row == coordinates[i].row && input.col == coordinates[i].col) {
+//                inputValid = true;
+//                break;
+//            }
+//        }
+//        if (inputValid) {
+//            try {
+        Coordinate coor = client->sendMove(string);
+
+        //Coordinate coor = client->sendMove(input.row, input.col);
                 cout << "row input: " << coor.row <<endl<<"col input: "<< coor.col<< endl;
-            } catch (const char *msg) {
-                cout << "Failed to send exercise to server. Reason: " << msg << endl;
-            }
-            break;
-        } else {
-            boardGraphic->printSpecialSituation(IllegelMove);
-        }
+//            } catch (const char *msg) {
+//                cout << "Failed to send exercise to server. Reason: " << msg << endl;
+//            }
+//            break;
+        //} else {
+          //  boardGraphic->printSpecialSituation(IllegelMove);
+      //  }
     }
 }
 
