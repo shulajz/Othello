@@ -12,8 +12,7 @@ using namespace std;
 GameFlow ::GameFlow(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic):
         m_gameRules(gameRules),m_board(board), m_boardGraphic(boardGraphic) {
     this->players = players;
-//    this->currentTurn =players[Black]->getValue() ;
-    currentTurn = Black;
+    this->currentTurn =players[Black]->getValue() ;
 }
 
 
@@ -26,11 +25,18 @@ void GameFlow :: run () {
     inputCoordinate.col = 0;
     bool first_move=true;
     bool needToPrint=true;
-    while (true) {
-        if (!printBoardIfNeed(needToPrint)) {
-            break;
+    while (true){
+        if (!printBoardIfNeed(needToPrint)){break;}
+
+        if (players[currentTurn]->isDemoPlayer()){
+            cout << "waiting for opponents turn (:"<<endl;
+            while(!players[currentTurn]->getClient()->getIfCanPlay()){
+            }
         }
-        if (!first_move && (needToPrint)) {
+        cout<<"BE4";
+        //print what the computer played only if Player is AIPlayer
+        // and this is not the first move and the computer have moves
+        if (!first_move && (needToPrint || players[currentTurn]->isRealPlayer())) {
             players[!currentTurn]->printWhatThePlayerPlayed(inputCoordinate,
                                                             &m_boardGraphic);
         }
@@ -40,7 +46,9 @@ void GameFlow :: run () {
 
         m_gameRules.getLegalCoordinates(m_board, players[currentTurn],
                                         validCoordinates);
-        if (validCoordinates.empty()) {
+        cout<<"AFTER";
+
+        if (validCoordinates.empty()&&!players[currentTurn]->isDemoPlayer()) {
             //switching to the other player in order to check
             // if he's got any legal moves
             players[currentTurn]->togglePlayer(currentTurn);
@@ -48,7 +56,7 @@ void GameFlow :: run () {
             if (validCoordinates.empty()) // checking if the other player has any legal moves
             { // there is no options for either of the players
                 m_boardGraphic.printSpecialSituation(NoMovesForAll);
-//                break;
+                break;
             } else {
                 players[currentTurn]->togglePlayer(currentTurn);
                 m_boardGraphic.printWhosMove(currentTurn);
@@ -67,6 +75,7 @@ void GameFlow :: run () {
             needToPrint=true;
 
         }
+        cout<<"toggle";
         players[currentTurn]->togglePlayer(currentTurn);
 
     }
@@ -83,7 +92,7 @@ bool GameFlow::printBoardIfNeed(bool &needToPrint){
         m_board.draw();
         return false;
     }
-    if ((needToPrint||players[currentTurn]->isRealPlayer())) {
+    if ((needToPrint||players[currentTurn]->isRealPlayer())&&!players[currentTurn]->isDemoPlayer()) {
         m_board.draw();
     }
     return true;
