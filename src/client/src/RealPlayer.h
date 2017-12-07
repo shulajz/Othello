@@ -20,7 +20,8 @@ public:
     //the turn of one of the players
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                    vector<Coordinate> &coordinates, Coordinate &input,
-                           BoardGraphic *boardGraphic, Player *player);
+                           BoardGraphic *boardGraphic, Player *player,
+                           bool &noMoveForOnePlayer, bool &endGame);
     virtual void printWhatThePlayerPlayed(Coordinate coordinate,
     BoardGraphic *boardGraphic);
 };

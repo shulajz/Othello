@@ -20,7 +20,9 @@ RealPlayer :: RealPlayer(TokenValue tv) {
 
 void RealPlayer :: doOneTurn(GameRules *gameRules, Board &board,
                              vector<Coordinate> &coordinates,
-                             Coordinate &input, BoardGraphic *boardGraphic, Player *player) {
+                             Coordinate &input, BoardGraphic *boardGraphic, Player *player,
+                             bool &noMoveForOnePlayer, bool &endGame) {
+
     bool inputValid = false;
     while (!inputValid) {
         boardGraphic->printWhosMove(player->getIdentity());

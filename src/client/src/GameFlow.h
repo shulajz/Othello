@@ -17,10 +17,11 @@ private:
     Board &m_board;
     TokenValue currentTurn;
     BoardGraphic &m_boardGraphic;
-    bool printBoardIfNeed(bool& needToPrint);
-    void ifNoValidCoordinates(vector<Coordinate>& validCoordinates, bool& needToPrint);
+    bool printBoardIfNeed(bool& needToPrint, bool &endGame);
+    void ifNoValidCoordinates(vector<Coordinate>& validCoordinates,
+                              bool& needToPrint, bool &noMoveForOnePlayer, bool &endGame);
     void ifValidCoordinates(vector<Coordinate>& validCoordinates, bool& needToPrint,
-                            Coordinate& inputCoordinate);
+                            Coordinate& inputCoordinate, bool &noMoveForOnePlayer, bool &endGame);
 public:
     GameFlow(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic);
     //the game flow//

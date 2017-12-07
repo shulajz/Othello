@@ -21,7 +21,8 @@ protected:
 public:
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates,
-                           Coordinate &input, BoardGraphic *boardGraphic, Player *player) =0;
+                           Coordinate &input, BoardGraphic *boardGraphic,
+                           Player *player, bool &noMoveForOnePlayer, bool &endGame) =0;
     virtual TokenValue getValue() const;
     virtual void togglePlayer(TokenValue &tokenValue);
     virtual bool isWhitePlayer() const;

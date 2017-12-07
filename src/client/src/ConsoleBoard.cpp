@@ -103,7 +103,14 @@ void ConsoleBoard::drawStatus(int black, int white)const{
 void ConsoleBoard :: printThePlayersChoice(TokenValue tv,
                                            Coordinate coordinate) const {
     ConsoleToken :: drawTokenValue(tv);
-    cout << ", played" << "(" <<  coordinate.row << "," << coordinate.col << ")" << endl;
+    cout << ", played"
+         << "("
+         <<  coordinate.row
+         << "," <<
+                coordinate.col
+         << ")"
+         << endl
+         << endl;
 
 }
 

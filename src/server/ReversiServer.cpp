@@ -13,7 +13,7 @@ using namespace std;
 
 #define MAX_CONNECTED_CLIENTS 2
 
-ReversiServer::ReversiServer(int port): port(port), serverSocket(0) ,receiveMove(false){
+ReversiServer::ReversiServer(int port): port(port), serverSocket(0),endGame(false) ,receiveMove(false){
     cout << "Server" << endl;
 }
 void ReversiServer::start() {
@@ -59,11 +59,17 @@ void ReversiServer::start() {
             throw "Error on accept";
         }
         sendValueOfClient(clientSocket1,clientSocket2);
-        int count=0;
-        while(count<=10000){
+        while(true){
             handleClient(clientSocket1, clientSocket2);
+            if(endGame) {
+                handleClient(clientSocket2, clientSocket1);
+                break;
+            }
             handleClient(clientSocket2, clientSocket1);
-            count++;
+            if(endGame) {
+                handleClient(clientSocket1, clientSocket2);
+                break;
+            }
         }
         // Close communication with the client
         close(clientSocket1);
@@ -74,32 +80,61 @@ void ReversiServer::start() {
 void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
     int row = 0;
     int col = 0;
+    int row1 = 0;
+    int col1 = 0;
+
 
     int n = read(clientSocket1, &row, sizeof(row));
     if (n == -1) {
         cout << "Error reading row" << endl;
         return;
     }
+    if(row) {
+        n = read(clientSocket1, &col, sizeof(col));
+        if (n == -1) {
+            cout << "Error reading row" << endl;
+            return;
+        }
 
-    n = read(clientSocket1, &col, sizeof(col));
-    if (n == -1) {
-        cout << "Error reading row" << endl;
-        return;
+        cout << "Got Move: row: " << row << " col: " << col << endl;
+
+        int moveToSendToOtherClient[2];
+        moveToSendToOtherClient[0] = row;
+        moveToSendToOtherClient[1] = col;
+        n = write(clientSocket2, &moveToSendToOtherClient, sizeof(moveToSendToOtherClient));
+        if (n == -1) {
+            cout << "Error writing to socket" << endl;
+            return;
+        }
+    } else if(row == NoMove) {
+
+    } else if(row == End) {
+        int n = read(clientSocket1, &row1, sizeof(row1));
+        if (n == -1) {
+            cout << "Error reading row" << endl;
+            return;
+        }
+        n = read(clientSocket1, &col1, sizeof(col1));
+        if (n == -1) {
+            cout << "Error reading row" << endl;
+            return;
+        }
+
+        cout << "Got Move: row: " << row << " col: " << col << endl;
+
+        int moveToSendToOtherClient[2];
+        moveToSendToOtherClient[0] = row1;
+        moveToSendToOtherClient[1] = col1;
+        n = write(clientSocket2, &moveToSendToOtherClient, sizeof(moveToSendToOtherClient));
+        if (n == -1) {
+            cout << "Error writing to socket" << endl;
+            return;
+        }
+        endGame = true;
     }
-
-    cout << "Got Move: row: " << row << " col: " << col << endl;
-
-    int moveToSendToOtherClient[2];
-    moveToSendToOtherClient[0] = row;
-    moveToSendToOtherClient[1] = col;
-    n = write(clientSocket2, &moveToSendToOtherClient, sizeof(moveToSendToOtherClient));
-    if (n == -1) {
-        cout << "Error writing to socket" << endl;
-        return;
-    }
-
 }
 void ReversiServer::stop() {
+    cout<<"client exit"<<endl;
     close(serverSocket);
 }
 
@@ -119,3 +154,4 @@ void ReversiServer::sendValueOfClient(int clientSocket1, int clientSocket2) {
         return;
     }
 }
+

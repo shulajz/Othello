@@ -9,6 +9,7 @@
 #include <netdb.h>
 #include <cstdlib>
 #include <unistd.h>
+#include "Tools.h"
 
 ReversiClient::ReversiClient(const char *serverIP, int serverPort):
         serverIP(serverIP), serverPort(serverPort),
@@ -77,6 +78,30 @@ void ReversiClient::sendMove(Coordinate coordinate) {
     }
 
     n = write(clientSocket, &col, sizeof(col));
+    if (n == -1) {
+        throw "Error writing row to socket";
+    }
+
+}
+
+void ReversiClient::sendNoMove() {
+    // Write the move to the socket
+//    string noMove = "no move for the player";
+    int noMove = NoMove;
+
+    int n = write(clientSocket, &noMove, sizeof(noMove));
+    if (n == -1) {
+        throw "Error writing row to socket";
+    }
+
+
+}
+
+void ReversiClient::sendEnd() {
+    // Write the move to the socket
+//    string noMove = "no move for the player";
+    int end = End;
+    int n = write(clientSocket, &end, sizeof(end));
     if (n == -1) {
         throw "Error writing row to socket";
     }

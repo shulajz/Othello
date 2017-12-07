@@ -19,6 +19,9 @@ public:
     void sendMove(Coordinate coordinate);
     Coordinate receiveMove();
     TokenValue getTokenValueOfPlayer();
+    void sendNoMove();
+    void sendEnd();
+
 private:
     const char *serverIP;
     int serverPort;

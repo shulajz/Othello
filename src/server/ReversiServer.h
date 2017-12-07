@@ -15,6 +15,7 @@ public:
     void stop();
 private:
     bool receiveMove;
+    bool endGame;
     int port;
     int serverSocket; // the socket's file descriptor;
     void handleClient(int clientSocket1, int clientSocket2);
