@@ -18,7 +18,7 @@ public:
 //    virtual bool isRealPlayer()const;
     bool isRemotePlayer() const;
     ReversiClient* getClient() const;
-    bool isMyTurn();
+//    bool isMyTurn();
 
 private:
     ReversiClient* client;

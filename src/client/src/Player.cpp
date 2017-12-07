@@ -58,12 +58,15 @@ bool Player ::isRemotePlayer() const {
 
 ReversiClient* Player :: getClient()const{}
 
-bool Player :: isMyTurn() {
-    return true;
-}
+//bool Player :: isMyTurn() {
+//    return true;
+//}
 
 bool Player::isDemoPlayer(){
     return false;
 }
 
 
+void Player :: setTokenValue(TokenValue tv1) {
+    tv = tv1;
+}

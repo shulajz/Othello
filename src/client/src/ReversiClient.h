@@ -16,16 +16,18 @@ class ReversiClient {
 public:
     ReversiClient(const char *serverIP, int serverPort);
     void connectToServer();
-    Coordinate sendMove(int row, int col);
-    Coordinate sendMove(string string);
-    string receiveMove();
-    bool getIfClientCanReceiveMove();
+//    Coordinate sendMove(int row, int col);
+    void sendMove(Coordinate coordinate);
+    Coordinate receiveMove();
+//    bool getIfClientCanReceiveMove();
     TokenValue getTokenValueOfPlayer();
-    TokenValue getOppositeTv()const;
-    bool isMyTurn();
-    bool getIfCanPlay()const;
+//    TokenValue getOppositeTv()const;
+//    bool isMyTurn();
+//    bool getIfCanPlay()const;
+//    void readMessage();
 private:
-    bool canPlay;
+//    bool isFirstTurn;
+//    bool canPlay;
     const char *serverIP;
     int serverPort;
     int clientSocket;

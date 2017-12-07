@@ -21,6 +21,8 @@ public:
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                    vector<Coordinate> &coordinates, Coordinate &input,
                            BoardGraphic *boardGraphic, Player *player);
+    virtual void printWhatThePlayerPlayed(Coordinate coordinate,
+    BoardGraphic *boardGraphic);
 };
 
 

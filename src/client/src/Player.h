@@ -33,8 +33,9 @@ public:
     TokenValue getIdentity();
     virtual bool isRemotePlayer() const;
     virtual ReversiClient* getClient()const;
-    virtual bool isMyTurn();
+//    virtual bool isMyTurn();
     virtual bool isDemoPlayer();
+    virtual void setTokenValue(TokenValue tv1);
 
 };
 

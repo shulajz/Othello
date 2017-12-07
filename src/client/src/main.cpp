@@ -16,7 +16,6 @@
 #include "Menu.h"
 #include "ConsoleMenu.h"
 #include "RemotePlayer.h"
-#include "DemoPlayer.h"
 
 int main() {
 
@@ -30,12 +29,26 @@ int main() {
     Player* p2 = consoleMenu.choosePlayer();
     Player* players[2];
     Player* p1;
-    if(p2==NULL){
-        p1=new RemotePlayer(Black);
-        p2=new DemoPlayer(White,p1->getClient());
+    Player *remotePlayer;
+    if(p2 == NULL){
+        remotePlayer = new RemotePlayer(Black);
+        if(remotePlayer->getValue() == Black) {
+            //if this is the first client
+            p1 = new RealPlayer(Black);
+            p2 = remotePlayer;
+            remotePlayer->setTokenValue(White);
+        } else {
+            //this is the second client
+            p1 = remotePlayer;
+            remotePlayer->setTokenValue(Black);
+            p2 = new RealPlayer(White);
+        }
+//        p2=new DemoPlayer(White,p1->getClient());
     }else{
-        p1= new RealPlayer (Black);
+        p1 = new RealPlayer (Black);
     }
+
+
     players[Black] = p1;
     players[White] = p2;
     GameFlow gameFlow(classicRules, players, board, consoleBoard);

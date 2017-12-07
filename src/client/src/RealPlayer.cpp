@@ -48,3 +48,7 @@ bool RealPlayer :: isRealPlayer()const{
 }
 
 
+void RealPlayer :: printWhatThePlayerPlayed(Coordinate coordinate,
+                                          BoardGraphic *boardGraphic) {
+//    boardGraphic->printThePlayersChoice(tv, coordinate);
+}

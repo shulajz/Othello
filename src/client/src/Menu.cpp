@@ -7,7 +7,7 @@
 
 #include "Menu.h"
 #include "RemotePlayer.h"
-#include "DemoPlayer.h"
+//#include "DemoPlayer.h"
 
 Menu::~Menu(){};
 Menu::Menu(){};
@@ -23,7 +23,7 @@ Player* Menu:: choosePlayer() const{
         } else if (selection == 'A') {
             p = new AIPlayer(White);
             return p;
-        }else if(selection == 'R'){
+        }else if(selection == '1'){
             return NULL;
         } else {
             //illegal option
