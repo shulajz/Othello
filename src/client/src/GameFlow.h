@@ -20,7 +20,7 @@ private:
     bool printBoardIfNeed(bool& needToPrint);
 public:
     GameFlow(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic);
-    //the game flow
+    //the game flow//
     void run();
 };
 
