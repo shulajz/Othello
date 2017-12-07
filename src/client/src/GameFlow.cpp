@@ -18,7 +18,7 @@ GameFlow ::GameFlow(GameRules &gameRules, Player **players, Board &board, BoardG
 
 
 /**
- * where the game runs.
+ * where the game runs..
  */
 void GameFlow :: run () {
     Coordinate inputCoordinate;
