@@ -22,7 +22,6 @@ public:
     GameFlow(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic);
     //the game flow
     void run();
-    void runRemoteGame();
 };
 
 

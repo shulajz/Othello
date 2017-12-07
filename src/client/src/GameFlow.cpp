@@ -16,28 +16,7 @@ GameFlow ::GameFlow(GameRules &gameRules, Player **players, Board &board, BoardG
     currentTurn = Black;
 }
 
-//void GameFlow :: runRemoteGame () {
-//    Coordinate inputCoordinate;
-//    vector<Coordinate> validCoordinates;
-//    bool needToPrint=true;
-//
-//    if (players[currentTurn]->isDemoPlayer()){
-//            cout << "waiting for opponents turn (:"<<endl;
-//            while(!players[currentTurn]->getClient()->getIfCanPlay()){
-//                //while the other turn is going continue doing nothing
-//                if(!players[currentTurn]->isDemoPlayer()) {
-//                    break;
-//                }
-//            }
-//        }
-//
-//    players[currentTurn]->doOneTurn(&m_gameRules, m_board,
-//                                    validCoordinates, inputCoordinate, &m_boardGraphic,
-//                                    players[currentTurn]);
-//    m_board.updateValue(inputCoordinate, currentTurn);
-//    m_gameRules.flipTokens(inputCoordinate, m_board, players[currentTurn]);
-//    needToPrint=true;
-//}
+
 /**
  * where the game runs
  */
