@@ -12,7 +12,7 @@ using namespace std;
 GameFlow ::GameFlow(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic):
         m_gameRules(gameRules),m_board(board), m_boardGraphic(boardGraphic) {
     this->players = players;
-//    this->currentTurn =players[Black]->getValue() ;
+//    this->currentTurn =players[Black]->getValue();//
     currentTurn = Black;
 }
 
