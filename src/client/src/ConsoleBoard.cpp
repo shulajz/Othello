@@ -60,6 +60,8 @@ void ConsoleBoard :: printSpecialSituation(Situation message) const{
         cout<<"No possible moves."<<endl;
     }else if(message==IllegelMove) {
         cout<<"Illegal move.Please try again."<<endl<<endl;
+    }else if (message==Wait){
+        cout << "please wait for other player to do his move" << endl;
     }else{
         cout<<endl<<"Please enter your move row,col:";
     }

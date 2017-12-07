@@ -30,29 +30,22 @@ ReversiClient* RemotePlayer :: getClient()const{
 
 }
 
-//bool RemotePlayer :: isMyTurn() {
-//    return client->isMyTurn();
-//}
-
-
-
 void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
                              vector<Coordinate> &coordinates,
                              Coordinate &input, BoardGraphic *boardGraphic, Player *player){
-
-    cout << "please wait for other player to do his move" << endl;
-
+    boardGraphic->printSpecialSituation(Wait);
     if(input.row) {
         //this is not the first move
         client->sendMove(input);
     }
     input = client->receiveMove();
-
 }
 
 bool RemotePlayer:: isRemotePlayer()const{
     return true;
 }
 
-
-
+void RemotePlayer:: printWhatThePlayerPlayed(Coordinate coordinate,
+                                          BoardGraphic *boardGraphic) {
+    boardGraphic->printThePlayersChoice(tv, coordinate);
+}

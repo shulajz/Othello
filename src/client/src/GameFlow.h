@@ -18,6 +18,9 @@ private:
     TokenValue currentTurn;
     BoardGraphic &m_boardGraphic;
     bool printBoardIfNeed(bool& needToPrint);
+    void ifNoValidCoordinates(vector<Coordinate>& validCoordinates, bool& needToPrint);
+    void ifValidCoordinates(vector<Coordinate>& validCoordinates, bool& needToPrint,
+                            Coordinate& inputCoordinate);
 public:
     GameFlow(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic);
     //the game flow//

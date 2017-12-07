@@ -58,9 +58,6 @@ bool Player ::isRemotePlayer() const {
 
 ReversiClient* Player :: getClient()const{}
 
-//bool Player :: isMyTurn() {
-//    return true;
-//}
 
 bool Player::isDemoPlayer(){
     return false;

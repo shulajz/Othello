@@ -15,10 +15,9 @@ public:
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates,
                            Coordinate &input, BoardGraphic *boardGraphic, Player *player);
-//    virtual bool isRealPlayer()const;
+    void printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic);
     bool isRemotePlayer() const;
     ReversiClient* getClient() const;
-//    bool isMyTurn();
 
 private:
     ReversiClient* client;

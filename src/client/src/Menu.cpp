@@ -23,7 +23,7 @@ Player* Menu:: choosePlayer() const{
         } else if (selection == 'A') {
             p = new AIPlayer(White);
             return p;
-        }else if(selection == '1'){
+        }else if(selection == 'R'){
             return NULL;
         } else {
             //illegal option

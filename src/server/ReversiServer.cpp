@@ -59,7 +59,6 @@ void ReversiServer::start() {
             throw "Error on accept";
         }
         sendValueOfClient(clientSocket1,clientSocket2);
-        cout<<"000";
         int count=0;
         while(count<=10000){
             handleClient(clientSocket1, clientSocket2);
@@ -77,20 +76,18 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
     int col = 0;
 
     int n = read(clientSocket1, &row, sizeof(row));
-    cout<<row<<endl;
     if (n == -1) {
         cout << "Error reading row" << endl;
         return;
     }
 
     n = read(clientSocket1, &col, sizeof(col));
-    cout<<col<<endl;
     if (n == -1) {
         cout << "Error reading row" << endl;
         return;
     }
 
-    cout << "Got Move: row: " << row << "col: " << col << endl;
+    cout << "Got Move: row: " << row << " col: " << col << endl;
 
     int moveToSendToOtherClient[2];
     moveToSendToOtherClient[0] = row;
@@ -122,20 +119,3 @@ void ReversiServer::sendValueOfClient(int clientSocket1, int clientSocket2) {
         return;
     }
 }
-
-//void ReversiServer::sendWhoNeedToPlay(int clientSocket1, int clientSocket2){
-//    int needToPlay = 1;
-//    int n = write(clientSocket1, &needToPlay, sizeof(needToPlay));
-//    cout << "Write How need to play 1" << endl;
-//    if (n == -1) {
-//        cout << "Error writing to socket" << endl;
-//        return;
-//    }
-//    needToPlay=0;
-//    n = write(clientSocket2, &needToPlay, sizeof(needToPlay));
-//    cout << "Write How need to play 2" << endl;
-//    if (n == -1) {
-//        cout << "Error writing to socket" << endl;
-//        return;
-//    }
-//}
