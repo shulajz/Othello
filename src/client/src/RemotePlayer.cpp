@@ -19,7 +19,7 @@ RemotePlayer::RemotePlayer(TokenValue tv):haveTwoPlayers(false){
     if (myFile.is_open()) {
         myFile >> ip;
         myFile >> port;
-//        char *ipBuff = nullptr;
+//        char *ipBuff = nullptr;/
         char *ipBuff = new char[ip.length() + 1];
         strcpy(ipBuff, ip.c_str());
         client = new ReversiClient(ipBuff, atoi(port.c_str()));
