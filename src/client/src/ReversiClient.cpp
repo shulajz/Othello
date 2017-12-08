@@ -12,7 +12,7 @@
 
 
 ReversiClient::ReversiClient(const char *serverIP, int serverPort):
-        serverIP(serverIP), serverPort(serverPort), clientSocket(0) {
+        serverIP(serverIP), serverPort(serverPort), clientSocket(0),tv(Empty) {
 }
 
 void ReversiClient::connectToServer() {
@@ -63,7 +63,7 @@ Coordinate ReversiClient::receiveMove() {
     moveReceived.row = moveReceivedFromOtherPlayer[0];
     moveReceived.col = moveReceivedFromOtherPlayer[1];
     return moveReceived;
-}//
+}
 
 void ReversiClient::sendMove(Coordinate coordinate) {
     // Write the move to the socket
