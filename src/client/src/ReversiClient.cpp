@@ -80,6 +80,7 @@ void ReversiClient::sendMove(Coordinate coordinate) {
     }
     n = write(clientSocket, &col, sizeof(col));
     if (n == -1) {
+        cout<<"here7";
         throw "Error writing row to socket";
     }
 

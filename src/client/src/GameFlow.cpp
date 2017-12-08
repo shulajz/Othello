@@ -80,6 +80,7 @@ void GameFlow::ifNoValidCoordinates(vector<Coordinate>& validCoordinates,
     m_gameRules.getLegalCoordinates(m_board, players[currentTurn],validCoordinates);
     if (validCoordinates.empty()) // checking if the other player has any legal moves
     { // there is no options for either of the players
+        inputCoordinate.row = 0;
         m_boardGraphic.printSpecialSituation(NoMovesForAll);
         players[currentTurn]->sendEndOfGame(inputCoordinate);
         players[!currentTurn]->sendEndOfGame(inputCoordinate);

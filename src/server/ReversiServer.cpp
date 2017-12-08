@@ -42,6 +42,7 @@ void ReversiServer::start() {
     struct sockaddr_in clientAddress2;
     socklen_t clientAddressLen2;
     while (true) {
+        endGame = false;
         cout << "Waiting for client connections..." << endl;
         // Accept a new client connection
         int clientSocket1 = accept(serverSocket, (struct
