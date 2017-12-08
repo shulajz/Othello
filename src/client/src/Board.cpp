@@ -47,7 +47,7 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
     }
         boardArr[4][1].setValue(Black);
         boardArr[4][4].setValue(Empty);
-       // boardArr[4][3].setValue(Empty);
+        boardArr[4][3].setValue(Empty);
 
 
         delete[] initialCells;

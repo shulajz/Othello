@@ -83,13 +83,13 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
         cout << "Error reading row" << endl;
         return;
     }
-    n = read(clientSocket1, &col, sizeof(col));
-    if (n == -1) {
-        cout<<"server2";
-        cout << "Error reading row" << endl;
-        return;
-    }
     if(row > 0) {
+        n = read(clientSocket1, &col, sizeof(col));
+        if (n == -1) {
+            cout<<"server2";
+            cout << "Error reading row" << endl;
+            return;
+        }
         cout << "Got Move: row: " << row << " col: " << col << endl;
         int moveToSendToOtherClient[2];
         moveToSendToOtherClient[0] = row;
