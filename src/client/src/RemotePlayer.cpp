@@ -7,22 +7,32 @@
 #include "GameRules.h"
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
 
 using namespace std;
 
 RemotePlayer::RemotePlayer(TokenValue tv):haveTwoPlayers(false){
+    string ip;
+    string port;
+    ifstream myFile;
+    myFile.open("ipAndPort");
+    if (myFile.is_open()) {
+        myFile >> ip;
+        myFile >> port;
+//        char *ipBuff = nullptr;
+        char *ipBuff = new char[ip.length() + 1];
+        strcpy(ipBuff, ip.c_str());
+        client = new ReversiClient(ipBuff, atoi(port.c_str()));
+        try {
+            client->connectToServer();
+        } catch (const char *msg) {
+            cout << "Failed to connect to server. Reason:" << msg << endl;
+        }
+        do {
+            this->tv = client->getTokenValueOfPlayer();
+        } while (this->tv != Black && this->tv != White);
 
-    client= new ReversiClient("127.0.0.1", 8000);
-    try {
-        client->connectToServer();
-    } catch (const char *msg) {
-        cout << "Failed to connect to server. Reason:" << msg << endl;
     }
-    do{
-        this->tv = client->getTokenValueOfPlayer();
-    }while(this->tv != Black && this->tv != White);
-
-
 }
 
 void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,

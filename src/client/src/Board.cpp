@@ -7,13 +7,13 @@
 
 using namespace std;
 
-
 #include <vector>
 #include <list>
 #include <iostream>
 #include "Board.h"
 #include "TokenFactory.h"
 
+#define NUM_OF_INITIAL_CELLS 4
 
 /**
  *
@@ -34,19 +34,19 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
 
     //one teo three
 
-//    for(int i = 0; i < 4; i++) {
-//        //set values to the initial cells
-//        boardArr[initialCells[i].coordinate.row][initialCells[i].coordinate.col].
-//                setValue(initialCells[i].tv);
-//    }
-
-    for(int i = 0; i < 5; i++) {
-        for (int j = 0; j < 5; j++) {
-            boardArr[i][j].setValue(White);
-        }
+    for(int i = 0; i < NUM_OF_INITIAL_CELLS; i++) {
+        //set values to the initial cells
+        boardArr[initialCells[i].coordinate.row][initialCells[i].coordinate.col].
+                setValue(initialCells[i].tv);
     }
+
+//    for(int i = 0; i < 5; i++) {
+//        for (int j = 0; j < 5; j++) {
+//            boardArr[i][j].setValue(White);
+//        }
+//    }
 //        boardArr[4][1].setValue(Black);
-       boardArr[4][4].setValue(Empty);
+//       boardArr[4][4].setValue(Empty);
 //        boardArr[4][3].setValue(Empty);
 
 
