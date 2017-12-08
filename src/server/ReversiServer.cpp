@@ -9,9 +9,10 @@
 #include <string.h>
 #include <iostream>
 #include <stdio.h>
+
 using namespace std;
 
-#define MAX_CONNECTED_CLIENTS 2
+#define MAX_CONNECTED_CLIENTS 10
 
 ReversiServer::ReversiServer(int port): port(port), serverSocket(0),endGame(false) ,receiveMove(false){
     cout << "Server" << endl;
@@ -77,11 +78,13 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
     int col = 0;
     int n = read(clientSocket1, &row, sizeof(row));
     if (n == -1) {
+        cout<<"server1";
         cout << "Error reading row" << endl;
         return;
     }
     n = read(clientSocket1, &col, sizeof(col));
     if (n == -1) {
+        cout<<"server2";
         cout << "Error reading row" << endl;
         return;
     }
@@ -92,6 +95,7 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
         moveToSendToOtherClient[1] = col;
         n = write(clientSocket2, &moveToSendToOtherClient, sizeof(moveToSendToOtherClient));
         if (n == -1) {
+            cout<<"server3";
             cout << "Error writing to socket" << endl;
             return;
         }
@@ -114,12 +118,14 @@ void ReversiServer::sendValueOfClient(int clientSocket1, int clientSocket2) {
     int n = write(clientSocket1, &player1, sizeof(player1));
     cout << "Write on ClientSocket1" << endl;
     if (n == -1) {
+        cout<<"server4";
         cout << "Error writing to socket" << endl;
         return;
     }
     n = write(clientSocket2, &player2, sizeof(player2));
     cout << "Write on ClientSocket2" << endl;
     if (n == -1) {
+        cout<<"serverr";
         cout << "Error writing to socket" << endl;
         return;
     }

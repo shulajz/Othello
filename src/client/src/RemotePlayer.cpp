@@ -11,7 +11,7 @@
 
 using namespace std;
 
-RemotePlayer::RemotePlayer(TokenValue tv):haveTwoPlayers(false){
+RemotePlayer::RemotePlayer(TokenValue tv) {
     string ip;
     string port;
     ifstream myFile;
@@ -19,7 +19,6 @@ RemotePlayer::RemotePlayer(TokenValue tv):haveTwoPlayers(false){
     if (myFile.is_open()) {
         myFile >> ip;
         myFile >> port;
-//        char *ipBuff = nullptr;/
         char *ipBuff = new char[ip.length() + 1];
         strcpy(ipBuff, ip.c_str());
         client = new ReversiClient(ipBuff, atoi(port.c_str()));
@@ -31,8 +30,8 @@ RemotePlayer::RemotePlayer(TokenValue tv):haveTwoPlayers(false){
         do {
             this->tv = client->getTokenValueOfPlayer();
         } while (this->tv != Black && this->tv != White);
-
     }
+
 }
 
 void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,

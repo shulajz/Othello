@@ -28,6 +28,9 @@ void GameFlow :: run () {
     bool needToPrint=true;
     while (true) {
         if (!printBoardIfNeed(needToPrint)) {
+            if (first_move) {
+                players[!currentTurn]->sendEndOfGame(inputCoordinate);
+            }
             players[currentTurn]->sendEndOfGame(inputCoordinate);
             break; // the board is full of tokens - end game
         }
@@ -79,8 +82,8 @@ void GameFlow::ifNoValidCoordinates(vector<Coordinate>& validCoordinates,
         m_boardGraphic.printSpecialSituation(NoMovesForAll);
         players[currentTurn]->togglePlayer(currentTurn);
         players[currentTurn]->sendEndOfGame(inputCoordinate);
-        players[currentTurn]->togglePlayer(currentTurn);
-        players[currentTurn]->sendEndOfGame(inputCoordinate);
+//        players[currentTurn]->togglePlayer(currentTurn);
+//        players[currentTurn]->sendEndOfGame(inputCoordinate);
         endGame = true;
     } else {
         //no possible moves for one player
