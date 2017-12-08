@@ -9,11 +9,10 @@
 #include <netdb.h>
 #include <cstdlib>
 #include <unistd.h>
-#include "Tools.h"
+
 
 ReversiClient::ReversiClient(const char *serverIP, int serverPort):
-        serverIP(serverIP), serverPort(serverPort),
-        clientSocket(0) {
+        serverIP(serverIP), serverPort(serverPort), clientSocket(0) {
 }
 
 void ReversiClient::connectToServer() {
@@ -47,7 +46,6 @@ void ReversiClient::connectToServer() {
     *)&serverAddress, sizeof(serverAddress)) == -1) {
         throw "Error connecting to server";
     }
-
     cout <<"Waiting for other player to join..." << endl;
 }
 
@@ -57,10 +55,9 @@ Coordinate ReversiClient::receiveMove() {
 
     int n = read(clientSocket, &moveReceivedFromOtherPlayer, sizeof(moveReceivedFromOtherPlayer));
     if (n == -1) {
-        throw "Error writing row to socket";
+        cout<<"here";
+        throw "Error reading move from the socket";
     }
-    cout << "row received: " << moveReceivedFromOtherPlayer[0] <<endl
-         << "col received: " << moveReceivedFromOtherPlayer[1] << endl;
 
     Coordinate moveReceived;
     moveReceived.row = moveReceivedFromOtherPlayer[0];
@@ -84,28 +81,28 @@ void ReversiClient::sendMove(Coordinate coordinate) {
 
 }
 
-void ReversiClient::sendNoMove() {
-    // Write the move to the socket
-//    string noMove = "no move for the player";
-    int noMove = NoMove;
-
-    int n = write(clientSocket, &noMove, sizeof(noMove));
-    if (n == -1) {
-        throw "Error writing row to socket";
-    }
-
-
-}
+//void ReversiClient::sendNoMove() {
+//    // Write the move to the socket
+////    string noMove = "no move for the player";
+//    int noMove = NoMove;
+//
+//    int n = write(clientSocket, &noMove, sizeof(noMove));
+//    if (n == -1) {
+//        throw "Error writing row to socket";
+//    }
+//}
 
 void ReversiClient::sendEnd() {
     // Write the move to the socket
-//    string noMove = "no move for the player";
     int end = End;
     int n = write(clientSocket, &end, sizeof(end));
     if (n == -1) {
         throw "Error writing row to socket";
     }
-
+    n = write(clientSocket, &end, sizeof(end));
+    if (n == -1) {
+        throw "Error writing row to socket";
+    }
 }
 
 TokenValue ReversiClient::getTokenValueOfPlayer(){
@@ -115,11 +112,9 @@ TokenValue ReversiClient::getTokenValueOfPlayer(){
         return Empty;
     }
     if (type == '1'){
-        cout<<"You play Black('X')"<<endl;
         tv = Black;
         return Black;
     } else if (type == '2'){
-        cout<<"You play White('O')"<<endl;
         tv = White;
         return White;
     } else {

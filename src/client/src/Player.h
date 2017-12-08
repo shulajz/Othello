@@ -22,7 +22,7 @@ public:
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates,
                            Coordinate &input, BoardGraphic *boardGraphic,
-                           Player *player, bool &noMoveForOnePlayer, bool &endGame) =0;
+                           Player *player) =0;
     virtual TokenValue getValue() const;
     virtual void togglePlayer(TokenValue &tokenValue);
     virtual bool isWhitePlayer() const;
@@ -32,11 +32,8 @@ public:
     virtual void calcTheMaxScoreForOneTurn(GameRules *gameRules, Board &tempBoard,
                                    vector<Coordinate> &validCoordinates, int &maxLocal){};
     TokenValue getIdentity();
-    virtual bool isRemotePlayer() const;
-    virtual ReversiClient* getClient()const;
-//    virtual bool isMyTurn();
-    virtual bool isDemoPlayer();
     virtual void setTokenValue(TokenValue tv1);
+    virtual void sendEndOfGame(Coordinate inputCoordinate);
 
 };
 

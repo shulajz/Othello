@@ -21,15 +21,14 @@ GameFlow ::GameFlow(GameRules &gameRules, Player **players, Board &board, BoardG
  */
 void GameFlow :: run () {
     bool endGame = false;
-    bool noMoveForOnePlayer = false;
-    bool isGameOver = false;
     Coordinate inputCoordinate;
     inputCoordinate.row = 0;
     inputCoordinate.col = 0;
     bool first_move=true;
     bool needToPrint=true;
     while (true) {
-        if (!printBoardIfNeed(needToPrint, endGame)&&!players[currentTurn]->isRemotePlayer()) {
+        if (!printBoardIfNeed(needToPrint)) {
+            players[currentTurn]->sendEndOfGame(inputCoordinate);
             break; // the board is full of tokens - end game
         }
         if (!first_move && (needToPrint)) {
@@ -39,16 +38,13 @@ void GameFlow :: run () {
         vector<Coordinate> validCoordinates;
         m_gameRules.getLegalCoordinates(m_board, players[currentTurn], validCoordinates);
 
-        if (validCoordinates.empty() && !endGame) {
-            ifNoValidCoordinates(validCoordinates, needToPrint, noMoveForOnePlayer, endGame);
-            if(endGame) { //there is no options for either of the players - end game
+        if (validCoordinates.empty()) {
+            ifNoValidCoordinates(validCoordinates, needToPrint, endGame,  inputCoordinate);
+            if (endGame) { //there is no options for either of the players - end game
                 break;
             }
-//            endGame = false;
         } else {
-            ifValidCoordinates(validCoordinates, needToPrint,
-                               inputCoordinate,
-                               noMoveForOnePlayer, endGame);
+            ifValidCoordinates(validCoordinates, needToPrint, inputCoordinate);
         }
         players[currentTurn]->togglePlayer(currentTurn);
     }
@@ -59,11 +55,11 @@ void GameFlow :: run () {
     m_boardGraphic.drawStatus(black, white);
 }
 
-bool GameFlow::printBoardIfNeed(bool &needToPrint, bool &endGame){
+bool GameFlow::printBoardIfNeed(bool &needToPrint){
     //if the board full print and break.
     if (m_board.isFullOfTokens()) {
         m_board.draw();
-        endGame = true;
+        needToPrint = false;
         return false;
     }
     if ((needToPrint||players[currentTurn]->isRealPlayer())) {
@@ -73,32 +69,33 @@ bool GameFlow::printBoardIfNeed(bool &needToPrint, bool &endGame){
 }
 
 void GameFlow::ifNoValidCoordinates(vector<Coordinate>& validCoordinates,
-                                    bool& needToPrint, bool &noMoveForOnePlayer, bool &endGame){
+                                    bool& needToPrint, bool &endGame, Coordinate& inputCoordinate){
     //switching to the other player in order to check
     // if he's got any legal moves
     players[currentTurn]->togglePlayer(currentTurn);
     m_gameRules.getLegalCoordinates(m_board, players[currentTurn],validCoordinates);
     if (validCoordinates.empty()) // checking if the other player has any legal moves
     { // there is no options for either of the players
-        m_boardGraphic.printSpecialSituation(NoMovesForAll);
-        endGame = true;
+            m_boardGraphic.printSpecialSituation(NoMovesForAll);
+            players[currentTurn]->togglePlayer(currentTurn);
+            players[currentTurn]->sendEndOfGame(inputCoordinate);
+            endGame = true;
     } else {
         //no possible moves for one player
         players[currentTurn]->togglePlayer(currentTurn);
         m_boardGraphic.printWhosMove(currentTurn);
         m_boardGraphic.printSpecialSituation(Next);
         needToPrint = false;
-        noMoveForOnePlayer = true;
     }
 }
 
 void GameFlow::ifValidCoordinates(vector<Coordinate>& validCoordinates, bool& needToPrint,
-                                  Coordinate& inputCoordinate, bool &noMoveForOnePlayer, bool &endGame){
+                                  Coordinate& inputCoordinate){
 
     players[currentTurn]->printAfterTheRealPlayerMove(&m_boardGraphic,needToPrint);
     players[currentTurn]->doOneTurn(&m_gameRules, m_board,
                                     validCoordinates, inputCoordinate, &m_boardGraphic,
-                                    players[currentTurn], noMoveForOnePlayer, endGame);
+                                    players[currentTurn]);
     m_board.updateValue(inputCoordinate, currentTurn);
     m_gameRules.flipTokens(inputCoordinate, m_board, players[currentTurn]);
     needToPrint = true;

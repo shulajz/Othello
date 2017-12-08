@@ -40,30 +40,16 @@ void Player :: togglePlayer(TokenValue &tokenValue) {
     }
 }
 
-void Player :: printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic) {
+void Player :: printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic) {}
 
-}
-
-void Player ::printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const {
-
-}
+void Player ::printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const {}
 
 bool Player ::isRealPlayer() const {
     return false;
 }
 
-bool Player ::isRemotePlayer() const {
-    return false;
-}
-
-ReversiClient* Player :: getClient()const{}
-
-
-bool Player::isDemoPlayer(){
-    return false;
-}
-
-
 void Player :: setTokenValue(TokenValue tv1) {
     tv = tv1;
 }
+
+void Player ::sendEndOfGame(Coordinate inputCoordinate){}

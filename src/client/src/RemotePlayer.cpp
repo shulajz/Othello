@@ -19,44 +19,34 @@ RemotePlayer::RemotePlayer(TokenValue tv):haveTwoPlayers(false){
         cout << "Failed to connect to server. Reason:" << msg << endl;
     }
     do{
-        this->tv=client->getTokenValueOfPlayer();
-    }while(this->tv!=Black&&this->tv!=White);
+        this->tv = client->getTokenValueOfPlayer();
+    }while(this->tv != Black && this->tv != White);
 
-
-}
-
-ReversiClient* RemotePlayer :: getClient()const{
-    return this->client;
 
 }
 
 void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
                              vector<Coordinate> &coordinates,
-                             Coordinate &input, BoardGraphic *boardGraphic, Player *player,
-                             bool &noMoveForOnePlayer, bool &endGame){
-    if(noMoveForOnePlayer) {
-        client->sendNoMove();
-    } else {
+                             Coordinate &input, BoardGraphic *boardGraphic, Player *player){
         boardGraphic->printSpecialSituation(Wait);
-        cout<<"row: "<<input.row<<" col: "<<input.col;
         if (input.row) {
             //this is not the first move
             client->sendMove(input);
-//            if(endGame) {
-//                client->sendEnd();
-//            }
-
-
         }
         input = client->receiveMove();
-    }
-}
+        cout << input.row<<" ,"<< input.col << endl;
+        if (input.row == End){
+            client->sendEnd();
+        }
 
-bool RemotePlayer:: isRemotePlayer()const{
-    return true;
 }
 
 void RemotePlayer:: printWhatThePlayerPlayed(Coordinate coordinate,
                                           BoardGraphic *boardGraphic) {
     boardGraphic->printThePlayersChoice(tv, coordinate);
+}
+
+void RemotePlayer::sendEndOfGame(Coordinate coordinate){
+    client->sendMove(coordinate);
+    client->sendEnd();
 }

@@ -39,8 +39,7 @@ class AIPlayer : public Player{
      */
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates, Coordinate &input,
-                           BoardGraphic *boardGraphic, Player *player,bool &noMoveForOnePlayer,
-                           bool &endGame);
+                           BoardGraphic *boardGraphic, Player *player);
     /**
      * Print the move the AIPlayer did.
      * @param coordinate

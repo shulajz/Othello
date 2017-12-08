@@ -13,8 +13,7 @@ AIPlayer :: AIPlayer(TokenValue tv) {
 
 void AIPlayer :: doOneTurn(GameRules *gameRules, Board &board,
                    vector<Coordinate> &coordinates, Coordinate &input,
-                           BoardGraphic *boardGraphic, Player *player,
-                           bool &noMoveForOnePlayer, bool &endGame)  {
+                           BoardGraphic *boardGraphic, Player *player)  {
     vector<int> minOfAllMoves;
     Coordinate computerMove;
 

@@ -14,10 +14,9 @@ public:
     RemotePlayer(TokenValue tv);
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates,
-                           Coordinate &input, BoardGraphic *boardGraphic, Player *player, bool &noMoveForOnePlayer, bool &endGame);
+                           Coordinate &input, BoardGraphic *boardGraphic, Player *player);
     void printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic);
-    bool isRemotePlayer() const;
-    ReversiClient* getClient() const;
+    void sendEndOfGame(Coordinate coordinate);
 
 private:
     ReversiClient* client;

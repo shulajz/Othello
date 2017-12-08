@@ -45,8 +45,9 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
             boardArr[i][j].setValue(White);
         }
     }
-        boardArr[1][1].setValue(Black);
-        boardArr[4][4].setValue(Empty);
+//        boardArr[4][1].setValue(Black);
+       boardArr[4][4].setValue(Empty);
+//        boardArr[4][3].setValue(Empty);
 
 
         delete[] initialCells;
@@ -139,5 +140,3 @@ void Board:: calcResults(int &black, int &white) {
 BoardGraphic&  Board::getBoardGraphic()const{
     return this->m_boardGraphic;
 }
-
-

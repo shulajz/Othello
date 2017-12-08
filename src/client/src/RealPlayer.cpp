@@ -20,8 +20,7 @@ RealPlayer :: RealPlayer(TokenValue tv) {
 
 void RealPlayer :: doOneTurn(GameRules *gameRules, Board &board,
                              vector<Coordinate> &coordinates,
-                             Coordinate &input, BoardGraphic *boardGraphic, Player *player,
-                             bool &noMoveForOnePlayer, bool &endGame) {
+                             Coordinate &input, BoardGraphic *boardGraphic, Player *player) {
 
     bool inputValid = false;
     while (!inputValid) {
@@ -47,10 +46,4 @@ void RealPlayer :: doOneTurn(GameRules *gameRules, Board &board,
 
 bool RealPlayer :: isRealPlayer()const{
     return true;
-}
-
-
-void RealPlayer :: printWhatThePlayerPlayed(Coordinate coordinate,
-                                          BoardGraphic *boardGraphic) {
-//    boardGraphic->printThePlayersChoice(tv, coordinate);
 }
