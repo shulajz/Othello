@@ -52,4 +52,6 @@ int main() {
     Game gameFlow(classicRules, players, board, consoleBoard);
     gameFlow.run();
     delete(players[1]);
+    delete(players[2]);
+
 }

@@ -16,11 +16,11 @@ Game ::Game(GameRules &gameRules, Player **players, Board &board, BoardGraphic &
  * where the game runs...
  */
 void Game :: run () {
-    //while the board not full or ther is no possible moves running the game
+    //while the board not full or there is no possible moves running the game
     while (!m_board.isFullOfTokens() && !noMovesForAll) {
         playOneTurn();
     }
-    // update the players that is the end of the game
+    // update the players that its the end of the game
     curr_player->sendEndOfGame(inputCoordinate);
     //print after the game end the current board if needToPrint is not false
     // (happened when there is no moves for both players and the board we print
@@ -50,9 +50,11 @@ void Game :: playOneTurn(){
     if ((needToPrint||curr_player->isRealPlayer())) {
         m_board.draw();
       //print the move that rival do.
-        if (!first_move && (needToPrint)&&!players[!curr_player->getValue()]->isRealPlayer()) {
+        if (!first_move && (needToPrint)
+            && !players[!curr_player->getValue()]->isRealPlayer()) {
             if (inputCoordinate.row != NoMove) {
-                players[!curr_player->getValue()]->printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
+                players[!curr_player->getValue()]->
+                        printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
             }
             curr_player->printWhatThePlayerPlayed(inputCoordinate, &m_boardGraphic);
         }

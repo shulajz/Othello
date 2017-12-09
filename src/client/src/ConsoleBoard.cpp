@@ -132,8 +132,8 @@ void ConsoleBoard :: printAfterRealPlayer() const {
  * @param input
  */
 void ConsoleBoard :: receivePlayersAnswer(Coordinate &input) {
-    char temp;
-    while(!(cin>>input.row>>temp>>input.col)){
+//    char temp;
+    while(!(cin>> input.row >> input.col)){
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(),'\n');
         printSpecialSituation(IllegelMove);
