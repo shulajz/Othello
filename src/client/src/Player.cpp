@@ -27,6 +27,7 @@ bool Player :: isWhitePlayer() const {
 TokenValue Player :: getIdentity() {
     return tv;
 }
+
 /**
  * switches between the players
  */
@@ -52,4 +53,11 @@ void Player :: setTokenValue(TokenValue tv1) {
     tv = tv1;
 }
 
+void Player ::printNoMoves(BoardGraphic&  m_boardGraphic){
+    m_boardGraphic.printWhosMove(this->getValue());
+    m_boardGraphic.printSpecialSituation(Next);
+}
+
 void Player ::sendEndOfGame(Coordinate inputCoordinate){}
+
+void  Player ::sendNoMove() {}

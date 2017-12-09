@@ -79,29 +79,28 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
     int col = 0;
     int n = read(clientSocket1, &row, sizeof(row));
     if (n == -1) {
-        cout<<"server1";
         cout << "Error reading row" << endl;
         return;
     }
-    if(row > 0) {
+    if(row > 0 ||row == NoMove) {
         n = read(clientSocket1, &col, sizeof(col));
         if (n == -1) {
-            cout<<"server2";
             cout << "Error reading row" << endl;
             return;
         }
-        cout << "Got Move: row: " << row << " col: " << col << endl;
+        if (row == NoMove){
+            cout<<"Got No Move"<<endl;
+        } else {
+            cout << "Got Move: row: " << row << " col: " << col << endl;
+        }
         int moveToSendToOtherClient[2];
         moveToSendToOtherClient[0] = row;
         moveToSendToOtherClient[1] = col;
         n = write(clientSocket2, &moveToSendToOtherClient, sizeof(moveToSendToOtherClient));
         if (n == -1) {
-            cout<<"server3";
             cout << "Error writing to socket" << endl;
             return;
         }
-    } else if (row == NoMove) {
-
     } else if (row == End) {
         cout << "Got End" << endl;
         endGame = true;
@@ -117,16 +116,14 @@ void ReversiServer::sendValueOfClient(int clientSocket1, int clientSocket2) {
     char player1 = '1';
     char player2 = '2';
     int n = write(clientSocket1, &player1, sizeof(player1));
-    cout << "Write on ClientSocket1" << endl;
+    cout << "Write on ClientSocket1 he play Black ('x')" << endl;
     if (n == -1) {
-        cout<<"server4";
         cout << "Error writing to socket" << endl;
         return;
     }
     n = write(clientSocket2, &player2, sizeof(player2));
-    cout << "Write on ClientSocket2" << endl;
+    cout << "Write on ClientSocket2 he play White ('o') " << endl;
     if (n == -1) {
-        cout<<"serverr";
         cout << "Error writing to socket" << endl;
         return;
     }

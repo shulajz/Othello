@@ -4,7 +4,7 @@
 
 #ifndef OTHELLO_TOOLS_H
 #define OTHELLO_TOOLS_H
-#define DIM 5
+#define DIM 6
 
 enum TokenValue {
     Black,
@@ -12,7 +12,7 @@ enum TokenValue {
     Empty,
 };
 enum Situation {
-    IllegelMove,NoMovesForAll,Next,AskForRowAndCol,Wait
+    IllegelMove,NoMovesForAll,Next,AskForRowAndCol,WaitToMove,WaitToJoin,NoMoveForTheRival
 };
 
 enum StatusForClient {

@@ -15,16 +15,19 @@ private:
     Player **players;
     GameRules &m_gameRules;
     Board &m_board;
-    TokenValue currentTurn;
+    TokenValue turn;
     BoardGraphic &m_boardGraphic;
-    bool printBoardIfNeed(bool& needToPrint);
+    bool first_move;
+    Player* curr_player;
+    bool printBoardIfNeed(bool& needToPrint, Coordinate& inputCoordinate);
     void ifNoValidCoordinates(vector<Coordinate>& validCoordinates,
                               bool& needToPrint, bool &endGame, Coordinate& inputCoordinate);
     void ifValidCoordinates(vector<Coordinate>& validCoordinates, bool& needToPrint,
                             Coordinate& inputCoordinate);
+    void switchPlayer();
 public:
     GameFlow(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic);
-    //the game flow//
+    //the game flow
     void run();
 };
 

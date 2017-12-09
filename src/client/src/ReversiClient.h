@@ -20,6 +20,7 @@ public:
     Coordinate receiveMove();
     TokenValue getTokenValueOfPlayer();
     void sendEnd();
+    void sendNoMove();
 
 private:
     const char *serverIP;

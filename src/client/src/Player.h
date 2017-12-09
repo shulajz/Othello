@@ -7,8 +7,7 @@
 
 #include "Cell.h"
 #include "ReversiClient.h"
-//#include "Board.h"
-//#include "BoardGraphic.h"
+#include "BoardGraphic.h"
 #include <vector>
 using namespace std;
 class GameRules;
@@ -34,6 +33,8 @@ public:
     TokenValue getIdentity();
     virtual void setTokenValue(TokenValue tv1);
     virtual void sendEndOfGame(Coordinate inputCoordinate);
+    virtual void sendNoMove();
+    virtual void printNoMoves(BoardGraphic & m_boardGraphic);
 
 };
 

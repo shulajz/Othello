@@ -11,7 +11,7 @@
 
 using namespace std;
 
-RemotePlayer::RemotePlayer(TokenValue tv) {
+RemotePlayer::RemotePlayer(TokenValue tv): needToPrint(true), printOnlyOneTime(true) {
     string ip;
     string port;
     ifstream myFile;
@@ -37,17 +37,30 @@ RemotePlayer::RemotePlayer(TokenValue tv) {
 void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
                              vector<Coordinate> &coordinates,
                              Coordinate &input, BoardGraphic *boardGraphic, Player *player){
-        boardGraphic->printSpecialSituation(Wait);
-        if (input.row) {
-            //this is not the first move
-            client->sendMove(input);
-        }
-        input = client->receiveMove();
-        cout << input.row<<" ,"<< input.col << endl;
-        if (input.row == End){
-            client->sendEnd();
-        }
+    //if is remote player turn print to the real player he need
+    // to wait to the other player to do is ove
+    if (needToPrint) {
+        boardGraphic->printSpecialSituation(WaitToMove);
+        needToPrint = true;
+    }
 
+    if (input.row && needToPrint) {
+        //this is not the first move
+        client->sendMove(input);
+
+    }
+    input = client->receiveMove();
+    //if the input present NoMove situation
+    if (input.row == NoMove){
+       //if there is no move the player need to stay remote player and not to change
+        // his turn to the real player, so we don't want in his next time
+        // the remote will do is turn will print WaitToMove or send move.
+        needToPrint = false;
+    }
+    //if the input present End situation we will send End
+    if (input.row == End){
+        client->sendEnd();
+    }
 }
 
 void RemotePlayer:: printWhatThePlayerPlayed(Coordinate coordinate,
@@ -60,5 +73,11 @@ void RemotePlayer::sendEndOfGame(Coordinate coordinate){
         client->sendMove(coordinate);
     }
     client->sendEnd();
+}
 
+void RemotePlayer::sendNoMove(){
+    client->sendNoMove();
+}
+void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
+    m_boardGraphic.printSpecialSituation(NoMoveForTheRival);
 }

@@ -17,10 +17,13 @@ public:
                            Coordinate &input, BoardGraphic *boardGraphic, Player *player);
     void printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic);
     void sendEndOfGame(Coordinate coordinate);
+    void sendNoMove();
+    void printNoMoves(BoardGraphic&  m_boardGraphic);
 
 private:
     ReversiClient* client;
-    bool haveTwoPlayers;
+    bool needToPrint;
+    bool printOnlyOneTime;
 };
 
 

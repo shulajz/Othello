@@ -51,17 +51,25 @@ void ConsoleBoard :: draw (Token** tokenArr) const {
 }
 
 void ConsoleBoard :: printSpecialSituation(Situation message) const{
-    if (message==Next){
+    if (message == Next){
         char temp;
         cout<<"No possible moves.Play passes back to the other player."
                 "press any key to continue."<<endl;
         cin>>temp;
-    }else if (message==NoMovesForAll){
+    }else if (message == NoMovesForAll){
         cout<<"No possible moves."<<endl;
-    }else if(message==IllegelMove) {
+    }else if(message == IllegelMove) {
         cout<<"Illegal move.Please try again."<<endl<<endl;
-    }else if (message==Wait){
+    }else if (message == WaitToMove){
         cout << "please wait for other player to do his move" << endl;
+    }else if(message == WaitToJoin) {
+        cout <<"Waiting for other player to join..." << endl;
+    }else if(message == NoMoveForTheRival) {
+        char temp;
+        cout << "No possible moves for the other player." << endl
+             << "Play passes back to you."
+                     "press any key to continue." << endl;
+        cin >> temp;
     }else{
         cout<<endl<<"Please enter your move row,col:";
     }

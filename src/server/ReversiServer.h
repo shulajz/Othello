@@ -20,7 +20,6 @@ private:
     int serverSocket; // the socket's file descriptor;
     void handleClient(int clientSocket1, int clientSocket2);
     void sendValueOfClient(int clientSocket1, int clientSocket2);
-    void sendWhoNeedToPlay(int clientSocket1, int clientSocket2);
 
 };
 

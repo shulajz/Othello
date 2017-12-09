@@ -13,8 +13,8 @@ set(SOURCE_TEST_FILES src/client/gtest_src/main_test.cpp src/client/gtest_src/Te
         src/client/gtest_src/Test_board.h src/client/gtest_src/Test_classicRules.cpp src/client/gtest_src/Test_classicRules.h
         src/client/gtest_src/Test_AIPlayer.cpp src/client/gtest_src/Test_AIPlayer.h)
 
-set(OTHELLO_MAIN src/client/src/main)
-set(SOURCE_FILES src/client/src/Board.cpp src/client/src/Board.h
+set(OTHELLO_MAIN src/client/src/main )
+set(SOURCE_FILES src/client/src/Game.cpp src/client/src/Game.h src/client/src/Board.cpp src/client/src/Board.h
         src/client/src/ReversiClient.cpp src/client/src/ReversiClient.h
         src/client/src/RemotePlayer.cpp src/client/src/RemotePlayer.h
         src/client/src/Cell.h src/client/src/ClassicRules.cpp src/client/src/ClassicRules.h
