@@ -61,3 +61,5 @@ void Player ::printNoMoves(BoardGraphic&  m_boardGraphic){
 void Player ::sendEndOfGame(Coordinate inputCoordinate){}
 
 void  Player ::sendNoMove() {}
+
+Player ::~ Player(){}

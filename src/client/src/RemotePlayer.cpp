@@ -30,6 +30,7 @@ RemotePlayer::RemotePlayer(TokenValue tv): needToPrint(true), printOnlyOneTime(t
         do {
             this->tv = client->getTokenValueOfPlayer();
         } while (this->tv != Black && this->tv != White);
+        delete(ipBuff);
     }
 
 }
@@ -80,4 +81,8 @@ void RemotePlayer::sendNoMove(){
 }
 void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
     m_boardGraphic.printSpecialSituation(NoMoveForTheRival);
+}
+
+RemotePlayer::~RemotePlayer(){
+    delete(client);
 }

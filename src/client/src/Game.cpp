@@ -24,7 +24,7 @@ void Game :: run () {
     curr_player->sendEndOfGame(inputCoordinate);
     //print after the game end the current board if needToPrint is not false
     // (happened when there is no moves for both players and the board we print
-    // in the last time is the same so we don't whant to print the board again).
+    // in the last time is the same so we don't want to print the board again).
     if (needToPrint) {
         m_board.draw();
         //if is not the first move print what the rival played

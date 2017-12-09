@@ -35,6 +35,7 @@ public:
     virtual void sendEndOfGame(Coordinate inputCoordinate);
     virtual void sendNoMove();
     virtual void printNoMoves(BoardGraphic & m_boardGraphic);
+    virtual ~ Player();
 
 };
 

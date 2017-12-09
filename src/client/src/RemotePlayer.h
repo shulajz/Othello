@@ -19,6 +19,7 @@ public:
     void sendEndOfGame(Coordinate coordinate);
     void sendNoMove();
     void printNoMoves(BoardGraphic&  m_boardGraphic);
+    ~RemotePlayer();
 
 private:
     ReversiClient* client;
