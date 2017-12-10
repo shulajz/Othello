@@ -34,7 +34,7 @@ RemotePlayer::RemotePlayer(TokenValue tv): needToPrint(true), printOnlyOneTime(t
     }
 
 }
-
+//
 void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
                              vector<Coordinate> &coordinates,
                              Coordinate &input, BoardGraphic *boardGraphic, Player *player){
