@@ -58,7 +58,7 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
         // the remote will do is turn will print WaitToMove or send move.
         needToPrint = false;
     }
-    //if the input present End situation we will send End
+    //if the current input is End we will send End
     if (input.row == End){
         client->sendEnd();
     }

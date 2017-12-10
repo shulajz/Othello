@@ -62,8 +62,10 @@ void ReversiServer::start() {
         }
         sendValueOfClient(clientSocket1,clientSocket2);
         while(!endGame){
+            //reading from client1, writing to client2
             handleClient(clientSocket1, clientSocket2);
             if (endGame){break;}
+            //reading from client2, writing to client1
             handleClient(clientSocket2, clientSocket1);
         }
         // Close communication with the client
@@ -75,33 +77,33 @@ void ReversiServer::start() {
 }
 
 void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
-    int row = 0;
-    int col = 0;
-    int n = read(clientSocket1, &row, sizeof(row));
+    int arg1 = 0;
+    int arg2 = 0;
+    int n = read(clientSocket1, &arg1, sizeof(arg1));
     if (n == -1) {
         cout << "Error reading row" << endl;
         return;
     }
-    if(row > 0 ||row == NoMove) {
-        n = read(clientSocket1, &col, sizeof(col));
+    if(arg1 > 0 || arg1 == NoMove) {
+        n = read(clientSocket1, &arg2, sizeof(arg2));
         if (n == -1) {
-            cout << "Error reading row" << endl;
+            cout << "Error reading col" << endl;
             return;
         }
-        if (row == NoMove){
+        if (arg1 == NoMove){
             cout<<"Got No Move"<<endl;
         } else {
-            cout << "Got Move: row: " << row << " col: " << col << endl;
+            cout << "Got Move: row: " << arg1 << " col: " << arg2 << endl;
         }
         int moveToSendToOtherClient[2];
-        moveToSendToOtherClient[0] = row;
-        moveToSendToOtherClient[1] = col;
+        moveToSendToOtherClient[0] = arg1;
+        moveToSendToOtherClient[1] = arg2;
         n = write(clientSocket2, &moveToSendToOtherClient, sizeof(moveToSendToOtherClient));
         if (n == -1) {
             cout << "Error writing to socket" << endl;
             return;
         }
-    } else if (row == End) {
+    } else if (arg1 == End) {
         cout << "Got End" << endl;
         endGame = true;
     }

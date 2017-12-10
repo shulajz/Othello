@@ -14,8 +14,11 @@ public:
     RemotePlayer(TokenValue tv);
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates,
-                           Coordinate &input, BoardGraphic *boardGraphic, Player *player);
-    void printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic);
+                           Coordinate &input,
+                           BoardGraphic *boardGraphic,
+                           Player *player);
+    void printWhatThePlayerPlayed(Coordinate coordinate,
+                                  BoardGraphic *boardGraphic);
     void sendEndOfGame(Coordinate coordinate);
     void sendNoMove();
     void printNoMoves(BoardGraphic&  m_boardGraphic);

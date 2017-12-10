@@ -32,7 +32,8 @@ TokenValue Player :: getIdentity() {
  * switches between the players
  */
 void Player :: togglePlayer(TokenValue &tokenValue) {
-    if (isWhitePlayer()) {
+    if (isWhitePlayer())
+    {
         tokenValue = Black;
     }
     else
@@ -41,9 +42,11 @@ void Player :: togglePlayer(TokenValue &tokenValue) {
     }
 }
 
-void Player :: printWhatThePlayerPlayed(Coordinate coordinate, BoardGraphic *boardGraphic) {}
+void Player :: printWhatThePlayerPlayed(Coordinate coordinate,
+                                        BoardGraphic *boardGraphic) {}
 
-void Player ::printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,bool need_to_print) const {}
+void Player ::printAfterTheRealPlayerMove(BoardGraphic *boardGraphic,
+                                          bool need_to_print) const {}
 
 bool Player ::isRealPlayer() const {
     return false;

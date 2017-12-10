@@ -50,7 +50,7 @@ void ReversiClient::connectToServer() {
 }
 
 Coordinate ReversiClient::receiveMove() {
-    // Write the Move to the socket
+    // read the Move from the socket
     int moveReceivedFromOtherPlayer[2];
 
     int n = read(clientSocket, &moveReceivedFromOtherPlayer, sizeof(moveReceivedFromOtherPlayer));

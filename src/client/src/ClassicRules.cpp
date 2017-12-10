@@ -11,6 +11,9 @@
  */
 Cell* ClassicRules :: getInitialValues(int dim) const {
     Cell* cells = new Cell[4];
+//    vector<Cell>* initCells;
+
+
 
     cells[0].coordinate.row = dim/2;
     cells[0].coordinate.col = dim/2;
@@ -56,7 +59,6 @@ void ClassicRules :: getLegalCoordinates
 
     Token** tokens = b.getTokens();
     int dim = b.getDimensions();
-//    int index = 0;
     for(int i = 1; i < dim; i++) {
         for (int j = 1; j < dim; j++) {
             if(tokens[i][j].isEmpty()) {
@@ -168,13 +170,13 @@ void ClassicRules :: checkIfToFlipCell(Coordinate inputCoordinate, int rowDir, i
     int paramCol = inputCoordinate.col + colDir;
 
     do {
-        if (paramRow >= 1 && paramRow <= dim - 1 && paramCol >= 1 && paramCol <= dim - 1) //if its in a valid place
+        if (paramRow >= 1 && paramRow <= dim - 1
+            && paramCol >= 1 && paramCol <= dim - 1) //if its in a valid place
         {
             if(tokens[paramRow][paramCol].getValue() != oppositeValue && isValid)
             {// we found the cell of the same kind + after we found at least one from the opposite
 
                 int i = 0;
-                //tempCoordinate[i].col != 0
                 while(i != tempCoordinates.size()) {
                     Coordinate coordinate;
                     coordinate.row = tempCoordinates[i].row;

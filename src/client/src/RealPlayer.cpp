@@ -31,7 +31,8 @@ void RealPlayer :: doOneTurn(GameRules *gameRules, Board &board,
         boardGraphic->receivePlayersAnswer(input);
         for (int i = 0; i < coordinates.size(); i++) {
            //checks if the input is one of the legal coordinates
-            if (input.row == coordinates[i].row && input.col == coordinates[i].col) {
+            if (input.row == coordinates[i].row
+                && input.col == coordinates[i].col) {
                 inputValid = true;
                 break;
             }
