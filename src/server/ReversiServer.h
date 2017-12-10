@@ -28,7 +28,8 @@ private:
      * @param clientSocket2
      */
     void sendValueOfClient(int clientSocket1, int clientSocket2);
-
+    bool isClientClosed(int close);
+    bool clientStoppedCloseAllClients;
 };
 
 

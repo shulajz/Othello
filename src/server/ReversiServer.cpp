@@ -9,12 +9,17 @@
 #include <string.h>
 #include <iostream>
 #include <stdio.h>
+#include <poll.h>
 
 using namespace std;
 
 #define MAX_CONNECTED_CLIENTS 10
 
-ReversiServer::ReversiServer(int port): port(port), serverSocket(0),endGame(false) ,receiveMove(false){
+ReversiServer::ReversiServer(int port): port(port),
+                                        serverSocket(0),
+                                        endGame(false),
+                                        receiveMove(false),
+                                        clientStoppedCloseAllClients(false){
     cout << "Server" << endl;
 }
 void ReversiServer::start() {
@@ -42,6 +47,7 @@ void ReversiServer::start() {
     struct sockaddr_in clientAddress2;
     socklen_t clientAddressLen2;
     while (true) {
+        clientStoppedCloseAllClients = false;
         endGame = false;
         cout << "Waiting for client connections..." << endl;
         // Accept a new client connection
@@ -61,10 +67,12 @@ void ReversiServer::start() {
             throw "Error on accept";
         }
         sendValueOfClient(clientSocket1,clientSocket2);
-        while(!endGame){
+        while(!endGame || !clientStoppedCloseAllClients || !isClientClosed(clientSocket1)){
             //reading from client1, writing to client2
             handleClient(clientSocket1, clientSocket2);
-            if (endGame){break;}
+            if (endGame || clientStoppedCloseAllClients || isClientClosed(clientSocket2)){
+                break;
+            }
             //reading from client2, writing to client1
             handleClient(clientSocket2, clientSocket1);
         }
@@ -98,6 +106,10 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
         int moveToSendToOtherClient[2];
         moveToSendToOtherClient[0] = arg1;
         moveToSendToOtherClient[1] = arg2;
+        if(isClientClosed(clientSocket1) || isClientClosed(clientSocket2)) {
+            clientStoppedCloseAllClients = true;
+            return;
+        }
         n = write(clientSocket2, &moveToSendToOtherClient, sizeof(moveToSendToOtherClient));
         if (n == -1) {
             cout << "Error writing to socket" << endl;
@@ -129,4 +141,21 @@ void ReversiServer::sendValueOfClient(int clientSocket1, int clientSocket2) {
         cout << "Error writing to socket" << endl;
         return;
     }
+}
+
+bool ReversiServer :: isClientClosed(int clientSocket)
+{
+    pollfd pfd;
+    pfd.fd = clientSocket;
+    pfd.events = POLLIN | POLLHUP | POLLRDNORM;
+    pfd.events = 0;
+    while(pfd.revents == 0) {
+        if(poll(&pfd, 1, 100) > 0) {
+            char buffer[32];
+            if(recv(clientSocket, buffer, sizeof(buffer), MSG_PEEK | MSG_DONTWAIT) == 0){
+                return true;
+            }
+        }
+    }
+    return false;
 }
