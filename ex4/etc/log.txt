@@ -1,0 +1,921 @@
+commit 4e4b5b66b5aa690a9c12b91d3b0baa693d066bb4
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 15:31:06 2017 +0200
+
+    added isCLientClosed
+
+commit b9d987ecbf7d00f2c63bdd07d1c3849abd7b8bab
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Dec 10 04:16:03 2017 -0800
+
+    sent end : changes in ReversiServer RemotePlayer ReversiClient
+
+commit 3cd8c2d19194abbe6c418b8487f4f64f99dc53bf
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 13:12:56 2017 +0200
+
+    added isCLientClosed
+
+commit 6138edfc48b91daeea92a98ea724c29d85979d9c
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 12:32:08 2017 +0200
+
+    added some comments
+
+commit 1aadb9da51800238a6876ed190f6333cc24b9f47
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sat Dec 9 10:08:40 2017 -0800
+
+    add deconstructor to Player and to RemotePlayer
+
+commit fdd88f03d36a41f7daddf2bf935ceb3db12a3c6e
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sat Dec 9 19:34:41 2017 +0200
+
+    added delete
+
+commit 51363985118edf163cc6322fd6bad0cafcd37753
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sat Dec 9 08:36:59 2017 -0800
+
+    sent end : changes in ReversiServer RemotePlayer ReversiClient
+
+commit 631acfd70b4d8d62bb5fd0e033a467fdd49adf2e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 8 05:15:41 2017 -0800
+
+    sent end : changes in ReversiServer RemotePlayer ReversiClient
+
+commit 23dba13596772e559249d629ac8ef88e63ce4d70
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 8 04:53:18 2017 -0800
+
+    sent end : changes in ReversiServer RemotePlayer ReversiClient
+
+commit c934045e43ed7bbc0c6498cbf0c453bdceb8cfd3
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 8 03:53:31 2017 -0800
+
+    sent end : changes in ReversiServer RemotePlayer ReversiClient
+
+commit 452eebce883358a0a508ace237cb684690f6d936
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 8 03:46:57 2017 -0800
+
+    sent end : changes in ReversiServer RemotePlayer ReversiClient
+
+commit 43dcced2103745ec6f60ad84b459c378511bdc39
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 8 13:34:30 2017 +0200
+
+    added file
+
+commit 796b885011edc3655c50d141e1efaacd2d7dd3b6
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 8 13:34:10 2017 +0200
+
+    added file
+
+commit 514e44385937dfa946bd574a05598e7d9b2f5952
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 8 13:31:09 2017 +0200
+
+    added file
+
+commit d05929643bf871f34dfef75efb1f93b6fa16dcba
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 8 00:26:19 2017 -0800
+
+    sent end : changes in ReversiServer RemotePlayer ReversiClient
+
+commit cd4b282b3bf83df5b5a0660cc4908be0cd38d1e6
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Dec 7 18:58:30 2017 -0800
+
+    sent end : changes in ReversiServer RemotePlayer ReversiClient
+
+commit 2dbecb07e12d063206fe2a981882607d41b44f80
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Dec 7 18:57:04 2017 -0800
+
+    sent end : changes in ReversiServer RemotePlayer ReversiClient
+
+commit c6c4120ac5528daa743162d2ea5ae6b53491d4f2
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Dec 7 21:55:56 2017 +0200
+
+    changed the design for how to implement remote player
+
+commit 6e2ee5f88aa2bf76b5139e4bba37ccc7cd61b2d7
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Dec 7 03:24:27 2017 -0800
+
+    some changes in gameFlow
+
+commit 2299de3a077cb072b214625cfd41daeab5a6c077
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Dec 7 11:53:21 2017 +0200
+
+    changed the design for how to implement remote player
+
+commit 4d3ef6fa35e0eda9993283c10466ab2b641ecdaa
+Merge: 100de4a 0c2b965
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Dec 7 11:53:08 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       src/client/src/GameFlow.cpp
+
+commit 100de4abbf3284aa03d9a1a7141d69f603703a7d
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Dec 7 11:52:46 2017 +0200
+
+    changed the design for how to implement remote player
+
+commit 0c2b965c92caab03a012fd283590db98296b94d9
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Dec 7 01:51:02 2017 -0800
+
+    some changes in ReversiClient and RemotePlayer and ReversiServer and create DemoPlayer
+
+commit e1fdaf282caad6d12a20e299d9dc8732883ae702
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Dec 7 11:49:55 2017 +0200
+
+    changed the design for how to implement remote player
+
+commit f7ea51909ca3e02988b87fdf5a6ac6a740f060f7
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Dec 7 11:48:51 2017 +0200
+
+    changed the design for how to implement remote player
+
+commit e67be4109d32faf5833f711672226c4ebdba54aa
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Dec 7 11:47:20 2017 +0200
+
+    changed the design for how to implement remote player
+
+commit 99a406c9bda82a0e184bc25362ecc29d8d95de70
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Dec 7 10:49:38 2017 +0200
+
+    changed the design for how to implement remote player
+
+commit 149e9183e7d4decb53303a69b0f6b7f799ced5ce
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Dec 7 10:41:32 2017 +0200
+
+    changed the design for how to implement remote player
+
+commit 0bbf7fe950a5048bcfc35d7dc2a71b3c314e0d57
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Dec 6 03:21:03 2017 -0800
+
+    some changes in ReversiClient and RemotePlayer and ReversiServer and create DemoPlayer
+
+commit e0d89c32e3372832f3075c2ed84ff3a1ccfb04c6
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 5 14:04:07 2017 -0800
+
+    some changes in ReversiClient and RemotePlayer and ReversiServer and create DemoPlayer
+
+commit 3c6c8ed61b90d3bfc554ac08ddc2638331691bb6
+Merge: c1faa77 339fc4d
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 5 13:23:24 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       src/client/src/RemotePlayer.cpp
+    #       src/client/src/main.cpp
+
+commit c1faa77f3f958ffb9e5b0017849a2659d13b1da6
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 5 13:21:38 2017 -0800
+
+    some changes in ReversiClient and RemotePlayer and ReversiServer and create DemoPlayer
+
+commit 339fc4d535cb87771dc9bddbe65e41b0926b436b
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 5 14:05:30 2017 +0200
+
+    editing
+
+commit 319bb5c0ebf90468c53d20034897c988f7fbcb0c
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Dec 4 16:55:14 2017 -0800
+
+    some changes in ReversiClient and RemotePlayer
+
+commit 40ed9be6b8f9e38e87dca097bef6ee4decc5dc72
+Merge: a7a9531 dbfc0d3
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Dec 4 13:25:40 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       src/client/gtest_src/Test_AIPlayer.cpp
+    #       src/client/gtest_src/Test_AIPlayer.h
+    #       src/client/gtest_src/Test_board.cpp
+    #       src/client/gtest_src/Test_board.h
+    #       src/client/gtest_src/Test_classicRules.cpp
+    #       src/client/gtest_src/Test_classicRules.h
+    #       src/client/gtest_src/main_test.cpp
+    #       src/client/src/AIPlayer.cpp
+    #       src/client/src/AIPlayer.h
+    #       src/client/src/Board.cpp
+    #       src/client/src/Board.h
+    #       src/client/src/BoardGraphic.cpp
+    #       src/client/src/BoardGraphic.h
+    #       src/client/src/Cell.h
+    #       src/client/src/ClassicRules.cpp
+    #       src/client/src/ClassicRules.h
+    #       src/client/src/ConsoleBoard.cpp
+    #       src/client/src/ConsoleBoard.h
+    #       src/client/src/ConsoleMenu.cpp
+    #       src/client/src/ConsoleMenu.h
+    #       src/client/src/ConsoleToken.cpp
+    #       src/client/src/ConsoleToken.h
+    #       src/client/src/ConsoleTokenFactory.cpp
+    #       src/client/src/ConsoleTokenFactory.h
+    #       src/client/src/GameFlow.cpp
+    #       src/client/src/GameFlow.h
+    #       src/client/src/GameRules.h
+    #       src/client/src/Menu.cpp
+    #       src/client/src/Menu.h
+    #       src/client/src/Player.cpp
+    #       src/client/src/Player.h
+    #       src/client/src/README.md
+    #       src/client/src/RealPlayer.cpp
+    #       src/client/src/RealPlayer.h
+    #       src/client/src/ReversiClient.cpp
+    #       src/client/src/ReversiClient.h
+    #       src/client/src/Token.cpp
+    #       src/client/src/Token.h
+    #       src/client/src/TokenFactory.h
+    #       src/client/src/Tools.h
+    #       src/client/src/main.cpp
+    #       src/server/ReversiServer.cpp
+    #       src/server/ReversiServer.h
+    #       src/server/main.cpp
+
+commit dbfc0d30881a4768220494d4194b81397f952160
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Dec 4 23:22:58 2017 +0200
+
+    commiting src
+
+commit a4f2cb453a995d4603f18b385b2712d9eac91fa6
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Dec 4 21:50:12 2017 +0200
+
+    commiting src
+
+commit 8fbb94b7265fd43fb5252cc90b7cd46f3f1b2896
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Dec 4 21:48:04 2017 +0200
+
+    commiting src
+
+commit 71f71c13534595306110254315a5dd097905e38a
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Dec 4 21:46:40 2017 +0200
+
+    commiting src
+
+commit a7a953116529da3299ed06fb7582cdf55b51fb18
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Dec 4 07:32:17 2017 -0800
+
+    Adding some classes like RemotePlayer Client and Server
+
+commit f2cbfef13c4834aa978560573a2500c643602c1c
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Dec 4 07:07:00 2017 -0800
+
+    Adding some classes like RemotePlayer Client and Server
+
+commit cd69fab9822a8f3ad40eaa231ee0952503d2df1b
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Dec 4 06:53:23 2017 -0800
+
+    Adding some classes like RemotePlayer Client and Server
+
+commit b057b38596c46bec64c537cc3453aa993b5ed5ce
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Wed Nov 29 11:20:11 2017 +0200
+
+    changing something in RealPlayer
+
+commit c80386db8e90e3e775ce4d43b844be70bb63501f
+Merge: d61bbb6 8a480ac
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Nov 28 13:59:15 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8a480ac42877dbe756ae13f755d1b652f5dc654d
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Nov 28 23:53:09 2017 +0200
+
+    changing something in RealPlayer
+
+commit d61bbb6e4149cf022212f6a42d961177fc28e8cb
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Nov 28 13:08:21 2017 -0800
+
+    Merge branch 'master' of /home/or/CLionProjects/Othello with conflicts.
+
+commit 2d800ac6ada1166481764fee466b02ae59058ce6
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Nov 28 20:21:30 2017 +0200
+
+    changing something in RealPlayer
+
+commit 567d53a8a5b3347f434ec9cb406c3ebe18b21e26
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Nov 28 15:25:37 2017 +0200
+
+    editing
+
+commit 8f9a118672b0fc9c14ea6c7f690c8b245e197d39
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Nov 27 15:28:46 2017 -0800
+
+    comments in Test_AIPlayer in do one turn tests
+
+commit 7a3f25f717336ef14bc7ca9aebbbac5cd001247e
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Nov 27 23:15:34 2017 +0200
+
+    editing
+
+commit 7e8f46bd410f5a52cffc8b522907c7f9f6b1cd64
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Nov 27 21:38:48 2017 +0200
+
+    editing
+
+commit 71855d6d9b227bfc160ddd65e4c2e419521f633e
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Nov 27 21:36:18 2017 +0200
+
+    editing
+
+commit 0dc77fb5867ee9db1cc25d0330d798bcf24b2105
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Nov 27 19:14:36 2017 +0200
+
+    editing
+
+commit e035986e7691caf56cbfa653b36e9580141efe83
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Nov 27 15:49:00 2017 +0200
+
+    editing
+
+commit e47777e471fbaf9c24acb2380518fa040fae598d
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 14:21:26 2017 -0800
+
+    little change in game flow
+
+commit 5d65aace1419e3ede6fadad3a38f4cb11933b05a
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 23:32:23 2017 +0200
+
+    editing
+
+commit 3f49a7b729051128be399e41fcf318f0e726464e
+Merge: f387aaa b90f702
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 23:32:07 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       gtest_src/Test_classicRules.cpp
+
+commit f387aaafd92c9546bcbca160042f1e143ec0e9e9
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 23:30:02 2017 +0200
+
+    editing
+
+commit b90f702e759c84be03f58e3347ede6b219dc464a
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 12:31:47 2017 -0800
+
+    test 2 functions of getLegalCoordinate and getLegalCoordinates in Test_classicRules
+
+commit 466d65e4871e3782d1d504733eda9fde6c701eca
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 22:06:57 2017 +0200
+
+    editing
+
+commit e95b43fbb459bac05da05b1c792141924be6dc58
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 07:09:17 2017 -0800
+
+    test 2 functions of getLegalCoordinate and getLegalCoordinates in Test_classicRules
+
+commit eb9f8186f2aded354b5026285e84d32092efae43
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 07:08:53 2017 -0800
+
+    test 2 functions of getLegalCoordinate and getLegalCoordinates in Test_classicRules
+
+commit 5fe0361be4daa484da3770d7dea319514bed188e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 07:06:34 2017 -0800
+
+    Merge branch 'master' of /home/or/CLionProjects/Othello with conflicts.
+
+commit a27d48cfbf196694f2c9224d5dba6eadf4d33fa7
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 16:55:37 2017 +0200
+
+    adding a method in test_classicRules
+
+commit 2b13757f444758fb5464c9c7109340ddd85d7556
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 16:54:57 2017 +0200
+
+    adding a method in test_classicRules
+
+commit 0ffa20f50a8ac26bc9574414cccd345069fea615
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 16:18:31 2017 +0200
+
+    modifying a method in ai player
+
+commit 6063e9263b4e5665806f96e47c99df4b6cc8128e
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 16:00:05 2017 +0200
+
+    modifying a method in ai player
+
+commit 7b2f42bb6ebfc0a79f576bda2fbcbe6e30062100
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 05:58:02 2017 -0800
+
+    test 2 functions of doOneTurn in Test_AIPlayer
+
+commit 781ec6efc32e34a7e1d525b914cb0ea6581143ac
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 15:50:06 2017 +0200
+
+    modifying a method in ai player
+
+commit 02f83d9c7f529c289f15d3a7aed1c15da9a37385
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 05:48:43 2017 -0800
+
+    test 2 functions of doOneTurn in Test_AIPlayer
+
+commit 6dfdc1bab45f548fec972054c83a88bfabc1c94a
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 05:43:50 2017 -0800
+
+    test 2 functions of doOneTurn in Test_AIPlayer
+
+commit 3d91376b07bbec310201719b002ad24f23280017
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 15:40:04 2017 +0200
+
+    modifying a method in ai player
+
+commit c1b1f4b7406dfe67ffb6e63eca2970fbcf7ac9ef
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 15:31:13 2017 +0200
+
+    modifying a method in ai player
+
+commit 24c292943d1ed105568555f174ea5dda72db52da
+Merge: bbb4cd2 7e982f9
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 15:28:59 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       gtest_src/Test_AIPlayer.cpp
+    #       gtest_src/Test_AIPlayer.h
+    #       src/AIPlayer.cpp
+
+commit bbb4cd21dad9dd9f2be08c356ccd4c6d8768f629
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 15:26:29 2017 +0200
+
+    modifying a method in ai player
+
+commit 7e982f95aa3e60b6eee30b868297e0776aad9f26
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 05:24:36 2017 -0800
+
+    test 2 functions of doOneTurn in Test_AIPlayer
+
+commit a265439bf62294435e387f8bf5ad9459cc876819
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 05:13:45 2017 -0800
+
+    test 2 functions of doOneTurn in Test_AIPlayer
+
+commit 4bfceff0b77a64acd6def2ddb6097c82cb62f101
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 04:59:35 2017 -0800
+
+    test 2 functions of doOneTurn in Test_AIPlayer
+
+commit ae608c52359fd2bc297ef4874eb6197ea4177057
+Merge: 807bf4b e0c99e5
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 03:33:30 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 807bf4b6720638f0145feea8eff9e5cc6e1fb80f
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 03:33:19 2017 -0800
+
+    test
+
+commit cb32dfddf4c570cd67fd38a95ac6b8c18762496b
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 03:32:50 2017 -0800
+
+    test
+
+commit e0c99e55cbfd1f7818c75a178ac849ff7ebb059b
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 13:30:17 2017 +0200
+
+    adding a method to ai player
+
+commit 35c8309de7810c650406830cc71531179a557274
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Nov 26 03:27:22 2017 -0800
+
+    test
+
+commit a7c2b5069b94122bf99f86afb64602759f539ddf
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sat Nov 25 17:09:12 2017 -0800
+
+    I do a little change in the game flow
+
+commit 61f8bd791a289d4536683d248855c0cde4f4b8a7
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 00:30:46 2017 +0200
+
+    adding a method to ai player
+
+commit 30e09409a997c146edbe5f5fbe4f1e6a62e0d560
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Nov 26 00:21:52 2017 +0200
+
+    adding test AIplayer files
+
+commit 048f157905e8ab35e536bbfc8a8e770f023dc6a6
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sat Nov 25 23:56:35 2017 +0200
+
+    adding test AIplayer files
+
+commit 2b768051433e1dea7bd6e4c39eda65e701d29b98
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sat Nov 25 23:20:24 2017 +0200
+
+    function in test_classicRules
+
+commit 2e4be3e0275714c04975e17ba930794f293d9ba4
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sat Nov 25 23:01:19 2017 +0200
+
+    function in test_classicRules
+
+commit 3a22abbc607019ffdd6ed5c0b67862a93785bb63
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sat Nov 25 22:10:15 2017 +0200
+
+    function in test_classicRules
+
+commit 071bf7a2da29b71c0ef96d781750a06f435cb025
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Nov 24 06:37:08 2017 -0800
+
+    test
+
+commit 706cbdcb85bf261142515262686f6e9ffa75c36a
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Nov 24 06:15:51 2017 -0800
+
+    test
+
+commit 8b6817fa480531d9df0dd6afb5512b8a9c212875
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Nov 24 15:48:17 2017 +0200
+
+    function in test_classicRules
+
+commit 6d8fc7727657a7629ea62d9b88d85c166b3b9364
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Nov 24 15:26:42 2017 +0200
+
+    getting ready for tests
+
+commit 40679513b136dc7378768b9289f375b8d5cc9461
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Nov 24 15:26:29 2017 +0200
+
+    getting ready for tests
+
+commit 8b08b0f94c1dab95aa6d2b8e94a5961b8882a6b9
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Nov 24 05:00:42 2017 -0800
+
+    test
+
+commit 33eab3ced426317834cfd01061e16c80d2916290
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Nov 24 04:43:40 2017 -0800
+
+    test
+
+commit 13e23d3662ae2be8e4a11eda6ab6bb15b37d39f0
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Nov 24 04:40:06 2017 -0800
+
+    test
+
+commit 7f9dd1c24d34546e8b7df39b66d6e88198d0ec08
+Merge: 5c21abe 57044ef
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Nov 24 02:33:43 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 57044ef76dd57f50e962f0dd3a2a78ced060c363
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 22:52:36 2017 +0200
+
+    getting ready for tests
+
+commit 164b4856b9826552885a7d1f3644d05074614294
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 22:51:58 2017 +0200
+
+    getting ready for tests
+
+commit 5c21abe3555589a4e48c234457dbfd6605432be0
+Merge: f0f899e d117390
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Nov 23 09:53:50 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       gtest_src/main_test.cpp
+
+commit d117390be58c20f94992dd985d7d2b45c9f33d5f
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 19:53:09 2017 +0200
+
+    getting ready for tests
+
+commit f0f899eaf8cb5b1e45c44e81121926e7c7b6de9e
+Merge: 7802061 a912887
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Nov 23 09:43:40 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a912887f276c0c480d679e066689e18b8c9807c8
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 19:38:03 2017 +0200
+
+    getting ready for tests
+
+commit 78020619ab76308304494cc5a17161c66ddba83b
+Merge: 060e15c b2d767a
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Nov 23 09:28:54 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b2d767a808fa992d9a62881ed513c79b1f43e1ef
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 19:28:37 2017 +0200
+
+    getting ready for tests
+
+commit 060e15cd2196bdc4a6bd3e969e6bb76b8e709e76
+Merge: 87b3419 5d41002
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Nov 23 09:28:01 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       CMakeLists.txt
+    #       gtest_src/test_Borad.cpp
+
+commit 5d41002b6adee6bd337d0b105aaa0a12a20e037b
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 19:25:55 2017 +0200
+
+    getting ready for tests
+
+commit 87b3419b8e97fa7309a044d26222e5ca660ead65
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Nov 23 09:21:41 2017 -0800
+
+    test
+
+commit 820ffe871452add81e3c0154023bf8846b375a25
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 18:35:31 2017 +0200
+
+    getting ready for tests
+
+commit fef66983702d84343958a4be8f67b5720b4e1511
+Merge: 3edbea1 9edff5f
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 18:35:03 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       src/Cell.h
+
+commit 3edbea177ecd10a5965217f848c0a7d6102bab57
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 18:34:44 2017 +0200
+
+    getting ready for tests
+
+commit 9edff5ff2842deccf0b4564932f63acbdbe1a0ca
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Nov 23 08:34:21 2017 -0800
+
+    test
+
+commit 8756e590dfd1d83a00fe7c88a36904b8e0904eb0
+Merge: fe2c3df 950026a
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 18:33:55 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       src/Cell.h
+
+commit 950026a617def462077d4b928bdb8a17b608b26b
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Nov 23 08:33:21 2017 -0800
+
+    test
+
+commit fe2c3df66a6040a7b216d167981ba86c2b19bd62
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 18:32:48 2017 +0200
+
+    getting ready for tests
+
+commit 9e55ed69e0ce483e64ef0c7e0790a8f365023e12
+Merge: a5956f7 e73b5ee
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Nov 23 08:30:32 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit e73b5ee925b3bf7d9d8b18ec8bbf0d31d9a1abed
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 18:30:07 2017 +0200
+
+    getting ready for tests
+
+commit 4066fc269b03d01d21acfdda928d86647f53031e
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 18:29:19 2017 +0200
+
+    getting ready for tests
+
+commit a5956f70c3f7cf1587a1b134f91ab31471414461
+Merge: 296b931 283ea2a
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Nov 23 06:45:03 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       src/Player.h
+
+commit 296b931756b0771aca6b5e00472f428d953b9911
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Nov 23 06:43:40 2017 -0800
+
+    I added the ConsoleMenu that inherit from Menu.
+
+commit 283ea2a8ade061437af840e84093a128e5aae064
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 16:31:07 2017 +0200
+
+    getting ready for tests
+
+commit 8abadd10f9edcd947f6fda9837549b6e99331676
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Nov 23 16:29:14 2017 +0200
+
+    getting ready for tests
+
+commit a165995b48cac923b57b01af92a3c354b8bacc20
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Nov 21 12:25:48 2017 +0200
+
+    made a few changes
+
+commit 7590395332d817f1adb86fcd7524f8344bdb1688
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Nov 21 01:05:16 2017 -0800
+
+    I added the ConsoleMenu that inherit from Menu.
+
+commit 2def3478511b9df820d75e3bf073b07bcc812cc0
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Nov 20 16:12:28 2017 -0800
+
+    I added the ConsoleMenu that implement from Menu.
+
+commit 7d0f3f03535abddd2600bb674e25d4fc366f8e1b
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Nov 20 11:01:13 2017 -0800
+
+    fixing a problem in the game flow
+
+commit 98f74cc8da120911034d713c3c7c5995d0e36a86
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Nov 20 10:55:40 2017 -0800
+
+    fixing a problem in the game flow
+
+commit 1b18a2fb50a212e285f8545fa10240af868e40ba
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Nov 20 19:37:53 2017 +0200
+
+    I added a method for the AIplayer to print what he just played
+
+commit 05b030b88523f90a51ccd3fc21ef561538660b68
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Nov 20 09:36:43 2017 -0800
+
+    I implemented the method calcTheMaxScoreForOneTurn
+
+commit 400da1f6436964868b16039ed516e47e9efe8545
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Nov 20 09:32:18 2017 -0800
+
+    I add some function to the console board in order to improve the oop of the project
+
+commit 37e976d2ee82277b8699c78945d1d67b28c541f7
+Merge: 4e0c4fb 232d12e
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Nov 20 19:26:38 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4e0c4fbf7d9bf2090636c57468e77d184ae68e5d
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Nov 20 19:26:26 2017 +0200
+
+    I added a AI class and started implementing the function and modified the gameFlow
+
+commit 232d12e3e2091c23b0b223da314b9101260f25b0
+Author: shulajz <33668592+shulajz@users.noreply.github.com>
+Date:   Wed Nov 15 10:23:33 2017 +0200
+
+    Create README.md
+
+commit 4080b0b5f3c4e2bd3e6f9c28730b06daab787f6d
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Wed Nov 15 10:03:23 2017 +0200
+
+    just another comment
+
+commit 60c5158b810691afbd44f97dabe1c44fa7722632
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Nov 14 21:15:11 2017 +0200
+
+    just another comment
+
+commit 845bb547e7c2288c0c27b62817901cc2be44a7e0
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Nov 14 21:11:10 2017 +0200
+
+    Initial commit
