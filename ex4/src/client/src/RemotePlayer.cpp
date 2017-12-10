@@ -15,7 +15,7 @@ RemotePlayer::RemotePlayer(TokenValue tv): needToPrint(true), printOnlyOneTime(t
     string ip;
     string port;
     ifstream myFile;
-    myFile.open("../../../exe/ipAndPort");
+    myFile.open("ipAndPort");
     if (myFile.is_open()) {
         myFile >> ip;
         myFile >> port;
