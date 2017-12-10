@@ -40,21 +40,6 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
                 setValue(initialCells[i].tv);
     }
 
-//    for(int i = 0; i < 6; i++) {
-//        for (int j = 0; j < 6; j++) {
-//            boardArr[i][j].setValue(Black);
-//        }
-//    }
-////        boardArr[4][1].setValue(Black);
-////        boardArr[4][4].setValue(Empty);
-////        boardArr[4][3].setValue(Empty);
-//// //       boardArr[3][3].setValue(White);
-//
-//        boardArr[3][1].setValue(White);
-//        boardArr[3][3].setValue(Empty);
-//        boardArr[1][5].setValue(Empty);
-//        //boardArr[3][3].setValue(White);
-//        boardArr[2][4].setValue(White);
 
         delete[] initialCells;
 

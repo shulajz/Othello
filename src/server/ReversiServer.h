@@ -29,7 +29,7 @@ private:
      */
     void sendValueOfClient(int clientSocket1, int clientSocket2);
 
-    bool isClientClosed(int clientSocket1 , int clientSocket2);
+    bool isClientClosed(int clientSocket1);
     bool clientStoppedCloseAllClients;
 };
 
