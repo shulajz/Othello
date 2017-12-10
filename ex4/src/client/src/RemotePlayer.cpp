@@ -15,7 +15,7 @@ RemotePlayer::RemotePlayer(TokenValue tv): needToPrint(true), printOnlyOneTime(t
     string ip;
     string port;
     ifstream myFile;
-    myFile.open("ipAndPort");
+    myFile.open("../../../exe/ipAndPort");
     if (myFile.is_open()) {
         myFile >> ip;
         myFile >> port;
@@ -84,6 +84,7 @@ void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
 }
 
 RemotePlayer::~RemotePlayer(){
+//    cout<<"bye bye remote" << endl;
     Coordinate coordinate;
     coordinate.row = End;
     coordinate.col = End;

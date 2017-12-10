@@ -12,7 +12,7 @@ using namespace std;
 int main() {
     string port;
     ifstream myFile;
-    myFile.open("portOnly");
+    myFile.open("../../exe/portOnly");
     if (myFile.is_open()) {
         myFile >> port;
         ReversiServer server(atoi(port.c_str()));
