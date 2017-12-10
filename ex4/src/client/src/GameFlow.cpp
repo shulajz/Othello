@@ -92,7 +92,7 @@ void GameFlow::ifNoValidCoordinates(vector<Coordinate>& validCoordinates,
         endGame = true;
     } else {
         //no possible moves for one player
-        curr_player->sendNoMove();
+        curr_player->sendNoMove(inputCoordinate);
 
         switchPlayer();
         m_boardGraphic.printWhosMove(curr_player->getValue());

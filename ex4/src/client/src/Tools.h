@@ -4,7 +4,7 @@
 
 #ifndef OTHELLO_TOOLS_H
 #define OTHELLO_TOOLS_H
-#define DIM 6
+#define DIM 5
 
 enum TokenValue {
     Black,

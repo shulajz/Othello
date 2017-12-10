@@ -51,7 +51,7 @@ int main() {
     players[White] = p2;
     Game gameFlow(classicRules, players, board, consoleBoard);
     gameFlow.run();
+    delete(players[0]);
     delete(players[1]);
-    delete(players[2]);
 
 }

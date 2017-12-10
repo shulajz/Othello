@@ -20,6 +20,7 @@ private:
     Board &m_board;
     TokenValue turn;
     BoardGraphic &m_boardGraphic;
+    bool noMove;
     bool first_move;
     Player* curr_player;
     Coordinate inputCoordinate;

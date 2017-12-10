@@ -76,7 +76,10 @@ void RemotePlayer::sendEndOfGame(Coordinate coordinate){
     client->sendEnd();
 }
 
-void RemotePlayer::sendNoMove(){
+void RemotePlayer::sendNoMove(Coordinate coordinate){
+    if (coordinate.row > 0) {
+        client->sendMove(coordinate);
+    }
     client->sendNoMove();
 }
 void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
@@ -85,9 +88,9 @@ void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
 
 RemotePlayer::~RemotePlayer(){
 //    cout<<"bye bye remote" << endl;
-    Coordinate coordinate;
-    coordinate.row = End;
-    coordinate.col = End;
-    sendEndOfGame(coordinate);
+//    Coordinate coordinate;
+//    coordinate.row = End;
+//    coordinate.col = End;
+//    sendEndOfGame(coordinate);
     delete(client);
 }

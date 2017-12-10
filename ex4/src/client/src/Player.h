@@ -33,7 +33,7 @@ public:
     TokenValue getIdentity();
     virtual void setTokenValue(TokenValue tv1);
     virtual void sendEndOfGame(Coordinate inputCoordinate);
-    virtual void sendNoMove();
+    virtual void sendNoMove(Coordinate coordinate){};
     virtual void printNoMoves(BoardGraphic & m_boardGraphic);
     virtual ~ Player();
 

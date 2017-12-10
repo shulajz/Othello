@@ -5,7 +5,7 @@
 #include "Game.h"
 Game ::Game(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic):
         m_gameRules(gameRules),m_board(board), m_boardGraphic(boardGraphic),
-        first_move(true), needToPrint(true), noMovesForAll(false) ,turn (Black)  {
+        first_move(true), needToPrint(true), noMovesForAll(false) ,turn (Black), noMove(false)  {
     this->players = players;
     curr_player = players[Black];
     inputCoordinate.row = 0;
@@ -81,7 +81,7 @@ void Game ::ifValidCoordinates(vector<Coordinate>& validCoordinates) {
                            inputCoordinate, &m_boardGraphic, curr_player);
     //check if there is valid coordinates if so, update the value of the inputCoordinate in the board
     //and flip tokens.
-    if(inputCoordinate.row > 0 && inputCoordinate.col>0){
+    if(inputCoordinate.row > 0 && inputCoordinate.col > 0){
         m_board.updateValue(inputCoordinate, curr_player->getValue());
         m_gameRules.flipTokens(inputCoordinate, m_board, curr_player);
     }
@@ -103,8 +103,13 @@ void Game::ifNoValidCoordinates(vector<Coordinate>& validCoordinates) {
         noMovesForAll = true;
     } else {
         //no possible moves for one player
-        curr_player->sendNoMove();
         switchPlayer();
+//        noMove = true;
+
+        curr_player->sendNoMove(inputCoordinate);
+        inputCoordinate.row = NoMove;
+        inputCoordinate.col = NoMove;
+//        switchPlayer();
         //print No Moves situation in the Graphic tool.
         curr_player->printNoMoves(m_boardGraphic);
     }
