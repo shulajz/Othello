@@ -9,24 +9,55 @@ include_directories(lib/googletest-release-1.8.0/googlemock/include)
 
 
 
-set(SOURCE_TEST_FILES src/client/gtest_src/main_test.cpp src/client/gtest_src/Test_board.cpp
-        src/client/gtest_src/Test_board.h src/client/gtest_src/Test_classicRules.cpp src/client/gtest_src/Test_classicRules.h
-        src/client/gtest_src/Test_AIPlayer.cpp src/client/gtest_src/Test_AIPlayer.h)
+set(SOURCE_TEST_FILES ex4/src/client/gtest_src/main_test.cpp
+        ex4/src/client/gtest_src/Test_board.cpp
+        ex4/src/client/gtest_src/Test_board.h
+        ex4/src/client/gtest_src/Test_classicRules.cpp
+        ex4/src/client/gtest_src/Test_classicRules.h
+        ex4/src/client/gtest_src/Test_AIPlayer.cpp
+        ex4/src/client/gtest_src/Test_AIPlayer.h)
 
-set(OTHELLO_MAIN src/client/src/main )
-set(SOURCE_FILES src/client/src/Game.cpp src/client/src/Game.h src/client/src/Board.cpp src/client/src/Board.h
-        src/client/src/ReversiClient.cpp src/client/src/ReversiClient.h
-        src/client/src/RemotePlayer.cpp src/client/src/RemotePlayer.h
-        src/client/src/Cell.h src/client/src/ClassicRules.cpp src/client/src/ClassicRules.h
-        src/client/src/ConsoleBoard.cpp src/client/src/ConsoleBoard.h src/client/src/ConsoleToken.cpp
-        src/client/src/ConsoleToken.h src/client/src/ConsoleTokenFactory.cpp
-        src/client/src/ConsoleTokenFactory.h src/client/src/GameFlow.cpp src/client/src/GameFlow.h
-        src/client/src/GameRules.h src/client/src/Player.h src/client/src/RealPlayer.cpp src/client/src/RealPlayer.h
-        src/client/src/Token.cpp src/client/src/Token.h src/client/src/TokenFactory.h src/client/src/Tools.h src/client/src/BoardGraphic.h
-        src/client/src/Player.cpp src/client/src/AIPlayer.cpp src/client/src/AIPlayer.h src/client/src/BoardGraphic.cpp
-        src/client/src/Menu.cpp src/client/src/Menu.h src/client/src/ConsoleMenu.cpp src/client/src/ConsoleMenu.h)
+set(OTHELLO_MAIN ex4/src/client/src/main )
+set(SOURCE_FILES ex4/src/client/src/Game.cpp
+        ex4/src/client/src/Game.h
+        ex4/src/client/src/Board.cpp
+        ex4/src/client/src/Board.h
+        ex4/src/client/src/ReversiClient.cpp
+        ex4/src/client/src/ReversiClient.h
+        ex4/src/client/src/RemotePlayer.cpp
+        ex4/src/client/src/RemotePlayer.h
+        ex4/src/client/src/Cell.h
+        ex4/src/client/src/ClassicRules.cpp
+        ex4/src/client/src/ClassicRules.h
+        ex4/src/client/src/ConsoleBoard.cpp
+        ex4/src/client/src/ConsoleBoard.h
+        ex4/src/client/src/ConsoleToken.cpp
+        ex4/src/client/src/ConsoleToken.h
+        ex4/src/client/src/ConsoleTokenFactory.cpp
+        ex4/src/client/src/ConsoleTokenFactory.h
+        ex4/src/client/src/GameFlow.cpp
+        ex4/src/client/src/GameFlow.h
+        ex4/src/client/src/GameRules.h
+        ex4/src/client/src/Player.h
+        ex4/src/client/src/RealPlayer.cpp
+        ex4/src/client/src/RealPlayer.h
+        ex4/src/client/src/Token.cpp
+        ex4/src/client/src/Token.h
+        ex4/src/client/src/TokenFactory.h
+        ex4/src/client/src/Tools.h
+        ex4/src/client/src/BoardGraphic.h
+        ex4/src/client/src/Player.cpp
+        ex4/src/client/src/AIPlayer.cpp
+        ex4/src/client/src/AIPlayer.h
+        ex4/src/client/src/BoardGraphic.cpp
+        ex4/src/client/src/Menu.cpp
+        ex4/src/client/src/Menu.h
+        ex4/src/client/src/ConsoleMenu.cpp
+        ex4/src/client/src/ConsoleMenu.h)
 
-set(SERVER src/server/ReversiServer.cpp src/server/ReversiServer.h src/server/main.cpp)
+set(SERVER ex4/src/server/ReversiServer.cpp
+        ex4/src/server/ReversiServer.h
+        ex4/src/server/main.cpp)
 add_test(runTests runTests)
 add_test(Server Server)
 add_executable(Server ${OTHELLO_FILES} ${SERVER})
