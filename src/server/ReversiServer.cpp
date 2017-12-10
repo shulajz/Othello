@@ -96,6 +96,10 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
         cout << "Error reading row" << endl;
         return;
     }
+    if(arg1 == 0){
+        endGame = true;
+        return;
+    }
     if(arg1 > 0 || arg1 == NoMove) {
         n = read(clientSocket1, &arg2, sizeof(arg2));
         if (n == -1) {

@@ -84,5 +84,9 @@ void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
 }
 
 RemotePlayer::~RemotePlayer(){
+    Coordinate coordinate;
+    coordinate.row = End;
+    coordinate.col = End;
+    sendEndOfGame(coordinate);
     delete(client);
 }

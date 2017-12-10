@@ -21,6 +21,7 @@ public:
     TokenValue getTokenValueOfPlayer();
     void sendEnd();
     void sendNoMove();
+    ~ReversiClient();
 
 private:
     const char *serverIP;
