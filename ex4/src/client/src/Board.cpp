@@ -55,6 +55,13 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
     boardArr[3][4].setValue(Black);
     boardArr[4][4].setValue(Black);
 
+
+
+//    boardArr[3][1].setValue(White);
+//    boardArr[3][3].setValue(Empty);
+//    boardArr[1][5].setValue(Empty);
+//    boardArr[2][4].setValue(White);
+
 //    for(int i = 0; i < 6; i++) {
 //        for (int j = 0; j < 6; j++) {
 //            boardArr[i][j].setValue(Black);
