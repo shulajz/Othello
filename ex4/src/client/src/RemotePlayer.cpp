@@ -11,7 +11,7 @@
 
 using namespace std;
 
-RemotePlayer::RemotePlayer(TokenValue tv): needToPrint(true), printOnlyOneTime(true) {
+RemotePlayer::RemotePlayer(TokenValue tv): needToPrint(true), printOnlyOneTime(true), needToSendMove(true) {
     string ip;
     string port;
     ifstream myFile;
@@ -42,10 +42,9 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
     // to wait to the other player to do is ove
     if (needToPrint) {
         boardGraphic->printSpecialSituation(WaitToMove);
-        needToPrint = true;
     }
-
-    if (input.row && needToPrint) {
+    needToPrint = true;
+    if (input.row && needToPrint && needToSendMove) {
         //this is not the first move
         client->sendMove(input);
     }
@@ -61,6 +60,7 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
     if (input.row == End){
         client->sendEnd();
     }
+    needToSendMove = true;
 }
 
 void RemotePlayer:: printWhatThePlayerPlayed(Coordinate coordinate,
@@ -87,7 +87,9 @@ void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
 }
 
 RemotePlayer::~RemotePlayer(){
-
     delete(client);
 }
 
+void RemotePlayer:: setNeedToSendMove(bool boolean){
+    needToSendMove = boolean;
+}

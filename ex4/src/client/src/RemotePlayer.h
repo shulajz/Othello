@@ -21,6 +21,7 @@ public:
                                   BoardGraphic *boardGraphic);
     void sendEndOfGame(Coordinate coordinate);
     void sendNoMove();
+    void  setNeedToSendMove(bool boolean);
     void sendMove(Coordinate coordinate);
     void printNoMoves(BoardGraphic&  m_boardGraphic);
     ~RemotePlayer();
@@ -29,6 +30,7 @@ private:
     ReversiClient* client;
     bool needToPrint;
     bool printOnlyOneTime;
+    bool needToSendMove;
 };
 
 
