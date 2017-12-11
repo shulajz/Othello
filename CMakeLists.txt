@@ -35,8 +35,6 @@ set(SOURCE_FILES ex4/src/client/src/Game.cpp
         ex4/src/client/src/ConsoleToken.h
         ex4/src/client/src/ConsoleTokenFactory.cpp
         ex4/src/client/src/ConsoleTokenFactory.h
-        ex4/src/client/src/GameFlow.cpp
-        ex4/src/client/src/GameFlow.h
         ex4/src/client/src/GameRules.h
         ex4/src/client/src/Player.h
         ex4/src/client/src/RealPlayer.cpp

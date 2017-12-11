@@ -20,7 +20,8 @@ public:
     void printWhatThePlayerPlayed(Coordinate coordinate,
                                   BoardGraphic *boardGraphic);
     void sendEndOfGame(Coordinate coordinate);
-    void sendNoMove(Coordinate coordinate);
+    void sendNoMove();
+    void sendMove(Coordinate coordinate);
     void printNoMoves(BoardGraphic&  m_boardGraphic);
     ~RemotePlayer();
 

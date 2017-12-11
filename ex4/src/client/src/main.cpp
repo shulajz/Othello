@@ -6,9 +6,7 @@
 */
 
 #include "Tools.h"
-
 #include "Board.h"
-#include "GameFlow.h"
 #include "RealPlayer.h"
 #include "ClassicRules.h"
 #include "ConsoleTokenFactory.h"

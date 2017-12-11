@@ -48,7 +48,6 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
     if (input.row && needToPrint) {
         //this is not the first move
         client->sendMove(input);
-
     }
     input = client->receiveMove();
     //if the input present NoMove situation
@@ -75,22 +74,20 @@ void RemotePlayer::sendEndOfGame(Coordinate coordinate){
     }
     client->sendEnd();
 }
-
-void RemotePlayer::sendNoMove(Coordinate coordinate){
-    if (coordinate.row > 0) {
-        client->sendMove(coordinate);
-    }
+void RemotePlayer::sendNoMove(){
     client->sendNoMove();
 }
+
+void RemotePlayer::sendMove(Coordinate coordinate){
+    client->sendMove(coordinate);
+}
+
 void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
     m_boardGraphic.printSpecialSituation(NoMoveForTheRival);
 }
 
 RemotePlayer::~RemotePlayer(){
-//    cout<<"bye bye remote" << endl;
-//    Coordinate coordinate;
-//    coordinate.row = End;
-//    coordinate.col = End;
-//    sendEndOfGame(coordinate);
+
     delete(client);
 }
+

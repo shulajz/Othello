@@ -95,6 +95,9 @@ void Game ::ifValidCoordinates(vector<Coordinate>& validCoordinates) {
 void Game::ifNoValidCoordinates(vector<Coordinate>& validCoordinates) {
     //switching to the other player in order to check
     // if he's got any legal moves
+    if(!curr_player->isRealPlayer()) {
+        noMove = true;
+    }
     switchPlayer();
     m_gameRules.getLegalCoordinates(m_board, curr_player, validCoordinates);
     if (validCoordinates.empty()) // checking if the other player has any legal moves
@@ -102,16 +105,18 @@ void Game::ifNoValidCoordinates(vector<Coordinate>& validCoordinates) {
         m_boardGraphic.printSpecialSituation(NoMovesForAll);
         noMovesForAll = true;
     } else {
-        //no possible moves for one player
-        switchPlayer();
-//        noMove = true;
 
-        curr_player->sendNoMove(inputCoordinate);
-        inputCoordinate.row = NoMove;
-        inputCoordinate.col = NoMove;
-//        switchPlayer();
+        //no possible moves for one player
+
+        curr_player->sendNoMove();
+        switchPlayer();
+        if (noMove && inputCoordinate.row >0) {
+            curr_player->sendMove(inputCoordinate);
+            noMove = false;
+        }
         //print No Moves situation in the Graphic tool.
         curr_player->printNoMoves(m_boardGraphic);
+
     }
     needToPrint = false;
 }

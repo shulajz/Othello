@@ -56,6 +56,8 @@ void Player :: setTokenValue(TokenValue tv1) {
     tv = tv1;
 }
 
+void Player ::sendMove(Coordinate coordinate){}
+
 void Player ::printNoMoves(BoardGraphic&  m_boardGraphic){
     m_boardGraphic.printWhosMove(this->getValue());
     m_boardGraphic.printSpecialSituation(Next);
@@ -63,6 +65,7 @@ void Player ::printNoMoves(BoardGraphic&  m_boardGraphic){
 
 void Player ::sendEndOfGame(Coordinate inputCoordinate){}
 
-//void  Player ::sendNoMove(Coordinate inputCoordinate) {}
+
+void Player ::sendNoMove(){}
 
 Player ::~ Player(){}

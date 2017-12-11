@@ -33,12 +33,12 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
     }
 
     //one teo three
-
-    for(int i = 0; i < NUM_OF_INITIAL_CELLS; i++) {
-        //set values to the initial cells
-        boardArr[initialCells[i].coordinate.row][initialCells[i].coordinate.col].
-                setValue(initialCells[i].tv);
-    }
+//
+//    for(int i = 0; i < NUM_OF_INITIAL_CELLS; i++) {
+//        //set values to the initial cells
+//        boardArr[initialCells[i].coordinate.row][initialCells[i].coordinate.col].
+//                setValue(initialCells[i].tv);
+//    }
 
     for(int i = 1; i < 5; i++) {
         for (int j = 1; j < 5; j++) {
@@ -54,6 +54,18 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
     boardArr[2][4].setValue(Black);
     boardArr[3][4].setValue(Black);
     boardArr[4][4].setValue(Black);
+
+//    for(int i = 0; i < 6; i++) {
+//        for (int j = 0; j < 6; j++) {
+//            boardArr[i][j].setValue(Black);
+//        }
+//    }
+//////        boardArr[4][1].setValue(Black);
+//////        boardArr[4][4].setValue(Empty);
+//////        boardArr[4][3].setValue(Empty);
+////// //       boardArr[3][3].setValue(White);
+////
+//        boardArr[3][1].setValue(White);
 //        boardArr[3][3].setValue(Empty);
 //        boardArr[1][5].setValue(Empty);
 //        //boardArr[3][3].setValue(White);
