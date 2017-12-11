@@ -32,11 +32,26 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
         boardArr[i] = pTokenFactory.Create(dimensions);
     }
 
-    for(int i = 0; i < NUM_OF_INITIAL_CELLS; i++) {
-        //set values to the initial cells
-        boardArr[initialCells[i].coordinate.row][initialCells[i].coordinate.col].
-                setValue(initialCells[i].tv);
+//    for(int i = 0; i < NUM_OF_INITIAL_CELLS; i++) {
+//        //set values to the initial cells
+//        boardArr[initialCells[i].coordinate.row][initialCells[i].coordinate.col].
+//                setValue(initialCells[i].tv);
+//    }
+    for(int i = 1; i < 6; i++) {
+        for (int j = 1; j < 6; j++) {
+            boardArr[i][j].setValue(Empty);
+        }
     }
+    boardArr[1][3].setValue(White);
+    boardArr[2][3].setValue(White);
+
+    boardArr[1][4].setValue(Black);
+    boardArr[2][4].setValue(Black);
+
+
+    boardArr[1][5].setValue(Black);
+    boardArr[2][5].setValue(White);
+
     delete[] initialCells;
 
 }

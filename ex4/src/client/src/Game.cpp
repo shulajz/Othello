@@ -106,9 +106,14 @@ void Game::ifNoValidCoordinates(vector<Coordinate>& validCoordinates) {
         noMovesForAll = true;
     } else {
 
+
         //no possible moves for one player
 
+        ///no possible moves for one player/
+
+
         curr_player->sendNoMove();
+        curr_player->setNeedToSendMove(false);
         switchPlayer();
         if (noMove && inputCoordinate.row >0) {
             curr_player->sendMove(inputCoordinate);
@@ -116,7 +121,6 @@ void Game::ifNoValidCoordinates(vector<Coordinate>& validCoordinates) {
         }
         //print No Moves situation in the Graphic tool.
         curr_player->printNoMoves(m_boardGraphic);
-
     }
     needToPrint = false;
 }

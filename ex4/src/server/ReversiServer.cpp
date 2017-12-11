@@ -13,7 +13,7 @@
 
 using namespace std;
 
-#define MAX_CONNECTED_CLIENTS 10
+#define MAX_CONNECTED_CLIENTS 2
 
 ReversiServer::ReversiServer(int port): port(port),
                                         serverSocket(0),
@@ -108,7 +108,7 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
         if (arg1 == NoMove){
             cout<<"Got No Move"<<endl;
         } else {
-//            cout << "NOMOVE:Got Move: row: " << arg1 << " col: " << arg2 << endl;
+            cout << "Got Move: row: " << arg1 << " col: " << arg2 << endl;
         }
         int moveToSendToOtherClient[2];
         moveToSendToOtherClient[0] = arg1;

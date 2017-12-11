@@ -42,10 +42,9 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
     // to wait to the other player to do is ove
     if (needToPrint) {
         boardGraphic->printSpecialSituation(WaitToMove);
-        needToPrint = true;
     }
-
-    if (input.row && needToPrint && needToSendMove) {
+    needToPrint = true;
+    if (input.row && needToSendMove) {
         //this is not the first move
         client->sendMove(input);
     }
@@ -91,6 +90,7 @@ RemotePlayer::~RemotePlayer(){
 
     delete(client);
 }
+
 void RemotePlayer:: setNeedToSendMove(bool boolean){
     needToSendMove = false;
 }
