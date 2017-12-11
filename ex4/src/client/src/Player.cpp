@@ -69,3 +69,5 @@ void Player ::sendEndOfGame(Coordinate inputCoordinate){}
 void Player ::sendNoMove(){}
 
 Player ::~ Player(){}
+
+void Player :: setNeedToSendMove(bool boolean){}
