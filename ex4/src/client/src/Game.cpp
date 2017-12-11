@@ -49,7 +49,7 @@ void Game :: playOneTurn(){
     //print board unless there is no possible move for the previous player
     if ((needToPrint||curr_player->isRealPlayer())) {
         m_board.draw();
-      //print the move that rival do.
+        //print the move that rival do.
         if (!first_move && (needToPrint)
             && !players[!curr_player->getValue()]->isRealPlayer()) {
             if (inputCoordinate.row != NoMove) {
@@ -71,6 +71,7 @@ void Game :: playOneTurn(){
         ifNoValidCoordinates(validCoordinates);
     }
     switchPlayer();
+
 }
 
 void Game ::ifValidCoordinates(vector<Coordinate>& validCoordinates) {
@@ -89,7 +90,6 @@ void Game ::ifValidCoordinates(vector<Coordinate>& validCoordinates) {
         switchPlayer();
         needToPrint = false;
     }
-
 }
 
 void Game::ifNoValidCoordinates(vector<Coordinate>& validCoordinates) {
@@ -107,8 +107,8 @@ void Game::ifNoValidCoordinates(vector<Coordinate>& validCoordinates) {
     } else {
 
         //no possible moves for one player
+
         curr_player->sendNoMove();
-        //curr_player->setNeedToSendMove(false);
         switchPlayer();
         if (noMove && inputCoordinate.row >0) {
             curr_player->sendMove(inputCoordinate);
@@ -124,7 +124,7 @@ void Game::ifNoValidCoordinates(vector<Coordinate>& validCoordinates) {
 void Game:: switchPlayer(){
     if (curr_player == players[turn]){
         curr_player = players[!turn];
-    }else {
+    }else{
         curr_player = players[turn];
     }
 }

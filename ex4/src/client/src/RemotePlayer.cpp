@@ -3,9 +3,9 @@
 //
 
 #include "RemotePlayer.h"
-#include "ReversiClient.h"
+
 #include "GameRules.h"
-#include <iostream>
+
 #include <cstdlib>
 #include <fstream>
 
@@ -42,8 +42,9 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
     // to wait to the other player to do is ove
     if (needToPrint) {
         boardGraphic->printSpecialSituation(WaitToMove);
+        needToPrint = true;
     }
-    needToPrint = true;
+
     if (input.row && needToPrint && needToSendMove) {
         //this is not the first move
         client->sendMove(input);
@@ -51,7 +52,7 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
     input = client->receiveMove();
     //if the input present NoMove situation
     if (input.row == NoMove){
-       //if there is no move the player need to stay remote player and not to change
+        //if there is no move the player need to stay remote player and not to change
         // his turn to the real player, so we don't want in his next time
         // the remote will do is turn will print WaitToMove or send move.
         needToPrint = false;
@@ -64,7 +65,7 @@ void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
 }
 
 void RemotePlayer:: printWhatThePlayerPlayed(Coordinate coordinate,
-                                          BoardGraphic *boardGraphic) {
+                                             BoardGraphic *boardGraphic) {
     boardGraphic->printThePlayersChoice(tv, coordinate);
 }
 
@@ -87,9 +88,9 @@ void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
 }
 
 RemotePlayer::~RemotePlayer(){
+
     delete(client);
 }
-
 void RemotePlayer:: setNeedToSendMove(bool boolean){
-    needToSendMove = boolean;
+    needToSendMove = false;
 }

@@ -59,7 +59,6 @@ Coordinate ReversiClient::receiveMove() {
     if (n == -1) {
         throw "Error reading move from the socket";
     }
-
     Coordinate moveReceived;
     moveReceived.row = moveReceivedFromOtherPlayer[0];
     moveReceived.col = moveReceivedFromOtherPlayer[1];
@@ -70,8 +69,10 @@ void ReversiClient::sendMove(Coordinate coordinate) {
     // Write the move to the socket
     int row = coordinate.row;
     int col = coordinate.col;
+
     int n = write(clientSocket, &row, sizeof(row));
     if (n == -1) {
+
         throw "Error writing row to socket";
     }
     n = write(clientSocket, &col, sizeof(col));
@@ -86,6 +87,7 @@ void ReversiClient::sendNoMove() {
     int noMove = NoMove;
     int n = write(clientSocket, &noMove, sizeof(noMove));
     if (n == -1) {
+
         throw "Error writing row to socket";
     }
     n = write(clientSocket, &noMove, sizeof(noMove));

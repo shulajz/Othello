@@ -21,9 +21,9 @@ public:
                                   BoardGraphic *boardGraphic);
     void sendEndOfGame(Coordinate coordinate);
     void sendNoMove();
-    void  setNeedToSendMove(bool boolean);
     void sendMove(Coordinate coordinate);
     void printNoMoves(BoardGraphic&  m_boardGraphic);
+    void setNeedToSendMove(bool boolean);
     ~RemotePlayer();
 
 private:
@@ -33,5 +33,5 @@ private:
     bool needToSendMove;
 };
 
-
 #endif //OTHELLO_REMOTEPLAYER_H
+
