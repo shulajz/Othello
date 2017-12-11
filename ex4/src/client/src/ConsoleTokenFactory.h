@@ -10,7 +10,6 @@
 class ConsoleTokenFactory: public TokenFactory {
 public:
 
-    //virtual Token* Create();
     virtual Token* Create(int);
 };
 

@@ -16,7 +16,15 @@ class ReversiClient {
 public:
     ReversiClient(const char *serverIP, int serverPort);
     void connectToServer();
+    /**
+     * send a coordinate to the other player
+     * @param coordinate 
+     */
     void sendMove(Coordinate coordinate);
+    /**
+     * receive a coordinate from the other player
+     * @return 
+     */
     Coordinate receiveMove();
     TokenValue getTokenValueOfPlayer();
     void sendEnd();

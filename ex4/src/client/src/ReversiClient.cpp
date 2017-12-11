@@ -55,7 +55,7 @@ Coordinate ReversiClient::receiveMove() {
     // read the Move from the socket
     int moveReceivedFromOtherPlayer[2];
 
-    int n = read(clientSocket, &moveReceivedFromOtherPlayer, sizeof(moveReceivedFromOtherPlayer));
+    int n = read(clientSocket, moveReceivedFromOtherPlayer, sizeof(moveReceivedFromOtherPlayer));
     if (n == -1) {
         throw "Error reading move from the socket";
     }
@@ -67,6 +67,7 @@ Coordinate ReversiClient::receiveMove() {
 
 void ReversiClient::sendMove(Coordinate coordinate) {
     // Write the move to the socket
+//    cout << "sendMove of CLient: row"<< coordinate.row << "col: " << coordinate.col << endl;
     int row = coordinate.row;
     int col = coordinate.col;
 
