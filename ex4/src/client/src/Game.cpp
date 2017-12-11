@@ -106,7 +106,7 @@ void Game::ifNoValidCoordinates(vector<Coordinate>& validCoordinates) {
         noMovesForAll = true;
     } else {
 
-        //no possible moves for one player
+        ///no possible moves for one player
 
         curr_player->sendNoMove();
         switchPlayer();
