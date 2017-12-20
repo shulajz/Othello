@@ -67,7 +67,7 @@ Coordinate ReversiClient::receiveMove() {
 
 void ReversiClient::sendMove(Coordinate coordinate) {
     // Write the move to the socket
-//    cout << "sendMove of CLient: row"<< coordinate.row << "col: " << coordinate.col << endl;
+    cout << "sendMove of CLient: row"<< coordinate.row << "col: " << coordinate.col << endl;
     int row = coordinate.row;
     int col = coordinate.col;
 

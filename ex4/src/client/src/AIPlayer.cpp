@@ -15,6 +15,7 @@ void AIPlayer :: doOneTurn(GameRules *gameRules, Board &board,
                    vector<Coordinate> &coordinates, Coordinate &input,
                            BoardGraphic *boardGraphic, Player *player)  {
     vector<int> minOfAllMoves;
+//    minOfAllMoves.push_back(0);
     Coordinate computerMove;
 
     for(int i = 0; i < coordinates.size(); i++) {
@@ -36,15 +37,20 @@ void AIPlayer :: doOneTurn(GameRules *gameRules, Board &board,
     //we want to get now the minimum score of the real
     //player and update the input of the AIPlayer
     // with the minimum score.
-    int minOfAllMovesParam = minOfAllMoves[0];
-    input.row = coordinates[0].row;
-    input.col = coordinates[0].col;
-    for(int k = 0; k < minOfAllMoves.size(); k++) {
-        if(minOfAllMoves[k] < minOfAllMovesParam) {
-            minOfAllMovesParam = minOfAllMoves[k];
-            input.row = coordinates[k].row;
-            input.col = coordinates[k].col;
+    if(!minOfAllMoves.empty()) {
+        int minOfAllMovesParam = minOfAllMoves[0];
+        input.row = coordinates[0].row;
+        input.col = coordinates[0].col;
+        for (int k = 0; k < minOfAllMoves.size(); k++) {
+            if (minOfAllMoves[k] < minOfAllMovesParam) {
+                minOfAllMovesParam = minOfAllMoves[k];
+                input.row = coordinates[k].row;
+                input.col = coordinates[k].col;
+            }
         }
+    } else {
+        input.row = NoMove;
+        input.col = NoMove;
     }
 }
 

@@ -4,7 +4,7 @@
 
 #ifndef OTHELLO_TOOLS_H
 #define OTHELLO_TOOLS_H
-#define DIM 6
+#define DIM 5
 
 enum TokenValue {
     Black,
@@ -16,7 +16,7 @@ enum Situation {
 };
 
 enum StatusForClient {
-    NoMove = -2, End = -3
+    NoMove = -2, End = -3,
 };
 
 class Tools {

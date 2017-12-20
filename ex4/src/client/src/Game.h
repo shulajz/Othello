@@ -25,12 +25,12 @@ private:
     Player* curr_player;
     Coordinate inputCoordinate;
     bool needToPrint;
-    bool noMovesForAll;
+    bool thereIsAMoveForOnePlayer;
     void  printStatus();
     void playOneTurn();
-    void ifNoValidCoordinates(vector<Coordinate>& validCoordinates);
-    void ifValidCoordinates(vector<Coordinate>& validCoordinates);
+    void handleOnePlayerHasAMove(vector<Coordinate>& validCoordinates);
     void switchPlayer();
+    bool rivalHasAMove();
 };
 
 
