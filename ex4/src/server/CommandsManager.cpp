@@ -18,7 +18,7 @@ CommandsManager::CommandsManager(vector<Game> &listOfGames, int socket):
     commandsMap["close"] = new CommandClose(listOfGames, socket);
     commandsMap["listGames"] = new CommandGetList(listOfGames, socket);
     commandsMap["join"] = new CommandJoin(listOfGames, socket);
-    commandsMap["play"] = new CommandPlay(listOfGames, socket);
+//    commandsMap["play"] = new CommandPlay(listOfGames, socket);
 
 }
 void CommandsManager::executeCommand(string
@@ -26,6 +26,7 @@ void CommandsManager::executeCommand(string
     Command *commandObj = commandsMap[command];
     commandObj->execute(args);
 }
+
 CommandsManager::~CommandsManager() {
     map<string, Command *>::iterator it;
     for (it = commandsMap.begin(); it !=

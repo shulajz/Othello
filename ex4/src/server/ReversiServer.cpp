@@ -115,6 +115,8 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
     } else if (arg1 == End) {
         cout << "Got End" << endl;
         endGame = true;
+    } else if(arg1 == 0) {
+        endGame = true;
     }
     
 }
