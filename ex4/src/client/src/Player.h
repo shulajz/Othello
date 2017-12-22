@@ -6,7 +6,7 @@
 #define OTHELLO_PLAYER_H
 
 #include "Cell.h"
-#include "ReversiClient.h"
+
 #include "BoardGraphic.h"
 #include <vector>
 using namespace std;

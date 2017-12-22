@@ -8,10 +8,8 @@
 using namespace std;
 
 #include <vector>
-#include <list>
-#include <iostream>
 #include "Board.h"
-#include "TokenFactory.h"
+
 
 #define NUM_OF_INITIAL_CELLS 4
 

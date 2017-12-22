@@ -3,16 +3,12 @@
 //
 
 #include "RemotePlayer.h"
-
-#include "GameRules.h"
-#include "Menu.h"
-
 #include <cstdlib>
 #include <fstream>
 
 using namespace std;
 
-RemotePlayer::RemotePlayer(TokenValue tv, Menu* subMenu){
+RemotePlayer::RemotePlayer(Menu* subMenu){
     string ip;
     string port;
     ifstream myFile;
@@ -79,7 +75,7 @@ void RemotePlayer:: subMenuForTheRemotePlayer(Menu* subMenu){
     string command;
     do {
         command = subMenu->getChoose();
-        client->sendCommand(command);
+        //client->sendCommand(command, subMenu);
 
     }while (command == "list_games");
     subMenu->printSpecialSituation(WaitToJoin);

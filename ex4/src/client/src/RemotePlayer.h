@@ -7,12 +7,11 @@
 
 #include "Player.h"
 #include "ReversiClient.h"
-#include "Menu.h"
 
 
 class RemotePlayer: public Player {
 public:
-    RemotePlayer(TokenValue tv, Menu* subMenu);
+    RemotePlayer(Menu* subMenu);
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates,
                            Coordinate &input,

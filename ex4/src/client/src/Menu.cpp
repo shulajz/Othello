@@ -1,15 +1,16 @@
 /*
  * ex3.c
  *
- *  Created on: Nov 25, 2017
+ *  Created on:
+ *  Nov 25, 2017
  *      Author:  Shulamit & Or Sha'ashua
 */
 
 #include "Menu.h"
 #include "RemotePlayer.h"
+#include "RealPlayer.h"
+#include "AIPlayer.h"
 using namespace std;
-
-//#include "DemoPlayer.h"
 
 Menu::~Menu(){};
 Menu::Menu(){};
@@ -75,7 +76,7 @@ void Menu::chooseAiPlayer(Player* players[2]){
 void Menu::chooseRemotePlayer(Player* players[2]){
     Player* p2;
     Player* p1;
-    Player *remotePlayer = new RemotePlayer(Black, this);
+    Player *remotePlayer = new RemotePlayer(this);
     if(remotePlayer->getValue() == Black) {
         //if this is the first client
         p1 = new RealPlayer(Black);

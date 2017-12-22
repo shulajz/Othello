@@ -5,7 +5,6 @@
 #ifndef OTHELLO_REVERSICLIENT_H
 #define OTHELLO_REVERSICLIENT_H
 
-#include "Cell.h"
 #include "Menu.h"
 #include <string.h>
 #include <iostream>

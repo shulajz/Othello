@@ -17,9 +17,10 @@ void CommandJoin::execute(vector<string> args){
         if(args[0] == m_listOfGames[i].name) {
             m_listOfGames[i].socket2 = socket;
             sendValueOfClient(m_listOfGames[i].socket1, m_listOfGames[i].socket2);
+            m_listOfGames[i].status = Active;
             break;
         }
-    }
+
     /// need to write to the socket if failed
 }
 

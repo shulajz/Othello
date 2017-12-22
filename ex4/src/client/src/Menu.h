@@ -6,9 +6,14 @@
 */
 #ifndef OTHELLO_MENU_H
 #define OTHELLO_MENU_H
+
 #include <iostream>
-#include "RealPlayer.h"
-#include "AIPlayer.h"
+#include "Player.h"
+
+enum TypeMenu{
+    MainMenu, SubMenu
+};
+
 
 class Menu {
 public:

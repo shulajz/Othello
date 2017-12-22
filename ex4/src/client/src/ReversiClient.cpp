@@ -3,12 +3,10 @@
 //
 
 #include "ReversiClient.h"
-#include "Menu.h"
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
-#include <cstdlib>
 #include <unistd.h>
 
 
@@ -133,7 +131,7 @@ void ReversiClient :: sendCommand(string command, Menu* subMenu) {
     }
 }
 
-void ReversiClient :: printList( Menu* subMenu) {
+void ReversiClient :: printList(Menu* subMenu) {
     string listOfAvailableGames;
     int n = read(clientSocket, &listOfAvailableGames, sizeof(listOfAvailableGames));
     if (n == -1) {
