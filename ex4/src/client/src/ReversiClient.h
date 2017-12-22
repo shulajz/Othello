@@ -29,6 +29,8 @@ public:
     TokenValue getTokenValueOfPlayer();
     void sendEnd();
     void sendNoMove();
+    void sendCommand(string command);
+    void printList();
     ~ReversiClient();
 
 private:

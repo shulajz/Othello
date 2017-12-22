@@ -14,10 +14,9 @@
 #include "Menu.h"
 #include "ConsoleMenu.h"
 #include "RemotePlayer.h"
-#include "Game.h"
+#include "GameFlow.h"
 
 int main() {
-
     ConsoleBoard consoleBoard(DIM);
     ConsoleTokenFactory consoleTokenFactory;
     ClassicRules classicRules;
@@ -47,7 +46,7 @@ int main() {
     }
     players[Black] = p1;
     players[White] = p2;
-    Game gameFlow(classicRules, players, board, consoleBoard);
+    GameFlow gameFlow(classicRules, players, board, consoleBoard);
     gameFlow.run();
     delete(players[0]);
     delete(players[1]);

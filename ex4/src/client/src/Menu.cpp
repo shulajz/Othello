@@ -24,6 +24,7 @@ Player* Menu:: choosePlayer() const{
             p = new AIPlayer(White);
             return p;
         }else if(selection == 'R'){
+
             return NULL;
         } else {
             //illegal option
@@ -31,3 +32,4 @@ Player* Menu:: choosePlayer() const{
         }
     }
 }
+

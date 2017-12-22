@@ -2,8 +2,8 @@
 // Created by or on 13/8/17.
 //
 
-#include "Game.h"
-Game ::Game(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic):
+#include "GameFlow.h"
+GameFlow ::GameFlow (GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic):
         m_gameRules(gameRules),m_board(board), m_boardGraphic(boardGraphic),
         first_move(true), needToPrint(true), thereIsAMoveForOnePlayer(true) ,turn (Black),
         noMove(false) {
@@ -16,7 +16,7 @@ Game ::Game(GameRules &gameRules, Player **players, Board &board, BoardGraphic &
 /**
  * where the game runs...
  */
-void Game :: run () {
+void GameFlow :: run () {
     //while the board not full or there is no possible moves running the game
     while (!m_board.isFullOfTokens() && thereIsAMoveForOnePlayer) {
         playOneTurn();
@@ -41,14 +41,14 @@ void Game :: run () {
 
 //print number of white and number of black and
 //announcement of the winner in the game
-void Game :: printStatus(){
+void GameFlow :: printStatus(){
     int black = 0;
     int white = 0;
     m_board.calcResults(black, white);
     m_boardGraphic.drawStatus(black, white);
 }
 
-void Game :: playOneTurn(){
+void GameFlow :: playOneTurn(){
     //print board unless there is no possible move for the previous player
     if ((needToPrint || curr_player->isRealPlayer())) {
         m_board.draw();
@@ -79,7 +79,7 @@ void Game :: playOneTurn(){
 
 }
 
-bool Game :: rivalHasAMove() {
+bool GameFlow :: rivalHasAMove() {
     vector<Coordinate> legalCoordinates;
     switchPlayer();
     m_gameRules.getLegalCoordinates(m_board, curr_player, legalCoordinates);
@@ -94,7 +94,7 @@ bool Game :: rivalHasAMove() {
 
 }
 
-void Game ::handleOnePlayerHasAMove(vector<Coordinate>& validCoordinates) {
+void GameFlow ::handleOnePlayerHasAMove(vector<Coordinate>& validCoordinates) {
     curr_player->printAfterTheRealPlayerMove(&m_boardGraphic,needToPrint);
     //do the turn of the player depend of is type: RemotePlayer, AIPlayer or RealPlayer.
     curr_player->doOneTurn(&m_gameRules, m_board, validCoordinates,
@@ -111,7 +111,7 @@ void Game ::handleOnePlayerHasAMove(vector<Coordinate>& validCoordinates) {
     }
 }
 
-void Game:: switchPlayer(){
+void GameFlow:: switchPlayer(){
     if (curr_player == players[turn]){
         curr_player = players[!turn];
     }else{

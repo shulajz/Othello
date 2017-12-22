@@ -18,8 +18,8 @@ set(SOURCE_TEST_FILES ex4/src/client/gtest_src/main_test.cpp
         ex4/src/client/gtest_src/Test_AIPlayer.h)
 
 set(OTHELLO_MAIN ex4/src/client/src/main )
-set(SOURCE_FILES ex4/src/client/src/Game.cpp
-        ex4/src/client/src/Game.h
+set(SOURCE_FILES ex4/src/client/src/GameFlow.cpp
+        ex4/src/client/src/GameFlow.h
         ex4/src/client/src/Board.cpp
         ex4/src/client/src/Board.h
         ex4/src/client/src/ReversiClient.cpp
@@ -55,7 +55,7 @@ set(SOURCE_FILES ex4/src/client/src/Game.cpp
 
 set(SERVER ex4/src/server/ReversiServer.cpp
         ex4/src/server/ReversiServer.h
-        ex4/src/server/main.cpp)
+        ex4/src/server/main.cpp ex4/src/server/Command.h ex4/src/server/CommandsManager.cpp ex4/src/server/CommandsManager.h ex4/src/server/CommandStart.cpp ex4/src/server/CommandStart.h ex4/src/server/CommandJoin.cpp ex4/src/server/CommandJoin.h ex4/src/server/CommandGetList.cpp ex4/src/server/CommandGetList.h ex4/src/server/CommandClose.cpp ex4/src/server/CommandClose.h ex4/src/server/CommandPlay.cpp ex4/src/server/CommandPlay.h)
 add_test(runTests runTests)
 add_test(Server Server)
 add_executable(Server ${OTHELLO_FILES} ${SERVER})

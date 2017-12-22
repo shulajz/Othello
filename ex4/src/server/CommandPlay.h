@@ -8,8 +8,9 @@
 
 #include <vector>
 #include "../client/src/Tools.h"
+#include "Command.h"
 
-class CommandPlay {
+class CommandPlay: public Command {
 
 public:
     CommandPlay(vector<Game>& listOfGames, int socket);

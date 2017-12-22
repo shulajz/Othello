@@ -8,7 +8,7 @@
 #include "Command.h"
 #include "../client/src/Tools.h"
 
-class CommandGetList {
+class CommandGetList: public Command {
 public:
     CommandGetList(vector<Game>& listOfGames, int socket);
     virtual void execute(vector<string> args);

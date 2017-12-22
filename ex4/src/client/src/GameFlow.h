@@ -8,9 +8,9 @@
 
 #include "GameRules.h"
 
-class Game {
+class GameFlow {
 public:
-    Game(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic);
+    GameFlow(GameRules &gameRules, Player **players, Board &board, BoardGraphic &boardGraphic);
     //the game flow
     void run();
 private:

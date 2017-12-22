@@ -47,6 +47,7 @@ protected:
      */
     virtual void printWrongChoice()const = 0;
 
+
 };
 
 #endif //OTHELLO_MENU_H

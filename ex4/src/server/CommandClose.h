@@ -8,7 +8,7 @@
 #include "Command.h"
 #include "../client/src/Tools.h"
 
-class CommandClose {
+class CommandClose: public Command {
 
 
 

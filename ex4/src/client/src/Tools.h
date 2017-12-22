@@ -6,6 +6,20 @@
 #define OTHELLO_TOOLS_H
 #define DIM 5
 
+#include <string>
+using namespace std;
+enum StatusOfClientInGame {
+    Active, Waiting
+};
+struct Game{
+    string name;
+    int socket1;
+    int socket2;
+    StatusOfClientInGame status;
+};
+
+
+
 enum TokenValue {
     Black,
     White,
@@ -22,6 +36,7 @@ enum StatusForClient {
 class Tools {
 
 };
+
 
 
 #endif //OTHELLO_TOOLS_H

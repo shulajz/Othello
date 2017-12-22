@@ -122,3 +122,23 @@ TokenValue ReversiClient::getTokenValueOfPlayer(){
         return Empty;
     }
 }
+
+void ReversiClient :: sendCommand(string command) {
+
+    int n = write(clientSocket, &command, sizeof(command));
+    if (n == -1) {
+        throw "Error writing row to socket in send command";
+    }
+    if(command == "listGames") {
+        printList();
+    }
+}
+
+void ReversiClient :: printList() {
+    string listOfAvailableGames;
+    int n = read(clientSocket, &listOfAvailableGames, sizeof(listOfAvailableGames));
+    if (n == -1) {
+        throw "Error reading move from the socket in print list method";
+    }
+    cout << listOfAvailableGames;
+}
