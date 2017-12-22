@@ -16,9 +16,9 @@ CommandsManager::CommandsManager(vector<Game> &listOfGames, int socket):
 
     commandsMap["start"] = new CommandStart(listOfGames, socket);
     commandsMap["close"] = new CommandClose(listOfGames, socket);
-    commandsMap["listGames"] = new CommandGetList(listOfGames, socket);
+    commandsMap["list_games"] = new CommandGetList(listOfGames, socket);
     commandsMap["join"] = new CommandJoin(listOfGames, socket);
-//    commandsMap["play"] = new CommandPlay(listOfGames, socket);
+    commandsMap["play"] = new CommandPlay(listOfGames, socket);
 
 }
 void CommandsManager::executeCommand(string

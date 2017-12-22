@@ -5,15 +5,14 @@
 #include "RemotePlayer.h"
 
 #include "GameRules.h"
+#include "Menu.h"
 
 #include <cstdlib>
 #include <fstream>
 
 using namespace std;
 
-RemotePlayer::RemotePlayer(TokenValue tv): needToPrint(true),
-                                           printOnlyOneTime(true),
-                                           needToSendMove(true) {
+RemotePlayer::RemotePlayer(TokenValue tv, Menu* subMenu){
     string ip;
     string port;
     ifstream myFile;
@@ -26,6 +25,7 @@ RemotePlayer::RemotePlayer(TokenValue tv): needToPrint(true),
         client = new ReversiClient(ipBuff, atoi(port.c_str()));
         try {
             client->connectToServer();
+            subMenuForTheRemotePlayer(subMenu);
         } catch (const char *msg) {
             cout << "Failed to connect to server. Reason:" << msg << endl;
         }
@@ -34,35 +34,17 @@ RemotePlayer::RemotePlayer(TokenValue tv): needToPrint(true),
         } while (this->tv != Black && this->tv != White);
         delete(ipBuff);
     }
-
 }
 //
 void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
                              vector<Coordinate> &coordinates,
                              Coordinate &input, BoardGraphic *boardGraphic, Player *player){
-    //if is remote player turn print to the real player he need
-    // to wait to the other player to do is ove
-//    if (needToPrint) {
-        boardGraphic->printSpecialSituation(WaitToMove);
-//    }
-    needToPrint = true;
+    boardGraphic->printSpecialSituation(WaitToMove);
     if (input.row) {
         //this is not the first move (input is not zero)
         client->sendMove(input);
     }
     input = client->receiveMove();
-
-    //if the input present NoMove situation
-    if (input.row == NoMove){
-        //if there is no move the player need to stay remote player and not to change
-        // his turn to the real player, so we don't want in his next time
-        // the remote will do is turn will print WaitToMove or send move.
-        needToPrint = false;
-    }
-    //if the current input is End we will send End
-//    if (input.row == End){
-//        client->sendEnd(); //do we need this?
-//    }
 }
 
 void RemotePlayer:: printWhatThePlayerPlayed(Coordinate coordinate,
@@ -76,6 +58,7 @@ void RemotePlayer::sendEndOfGame(Coordinate coordinate){
     }
     client->sendEnd();
 }
+
 void RemotePlayer::sendNoMove(){
     client->sendNoMove();
 }
@@ -89,10 +72,15 @@ void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
 }
 
 RemotePlayer::~RemotePlayer(){
-
     delete(client);
 }
 
-void RemotePlayer:: setNeedToSendMove(bool boolean){
-    needToSendMove = false;
+void RemotePlayer:: subMenuForTheRemotePlayer(Menu* subMenu){
+    string command;
+    do {
+        command = subMenu->getChoose();
+        client->sendCommand(command);
+
+    }while (command == "list_games");
+    subMenu->printSpecialSituation(WaitToJoin);
 }

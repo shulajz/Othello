@@ -4,10 +4,16 @@
 
 #ifndef OTHELLO_TOOLS_H
 #define OTHELLO_TOOLS_H
-#define DIM 5
+#define DIM 9
 
 #include <string>
 using namespace std;
+enum TypeMenu{
+    MainMenu, SubMenu
+};
+
+
+
 enum StatusOfClientInGame {
     Active, Waiting
 };

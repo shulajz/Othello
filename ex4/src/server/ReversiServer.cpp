@@ -92,16 +92,14 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
         cout << "Error reading row" << endl;
         return;
     }
-    cout << "row after reading "<< arg1 << endl;
-
     if(arg1 > 0 || arg1 == NoMove) {
         n = read(clientSocket1, &arg2, sizeof(arg2));
-        cout << "col after reading "<< arg2 << endl;
-
         if (n == -1) {
             cout << "Error reading col" << endl;
             return;
-        } else {
+        } else if (arg1 == NoMove){
+            cout << "Got noMove"<< endl;
+        }else{
             cout << "Got Move: row: " << arg1 << " col: " << arg2 << endl;
         }
         int moveToSendToOtherClient[2];

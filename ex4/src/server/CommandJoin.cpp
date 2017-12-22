@@ -20,6 +20,7 @@ void CommandJoin::execute(vector<string> args){
             break;
         }
     }
+    /// need to write to the socket if failed
 }
 
 void CommandJoin::sendValueOfClient(int clientSocket1, int clientSocket2) {

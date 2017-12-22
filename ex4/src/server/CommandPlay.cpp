@@ -16,8 +16,8 @@ CommandPlay::CommandPlay(vector<Game>& listOfGames, int socket):
 void CommandPlay::execute(vector<string> args){
 
     int moveToSendToOtherClient[2];
-//    moveToSendToOtherClient[0] = atoi(args[0]);
-//    moveToSendToOtherClient[1] = atoi(args[1]);
+    moveToSendToOtherClient[0] = atoi(args[0].c_str());
+    moveToSendToOtherClient[1] = atoi(args[1].c_str());
     string listOfAvailableGames;
     for(int i = 0; i < m_listOfGames.size(); i++) {
         if(socket == m_listOfGames[i].socket1) {

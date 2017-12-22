@@ -7,11 +7,12 @@
 
 #include "Player.h"
 #include "ReversiClient.h"
+#include "Menu.h"
 
 
 class RemotePlayer: public Player {
 public:
-    RemotePlayer(TokenValue tv);
+    RemotePlayer(TokenValue tv, Menu* subMenu);
     virtual void doOneTurn(GameRules *gameRules, Board &board,
                            vector<Coordinate> &coordinates,
                            Coordinate &input,
@@ -23,14 +24,11 @@ public:
     void sendNoMove();
     void sendMove(Coordinate coordinate);
     void printNoMoves(BoardGraphic&  m_boardGraphic);
-    void setNeedToSendMove(bool boolean);
     ~RemotePlayer();
 
 private:
+    void subMenuForTheRemotePlayer(Menu* subMenu);
     ReversiClient* client;
-    bool needToPrint;
-    bool printOnlyOneTime;
-    bool needToSendMove;
 };
 
 #endif //OTHELLO_REMOTEPLAYER_H

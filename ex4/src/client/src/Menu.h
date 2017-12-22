@@ -23,29 +23,44 @@ public:
     /**
      * Print the options of the menu
      */
-    virtual void printOptionsMenu() const = 0;
+    virtual void printOptionsMenu(TypeMenu typeMenu) const = 0;
 
     /**
      * This function handles the choice of the real player against who he want to play.
      * @return the type of the player the real player wants to play
      */
-    Player* choosePlayer()const;
+    void getChoose(Player* players[2]);
+
+    /**
+     * This function handles the choice of the real player against who he want to play.
+     * @return the type of the player the real player wants to play
+     */
+    string getChoose();
     /**
      * deconstructor of Menu.
      */
     ~Menu();
+
+    virtual void printSpecialSituation(Situation message) const = 0;
+
 protected:
 
     /**
      * This function receives the selection of the player.
      * @return the key(char) of the option in the menu the real player choose
      */
-    virtual char getSelection() const = 0;
+    virtual string getSelection() const = 0;
 
     /**
      *This function print in case of wrong selection (that not exist in the menu) .
      */
     virtual void printWrongChoice()const = 0;
+
+    void chooseRealPlayer(Player* players[]);
+
+    void chooseAiPlayer(Player* players[]);
+
+    void chooseRemotePlayer(Player* players[]);
 
 
 };

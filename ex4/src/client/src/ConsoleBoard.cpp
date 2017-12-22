@@ -62,8 +62,6 @@ void ConsoleBoard :: printSpecialSituation(Situation message) const{
         cout<<"Illegal move.Please try again."<<endl<<endl;
     }else if (message == WaitToMove){
         cout << "please wait for other player to do his move" << endl;
-    }else if(message == WaitToJoin) {
-        cout <<"Waiting for other player to join..." << endl;
     }else if(message == NoMoveForTheRival) {
         char temp;
         cout << "No possible moves for the other player." << endl
@@ -139,3 +137,4 @@ void ConsoleBoard :: receivePlayersAnswer(Coordinate &input) {
         printSpecialSituation(IllegelMove);
     }
 }
+

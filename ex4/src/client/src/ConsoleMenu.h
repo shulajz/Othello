@@ -17,13 +17,15 @@ public:
    /**
     * Print the options of the menu in the console.
     */
-    virtual void printOptionsMenu() const;
+    virtual void printOptionsMenu(TypeMenu typeMenu) const;
 
     /**
      * This function get the selection of the player by use the console
      * @return the key(char) of the option in the menu the real player choose
      */
-    virtual char getSelection() const;
+    virtual string getSelection() const;
+
+    virtual void printSpecialSituation(Situation message) const;
 };
 
 #endif //OTHELLO_CONSOLEMENU_H

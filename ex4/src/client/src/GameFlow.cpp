@@ -24,7 +24,6 @@ void GameFlow :: run () {
     // update the server that its the end of the game
     curr_player->sendEndOfGame(inputCoordinate);
 
-    m_boardGraphic.printSpecialSituation(NoMovesForAll);
     //print after the game end the current board if needToPrint is not false
     // (happened when there is no moves for both players and the board we print
     // in the last time is the same so we don't want to print the board again).
@@ -74,6 +73,7 @@ void GameFlow :: playOneTurn(){
         //if we don't have possible moves
         thereIsAMoveForOnePlayer = false;
         needToPrint = false;
+        m_boardGraphic.printSpecialSituation(NoMovesForAll);
     }
     switchPlayer();
 
