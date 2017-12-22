@@ -26,6 +26,8 @@ public:
     virtual string getSelection() const;
 
     virtual void printSpecialSituation(Situation message) const;
+
+    virtual void printList(string listOfAvailableGames) const;
 };
 
 #endif //OTHELLO_CONSOLEMENU_H

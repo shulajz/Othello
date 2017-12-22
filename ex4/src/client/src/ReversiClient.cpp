@@ -3,6 +3,7 @@
 //
 
 #include "ReversiClient.h"
+#include "Menu.h"
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
@@ -121,22 +122,22 @@ TokenValue ReversiClient::getTokenValueOfPlayer(){
     }
 }
 
-void ReversiClient :: sendCommand(string command) {
+void ReversiClient :: sendCommand(string command, Menu* subMenu) {
 
     int n = write(clientSocket, &command, sizeof(command));
     if (n == -1) {
         throw "Error writing row to socket in send command";
     }
     if(command == "list_games") {
-        printList();
+        printList(subMenu);
     }
 }
 
-void ReversiClient :: printList() {
+void ReversiClient :: printList( Menu* subMenu) {
     string listOfAvailableGames;
     int n = read(clientSocket, &listOfAvailableGames, sizeof(listOfAvailableGames));
     if (n == -1) {
         throw "Error reading move from the socket in print list method";
     }
-    cout << listOfAvailableGames;
+    subMenu->printList(listOfAvailableGames);
 }

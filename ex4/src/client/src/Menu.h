@@ -43,6 +43,8 @@ public:
 
     virtual void printSpecialSituation(Situation message) const = 0;
 
+    virtual void printList(string listOfAvailableGames) const = 0;
+
 protected:
 
     /**

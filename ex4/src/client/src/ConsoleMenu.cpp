@@ -45,3 +45,7 @@ void ConsoleMenu:: printSpecialSituation(Situation message) const {
         cout << "Waiting for other player to join..." << endl;
     }
 }
+
+void ConsoleMenu::printList(string listOfAvailableGames) const{
+    cout << listOfAvailableGames << endl;
+}

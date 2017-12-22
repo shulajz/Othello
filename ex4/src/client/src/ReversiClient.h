@@ -6,6 +6,7 @@
 #define OTHELLO_REVERSICLIENT_H
 
 #include "Cell.h"
+#include "Menu.h"
 #include <string.h>
 #include <iostream>
 using namespace std;
@@ -29,8 +30,8 @@ public:
     TokenValue getTokenValueOfPlayer();
     void sendEnd();
     void sendNoMove();
-    void sendCommand(string command);
-    void printList();
+    void sendCommand(string command,  Menu* subMenu);
+    void printList( Menu* subMenu);
     ~ReversiClient();
 
 private:
