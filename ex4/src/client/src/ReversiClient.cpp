@@ -34,7 +34,7 @@ void ReversiClient::connectToServer() {
         throw "Host is unreachable";
     }
     // Create a structure for the server address
-    struct sockaddr_in serverAddress;
+    struct sockaddr_in serverAddress;//
     bzero((char *)&address, sizeof(address));
     serverAddress.sin_family = AF_INET;
     memcpy((char *)&serverAddress.sin_addr.s_addr, (char
