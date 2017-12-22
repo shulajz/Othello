@@ -6,12 +6,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
-#include <string.h>
-#include <iostream>
-#include <stdio.h>
-#include <poll.h>
 
-using namespace std;
 
 #define MAX_CONNECTED_CLIENTS 2
 

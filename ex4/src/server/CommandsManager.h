@@ -7,7 +7,7 @@
 
 #include <map>
 #include "Command.h"
-#include "../client/src/Tools.h"
+#include "ReversiServer.h"
 
 class CommandsManager {
 public:

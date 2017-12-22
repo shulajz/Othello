@@ -4,9 +4,23 @@
 
 #ifndef OTHELLO_REVERSISERVER_H
 #define OTHELLO_REVERSISERVER_H
+#include <string.h>
+#include <iostream>
 
 
-//#include "../client/src/Cell.h"
+using namespace std;
+
+enum StatusOfClientInGame {
+    Active, Waiting
+};
+
+struct Game{
+    string name;
+    int socket1;
+    int socket2;
+    StatusOfClientInGame status;
+};
+
 enum StatusForClient {
     NoMove = -2, End = -3
 };
@@ -28,8 +42,6 @@ private:
      * @param clientSocket2
      */
     void sendValueOfClient(int clientSocket1, int clientSocket2);
-
-    bool isClientClosed(int clientSocket1 , int clientSocket2);
     bool clientStoppedCloseAllClients;
 };
 

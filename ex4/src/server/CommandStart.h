@@ -8,6 +8,7 @@
 
 #include "Command.h"
 #include "../client/src/Tools.h"
+#include "ReversiServer.h"
 
 class CommandStart: public Command {
 public:
