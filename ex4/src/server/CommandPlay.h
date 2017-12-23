@@ -9,6 +9,7 @@
 #include <vector>
 #include "../client/src/Tools.h"
 #include "Command.h"
+#include "ReversiServer.h"
 
 class CommandPlay: public Command {
 

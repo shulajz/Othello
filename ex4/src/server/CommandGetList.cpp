@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <iostream>
 #include "CommandGetList.h"
+#include "ReversiServer.h"
+
 using namespace std;
 CommandGetList::CommandGetList(vector<Game>& listOfGames, int socket):
         m_listOfGames(listOfGames), socket(socket){

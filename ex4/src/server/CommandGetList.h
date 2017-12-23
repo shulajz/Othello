@@ -7,6 +7,7 @@
 
 #include "Command.h"
 #include "../client/src/Tools.h"
+#include "ReversiServer.h"
 
 class CommandGetList: public Command {
 public:
