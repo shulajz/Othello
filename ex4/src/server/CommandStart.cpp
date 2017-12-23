@@ -26,7 +26,7 @@ void CommandStart::execute(vector<string> args){
         }
     }
 
-    Game game;
+    Game game; //make new? shula
     game.name = args[0];
     game.socket1 = socket;
     game.socket2 = 0;

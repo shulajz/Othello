@@ -44,7 +44,11 @@ string Menu:: getChoose(){
     printOptionsMenu(SubMenu);
     while (true) {
         string selection = getSelection();
-        if (selection.substr(0,5) == "start" || selection.substr(0,4) == "join" || selection.substr(0,10) == "list_games"){
+        if (selection.substr(0,5) == "start"
+            ||
+                selection.substr(0,4) == "join"
+            ||
+                selection.substr(0,10) == "list_games"){
             return selection;
         } else {
             //illegal option
