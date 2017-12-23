@@ -9,7 +9,7 @@
 
 
 using namespace std;
-
+//
 enum StatusOfClientInGame {
     Active, Waiting
 };
