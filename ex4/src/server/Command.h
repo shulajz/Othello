@@ -7,11 +7,12 @@
 
 #include <vector>
 #include <string>
+//#include "ReversiServer.h"
 using namespace std;
-
+class ClientData;
 class Command {
 public:
-    virtual void execute(vector<string> args) = 0;
+    virtual void execute(string args, ClientData* data) = 0;
     virtual ~Command() {}
 };
 

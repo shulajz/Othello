@@ -21,7 +21,7 @@ public:
                                   BoardGraphic *boardGraphic);
     void sendEndOfGame(Coordinate coordinate);
     void sendNoMove();
-    void sendMove(Coordinate coordinate);
+//    void sendMove(Coordinate coordinate);
     void printNoMoves(BoardGraphic&  m_boardGraphic);
     ~RemotePlayer();
 

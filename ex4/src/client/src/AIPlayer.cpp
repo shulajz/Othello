@@ -6,6 +6,7 @@
 */
 #include <iostream>
 #include "AIPlayer.h"
+#include "../../server/ReversiServer.h"
 
 AIPlayer :: AIPlayer(TokenValue tv) {
     this->tv = tv;

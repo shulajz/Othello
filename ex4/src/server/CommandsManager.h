@@ -7,20 +7,17 @@
 
 #include <map>
 #include "Command.h"
-#include "ReversiServer.h"
-
+//#include "ReversiServer.h"
+//class Command;
 class CommandsManager {
 public:
-    CommandsManager(vector<Game> &listOfGames, int socket);
+    CommandsManager();
     ~CommandsManager();
 
-    void executeCommand(string command,
-                        vector<string> args);
+    void executeCommand(string command, string args, ClientData* clientData);
 private:
 
     map<string, Command *> commandsMap;
-    vector<Game> listOfGames;
-    int socket;
 };
 
 

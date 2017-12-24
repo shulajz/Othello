@@ -7,18 +7,14 @@
 
 
 #include <vector>
-#include "../client/src/Tools.h"
+//#include "../client/src/Tools.h"
 #include "Command.h"
-#include "ReversiServer.h"
+//#include "ReversiServer.h"
 
 class CommandPlay: public Command {
 
 public:
-    CommandPlay(vector<Game>& listOfGames, int socket);
-    virtual void execute(vector<string> args);
-private:
-    vector<Game> &m_listOfGames;
-    int socket;
+    virtual void execute(string args, ClientData* data);
 };
 
 

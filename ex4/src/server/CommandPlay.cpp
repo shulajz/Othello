@@ -6,36 +6,23 @@
 #include <unistd.h>
 #include <iostream>
 #include <cstdlib>
-
+#include <sstream>
+#include "ReversiServer.h"
 using namespace std;
 
-CommandPlay::CommandPlay(vector<Game>& listOfGames, int socket):
-        m_listOfGames(listOfGames), socket(socket){
-}
 
-void CommandPlay::execute(vector<string> args){
-
-    int moveToSendToOtherClient[2];
-    moveToSendToOtherClient[0] = atoi(args[0].c_str());
-    moveToSendToOtherClient[1] = atoi(args[1].c_str());
-    string listOfAvailableGames;
-    for(int i = 0; i < m_listOfGames.size(); i++) {
-        if(socket == m_listOfGames[i].socket1) {
-            int n = write(m_listOfGames[i].socket2, &moveToSendToOtherClient,
-                          sizeof(moveToSendToOtherClient));
-            if (n == -1) {
-                cout << "Error writing to socket" << endl;
-                return;
-            }
-            return;
-        } else if(socket == m_listOfGames[i].socket2) {
-            int n = write(m_listOfGames[i].socket1, &moveToSendToOtherClient,
-                          sizeof(moveToSendToOtherClient));
-            if (n == -1) {
-                cout << "Error writing to socket" << endl;
-                return;
-            }
-            return;
-        }
+void CommandPlay::execute(string args, ClientData* data){
+    cout << "args in commandPlay:" << args<< endl;
+    int row, col;
+    string buf; // Have a buffer string
+    stringstream ss(args); // Insert the string into a stream
+    vector<string> tokens; // Create vector to hold our words
+    while (ss >> buf) {
+        tokens.push_back(buf);
     }
+    row = atoi(tokens[0].c_str());
+    col = atoi(tokens[1].c_str());
+    cout<<"command row: "<<row
+        << endl << "command col: "<< col<<endl;
+    data->server->play(row, col, data->clientSocket);
 }

@@ -7,16 +7,11 @@
 
 #include "Command.h"
 
-#include "../client/src/Tools.h"
+//#include "../client/src/Tools.h"
 
 class CommandJoin: public Command {
 public:
-    CommandJoin(vector<Game>& listOfGames, int socket);
-    virtual void execute(vector<string> args);
-    void sendValueOfClient(int clientSocket1, int clientSocket2);
-private:
-    vector<Game> &m_listOfGames;
-    int socket;
+    virtual void execute(string args, ClientData* data);
 };
 
 

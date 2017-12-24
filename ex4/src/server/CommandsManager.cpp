@@ -4,27 +4,25 @@
 
 
 #include "CommandsManager.h"
-#include "Command.h"
 #include "CommandStart.h"
 #include "CommandClose.h"
 #include "CommandGetList.h"
 #include "CommandJoin.h"
 #include "CommandPlay.h"
 
-CommandsManager::CommandsManager(vector<Game> &listOfGames, int socket):
-        socket(socket), listOfGames(listOfGames) {
+CommandsManager::CommandsManager() {
 
-    commandsMap["start"] = new CommandStart(listOfGames, socket);
-    commandsMap["close"] = new CommandClose(listOfGames, socket);
-    commandsMap["list_games"] = new CommandGetList(listOfGames, socket);
-    commandsMap["join"] = new CommandJoin(listOfGames, socket);
-    commandsMap["play"] = new CommandPlay(listOfGames, socket);
+    commandsMap["start"] = new CommandStart();
+    commandsMap["close"] = new CommandClose();
+    commandsMap["list_games"] = new CommandGetList();
+    commandsMap["join"] = new CommandJoin();
+    commandsMap["play"] = new CommandPlay();
 
 }
 void CommandsManager::executeCommand(string
-                                     command, vector<string> args) {
+                                     command, string args, ClientData* clientData) {
     Command *commandObj = commandsMap[command];
-    commandObj->execute(args);
+    commandObj->execute(args, clientData);
 }
 
 CommandsManager::~CommandsManager() {

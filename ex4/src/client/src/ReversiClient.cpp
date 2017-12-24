@@ -3,11 +3,13 @@
 //
 
 #include "ReversiClient.h"
+//#include "../../server/ReversiServer.h"
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <unistd.h>
+#include <sstream>
 
 
 ReversiClient::ReversiClient(const char *serverIP, int serverPort):
@@ -52,7 +54,7 @@ ReversiClient::~ReversiClient() {
 Coordinate ReversiClient::receiveMove() {
     // read the Move from the socket
     int moveReceivedFromOtherPlayer[2];
-
+    
     int n = read(clientSocket, moveReceivedFromOtherPlayer, sizeof(moveReceivedFromOtherPlayer));
     if (n == -1) {
         throw "Error reading move from the socket";
@@ -60,20 +62,28 @@ Coordinate ReversiClient::receiveMove() {
     Coordinate moveReceived;
     moveReceived.row = moveReceivedFromOtherPlayer[0];
     moveReceived.col = moveReceivedFromOtherPlayer[1];
+    cout<<"row: "<<moveReceivedFromOtherPlayer[0] 
+        << endl << "col: "<< moveReceivedFromOtherPlayer[1]<<endl;
     return moveReceived;
 }
 
-void ReversiClient::sendMove(Coordinate coordinate) {
+void ReversiClient::sendMove(Coordinate input) {
     // Write the move to the socket
-    int row = coordinate.row;
-    int col = coordinate.col;
+//    int row = coordinate.row;
+//    int col = coordinate.col;
+    cout<<"row sendMove: "<<input.row
+        << endl << "col sendMove: "<<input.col<<endl;
+    stringstream stream1;
+    stream1 << input.row << " " << input.col;
+    string inputCoordinateString = stream1.str();
 
-    int n = write(clientSocket, &row, sizeof(row));
-    if (n == -1) {
-
-        throw "Error writing row to socket";
-    }
-    n = write(clientSocket, &col, sizeof(col));
+    string playCoordinate = "play ";
+    playCoordinate += inputCoordinateString;
+//    inputCoordinateString += "Play ";
+    char buff[50];
+    strcpy(buff, playCoordinate.c_str());
+    cout<<"the buffer is: " << buff << endl;
+    int n = write(clientSocket, &buff, sizeof(buff));
     if (n == -1) {
         throw "Error writing row to socket";
     }
@@ -97,7 +107,8 @@ void ReversiClient::sendNoMove() {
 void ReversiClient::sendEnd() {
     // Write End to the socket
     int end = End;
-    int n = write(clientSocket, &end, sizeof(end));
+    char closeStr[6] = "close";
+    int n = write(clientSocket, &closeStr, sizeof(closeStr));
     if (n == -1) {
         throw "Error writing row to socket";
     }
@@ -121,8 +132,9 @@ TokenValue ReversiClient::getTokenValueOfPlayer(){
 }
 
 void ReversiClient :: sendCommand(string command, Menu* subMenu) {
-
-    int n = write(clientSocket, &command, sizeof(command));
+    char buffer[50];
+    strcpy(buffer, command.c_str());
+    int n = write(clientSocket, &buffer, sizeof(buffer));
     if (n == -1) {
         throw "Error writing row to socket in send command";
     }
@@ -132,10 +144,11 @@ void ReversiClient :: sendCommand(string command, Menu* subMenu) {
 }
 
 void ReversiClient :: printList(Menu* subMenu) {
-    string listOfAvailableGames;
+    char listOfAvailableGames[256];
     int n = read(clientSocket, &listOfAvailableGames, sizeof(listOfAvailableGames));
     if (n == -1) {
         throw "Error reading move from the socket in print list method";
     }
-    subMenu->printList(listOfAvailableGames);
+    string buff(listOfAvailableGames);
+    subMenu->printList(buff);
 }

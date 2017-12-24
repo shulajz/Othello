@@ -6,16 +6,12 @@
 #define OTHELLO_COMMANDGETLIST_H
 
 #include "Command.h"
-#include "../client/src/Tools.h"
-#include "ReversiServer.h"
+//#include "../client/src/Tools.h"
+//#include "ReversiServer.h"
 
 class CommandGetList: public Command {
 public:
-    CommandGetList(vector<Game>& listOfGames, int socket);
-    virtual void execute(vector<string> args);
-private:
-    vector<Game> &m_listOfGames;
-    int socket;
+    virtual void execute(string args, ClientData* data);
 };
 
 

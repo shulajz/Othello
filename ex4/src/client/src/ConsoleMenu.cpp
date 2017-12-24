@@ -47,5 +47,9 @@ void ConsoleMenu:: printSpecialSituation(Situation message) const {
 }
 
 void ConsoleMenu::printList(string listOfAvailableGames) const{
-    cout << listOfAvailableGames << endl;
+    if(listOfAvailableGames.empty()) {
+        cout << "There are no available games" << endl;
+    } else {
+        cout << listOfAvailableGames << endl;
+    }
 }

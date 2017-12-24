@@ -20,7 +20,7 @@ public:
      * send a coordinate to the other player
      * @param coordinate 
      */
-    void sendMove(Coordinate coordinate);
+    void sendMove(Coordinate input);
     /**
      * receive a coordinate from the other player
      * @return 

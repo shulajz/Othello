@@ -5,6 +5,7 @@
 #include "RemotePlayer.h"
 #include <cstdlib>
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -59,9 +60,9 @@ void RemotePlayer::sendNoMove(){
     client->sendNoMove();
 }
 
-void RemotePlayer::sendMove(Coordinate coordinate){
-    client->sendMove(coordinate);
-}
+//void RemotePlayer::sendMove(Coordinate coordinate){
+//    client->sendMove(coordinate);
+//}
 
 void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
     m_boardGraphic.printSpecialSituation(NoMoveForTheRival);
@@ -75,7 +76,7 @@ void RemotePlayer:: subMenuForTheRemotePlayer(Menu* subMenu){
     string command;
     do {
         command = subMenu->getChoose();
-        //client->sendCommand(command, subMenu);
+        client->sendCommand(command, subMenu);
 
     }while (command == "list_games");
     subMenu->printSpecialSituation(WaitToJoin);

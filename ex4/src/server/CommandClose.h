@@ -6,20 +6,12 @@
 #define OTHELLO_COMMANDCLOSE_H
 
 #include "Command.h"
-#include "../client/src/Tools.h"
-#include "ReversiServer.h"
+//#include "../client/src/Tools.h"
+//#include "ReversiServer.h"
 
 class CommandClose: public Command {
-
-
-
 public:
-    CommandClose(vector<Game>& listOfGames, int socket);
-    virtual void execute(vector<string> args);
-private:
-    vector<Game> &m_listOfGames;
-    int socket;
-
+    virtual void execute(string args, ClientData* data);
 };
 
 
