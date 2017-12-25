@@ -8,15 +8,21 @@
 #include <map>
 #include "Command.h"
 //#include "ReversiServer.h"
-//class Command;
+
+
+using namespace std;
+//#include "ReversiServer.h"
+class ClientData;
+class Command;
+class Game;
+
 class CommandsManager {
 public:
-    CommandsManager();
+    CommandsManager(vector<Game*> &listOfGames);
     ~CommandsManager();
 
-    void executeCommand(string command, string args, ClientData* clientData);
+    bool executeCommand(string command, string args, ClientData* clientData);
 private:
-
     map<string, Command *> commandsMap;
 };
 

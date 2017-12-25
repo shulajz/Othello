@@ -7,13 +7,31 @@
 
 #include <vector>
 #include <string>
-//#include "ReversiServer.h"
+#include "CommandsManager.h"
 using namespace std;
+
+enum StatusOfClientInGame {
+    Active, Waiting
+};
+
+struct Game {
+    string name;
+    int socket1;
+    int socket2;
+    StatusOfClientInGame status;
+};
+#include "ReversiServer.h"
 class ClientData;
 class Command {
 public:
-    virtual void execute(string args, ClientData* data) = 0;
-    virtual ~Command() {}
+    Command(vector<Game*>& listOfGames):listOfGames(listOfGames){}
+    virtual bool execute(string args, ClientData* data) = 0;
+    virtual ~Command(){}
+
+protected:
+    vector <Game*>& listOfGames;
+
+
 };
 
 

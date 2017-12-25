@@ -69,8 +69,6 @@ Coordinate ReversiClient::receiveMove() {
 
 void ReversiClient::sendMove(Coordinate input) {
     // Write the move to the socket
-//    int row = coordinate.row;
-//    int col = coordinate.col;
     cout<<"row sendMove: "<<input.row
         << endl << "col sendMove: "<<input.col<<endl;
     stringstream stream1;
@@ -79,7 +77,6 @@ void ReversiClient::sendMove(Coordinate input) {
 
     string playCoordinate = "play ";
     playCoordinate += inputCoordinateString;
-//    inputCoordinateString += "Play ";
     char buff[50];
     strcpy(buff, playCoordinate.c_str());
     cout<<"the buffer is: " << buff << endl;
@@ -151,4 +148,13 @@ void ReversiClient :: printList(Menu* subMenu) {
     }
     string buff(listOfAvailableGames);
     subMenu->printList(buff);
+}
+
+int ReversiClient::getValid() {
+    int buff;
+    int n = read(clientSocket, &buff, sizeof(buff));
+    if (n == -1) {
+        throw "Error reading getValid";
+    }
+    return buff;
 }

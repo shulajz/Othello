@@ -27,6 +27,7 @@ public:
      */
     Coordinate receiveMove();
     TokenValue getTokenValueOfPlayer();
+    int getValid();
     void sendEnd();
     void sendNoMove();
     void sendCommand(string command,  Menu* subMenu);

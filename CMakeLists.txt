@@ -19,6 +19,7 @@ set(SOURCE_TEST_FILES ex4/src/client/gtest_src/main_test.cpp
 
 set(OTHELLO_MAIN ex4/src/client/src/main )
 set(SOURCE_FILES ex4/src/client/src/GameFlow.cpp
+        ex4/src/client/src/GameRules.h
         ex4/src/client/src/GameFlow.h
         ex4/src/client/src/Board.cpp
         ex4/src/client/src/Board.h
@@ -35,7 +36,6 @@ set(SOURCE_FILES ex4/src/client/src/GameFlow.cpp
         ex4/src/client/src/ConsoleToken.h
         ex4/src/client/src/ConsoleTokenFactory.cpp
         ex4/src/client/src/ConsoleTokenFactory.h
-        ex4/src/client/src/GameRules.h
         ex4/src/client/src/Player.h
         ex4/src/client/src/RealPlayer.cpp
         ex4/src/client/src/RealPlayer.h
@@ -55,7 +55,20 @@ set(SOURCE_FILES ex4/src/client/src/GameFlow.cpp
 
 set(SERVER ex4/src/server/ReversiServer.cpp
         ex4/src/server/ReversiServer.h
-        ex4/src/server/main.cpp ex4/src/server/Command.h ex4/src/server/CommandsManager.cpp ex4/src/server/CommandsManager.h ex4/src/server/CommandStart.cpp ex4/src/server/CommandStart.h ex4/src/server/CommandJoin.cpp ex4/src/server/CommandJoin.h ex4/src/server/CommandGetList.cpp ex4/src/server/CommandGetList.h ex4/src/server/CommandClose.cpp ex4/src/server/CommandClose.h ex4/src/server/CommandPlay.cpp ex4/src/server/CommandPlay.h)
+        ex4/src/server/main.cpp
+        ex4/src/server/Command.h
+        ex4/src/server/CommandsManager.cpp
+        ex4/src/server/CommandsManager.h
+        ex4/src/server/CommandStart.cpp
+        ex4/src/server/CommandStart.h
+        ex4/src/server/CommandJoin.cpp
+        ex4/src/server/CommandJoin.h
+        ex4/src/server/CommandGetList.cpp
+        ex4/src/server/CommandGetList.h
+        ex4/src/server/CommandClose.cpp
+        ex4/src/server/CommandClose.h
+        ex4/src/server/CommandPlay.cpp
+        ex4/src/server/CommandPlay.h ex4/src/server/HandleClient.cpp ex4/src/server/HandleClient.h)
 add_test(runTests runTests)
 add_test(Server Server)
 add_executable(Server ${OTHELLO_FILES} ${SERVER})

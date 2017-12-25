@@ -7,12 +7,15 @@
 
 
 #include "Command.h"
-//#include "../client/src/Tools.h"
-//#include "ReversiServer.h"
+#include "CommandsManager.h"
+
 
 class CommandStart: public Command {
 public:
-    virtual void  execute(string args, ClientData* data);
+    CommandStart(vector<Game *> &listOfGames);
+    virtual bool execute(string args, ClientData* data);
+
+private:
 };
 
 

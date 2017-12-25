@@ -35,14 +35,14 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
         boardArr[initialCells[i].coordinate.row][initialCells[i].coordinate.col].
                 setValue(initialCells[i].tv);
     }
-
-    for(int i = 1; i < 4; i++) {
-        for (int j = 1; j < 4; j++) {
-            boardArr[i][j].setValue(Black);
-        }
-    }
-    boardArr[3][2].setValue(White);
-    boardArr[3][3].setValue(Empty);
+//
+//    for(int i = 1; i < 4; i++) {
+//        for (int j = 1; j < 4; j++) {
+//            boardArr[i][j].setValue(Black);
+//        }
+//    }
+//    boardArr[3][2].setValue(White);
+//    boardArr[3][3].setValue(Empty);
 //    boardArr[3][3].setValue(White);
 //    boardArr[4][3].setValue(White);
 //

@@ -7,14 +7,19 @@
 
 
 #include <vector>
-//#include "../client/src/Tools.h"
 #include "Command.h"
-//#include "ReversiServer.h"
+#include "CommandsManager.h"
+
 
 class CommandPlay: public Command {
 
 public:
-    virtual void execute(string args, ClientData* data);
+    CommandPlay(vector<Game *> &listOfGames);
+    virtual bool execute(string args, ClientData* data);
+    void parseArgsToRowAndCol(string args, int& row, int& col);
+
+private:
+//    vector <Game*> listOfGames;
 };
 
 

@@ -11,7 +11,12 @@
 
 class CommandJoin: public Command {
 public:
-    virtual void execute(string args, ClientData* data);
+    CommandJoin(vector<Game *> &listOfGames);
+    virtual bool execute(string args, ClientData* data);
+    void sendValueOfClient(int clientSocket1, int clientSocket2);
+
+private:
+//    vector <Game*> listOfGames;
 };
 
 

@@ -10,19 +10,19 @@
 #include "CommandJoin.h"
 #include "CommandPlay.h"
 
-CommandsManager::CommandsManager() {
+CommandsManager::CommandsManager(vector<Game*> &listOfGames) {
 
-    commandsMap["start"] = new CommandStart();
-    commandsMap["close"] = new CommandClose();
-    commandsMap["list_games"] = new CommandGetList();
-    commandsMap["join"] = new CommandJoin();
-    commandsMap["play"] = new CommandPlay();
+    commandsMap["start"] = new CommandStart(listOfGames);
+    commandsMap["close"] = new CommandClose(listOfGames);
+    commandsMap["list_games"] = new CommandGetList(listOfGames);
+    commandsMap["join"] = new CommandJoin(listOfGames);
+    commandsMap["play"] = new CommandPlay(listOfGames);
 
 }
-void CommandsManager::executeCommand(string
+bool CommandsManager::executeCommand(string
                                      command, string args, ClientData* clientData) {
     Command *commandObj = commandsMap[command];
-    commandObj->execute(args, clientData);
+    return commandObj->execute(args, clientData);
 }
 
 CommandsManager::~CommandsManager() {

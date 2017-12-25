@@ -74,10 +74,12 @@ RemotePlayer::~RemotePlayer(){
 
 void RemotePlayer:: subMenuForTheRemotePlayer(Menu* subMenu){
     string command;
+    int valid;
     do {
         command = subMenu->getChoose();
         client->sendCommand(command, subMenu);
+        valid = client->getValid();
 
-    }while (command == "list_games");
+    }while (valid == BadInput);
     subMenu->printSpecialSituation(WaitToJoin);
 }

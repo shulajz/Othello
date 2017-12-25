@@ -5,6 +5,8 @@
  *      Author:  Shulamit & Or Sha'ashua
 */
 
+#include <sstream>
+#include <cstdlib>
 #include "Tools.h"
 #include "Board.h"
 #include "RealPlayer.h"
@@ -16,7 +18,6 @@
 #include "GameFlow.h"
 
 int main() {
-
     ConsoleBoard consoleBoard(DIM);
     ConsoleTokenFactory consoleTokenFactory;
     ClassicRules classicRules;
