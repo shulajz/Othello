@@ -14,7 +14,7 @@ class CommandStart: public Command {
 public:
     CommandStart(vector<Game *> &listOfGames);
     virtual bool execute(string args, ClientData* data);
-
+    void Print(){cout << "Start Command" << endl;}
 private:
 };
 

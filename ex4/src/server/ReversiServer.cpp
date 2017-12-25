@@ -40,15 +40,16 @@ void ReversiServer::start() {
     // Define the client socket's structures
     struct sockaddr_in clientAddress1;
     socklen_t clientAddressLen1;
-
+    pthread_t thread;
+    HandleClient handleClient;
     while (true) {
 
         cout << "Waiting for client connections..." << endl;
         // Accept a new client connection
         int clientSocket = accept(serverSocket, (struct
                 sockaddr *)&clientAddress1, &clientAddressLen1);
-        HandleClient handleClient;
-        handleClient.run(clientSocket);
+
+        handleClient.run(clientSocket, thread);
     }
 }
 

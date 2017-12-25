@@ -54,7 +54,7 @@ ReversiClient::~ReversiClient() {
 Coordinate ReversiClient::receiveMove() {
     // read the Move from the socket
     int moveReceivedFromOtherPlayer[2];
-    
+
     int n = read(clientSocket, moveReceivedFromOtherPlayer, sizeof(moveReceivedFromOtherPlayer));
     if (n == -1) {
         throw "Error reading move from the socket";
@@ -62,7 +62,7 @@ Coordinate ReversiClient::receiveMove() {
     Coordinate moveReceived;
     moveReceived.row = moveReceivedFromOtherPlayer[0];
     moveReceived.col = moveReceivedFromOtherPlayer[1];
-    cout<<"row: "<<moveReceivedFromOtherPlayer[0] 
+    cout<<"row: "<<moveReceivedFromOtherPlayer[0]
         << endl << "col: "<< moveReceivedFromOtherPlayer[1]<<endl;
     return moveReceived;
 }
@@ -86,7 +86,15 @@ void ReversiClient::sendMove(Coordinate input) {
     }
 
 }
+int ReversiClient :: getValid() {
+    int buff;
+    int n = read(clientSocket, &buff, sizeof(buff));
+    if (n == -1) {
+        throw "Error reading getValid";
+    }
 
+    return buff;
+}
 void ReversiClient::sendNoMove() {
     // Write the NoMove to the socket
     int noMove = NoMove;
@@ -128,15 +136,21 @@ TokenValue ReversiClient::getTokenValueOfPlayer(){
     }
 }
 
-void ReversiClient :: sendCommand(string command, Menu* subMenu) {
+void ReversiClient :: sendCommand(string command, Menu* subMenu, bool &isListGames, int &validCommand) {
     char buffer[50];
     strcpy(buffer, command.c_str());
     int n = write(clientSocket, &buffer, sizeof(buffer));
     if (n == -1) {
         throw "Error writing row to socket in send command";
     }
+    isListGames = false;
+
     if(command == "list_games") {
         printList(subMenu);
+        isListGames = true;
+        validCommand = BadInput;
+        close(clientSocket);
+
     }
 }
 
@@ -149,12 +163,12 @@ void ReversiClient :: printList(Menu* subMenu) {
     string buff(listOfAvailableGames);
     subMenu->printList(buff);
 }
-
-int ReversiClient::getValid() {
-    int buff;
-    int n = read(clientSocket, &buff, sizeof(buff));
-    if (n == -1) {
-        throw "Error reading getValid";
-    }
-    return buff;
-}
+//
+//int ReversiClient::getValid() {
+//    int buff;
+//    int n = read(clientSocket, &buff, sizeof(buff));
+//    if (n == -1) {
+//        throw "Error reading getValid";
+//    }
+//    return buff;
+//}

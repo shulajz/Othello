@@ -21,7 +21,6 @@ RemotePlayer::RemotePlayer(Menu* subMenu){
         strcpy(ipBuff, ip.c_str());
         client = new ReversiClient(ipBuff, atoi(port.c_str()));
         try {
-            client->connectToServer();
             subMenuForTheRemotePlayer(subMenu);
         } catch (const char *msg) {
             cout << "Failed to connect to server. Reason:" << msg << endl;
@@ -75,11 +74,14 @@ RemotePlayer::~RemotePlayer(){
 void RemotePlayer:: subMenuForTheRemotePlayer(Menu* subMenu){
     string command;
     int valid;
+    bool isListGames = false;
     do {
         command = subMenu->getChoose();
-        client->sendCommand(command, subMenu);
-        valid = client->getValid();
-
+        client->connectToServer();
+        client->sendCommand(command, subMenu, isListGames, valid);
+        if(!isListGames) {//if its a list we killed the socket so we don't want to read anymore
+            valid = client->getValid();
+        }
     }while (valid == BadInput);
     subMenu->printSpecialSituation(WaitToJoin);
 }

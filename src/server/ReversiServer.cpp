@@ -117,7 +117,7 @@ void ReversiServer::handleClient(int clientSocket1, int clientSocket2) {
         //if (isClientClosed(clientSocket1, clientSocket2)){ return;}
         n = write(clientSocket2, &moveToSendToOtherClient, sizeof(moveToSendToOtherClient));
         if (n == -1) {
-            cout << "Error writing to socket" << endl;
+            cout << "Error writing to socket handle client" << endl;
             return;
         }
     } else if (arg1 == End) {
@@ -137,13 +137,13 @@ void ReversiServer::sendValueOfClient(int clientSocket1, int clientSocket2) {
     int n = write(clientSocket1, &player1, sizeof(player1));
     cout << "Write on ClientSocket1 he play Black ('x')" << endl;
     if (n == -1) {
-        cout << "Error writing to socket" << endl;
+        cout << "Error writing to socket socket sendValueOfClient1" << endl;
         return;
     }
     n = write(clientSocket2, &player2, sizeof(player2));
     cout << "Write on ClientSocket2 he play White ('o') " << endl;
     if (n == -1) {
-        cout << "Error writing to socket" << endl;
+        cout << "Error writing to socket sendValueOfClient2" << endl;
         return;
     }
 }

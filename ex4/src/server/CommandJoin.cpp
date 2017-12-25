@@ -23,7 +23,7 @@ bool CommandJoin::execute(string args, ClientData* data){
             int n = write(listOfGames[i]->socket2, &buffValid,
                           sizeof(buffValid));
             if (n == -1) {
-                cout << "Error writing to socket" << endl;
+                cout << "Error writing to socket command join" << endl;
                 return false;
             }
             sendValueOfClient(listOfGames[i]->socket1, listOfGames[i]->socket2);
@@ -35,7 +35,7 @@ bool CommandJoin::execute(string args, ClientData* data){
     int n = write(clientSocket, &buffValid,
                   sizeof(buffValid));
     if (n == -1) {
-        cout << "Error writing to socket" << endl;
+        cout << "Error writing to socket command join2" << endl;
         return false;
     }
     return true; //dont kill the thread
@@ -48,13 +48,13 @@ void CommandJoin::sendValueOfClient(int clientSocket1, int clientSocket2) {
     int n = write(clientSocket1, &player1, sizeof(player1));
     cout << "Write on ClientSocket1 he play Black ('x')" << endl;
     if (n == -1) {
-        cout << "Error writing to socket" << endl;
+        cout << "Error writing to socket command sendValueOfClient1" << endl;
         return;
     }
     n = write(clientSocket2, &player2, sizeof(player2));
     cout << "Write on ClientSocket2 he play White ('o') " << endl;
     if (n == -1) {
-        cout << "Error writing to socket" << endl;
+        cout << "Error writing to socket command sendValueOfClient2" << endl;
         return;
     }
 }

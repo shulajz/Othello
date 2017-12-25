@@ -32,11 +32,12 @@ bool CommandGetList::execute(string args, ClientData* data){
     }
     buffValid = BadInput;
     n = write(clientSocket, &buffValid, sizeof(buffValid));
-    cout << "send error - the name already exists in the list of games" << endl;
+    cout << "send that bad input to the client for the while" << endl;
     if (n == -1) {
         cout << "Error writing to socket CommandStart" << endl;
         return false;
     }
+    close(data->clientSocket);
     return false; //kill the thread
 
 }

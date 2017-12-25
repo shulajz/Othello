@@ -27,6 +27,7 @@ public:
     Command(vector<Game*>& listOfGames):listOfGames(listOfGames){}
     virtual bool execute(string args, ClientData* data) = 0;
     virtual ~Command(){}
+    virtual void Print(){cout << "Generic Command" << endl;}
 
 protected:
     vector <Game*>& listOfGames;

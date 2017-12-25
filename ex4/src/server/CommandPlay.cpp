@@ -30,7 +30,7 @@ bool CommandPlay::execute(string args, ClientData* data){
             int n = write(listOfGames[i]->socket2, &moveToSendToOtherClient,
                           sizeof(moveToSendToOtherClient));
             if (n == -1) {
-                cout << "Error writing to socket" << endl;
+                cout << "Error writing to socket command play1" << endl;
                 return false;
             }
             return true; // don't kill the thread
@@ -38,7 +38,7 @@ bool CommandPlay::execute(string args, ClientData* data){
             int n = write(listOfGames[i]->socket1, &moveToSendToOtherClient,
                           sizeof(moveToSendToOtherClient));
             if (n == -1) {
-                cout << "Error writing to socket" << endl;
+                cout << "Error writing to socket command play1" << endl;
                 return false;
             }
             return true;// dont kill the tread

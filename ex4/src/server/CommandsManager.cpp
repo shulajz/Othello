@@ -19,6 +19,7 @@ CommandsManager::CommandsManager(vector<Game*> &listOfGames) {
     commandsMap["play"] = new CommandPlay(listOfGames);
 
 }
+
 bool CommandsManager::executeCommand(string
                                      command, string args, ClientData* clientData) {
     Command *commandObj = commandsMap[command];

@@ -18,7 +18,7 @@ using namespace std;
 class HandleClient {
 public:
     HandleClient();
-    void run(int clientSocket);
+    void run(int clientSocket, pthread_t &thread);
     void handleClient(void* element);
     static void* gateFunction(void* element);
     void readCommand(int clientSocket, string &command, string &args);
@@ -27,8 +27,8 @@ private:
     pthread_mutex_t connect_client_locker;
     int num_of_clients;
     vector<pthread_t> threads;
-    CommandsManager commandsManager;
     vector<Game*> listOfGames;
+    CommandsManager commandsManager;
 
 };
 

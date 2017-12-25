@@ -11,9 +11,9 @@ HandleClient::HandleClient() : num_of_clients(0),commandsManager(listOfGames){
 //    listOfGames = new vector<Game*>;
 }
 
-void HandleClient::run(int clientSocket){
+void HandleClient::run(int clientSocket, pthread_t &thread){
+    pthread_t thread1;
     ClientData* clientData;
-    pthread_t thread;
     pthread_mutex_lock(&this->connect_client_locker);
     num_of_clients++;
     pthread_mutex_unlock(&this->connect_client_locker);
@@ -25,7 +25,7 @@ void HandleClient::run(int clientSocket){
     clientData->clientSocket = clientSocket;
     clientData->server = this;
 
-    int rc = pthread_create(&thread, NULL, gateFunction, (void*)clientData);
+    int rc = pthread_create(&thread1, NULL, gateFunction, (void*)clientData);
     if (rc) {
         cout << "Error: unable to create thread, " << rc << endl;
         exit(-1);
@@ -46,9 +46,11 @@ void HandleClient::handleClient(void* element) {
     ClientData* data = (ClientData*)element;
     bool isContinue = true;
     while(isContinue) {
+
         string command;
         string args;
         readCommand(data->clientSocket, command, args);
+
         pthread_mutex_lock(&this->handle_client_locker);
         isContinue = commandsManager.executeCommand(command, args, data);
         pthread_mutex_unlock(&this->handle_client_locker);
@@ -61,7 +63,6 @@ void HandleClient :: readCommand(int clientSocket, string &command, string &args
     if (n == -1) {
         throw "Error reading move from the socket";
     }
-
     string buf(commandFromUser);
     stringstream ss(commandFromUser); // Insert the string into a stream
     vector<string> tokens; // Create vector to hold our words

@@ -29,8 +29,9 @@ public:
     TokenValue getTokenValueOfPlayer();
     int getValid();
     void sendEnd();
+//    int getValid();
     void sendNoMove();
-    void sendCommand(string command,  Menu* subMenu);
+    void sendCommand(string command,  Menu* subMenu, bool &isListGames, int &validCommand);
     void printList( Menu* subMenu);
     ~ReversiClient();
 

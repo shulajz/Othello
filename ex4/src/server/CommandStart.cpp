@@ -44,5 +44,5 @@ bool CommandStart::execute(string args, ClientData* data){
     game->status = Waiting;
     ///lock ?
     listOfGames.push_back(game);
-    return false; //kill the thread cause we created a new game
+    return false; //kill the thread cause we create after a new game
 }
