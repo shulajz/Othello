@@ -1,6 +1,6 @@
 //
 // Created by shulamit on 21/12/17.
-//
+////
 
 #ifndef OTHELLO_COMMANDJOIN_H
 #define OTHELLO_COMMANDJOIN_H

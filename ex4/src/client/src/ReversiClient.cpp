@@ -150,7 +150,6 @@ void ReversiClient :: sendCommand(string command, Menu* subMenu, bool &isListGam
         isListGames = true;
         validCommand = BadInput;
         close(clientSocket);
-
     }
 }
 

@@ -1,6 +1,6 @@
 //
 // Created by shulamit on 21/12/17.
-//
+///
 
 #ifndef OTHELLO_COMMANDPLAY_H
 #define OTHELLO_COMMANDPLAY_H

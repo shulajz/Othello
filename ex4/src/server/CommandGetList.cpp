@@ -39,5 +39,4 @@ bool CommandGetList::execute(string args, ClientData* data){
     }
     close(data->clientSocket);
     return false; //kill the thread
-
 }
