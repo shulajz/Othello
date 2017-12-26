@@ -51,6 +51,7 @@ void ReversiClient::connectToServer() {
 ReversiClient::~ReversiClient() {
     close(clientSocket);
 }
+
 Coordinate ReversiClient::receiveMove() {
     // read the Move from the socket
     int moveReceivedFromOtherPlayer[2];
@@ -88,7 +89,9 @@ int ReversiClient :: getValid() {
     if (n == -1) {
         throw "Error reading getValid";
     }
-
+    if (buff == BadInput){
+        close(clientSocket);
+    }
     return buff;
 }
 void ReversiClient::sendNoMove() {

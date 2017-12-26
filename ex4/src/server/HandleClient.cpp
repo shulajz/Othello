@@ -36,16 +36,12 @@ void* HandleClient :: gateFunction(void* element) {
 
 void HandleClient::handleClient(void* element) {
     ClientData* data = (ClientData*)element;
-    bool isContinue = true;
-    while(isContinue) {
-        string command;
-        string args;
-        readCommand(data->clientSocket, command, args);
-        pthread_mutex_lock(&this->handle_client_locker);
-        isContinue = commandsManager.executeCommand(command, args, data);
-        pthread_mutex_unlock(&this->handle_client_locker);
-    }
-
+    string command;
+    string args;
+    readCommand(data->clientSocket, command, args);
+    pthread_mutex_lock(&this->handle_client_locker);
+    commandsManager.executeCommand(command, args, data);
+    pthread_mutex_unlock(&this->handle_client_locker);
 }
 
 void HandleClient :: readCommand(int clientSocket, string &command, string &args) {
