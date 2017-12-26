@@ -44,6 +44,7 @@ bool CommandJoin::execute(string args, ClientData* data){
     buffValid = BadInput;
     int n = write(clientSocket, &buffValid,
                   sizeof(buffValid));
+    cout << "send error - the name is not exists in the list of games" << endl;
     if (n == -1) {
         cout << "Error writing to socket command join2" << endl;
         return false;
