@@ -23,7 +23,7 @@ void GameManager::handleGame() {
         exit(-1);
     }
     cout <<"create game with the name : "<<game.name<<
-            " and the clients are: client"<<data1->clientSocket<<" and client"<<data2->clientSocket<<endl;
+            " ,the clients are: client"<<data1->clientSocket<<" and client"<<data2->clientSocket<<endl;
 }
 
 void *GameManager:: gameManagerGate(void* element) {
@@ -56,13 +56,13 @@ void GameManager::sendValueOfClient(int clientSocket1, int clientSocket2) {
     char player1 = '1';
     char player2 = '2';
     int n = write(clientSocket1, &player1, sizeof(player1));
-    cout << "Write on ClientSocket "<< clientSocket1<<" he play Black ('x')" << endl;
+    cout << "send to Client "<< clientSocket1<<" he play Black ('x')" << endl;
     if (n == -1) {
         cout << "Error writing to socket command sendValueOfClient1" << endl;
         return;
     }
     n = write(clientSocket2, &player2, sizeof(player2));
-    cout << "Write on ClientSocket "<< clientSocket2<<" he play White ('o') " << endl;
+    cout << "send to Client "<< clientSocket2<<" he play White ('o') " << endl;
     if (n == -1) {
         cout << "Error writing to socket command sendValueOfClient2" << endl;
         return;
