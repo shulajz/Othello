@@ -23,7 +23,7 @@ public:
     void  gameManager();
 private:
     Game game;
-    HandleClient* server;
+    HandleClient* handleClient;
     ClientData* data1;
     ClientData* data2;
     CommandsManager* commandsManager;

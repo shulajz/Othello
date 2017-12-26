@@ -38,7 +38,7 @@ bool CommandJoin::execute(string args, ClientData* data){
         }
     }
     //there's no such game is waiting to join of other client, write to client that its invalid
-    //if so send badInput to the client
+    //if so send badInput to the client.
     buffValid = BadInput;
     int n = write(clientSocket, &buffValid,
                   sizeof(buffValid));
