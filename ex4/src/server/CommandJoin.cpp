@@ -7,6 +7,7 @@
 #include "CommandJoin.h"
 #include "HandleClient.h"
 #include "GameManager.h"
+#include "ReversiServer.h"
 
 CommandJoin::CommandJoin(vector<Game *> &listOfGames, CommandsManager* commandsManager):
         commandsManager(commandsManager), Command(listOfGames)  {

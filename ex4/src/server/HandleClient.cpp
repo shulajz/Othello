@@ -8,6 +8,7 @@
 HandleClient::HandleClient() :commandsManager(listOfGames){
     pthread_mutex_init(&this->handle_client_locker, 0);
 }
+
 void HandleClient :: sendCloseToEveryOne() {
     int close[2];
     close[0] = Close;

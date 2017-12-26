@@ -6,6 +6,7 @@
 #include <iostream>
 #include "CommandStart.h"
 #include "HandleClient.h"
+#include "ReversiServer.h"
 
 
 CommandStart::CommandStart(vector<Game *> &listOfGames):Command(listOfGames)  {

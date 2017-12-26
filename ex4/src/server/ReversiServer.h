@@ -7,7 +7,6 @@
 #include <string.h>
 #include <iostream>
 #include "vector"
-#include "CommandsManager.h"
 #include "HandleClient.h"
 
 
@@ -24,9 +23,12 @@ public:
     void stop();
     void getClose();
     static void* gateFunction(void* element);
+    void serverFunc();
 private:
     int port;
     int serverSocket; // the socket's file descriptor;
+    HandleClient handleClient;
+    bool stopServer;
 
 };
 

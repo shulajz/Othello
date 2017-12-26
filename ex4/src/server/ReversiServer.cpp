@@ -8,33 +8,39 @@
 #define MAX_CONNECTED_CLIENTS 50
 
 ReversiServer::ReversiServer(int port): port(port),
-                                        serverSocket(0){
-    // Init mutex
+                                        serverSocket(0), stopServer(false){
     cout << "Server" << endl;
 }
 
 void ReversiServer::getClose() {
-//    ClientData* data = (ClientData*)element;
-
+    while(true) {
+        string select;
+        cin >> select;
+        if (select == "close"){
+            break;
+        }
+        cin.clear();
+    }
+    handleClient.sendCloseToEveryOne();
+    stopServer = true;
 }
+
 void* ReversiServer :: gateFunction(void* element) {
         ReversiServer* server = (ReversiServer*)element;
-        server->getClose();
-
+        server->serverFunc();
 }
 
 void ReversiServer::start() {
-        pthread_t thread1;
-        //create thread that handle with the commands,
-        // and after read command and execute it, the thread will ended.
-        int rc = pthread_create(&thread1, NULL, gateFunction, this);
-        if (rc) {
-            cout << "Error: unable to create thread, " << rc << endl;
+    pthread_t thread1;
+    int rc = pthread_create(&thread1, NULL, gateFunction, this);
+    if (rc) {
+        cout << "Error: unable to create thread, " << rc << endl;
             exit(-1);
-        }
+    }
+    getClose();
+}
 
-    ///////////*********************************////////////////////////////////
-    // Create a socket point
+void ReversiServer::serverFunc() {
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (serverSocket == -1) {
         throw "Error opening socket";
@@ -56,7 +62,7 @@ void ReversiServer::start() {
     struct sockaddr_in clientAddress1;
     socklen_t clientAddressLen1;
     HandleClient handleClient;
-    while (true) {
+    while (!stopServer) {
         cout << "Waiting for client connections..." << endl;
         // Accept a new client connection
         int clientSocket = accept(serverSocket, (struct

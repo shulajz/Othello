@@ -15,6 +15,7 @@
 
 using namespace std;
 
+
 class HandleClient {
 public:
     HandleClient();
@@ -31,13 +32,15 @@ private:
 
 };
 
+enum StatusOfGame{
+    Close = -4,
+};
+
 struct ClientData {
     int clientSocket;
     HandleClient* server;
 
 };
 
-enum StatusOfGame{
-    Close = -2,
-};
+
 #endif //OTHELLO_HANDLECLIENT_H
