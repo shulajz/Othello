@@ -19,7 +19,8 @@ void HandleClient::run(int clientSocket, pthread_t &thread){
     clientData = new ClientData();
     clientData->clientSocket = clientSocket;
     clientData->server = this;
-
+    //create thread that handle with the commands,
+    // and after read command and execute it, the thread will ended.
     int rc = pthread_create(&thread1, NULL, gateFunction, (void*)clientData);
     if (rc) {
         cout << "Error: unable to create thread, " << rc << endl;
@@ -63,7 +64,7 @@ void HandleClient :: readCommand(int clientSocket, string &command, string &args
     }
     cout<<"the command of client"<< clientSocket<<" is: " << tokens[0] ;
     command = tokens[0];
-    for(int i = 1; i < tokens.size(); i++){//we're now in play
+    for(int i = 1; i < tokens.size(); i++){
         if (first_loop) {
             cout << " ,args are: ";
         }

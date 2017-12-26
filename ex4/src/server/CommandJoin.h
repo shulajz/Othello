@@ -7,7 +7,7 @@
 
 #include "Command.h"
 
-//#include "../client/src/Tools.h"
+
 
 class CommandJoin: public Command {
 public:
@@ -16,7 +16,6 @@ public:
 
 private:
     CommandsManager* commandsManager;
-//    vector <Game*> listOfGames;
 };
 
 

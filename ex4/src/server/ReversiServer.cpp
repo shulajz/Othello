@@ -4,11 +4,6 @@
 
 #include "ReversiServer.h"
 #include "HandleClient.h"
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <unistd.h>
-#include <cstdlib>
-#include <sstream>
 
 #define MAX_CONNECTED_CLIENTS 50
 

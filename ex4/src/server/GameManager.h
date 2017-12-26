@@ -14,6 +14,11 @@ public:
     GameManager(Game game,HandleClient* server, CommandsManager* commandsManager);
     void handleGame();
     static void * gameManagerGate(void* element);
+    /**
+    * send the value of the client in the start of the game
+    * @param clientSocket1
+    * @param clientSocket2
+    */
     void sendValueOfClient(int clientSocket1, int clientSocket2);
     void  gameManager();
 private:

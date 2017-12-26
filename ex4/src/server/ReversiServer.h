@@ -26,12 +26,6 @@ private:
     int port;
     int serverSocket; // the socket's file descriptor;
 
-    /**
-     * send the value of the client in the start of the game
-     * @param clientSocket1
-     * @param clientSocket2
-     */
-
 };
 
 

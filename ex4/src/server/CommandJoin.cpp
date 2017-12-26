@@ -5,8 +5,6 @@
 #include <unistd.h>
 #include "CommandsManager.h"
 #include "CommandJoin.h"
-#include "ReversiServer.h"
-#include "HandleClient.h"
 #include "HandleClient.h"
 #include "GameManager.h"
 
