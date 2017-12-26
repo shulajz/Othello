@@ -69,6 +69,6 @@ void HandleClient :: readCommand(int clientSocket, string &command, string &args
         }
         first_loop = false;
         args += tokens[i] + " ";
-    }
+    }//
     cout << args << endl;
 }
