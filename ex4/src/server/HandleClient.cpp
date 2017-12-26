@@ -5,12 +5,17 @@
 #include <unistd.h>
 #include "HandleClient.h"
 
-HandleClient::HandleClient() :commandsManager(listOfGames){
+HandleClient::HandleClient(): commandsManager(listOfGames){
     pthread_mutex_init(&this->handle_client_locker, 0);
+    pthread_mutex_init(&this->kill_all_locker, 0);
 }
 
 void HandleClient :: sendCloseToEveryOne() {
-
+    ClientData* data;
+    string args;
+    pthread_mutex_lock(&this->kill_all_locker);
+    commandsManager.executeCommand("killAll", args, data);
+    pthread_mutex_unlock(&this->kill_all_locker);
 }
 void HandleClient::run(int clientSocket){
     pthread_t thread1;
@@ -52,7 +57,7 @@ void HandleClient :: readCommand(int clientSocket, string &command, string &args
     char commandFromUser[50];
     int n = read(clientSocket, &commandFromUser, sizeof(commandFromUser));
     if (n == -1) {
-        throw "Error reading move from the socket";
+        throw "Error reading command from the socket";
     }
     string buf(commandFromUser);
     stringstream ss(commandFromUser); // Insert the string into a stream

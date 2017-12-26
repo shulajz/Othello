@@ -3,17 +3,13 @@
 //
 
 #include "ReversiClient.h"
-//#include "../../server/ReversiServer.h"
-#include <sys/socket.h>
-#include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
-#include <unistd.h>
-#include <sstream>
+
 
 
 ReversiClient::ReversiClient(const char *serverIP, int serverPort):
-        serverIP(serverIP), serverPort(serverPort), clientSocket(0),tv(Empty) {
+        serverIP(serverIP), serverPort(serverPort), clientSocket(0), tv(Empty) {
 }
 
 void ReversiClient::connectToServer() {
@@ -60,7 +56,7 @@ Coordinate ReversiClient::receiveMove() {
     if (n == -1) {
         throw "Error reading move from the socket";
     }
-    checkIfServerOpen(moveReceivedFromOtherPlayer[0]);
+    checkIfServerOpen(n);
     Coordinate moveReceived;
     moveReceived.row = moveReceivedFromOtherPlayer[0];
     moveReceived.col = moveReceivedFromOtherPlayer[1];
@@ -87,6 +83,7 @@ int ReversiClient :: getValid() {
     if (n == -1) {
         throw "Error reading getValid";
     }
+    checkIfServerOpen(n);
     if (buff == BadInput){
         close(clientSocket);
     }
@@ -122,6 +119,7 @@ TokenValue ReversiClient::getTokenValueOfPlayer(){
     if (n == -1) {
         return Empty;
     }
+    checkIfServerOpen(n);
     if (type == '1'){
         tv = Black;
         return Black;
@@ -155,13 +153,14 @@ void ReversiClient :: printList(Menu* subMenu) {
     if (n == -1) {
         throw "Error reading move from the socket in print list method";
     }
+    checkIfServerOpen(n);
     string buff(listOfAvailableGames);
     subMenu->printList(buff);
 }
 
-void ReversiClient::checkIfServerOpen(int moveReceivedFromOtherPlayer){
-    if(moveReceivedFromOtherPlayer == Close) {
-        //close(clientSocket);
+void ReversiClient::checkIfServerOpen(int n){
+    if(n == 0) {
+        close(clientSocket);
         cout <<"the server closed!" <<endl;
         exit(1);
     }

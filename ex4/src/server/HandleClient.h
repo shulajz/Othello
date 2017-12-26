@@ -26,6 +26,7 @@ public:
     void readCommand(int clientSocket, string &command, string &args);
 private:
     pthread_mutex_t handle_client_locker;
+    pthread_mutex_t kill_all_locker;
     vector<pthread_t> threads;
     vector<Game*> listOfGames;
     CommandsManager commandsManager;
