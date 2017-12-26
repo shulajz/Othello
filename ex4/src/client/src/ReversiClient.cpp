@@ -60,15 +60,10 @@ Coordinate ReversiClient::receiveMove() {
     if (n == -1) {
         throw "Error reading move from the socket";
     }
+    checkIfServerOpen(moveReceivedFromOtherPlayer[0]);
     Coordinate moveReceived;
     moveReceived.row = moveReceivedFromOtherPlayer[0];
     moveReceived.col = moveReceivedFromOtherPlayer[1];
-    cout<<"receive row: "<<moveReceivedFromOtherPlayer[0]
-        << endl << " and col: "<< moveReceivedFromOtherPlayer[1]<<
-        "from the server to client"<<clientSocket<<endl;
-    if(moveReceivedFromOtherPlayer[0] == Close) {
-        close(clientSocket);
-    }
     return moveReceived;
 }
 
@@ -162,4 +157,12 @@ void ReversiClient :: printList(Menu* subMenu) {
     }
     string buff(listOfAvailableGames);
     subMenu->printList(buff);
+}
+
+void ReversiClient::checkIfServerOpen(int moveReceivedFromOtherPlayer){
+    if(moveReceivedFromOtherPlayer == Close) {
+        close(clientSocket);
+        cout <<"the server closed!" <<endl;
+        exit(1);
+    }
 }
