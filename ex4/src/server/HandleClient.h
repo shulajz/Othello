@@ -18,7 +18,7 @@ using namespace std;
 class HandleClient {
 public:
     HandleClient();
-    void run(int clientSocket, pthread_t &thread);
+    void run(int clientSocket);
     void handleClient(void* element);
     static void* gateFunction(void* element);
     void readCommand(int clientSocket, string &command, string &args);

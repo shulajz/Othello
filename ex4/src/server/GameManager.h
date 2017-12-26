@@ -27,6 +27,7 @@ private:
     ClientData* data1;
     ClientData* data2;
     CommandsManager* commandsManager;
+    pthread_t thread;
 
 
 };

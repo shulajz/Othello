@@ -9,7 +9,7 @@ HandleClient::HandleClient() :commandsManager(listOfGames){
     pthread_mutex_init(&this->handle_client_locker, 0);
 }
 
-void HandleClient::run(int clientSocket, pthread_t &thread){
+void HandleClient::run(int clientSocket){
     pthread_t thread1;
     ClientData* clientData;
     cout << "Client "<< clientSocket<< " connected"  << endl;

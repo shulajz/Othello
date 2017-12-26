@@ -15,7 +15,6 @@ GameManager::GameManager(Game game, HandleClient* handleClient, CommandsManager*
 }
 
 void GameManager::handleGame() {
-    pthread_t thread;
     //create thread for the game
     int rc = pthread_create(&thread, NULL, gameManagerGate, (void *) this);
     if (rc) {
