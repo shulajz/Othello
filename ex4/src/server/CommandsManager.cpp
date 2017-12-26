@@ -17,6 +17,7 @@ CommandsManager::CommandsManager(vector<Game*>& listOfGames) {
     commandsMap["list_games"] = new CommandGetList(listOfGames);
     commandsMap["join"] = new CommandJoin(listOfGames, this);
     commandsMap["play"] = new CommandPlay(listOfGames);
+    commandsMap["killAll"] = new CommandKillAll(listOfGames);
 
 }
 

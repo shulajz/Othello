@@ -17,11 +17,13 @@ bool CommandGetList::execute(string args, ClientData* data){
     int clientSocket = data->clientSocket;
     string listOfAvailableGames;
     int buffValid;
+
     for(int i = 0; i < listOfGames.size(); i++) {
         if(listOfGames[i]->status == Waiting) {
             listOfAvailableGames += listOfGames[i]->name + "\n";
         }
     }
+
     //send the list of available games to client
     char buff[256];
     strcpy(buff, listOfAvailableGames.c_str());
