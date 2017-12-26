@@ -3,15 +3,15 @@
 //
 
 #include "GameManager.h"
-GameManager::GameManager(Game game, HandleClient* server, CommandsManager* commandsManager):
-        game(game), server(server), commandsManager(commandsManager) {
+GameManager::GameManager(Game game, HandleClient* handleClient, CommandsManager* commandsManager):
+        game(game), handleClient(handleClient), commandsManager(commandsManager) {
 
     data1 = new ClientData();
     data1->clientSocket = game.socket1;
-    data1->server = server;
+    data1->server = handleClient;
     data2 = new ClientData();
     data2->clientSocket = game.socket2;
-    data2->server = server;
+    data2->server = handleClient;
 }
 
 void GameManager::handleGame() {
@@ -39,12 +39,12 @@ void GameManager:: gameManager(){
     while(isContinue){
         string command1;
         string args1;
-        server->readCommand(game.socket1,command1,args1);
-        isContinue = commandsManager->executeCommand(command1, args1,data1);
+        handleClient->readCommand(game.socket1,command1,args1);
+        isContinue = commandsManager->executeCommand(command1, args1, data1);
         if (!isContinue){break;}
         string command2;
         string args2;
-        server->readCommand(game.socket2,command2,args2);
+        handleClient->readCommand(game.socket2,command2,args2);
         isContinue = commandsManager->executeCommand(command2, args2, data2);
     }
     cout<<"close the game :" << game.name << endl;

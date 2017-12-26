@@ -38,12 +38,10 @@ void ReversiServer::start() {
     pthread_t thread;
     HandleClient handleClient;
     while (true) {
-
         cout << "Waiting for client connections..." << endl;
         // Accept a new client connection
         int clientSocket = accept(serverSocket, (struct
                 sockaddr *)&clientAddress1, &clientAddressLen1);
-
         handleClient.run(clientSocket, thread);
     }
 }
