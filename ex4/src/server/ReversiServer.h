@@ -8,6 +8,7 @@
 #include <iostream>
 #include "vector"
 #include "CommandsManager.h"
+#include "HandleClient.h"
 
 
 using namespace std;
@@ -28,8 +29,6 @@ private:
     int serverSocket; // the socket's file descriptor;
 
 };
-
-
 
 
 #endif //OTHELLO_REVERSISERVER_H

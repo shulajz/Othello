@@ -8,7 +8,23 @@
 HandleClient::HandleClient() :commandsManager(listOfGames){
     pthread_mutex_init(&this->handle_client_locker, 0);
 }
-
+void HandleClient :: sendCloseToEveryOne() {
+    int close[2];
+    close[0] = Close;
+    close[1] = Close;
+    for (int i = 0; i < listOfGames.size(); i++) {
+        int n = write(listOfGames[i]->socket1, &close, sizeof(close));
+        if (n == -1) {
+            throw "Error reading move from the socket";
+        }
+        if(listOfGames[i]->socket2) {
+            int n = write(listOfGames[i]->socket2, &close, sizeof(close));
+            if (n == -1) {
+                throw "Error reading move from the socket";
+            }
+        }
+    }
+}
 void HandleClient::run(int clientSocket){
     pthread_t thread1;
     ClientData* clientData;

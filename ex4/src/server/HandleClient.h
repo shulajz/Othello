@@ -18,6 +18,7 @@ using namespace std;
 class HandleClient {
 public:
     HandleClient();
+    void sendCloseToEveryOne();
     void run(int clientSocket);
     void handleClient(void* element);
     static void* gateFunction(void* element);
@@ -36,5 +37,7 @@ struct ClientData {
 
 };
 
-
+enum StatusOfGame{
+    Close = -2,
+};
 #endif //OTHELLO_HANDLECLIENT_H

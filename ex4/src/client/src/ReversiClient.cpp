@@ -66,6 +66,9 @@ Coordinate ReversiClient::receiveMove() {
     cout<<"receive row: "<<moveReceivedFromOtherPlayer[0]
         << endl << " and col: "<< moveReceivedFromOtherPlayer[1]<<
         "from the server to client"<<clientSocket<<endl;
+    if(moveReceivedFromOtherPlayer[0] == Close) {
+        close(clientSocket);
+    }
     return moveReceived;
 }
 
