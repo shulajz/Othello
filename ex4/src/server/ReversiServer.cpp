@@ -23,11 +23,18 @@ void ReversiServer::getClose() {
     }
     handleClient.sendCloseToEveryOne();
     stopServer = true;
+    stop();
 }
 
 void* ReversiServer :: gateFunction(void* element) {
         ReversiServer* server = (ReversiServer*)element;
-        server->serverFunc();
+        try{
+            server->serverFunc();
+        }catch (const char *msg) {
+            cout << "Cannot start server. Reason: " << msg << endl;
+            exit(-1);
+        }
+
 }
 
 void ReversiServer::start() {
@@ -40,7 +47,7 @@ void ReversiServer::start() {
     getClose();
 }
 
-void ReversiServer::serverFunc() {
+void ReversiServer::serverFunc(){
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (serverSocket == -1) {
         throw "Error opening socket";
@@ -67,6 +74,7 @@ void ReversiServer::serverFunc() {
         // Accept a new client connection
         int clientSocket = accept(serverSocket, (struct
                 sockaddr *)&clientAddress1, &clientAddressLen1);
+
         handleClient.run(clientSocket);
     }
 }

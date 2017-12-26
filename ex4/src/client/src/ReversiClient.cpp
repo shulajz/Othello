@@ -161,7 +161,7 @@ void ReversiClient :: printList(Menu* subMenu) {
 
 void ReversiClient::checkIfServerOpen(int moveReceivedFromOtherPlayer){
     if(moveReceivedFromOtherPlayer == Close) {
-        close(clientSocket);
+        //close(clientSocket);
         cout <<"the server closed!" <<endl;
         exit(1);
     }

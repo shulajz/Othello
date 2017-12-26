@@ -13,6 +13,7 @@ void HandleClient :: sendCloseToEveryOne() {
     int closeClients[2];
     closeClients[0] = Close;
     closeClients[1] = Close;
+   // vector <Game*> listOfGames = *this->listOfGames;
     for (int i = 0; i < listOfGames.size(); i++) {
         int n = write(listOfGames[i]->socket1, &closeClients, sizeof(closeClients));
         if (n == -1) {
@@ -31,10 +32,10 @@ void HandleClient :: sendCloseToEveryOne() {
 void HandleClient::run(int clientSocket){
     pthread_t thread1;
     ClientData* clientData;
-    cout << "Client "<< clientSocket<< " connected"  << endl;
     if (clientSocket == -1){
         throw "Error on accept";
     }
+    cout << "Client "<< clientSocket<< " connected"  << endl;
     clientData = new ClientData();
     clientData->clientSocket = clientSocket;
     clientData->server = this;
