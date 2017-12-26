@@ -10,10 +10,30 @@
 ReversiServer::ReversiServer(int port): port(port),
                                         serverSocket(0){
     // Init mutex
-
     cout << "Server" << endl;
 }
+
+void ReversiServer::getClose() {
+//    ClientData* data = (ClientData*)element;
+
+}
+void* ReversiServer :: gateFunction(void* element) {
+        ReversiServer* server = (ReversiServer*)element;
+        server->getClose();
+
+}
+
 void ReversiServer::start() {
+        pthread_t thread1;
+        //create thread that handle with the commands,
+        // and after read command and execute it, the thread will ended.
+        int rc = pthread_create(&thread1, NULL, gateFunction, this);
+        if (rc) {
+            cout << "Error: unable to create thread, " << rc << endl;
+            exit(-1);
+        }
+
+    ///////////*********************************////////////////////////////////
     // Create a socket point
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (serverSocket == -1) {

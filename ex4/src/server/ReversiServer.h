@@ -21,7 +21,8 @@ public:
     ReversiServer(int port);
     void start();
     void stop();
-
+    void getClose();
+    static void* gateFunction(void* element);
 private:
     int port;
     int serverSocket; // the socket's file descriptor;
