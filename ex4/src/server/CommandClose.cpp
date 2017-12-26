@@ -16,18 +16,15 @@ bool CommandClose::execute(string args,ClientData* data){
     int clientSocket = data->clientSocket;
     char buffClose[6] = "close";
     for(int i = 0; i < listOfGames.size(); i++) {
-        if(listOfGames[i]->socket1 == clientSocket) {
-            cout << "close Client1" << "i is " << i << endl;
+        if(listOfGames[i]->socket1 == clientSocket ||
+                listOfGames[i]->socket2 == clientSocket) {
+            cout << "close Client "<< listOfGames[i]->socket1<< endl;
             close(listOfGames[i]->socket2);
+            cout << "close Client " <<listOfGames[i]->socket2 << endl;
             close(listOfGames[i]->socket1);
-            break;
-        } else if(listOfGames[i]->socket2 == clientSocket){
-            cout << "close Client2" << endl;
-            close(listOfGames[i]->socket2);
-            close(listOfGames[i]->socket1);
+            listOfGames.erase(listOfGames.begin()+i);
             break;
         }
     }
-    cout << "before exit"<<endl;
     return false;
 }

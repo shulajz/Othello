@@ -35,7 +35,6 @@ Board::Board(int dimensions, TokenFactory &pTokenFactory,
         boardArr[initialCells[i].coordinate.row][initialCells[i].coordinate.col].
                 setValue(initialCells[i].tv);
     }
-//
 //    for(int i = 1; i < 4; i++) {
 //        for (int j = 1; j < 4; j++) {
 //            boardArr[i][j].setValue(Black);

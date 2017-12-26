@@ -59,10 +59,6 @@ void RemotePlayer::sendNoMove(){
     client->sendNoMove();
 }
 
-//void RemotePlayer::sendMove(Coordinate coordinate){
-//    client->sendMove(coordinate);
-//}
-
 void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
     m_boardGraphic.printSpecialSituation(NoMoveForTheRival);
 }
@@ -81,6 +77,11 @@ void RemotePlayer:: subMenuForTheRemotePlayer(Menu* subMenu){
         client->sendCommand(command, subMenu, isListGames, valid);
         if(!isListGames) {//if its a list we killed the socket so we don't want to read anymore
             valid = client->getValid();
+            //if this is a badInput and the command is not to print list of available games
+            //then update the client that he do a wrong choose and he need to try again.
+            if(valid == BadInput){
+                subMenu->printWrongChoice();
+            }
         }
     }while (valid == BadInput);
     subMenu->printSpecialSituation(WaitToJoin);

@@ -50,6 +50,11 @@ public:
 
     virtual void printList(string listOfAvailableGames) const = 0;
 
+    /**
+     *This function print in case of wrong selection (that not exist in the menu) .
+     */
+    virtual void printWrongChoice()const = 0;
+
 protected:
 
     /**
@@ -57,11 +62,6 @@ protected:
      * @return the key(char) of the option in the menu the real player choose
      */
     virtual string getSelection() const = 0;
-
-    /**
-     *This function print in case of wrong selection (that not exist in the menu) .
-     */
-    virtual void printWrongChoice()const = 0;
 
     void chooseRealPlayer(Player* players[]);
 

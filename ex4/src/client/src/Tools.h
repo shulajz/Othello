@@ -11,7 +11,6 @@
 
 using namespace std;
 
-
 enum TokenValue {
     Black,
     White,

@@ -10,12 +10,12 @@
 #include "CommandJoin.h"
 #include "CommandPlay.h"
 
-CommandsManager::CommandsManager(vector<Game*> &listOfGames) {
+CommandsManager::CommandsManager(vector<Game*>& listOfGames) {
 
     commandsMap["start"] = new CommandStart(listOfGames);
     commandsMap["close"] = new CommandClose(listOfGames);
     commandsMap["list_games"] = new CommandGetList(listOfGames);
-    commandsMap["join"] = new CommandJoin(listOfGames);
+    commandsMap["join"] = new CommandJoin(listOfGames, this);
     commandsMap["play"] = new CommandPlay(listOfGames);
 
 }

@@ -22,17 +22,19 @@ bool CommandGetList::execute(string args, ClientData* data){
             listOfAvailableGames += listOfGames[i]->name + "\n";
         }
     }
+    //send the list of available games to client
     char buff[256];
     strcpy(buff, listOfAvailableGames.c_str());
     int n = write(clientSocket, &buff, sizeof(buff));
-    cout << "send the list of available games to client" << endl;
+    cout << "send the list of available games to client "<< clientSocket << endl;
     if (n == -1) {
         cout << "Error writing to socket CommandGetList" << endl;
         return false;
     }
+    //send badInput to the client that will
+    // know that he need to choose another selection
     buffValid = BadInput;
     n = write(clientSocket, &buffValid, sizeof(buffValid));
-    cout << "send that bad input to the client for the while" << endl;
     if (n == -1) {
         cout << "Error writing to socket CommandStart" << endl;
         return false;

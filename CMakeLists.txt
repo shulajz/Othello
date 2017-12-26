@@ -68,7 +68,7 @@ set(SERVER ex4/src/server/ReversiServer.cpp
         ex4/src/server/CommandClose.cpp
         ex4/src/server/CommandClose.h
         ex4/src/server/CommandPlay.cpp
-        ex4/src/server/CommandPlay.h ex4/src/server/HandleClient.cpp ex4/src/server/HandleClient.h)
+        ex4/src/server/CommandPlay.h ex4/src/server/HandleClient.cpp ex4/src/server/HandleClient.h ex4/src/server/GameManager.cpp ex4/src/server/GameManager.h)
 add_test(runTests runTests)
 add_test(Server Server)
 add_executable(Server ${OTHELLO_FILES} ${SERVER})

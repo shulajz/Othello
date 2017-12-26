@@ -17,9 +17,10 @@ CommandStart::CommandStart(vector<Game *> &listOfGames):Command(listOfGames)  {
 bool CommandStart::execute(string args, ClientData* data){
     int buffValid;
     int clientSocket = data->clientSocket;
-    //checking if the name already exists
+    //checking if the name already exists and waiting to other client to join,
+    //if so send badInput to the client
     for(int i = 0; i < listOfGames.size(); i++) {
-        if (args == listOfGames[i]->name) {
+        if (args == listOfGames[i]->name && listOfGames[i]->status == Waiting) {
             buffValid = BadInput;
             int n = write(clientSocket, &buffValid, sizeof(buffValid));
             cout << "send error - the name already exists in the list of games" << endl;
@@ -30,9 +31,10 @@ bool CommandStart::execute(string args, ClientData* data){
             return true; //dont kill the thread! cause the user got it wrong
         }
     }
+    //if the name of the game available then send GoodInput to the client
+    // and create the struct of the game.
     buffValid = GoodInput;
     int n = write(clientSocket, &buffValid, sizeof(buffValid));
-    cout << "got good input" << endl;
     if (n == -1) {
         cout << "Error writing to socket CommandStart" << endl;
         return false;

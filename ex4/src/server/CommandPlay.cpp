@@ -16,16 +16,14 @@ CommandPlay::CommandPlay(vector<Game *> &listOfGames):Command(listOfGames)  {
 }
 
 bool CommandPlay::execute(string args, ClientData* data){
-    cout << "args in commandPlay:" << args<< endl;
     int clientSocket = data->clientSocket;
     int row, col;
     parseArgsToRowAndCol(args,row, col);
     int moveToSendToOtherClient[2];
     moveToSendToOtherClient[0] = row;
     moveToSendToOtherClient[1] = col;
-    cout<<"row: "<<moveToSendToOtherClient[0]
-        << endl << "col: "<< moveToSendToOtherClient[1]<<endl;
     for(int i = 0; i < listOfGames.size(); i++) {
+        //if clientSocket1 send move then sent to clientSocket2 is move
         if(clientSocket == listOfGames[i]->socket1) {
             int n = write(listOfGames[i]->socket2, &moveToSendToOtherClient,
                           sizeof(moveToSendToOtherClient));
@@ -33,7 +31,10 @@ bool CommandPlay::execute(string args, ClientData* data){
                 cout << "Error writing to socket command play1" << endl;
                 return false;
             }
+            cout <<listOfGames[i]->socket1 <<"send row: " <<
+                 row << "col: "<< col <<"to "<< listOfGames[i]->socket2 << endl;
             return true; // don't kill the thread
+        //if clientSocket2 send move then sent to clientSocket1 is move
         } else if(clientSocket == listOfGames[i]->socket2) {
             int n = write(listOfGames[i]->socket1, &moveToSendToOtherClient,
                           sizeof(moveToSendToOtherClient));
@@ -41,6 +42,8 @@ bool CommandPlay::execute(string args, ClientData* data){
                 cout << "Error writing to socket command play1" << endl;
                 return false;
             }
+            cout <<listOfGames[i]->socket2 <<"send row: " <<
+                 row << ", col: "<< col <<"to "<< listOfGames[i]->socket1 << endl;
             return true;// dont kill the tread
         }
     }
@@ -55,6 +58,4 @@ void CommandPlay::parseArgsToRowAndCol(string args, int& row, int& col){
     }
     row = atoi(tokens[0].c_str());
     col = atoi(tokens[1].c_str());
-    cout<<"command row: "<<row
-        << endl << "command col: "<< col<<endl;
 }

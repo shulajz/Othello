@@ -62,29 +62,25 @@ Coordinate ReversiClient::receiveMove() {
     Coordinate moveReceived;
     moveReceived.row = moveReceivedFromOtherPlayer[0];
     moveReceived.col = moveReceivedFromOtherPlayer[1];
-    cout<<"row: "<<moveReceivedFromOtherPlayer[0]
-        << endl << "col: "<< moveReceivedFromOtherPlayer[1]<<endl;
+    cout<<"receive row: "<<moveReceivedFromOtherPlayer[0]
+        << endl << " and col: "<< moveReceivedFromOtherPlayer[1]<<
+        "from the server to client"<<clientSocket<<endl;
     return moveReceived;
 }
 
 void ReversiClient::sendMove(Coordinate input) {
     // Write the move to the socket
-    cout<<"row sendMove: "<<input.row
-        << endl << "col sendMove: "<<input.col<<endl;
     stringstream stream1;
     stream1 << input.row << " " << input.col;
     string inputCoordinateString = stream1.str();
-
     string playCoordinate = "play ";
     playCoordinate += inputCoordinateString;
     char buff[50];
     strcpy(buff, playCoordinate.c_str());
-    cout<<"the buffer is: " << buff << endl;
     int n = write(clientSocket, &buff, sizeof(buff));
     if (n == -1) {
         throw "Error writing row to socket";
     }
-
 }
 int ReversiClient :: getValid() {
     int buff;
@@ -144,7 +140,6 @@ void ReversiClient :: sendCommand(string command, Menu* subMenu, bool &isListGam
         throw "Error writing row to socket in send command";
     }
     isListGames = false;
-
     if(command == "list_games") {
         printList(subMenu);
         isListGames = true;
@@ -162,12 +157,3 @@ void ReversiClient :: printList(Menu* subMenu) {
     string buff(listOfAvailableGames);
     subMenu->printList(buff);
 }
-//
-//int ReversiClient::getValid() {
-//    int buff;
-//    int n = read(clientSocket, &buff, sizeof(buff));
-//    if (n == -1) {
-//        throw "Error reading getValid";
-//    }
-//    return buff;
-//}

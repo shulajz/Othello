@@ -7,16 +7,24 @@
 #include "CommandJoin.h"
 #include "ReversiServer.h"
 #include "HandleClient.h"
+#include "HandleClient.h"
+#include "GameManager.h"
 
-
-CommandJoin::CommandJoin(vector<Game *> &listOfGames):Command(listOfGames)  {
+CommandJoin::CommandJoin(vector<Game *> &listOfGames, CommandsManager* commandsManager):
+        commandsManager(commandsManager), Command(listOfGames)  {
 }
 
 bool CommandJoin::execute(string args, ClientData* data){
     int clientSocket = data->clientSocket;
     int buffValid;
+    Game currGame;
+
     for(int i = 0; i < listOfGames.size(); i++) {
-        if (args == listOfGames[i]->name) {
+        // in case tha args-the name of game that the user want to join is exist in the list
+        //and in status waiting create game and send it to the game manager
+        //if so send goodInput to the client
+        if (args == listOfGames[i]->name && listOfGames[i]->status == Waiting) {
+            cout << "client"<<clientSocket<<" join"<<endl;
             listOfGames[i]->socket2 = clientSocket;
             listOfGames[i]->status = Active;
             buffValid = GoodInput;
@@ -27,10 +35,14 @@ bool CommandJoin::execute(string args, ClientData* data){
                 return false;
             }
             sendValueOfClient(listOfGames[i]->socket1, listOfGames[i]->socket2);
-            return true;//dont kill the thread
+            currGame = *listOfGames[i];
+            GameManager gameManager(currGame, data->server, commandsManager);
+            gameManager.handleGame();
+            return false;//kill the thread
         }
     }
-    //there's no such game, write to client that its invalid
+    //there's no such game is waiting to join of other client, write to client that its invalid
+    //if so send badInput to the client
     buffValid = BadInput;
     int n = write(clientSocket, &buffValid,
                   sizeof(buffValid));
@@ -38,7 +50,8 @@ bool CommandJoin::execute(string args, ClientData* data){
         cout << "Error writing to socket command join2" << endl;
         return false;
     }
-    return true; //dont kill the thread
+
+    return false; //kill the thread
 }
 
 
