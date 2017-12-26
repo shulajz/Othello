@@ -31,8 +31,8 @@ bool CommandPlay::execute(string args, ClientData* data){
                 cout << "Error writing to socket command play1" << endl;
                 return false;
             }
-            cout <<listOfGames[i]->socket1 <<"send row: " <<
-                 row << "col: "<< col <<"to "<< listOfGames[i]->socket2 << endl;
+            cout <<"send row: " <<
+                 row << " col: "<< col <<" to client"<< listOfGames[i]->socket2 << endl;
             return true; // don't kill the thread
         //if clientSocket2 send move then sent to clientSocket1 is move
         } else if(clientSocket == listOfGames[i]->socket2) {
@@ -42,8 +42,8 @@ bool CommandPlay::execute(string args, ClientData* data){
                 cout << "Error writing to socket command play1" << endl;
                 return false;
             }
-            cout <<listOfGames[i]->socket2 <<"send row: " <<
-                 row << ", col: "<< col <<"to "<< listOfGames[i]->socket1 << endl;
+            cout <<"send row: " <<
+                 row << " col: "<< col <<" to client"<< listOfGames[i]->socket1 << endl;;
             return true;// dont kill the tread
         }
     }

@@ -59,13 +59,13 @@ void CommandJoin::sendValueOfClient(int clientSocket1, int clientSocket2) {
     char player1 = '1';
     char player2 = '2';
     int n = write(clientSocket1, &player1, sizeof(player1));
-    cout << "Write on ClientSocket1 he play Black ('x')" << endl;
+    cout << "Write on ClientSocket "<< clientSocket1<<" he play Black ('x')" << endl;
     if (n == -1) {
         cout << "Error writing to socket command sendValueOfClient1" << endl;
         return;
     }
     n = write(clientSocket2, &player2, sizeof(player2));
-    cout << "Write on ClientSocket2 he play White ('o') " << endl;
+    cout << "Write on ClientSocket "<< clientSocket2<<" he play White ('o') " << endl;
     if (n == -1) {
         cout << "Error writing to socket command sendValueOfClient2" << endl;
         return;
