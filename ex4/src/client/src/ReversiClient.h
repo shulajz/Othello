@@ -29,7 +29,7 @@ public:
     TokenValue getTokenValueOfPlayer();
     int getValid();
     void sendEnd();
-//    int getValid();
+//    int getValid();/
     void sendNoMove();
     void sendCommand(string command,  Menu* subMenu, bool &isListGames, int &validCommand);
     void printList( Menu* subMenu);
