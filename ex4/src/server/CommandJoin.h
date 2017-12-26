@@ -13,7 +13,6 @@ class CommandJoin: public Command {
 public:
     CommandJoin(vector<Game *> &listOfGames, CommandsManager* commandsManager);
     virtual bool execute(string args, ClientData* data);
-    void sendValueOfClient(int clientSocket1, int clientSocket2);
 
 private:
     CommandsManager* commandsManager;

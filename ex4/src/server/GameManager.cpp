@@ -21,9 +21,9 @@ void GameManager::handleGame() {
         cout << "Error: unable to create thread, " << rc << endl;
         exit(-1);
     }
-    cout <<"create game: "<<endl<<
-            "the clients are: "<<data1->clientSocket<<" and "<<data2->clientSocket<<endl<<
-            "the name of the game is: "<<game.name<<endl;
+    cout <<"create game with the name : "<<game.name<<
+            " and the clients are: client"<<data1->clientSocket<<" and client"<<data2->clientSocket<<endl;
+    sendValueOfClient(data1->clientSocket, data2->clientSocket);
 }
 
 void *GameManager:: gameManagerGate(void* element) {
@@ -47,4 +47,21 @@ void GameManager:: gameManager(){
     cout<<"close the game :" << game.name << endl;
     delete(data1);
     delete(data2);
+}
+
+void GameManager::sendValueOfClient(int clientSocket1, int clientSocket2) {
+    char player1 = '1';
+    char player2 = '2';
+    int n = write(clientSocket1, &player1, sizeof(player1));
+    cout << "Write on ClientSocket "<< clientSocket1<<" he play Black ('x')" << endl;
+    if (n == -1) {
+        cout << "Error writing to socket command sendValueOfClient1" << endl;
+        return;
+    }
+    n = write(clientSocket2, &player2, sizeof(player2));
+    cout << "Write on ClientSocket "<< clientSocket2<<" he play White ('o') " << endl;
+    if (n == -1) {
+        cout << "Error writing to socket command sendValueOfClient2" << endl;
+        return;
+    }
 }

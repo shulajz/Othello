@@ -14,8 +14,8 @@ public:
     GameManager(Game game,HandleClient* server, CommandsManager* commandsManager);
     void handleGame();
     static void * gameManagerGate(void* element);
+    void sendValueOfClient(int clientSocket1, int clientSocket2);
     void  gameManager();
-   // ~GameManager();
 private:
     Game game;
     HandleClient* server;

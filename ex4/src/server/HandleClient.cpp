@@ -65,7 +65,7 @@ void HandleClient :: readCommand(int clientSocket, string &command, string &args
     command = tokens[0];
     for(int i = 1; i < tokens.size(); i++){//we're now in play
         if (first_loop) {
-            cout << " args are: ";
+            cout << " ,args are: ";
         }
         first_loop = false;
         args += tokens[i] + " ";

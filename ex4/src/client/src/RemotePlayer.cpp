@@ -31,7 +31,7 @@ RemotePlayer::RemotePlayer(Menu* subMenu){
         delete(ipBuff);
     }
 }
-//
+
 void RemotePlayer::doOneTurn(GameRules *gameRules, Board &board,
                              vector<Coordinate> &coordinates,
                              Coordinate &input, BoardGraphic *boardGraphic, Player *player){

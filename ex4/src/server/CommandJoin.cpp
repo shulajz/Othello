@@ -24,7 +24,6 @@ bool CommandJoin::execute(string args, ClientData* data){
         //and in status waiting create game and send it to the game manager
         //if so send goodInput to the client
         if (args == listOfGames[i]->name && listOfGames[i]->status == Waiting) {
-            cout << "client"<<clientSocket<<" join"<<endl;
             listOfGames[i]->socket2 = clientSocket;
             listOfGames[i]->status = Active;
             buffValid = GoodInput;
@@ -34,7 +33,6 @@ bool CommandJoin::execute(string args, ClientData* data){
                 cout << "Error writing to socket command join" << endl;
                 return false;
             }
-            sendValueOfClient(listOfGames[i]->socket1, listOfGames[i]->socket2);
             currGame = *listOfGames[i];
             GameManager gameManager(currGame, data->server, commandsManager);
             gameManager.handleGame();
@@ -54,20 +52,3 @@ bool CommandJoin::execute(string args, ClientData* data){
     return false; //kill the thread
 }
 
-
-void CommandJoin::sendValueOfClient(int clientSocket1, int clientSocket2) {
-    char player1 = '1';
-    char player2 = '2';
-    int n = write(clientSocket1, &player1, sizeof(player1));
-    cout << "Write on ClientSocket "<< clientSocket1<<" he play Black ('x')" << endl;
-    if (n == -1) {
-        cout << "Error writing to socket command sendValueOfClient1" << endl;
-        return;
-    }
-    n = write(clientSocket2, &player2, sizeof(player2));
-    cout << "Write on ClientSocket "<< clientSocket2<<" he play White ('o') " << endl;
-    if (n == -1) {
-        cout << "Error writing to socket command sendValueOfClient2" << endl;
-        return;
-    }
-}
