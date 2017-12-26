@@ -32,10 +32,6 @@ private:
 
 };
 
-enum StatusOfGame{
-    Close = -4,
-};
-
 struct ClientData {
     int clientSocket;
     HandleClient* server;
