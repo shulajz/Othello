@@ -4,10 +4,8 @@
 
 #include "CommandPlay.h"
 #include <unistd.h>
-#include <iostream>
 #include <cstdlib>
 #include <sstream>
-#include "ReversiServer.h"
 #include "HandleClient.h"
 
 using namespace std;
@@ -44,7 +42,7 @@ bool CommandPlay::execute(string args, ClientData* data){
             }
             cout <<"send row: " <<
                  row << " col: "<< col <<" to client"<< listOfGames[i]->socket1 << endl;;
-            return true;// dont kill the tread
+            return true;// don't kill the tread
         }
     }
 }

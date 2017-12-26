@@ -7,16 +7,12 @@
 
 #include "Command.h"
 #include "CommandsManager.h"
-//#include "../client/src/Tools.h"
-//#include "ReversiServer.h"
+
 
 class CommandGetList: public Command {
 public:
     CommandGetList(vector<Game *> &listOfGames);
     virtual bool execute(string args, ClientData* data);
-
-private:
-//    vector <Game*> listOfGames;
 };
 
 

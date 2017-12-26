@@ -7,16 +7,11 @@
 
 #include "Command.h"
 #include "CommandsManager.h"
-//#include "../client/src/Tools.h"
-//#include "ReversiServer.h"
 
 class CommandClose: public Command {
 public:
     CommandClose(vector <Game*> &listOfGames);
     virtual bool execute(string args, ClientData* data);
-
-private:
-//    vector <Game*> listOfGames;
 };
 
 

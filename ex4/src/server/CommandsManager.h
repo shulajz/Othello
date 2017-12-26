@@ -7,11 +7,9 @@
 
 #include <map>
 #include "Command.h"
-//#include "ReversiServer.h"//
-
 
 using namespace std;
-//#include "ReversiServer.h"
+
 class ClientData;
 class Command;
 class Game;

@@ -5,7 +5,6 @@
 #include <unistd.h>
 #include <iostream>
 #include "CommandGetList.h"
-#include "ReversiServer.h"
 #include "HandleClient.h"
 //
 using namespace std;

@@ -16,6 +16,7 @@ GameManager::GameManager(Game game, HandleClient* server, CommandsManager* comma
 
 void GameManager::handleGame() {
     pthread_t thread;
+    //create thread for the game
     int rc = pthread_create(&thread, NULL, gameManagerGate, (void *) this);
     if (rc) {
         cout << "Error: unable to create thread, " << rc << endl;
@@ -23,7 +24,6 @@ void GameManager::handleGame() {
     }
     cout <<"create game with the name : "<<game.name<<
             " and the clients are: client"<<data1->clientSocket<<" and client"<<data2->clientSocket<<endl;
-    sendValueOfClient(data1->clientSocket, data2->clientSocket);
 }
 
 void *GameManager:: gameManagerGate(void* element) {
@@ -32,7 +32,10 @@ void *GameManager:: gameManagerGate(void* element) {
 }
 
 void GameManager:: gameManager(){
+    sendValueOfClient(data1->clientSocket, data2->clientSocket);
     bool isContinue = true;
+    //the game will continue until get a command of close
+    // from any client.
     while(isContinue){
         string command1;
         string args1;
