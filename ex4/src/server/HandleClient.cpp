@@ -13,13 +13,16 @@ void HandleClient :: sendCloseToEveryOne() {
     ClientData* data;
     string args;
     commandsManager.executeCommand("killAll", args, data);
+    cout << "there is " << threads.size() << " of open process"<<endl;
     for(int i = 0; i < threads.size();i++){
         pthread_cancel(threads[i]);
+        cout << "close open game "<< i + 1 << endl;
     }
 }
 void HandleClient::run(int clientSocket){
     if (clientSocket == -1){
-        throw "Error on accept";
+        cout << "Error on accept";
+        exit(-1);
     }
     cout << "Client "<< clientSocket<< " connected"  << endl;
     pthread_t thread1;
@@ -57,7 +60,8 @@ void HandleClient :: readCommand(int clientSocket, string &command, string &args
     char commandFromUser[50];
     int n = read(clientSocket, &commandFromUser, sizeof(commandFromUser));
     if (n == -1) {
-        throw "Error reading command from the socket";
+        cout<< "Error reading command from the socket" << endl;
+        exit(-1);
     }
     string buf(commandFromUser);
     stringstream ss(commandFromUser); // Insert the string into a stream
@@ -80,6 +84,7 @@ void HandleClient :: readCommand(int clientSocket, string &command, string &args
 void HandleClient ::pushThread(pthread_t thread){
     threads.push_back(thread);
 }
+
 void HandleClient ::eraseThread(pthread_t thread){
     for(int i = 0 ; i< threads.size(); i++){
         if (threads[i] == thread){

@@ -54,7 +54,8 @@ Coordinate ReversiClient::receiveMove() {
 
     int n = read(clientSocket, moveReceivedFromOtherPlayer, sizeof(moveReceivedFromOtherPlayer));
     if (n == -1) {
-        throw "Error reading move from the socket";
+        cout << "Error reading move from the socket";
+        exit(-1);
     }
     checkIfServerOpen(n);
     Coordinate moveReceived;
@@ -74,14 +75,16 @@ void ReversiClient::sendMove(Coordinate input) {
     strcpy(buff, playCoordinate.c_str());
     int n = write(clientSocket, &buff, sizeof(buff));
     if (n == -1) {
-        throw "Error writing row to socket";
+        cout << "Error writing row to socket";
+        exit(-1);
     }
 }
 int ReversiClient :: getValid() {
     int buff;
     int n = read(clientSocket, &buff, sizeof(buff));
     if (n == -1) {
-        throw "Error reading getValid";
+        cout << "Error reading getValid";
+        exit(-1);
     }
     checkIfServerOpen(n);
     if (buff == BadInput){
@@ -95,11 +98,13 @@ void ReversiClient::sendNoMove() {
     int n = write(clientSocket, &noMove, sizeof(noMove));
     if (n == -1) {
 
-        throw "Error writing row to socket";
+        cout << "Error writing row to socket";
+        exit(-1);
     }
     n = write(clientSocket, &noMove, sizeof(noMove));
     if (n == -1) {
-        throw "Error writing row to socket";
+        cout<< "Error writing row to socket";
+        exit(-1);
     }
 }
 
@@ -109,7 +114,8 @@ void ReversiClient::sendEnd() {
     char closeStr[6] = "close";
     int n = write(clientSocket, &closeStr, sizeof(closeStr));
     if (n == -1) {
-        throw "Error writing row to socket";
+        cout <<"Error writing close to socket";
+        exit(-1);
     }
 }
 
@@ -136,7 +142,8 @@ void ReversiClient :: sendCommand(string command, Menu* subMenu, bool &isListGam
     strcpy(buffer, command.c_str());
     int n = write(clientSocket, &buffer, sizeof(buffer));
     if (n == -1) {
-        throw "Error writing row to socket in send command";
+        cout << "Error writing row to socket in send command";
+        exit(-1);
     }
     isListGames = false;
     if(command == "list_games") {
@@ -151,7 +158,8 @@ void ReversiClient :: printList(Menu* subMenu) {
     char listOfAvailableGames[256];
     int n = read(clientSocket, &listOfAvailableGames, sizeof(listOfAvailableGames));
     if (n == -1) {
-        throw "Error reading move from the socket in print list method";
+        cout << "Error reading move from the socket in print list method";
+        exit(-1);
     }
     checkIfServerOpen(n);
     string buff(listOfAvailableGames);

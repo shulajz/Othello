@@ -28,6 +28,7 @@ public:
 private:
     void subMenuForTheRemotePlayer(Menu* subMenu);
     ReversiClient* client;
+
 };
 
 #endif //OTHELLO_REMOTEPLAYER_H
