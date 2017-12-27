@@ -28,6 +28,8 @@ public:
     virtual void printSpecialSituation(Situation message) const;
 
     virtual void printList(string listOfAvailableGames) const;
+
+    virtual void printWhoPlay(TokenValue tv)const;
 };
 
 #endif //OTHELLO_CONSOLEMENU_H

@@ -55,6 +55,8 @@ public:
      */
     virtual void printWrongChoice()const = 0;
 
+    virtual void printWhoPlay(TokenValue tv)const =0;
+
 protected:
 
     /**

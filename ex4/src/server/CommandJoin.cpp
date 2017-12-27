@@ -35,8 +35,6 @@ bool CommandJoin::execute(string args, ClientData* data){
             currGame = *listOfGames[i];
             GameManager gameManager(currGame, data->server, commandsManager);
             gameManager.handleGame();
-            cout << "the thread is killed in join";
-
             return false;//kill the thread
         }
     }

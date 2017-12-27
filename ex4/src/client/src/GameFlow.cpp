@@ -25,6 +25,9 @@ void GameFlow :: run () {
     }
     // update the server that its the end of the game
     curr_player->sendEndOfGame(inputCoordinate);
+    switchPlayer();
+    curr_player->sendEndOfGame(inputCoordinate);
+    switchPlayer();
 
     //print after the game end the current board if needToPrint is not false
     // (happened when there is no moves for both players and the board we print

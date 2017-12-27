@@ -4,7 +4,13 @@
 
 #include "ConsoleMenu.h"
 #include <limits>
-
+void ConsoleMenu::printWhoPlay(TokenValue tv)const{
+    if (tv == Black ) {
+        cout<< endl << "You play black ('X')"<< endl;
+    } else{
+        cout << endl << "You play white ('O')"<< endl;
+    }
+}
 
 void ConsoleMenu:: printWrongChoice()const{
     cout<<"Illegal Input. Please try again."<<endl;

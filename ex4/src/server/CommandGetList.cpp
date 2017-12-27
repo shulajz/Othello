@@ -42,5 +42,6 @@ bool CommandGetList::execute(string args, ClientData* data){
         return false;
     }
     close(data->clientSocket);
+    cout << "close Client" << data->clientSocket << endl;
     return false; //kill the thread
 }

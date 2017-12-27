@@ -7,24 +7,23 @@
 
 HandleClient::HandleClient(): commandsManager(listOfGames){
     pthread_mutex_init(&this->handle_client_locker, 0);
-    pthread_mutex_init(&this->kill_all_locker, 0);
 }
 
 void HandleClient :: sendCloseToEveryOne() {
     ClientData* data;
     string args;
-    pthread_mutex_lock(&this->kill_all_locker);
     commandsManager.executeCommand("killAll", args, data);
-    pthread_mutex_unlock(&this->kill_all_locker);
+    for(int i = 0; i < threads.size();i++){
+        pthread_cancel(threads[i]);
+    }
 }
 void HandleClient::run(int clientSocket){
-    pthread_t thread1;
-    ClientData* clientData;
     if (clientSocket == -1){
         throw "Error on accept";
     }
     cout << "Client "<< clientSocket<< " connected"  << endl;
-    clientData = new ClientData();
+    pthread_t thread1;
+    ClientData* clientData = new ClientData();
     clientData->clientSocket = clientSocket;
     clientData->server = this;
     //create thread that handle with the commands,
@@ -50,6 +49,7 @@ void HandleClient::handleClient(void* element) {
     pthread_mutex_lock(&this->handle_client_locker);
     commandsManager.executeCommand(command, args, data);
     pthread_mutex_unlock(&this->handle_client_locker);
+    delete(element);
 }
 
 void HandleClient :: readCommand(int clientSocket, string &command, string &args) {
@@ -75,4 +75,15 @@ void HandleClient :: readCommand(int clientSocket, string &command, string &args
         args += tokens[i] + " ";
     }
     cout << args << endl;
+}
+
+void HandleClient ::pushThread(pthread_t thread){
+    threads.push_back(thread);
+}
+void HandleClient ::eraseThread(pthread_t thread){
+    for(int i = 0 ; i< threads.size(); i++){
+        if (threads[i] == thread){
+            threads.erase(threads.begin() + i);
+        }
+    }
 }

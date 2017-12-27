@@ -28,6 +28,7 @@ RemotePlayer::RemotePlayer(Menu* subMenu){
         do {
             this->tv = client->getTokenValueOfPlayer();
         } while (this->tv != Black && this->tv != White);
+        subMenu->printWhoPlay(this->tv);
         delete(ipBuff);
     }
 }
