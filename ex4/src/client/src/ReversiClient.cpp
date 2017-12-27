@@ -3,6 +3,7 @@
 //
 
 #include "ReversiClient.h"
+#include "../../server/CommandKillAll.h"
 //#include "../../server/ReversiServer.h"
 #include <sys/socket.h>
 #include <netinet/in.h>

@@ -3,13 +3,15 @@
 ////
 
 
+#include <iostream>
 #include "CommandsManager.h"
 #include "CommandStart.h"
 #include "CommandClose.h"
 #include "CommandGetList.h"
 #include "CommandJoin.h"
 #include "CommandPlay.h"
-
+#include "CommandKillAll.h"
+using namespace std;
 CommandsManager::CommandsManager(vector<Game*>& listOfGames) {
 
     commandsMap["start"] = new CommandStart(listOfGames);
@@ -18,6 +20,7 @@ CommandsManager::CommandsManager(vector<Game*>& listOfGames) {
     commandsMap["join"] = new CommandJoin(listOfGames, this);
     commandsMap["play"] = new CommandPlay(listOfGames);
     commandsMap["killAll"] = new CommandKillAll(listOfGames);
+//    cout << "hi im a ctr"<<endl;
 
 }
 

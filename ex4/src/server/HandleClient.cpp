@@ -10,7 +10,9 @@ HandleClient::HandleClient() :commandsManager(listOfGames){
 }
 
 void HandleClient :: sendCloseToEveryOne() {
-    commandsManager.executeCommand("killAll", 0, 0);
+    ClientData *data;
+    string args;
+    commandsManager.executeCommand("killAll", args, data);
 
 }
 void HandleClient::run(int clientSocket){
@@ -22,7 +24,7 @@ void HandleClient::run(int clientSocket){
     cout << "Client "<< clientSocket<< " connected"  << endl;
     clientData = new ClientData();
     clientData->clientSocket = clientSocket;
-    clientData->server = this;
+    clientData->handleClient = this;
     //create thread that handle with the commands,
     // and after read command and execute it, the thread will ended.
     int rc = pthread_create(&thread1, NULL, gateFunction, (void*)clientData);
@@ -34,11 +36,11 @@ void HandleClient::run(int clientSocket){
 
 void* HandleClient :: gateFunction(void* element) {
     ClientData* data = (ClientData*)element;
-    data->server->handleClient(element);
+    data->handleClient->handleCommands(element);
 
 }
 
-void HandleClient::handleClient(void* element) {
+void HandleClient::handleCommands(void* element) {
     ClientData* data = (ClientData*)element;
     string command;
     string args;

@@ -12,7 +12,7 @@ ReversiServer::ReversiServer(int port): port(port),
     cout << "Server" << endl;
 }
 
-void ReversiServer::getClose() {
+void ReversiServer::getCloseFromUser() {
     while(true) {
         string select;
         cin >> select;
@@ -39,12 +39,12 @@ void* ReversiServer :: gateFunction(void* element) {
 
 void ReversiServer::start() {
     pthread_t thread1;
-    int rc = pthread_create(&thread1, NULL, gateFunction, this);
+    int rc = pthread_create(&thread1, NULL, gateFunction, (void*)this);
     if (rc) {
         cout << "Error: unable to create thread, " << rc << endl;
             exit(-1);
     }
-    getClose();
+    getCloseFromUser();
 }
 
 void ReversiServer::serverFunc(){
@@ -67,7 +67,7 @@ void ReversiServer::serverFunc(){
     // Define the client socket's structures
     struct sockaddr_in clientAddress1;
     socklen_t clientAddressLen1;
-    HandleClient handleClient;
+//    HandleClient handleClient;
     while (!stopServer) {
         cout << "Waiting for client connections..." << endl;
         // Accept a new client connection

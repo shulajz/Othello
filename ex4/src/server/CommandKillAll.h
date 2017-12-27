@@ -11,6 +11,7 @@ enum StatusOfGame{
 #include "Command.h"
 
 class CommandKillAll: public Command {
+public:
     CommandKillAll(vector <Game*> &listOfGames);
     virtual bool execute(string args, ClientData* data);
 };

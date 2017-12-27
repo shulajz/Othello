@@ -21,7 +21,7 @@ public:
     HandleClient();
     void sendCloseToEveryOne();
     void run(int clientSocket);
-    void handleClient(void* element);
+    void handleCommands(void* element);
     static void* gateFunction(void* element);
     void readCommand(int clientSocket, string &command, string &args);
 private:
@@ -34,7 +34,7 @@ private:
 
 struct ClientData {
     int clientSocket;
-    HandleClient* server;
+    HandleClient* handleClient;
 
 };
 
