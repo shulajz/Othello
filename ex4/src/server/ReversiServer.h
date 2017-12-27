@@ -21,7 +21,7 @@ public:
     ReversiServer(int port);
     void start();
     void stop();
-    void getClose();
+    void getCloseFromUser();
     static void* gateFunction(void* element);
     void serverFunc();
 private:

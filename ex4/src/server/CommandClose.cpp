@@ -11,7 +11,6 @@ CommandClose::CommandClose(vector<Game *> &listOfGames):Command(listOfGames) {
 }
 bool CommandClose::execute(string args,ClientData* data){
     int clientSocket = data->clientSocket;
-    char buffClose[6] = "close";
     for(int i = 0; i < listOfGames.size(); i++) {
         if(listOfGames[i]->socket1 == clientSocket ||
                 listOfGames[i]->socket2 == clientSocket) {

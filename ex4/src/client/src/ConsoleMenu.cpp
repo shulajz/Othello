@@ -26,8 +26,8 @@ void ConsoleMenu:: printOptionsMenu(TypeMenu typeMenu) const{
              << "press 'R' -to play against RemotePlayer" << endl;
     } else if (typeMenu == SubMenu){
             cout<<endl<<"Choose one of the options:"
-             <<endl<< "1. write 'start <name>' - to open a new game in the name you choose, for example: start Shula;)" << endl
-             << "2. write 'join <name>' -to join to existing game with a specific name, for example: join Shula;)" << endl
+             <<endl<< "1. write 'start <name>' - to open a new game in the name you choose, for example: start dana" << endl
+             << "2. write 'join <name>' -to join to existing game with a specific name, for example: join dana" << endl
              << "3. write 'list_games' -to see all the available game that you can join" << endl;
     }
 }

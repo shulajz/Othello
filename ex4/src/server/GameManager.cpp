@@ -8,10 +8,10 @@ GameManager::GameManager(Game game, HandleClient* handleClient, CommandsManager*
 
     data1 = new ClientData();
     data1->clientSocket = game.socket1;
-    data1->server = handleClient;
+    data1->handleClient = handleClient;
     data2 = new ClientData();
     data2->clientSocket = game.socket2;
-    data2->server = handleClient;
+    data2->handleClient = handleClient;
 }
 
 void GameManager::handleGame() {
