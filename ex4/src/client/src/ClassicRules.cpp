@@ -11,7 +11,6 @@
  */
 Cell* ClassicRules :: getInitialValues(int dim) const {
     Cell* cells = new Cell[4];
-//    vector<Cell>* initCells;
 
 
 

@@ -5,7 +5,6 @@
 #ifndef OTHELLO_GAMERULES_H
 #define OTHELLO_GAMERULES_H
 
-//#include "Coordinate.h"
 #include "Cell.h"
 #include "Player.h"
 #include "Board.h"

@@ -19,3 +19,4 @@ bool CommandKillAll::execute(string args, ClientData* data){
         }
     }
 }
+//

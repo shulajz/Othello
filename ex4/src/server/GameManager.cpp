@@ -1,7 +1,7 @@
 //
 // Created by or on 12/25/17.
 //
-
+//
 #include "GameManager.h"
 GameManager::GameManager(Game game, HandleClient* handleClient, CommandsManager* commandsManager):
         game(game), handleClient(handleClient), commandsManager(commandsManager) {

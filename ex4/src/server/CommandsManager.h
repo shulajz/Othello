@@ -1,7 +1,7 @@
 //
 // Created by shulamit on 21/12/17.
-//
 
+//
 #ifndef OTHELLO_COMMANDSMANAGER_H
 #define OTHELLO_COMMANDSMANAGER_H
 

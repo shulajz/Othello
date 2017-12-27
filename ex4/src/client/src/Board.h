@@ -13,11 +13,9 @@
 
 class Board {
 private:
-    //Token** boardArr;
 
 
     Token** boardArr;
-//    Cell* initialCells;
     BoardGraphic &m_boardGraphic;
     int dimensions;
     TokenFactory &pTokenFactory;

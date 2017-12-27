@@ -31,5 +31,5 @@ public:
 
     virtual void printWhoPlay(TokenValue tv)const;
 };
-
+//
 #endif //OTHELLO_CONSOLEMENU_H

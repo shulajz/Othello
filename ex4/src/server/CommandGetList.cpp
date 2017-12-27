@@ -7,7 +7,7 @@
 #include "CommandGetList.h"
 #include "HandleClient.h"
 #include "ReversiServer.h"
-//
+
 using namespace std;
 
 CommandGetList::CommandGetList(vector<Game *> &listOfGames):Command(listOfGames) {

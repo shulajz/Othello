@@ -11,7 +11,7 @@
 using namespace std;
 
 
-
+//
 class BoardGraphic {
 public:
     virtual void draw(Token** tokenArr) const = 0;

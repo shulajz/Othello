@@ -20,3 +20,4 @@ private:
 
 
 #endif //OTHELLO_COMMANDJOIN_H
+//

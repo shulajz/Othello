@@ -5,9 +5,6 @@
 #include "ConsoleTokenFactory.h"
 #include "ConsoleToken.h"
 
-//Token* ConsoleTokenFactory:: Create() {
-//    return new ConsoleToken();
-//}
 
 
 Token* ConsoleTokenFactory:: Create(int numObjects) {

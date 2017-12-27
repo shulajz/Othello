@@ -31,7 +31,7 @@ void ConsoleMenu:: printOptionsMenu(TypeMenu typeMenu) const{
              << "3. write 'list_games' -to see all the available game that you can join" << endl;
     }
 }
-
+//
  string ConsoleMenu::getSelection() const {
      string selection, string;
      bool firstTime = true;

@@ -1,6 +1,6 @@
 //
 // Created by shulamit on 10/31/17.
-//
+////
 
 #ifndef OTHELLO_REALPLAYER_H
 #define OTHELLO_REALPLAYER_H

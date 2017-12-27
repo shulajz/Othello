@@ -17,5 +17,5 @@ public:
 private:
 };
 
-
+//
 #endif //OTHELLO_STARTCOMMAND_H

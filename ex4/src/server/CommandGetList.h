@@ -1,7 +1,7 @@
 //
 // Created by shulamit on 21/12/17.
 ////
-
+//
 #ifndef OTHELLO_COMMANDGETLIST_H
 #define OTHELLO_COMMANDGETLIST_H
 

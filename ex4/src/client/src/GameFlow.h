@@ -1,6 +1,6 @@
 //
 // Created by or on 12/8/17.
-//
+///
 
 #ifndef OTHELLO_GAME_H
 #define OTHELLO_GAME_H

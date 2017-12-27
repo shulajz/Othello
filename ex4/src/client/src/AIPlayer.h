@@ -17,10 +17,6 @@ class AIPlayer : public Player{
 
     public:
 
-    /**
-     * @return true if is real player, false otherwise.
-     */
-//    bool isRealPlayer()const;
 
     /**
      * Constructor of AIPLayer.

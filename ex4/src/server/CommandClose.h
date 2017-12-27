@@ -16,3 +16,4 @@ public:
 
 
 #endif //OTHELLO_COMMANDCLOSE_H
+//

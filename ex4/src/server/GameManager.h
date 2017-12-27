@@ -4,7 +4,7 @@
 
 #ifndef OTHELLO_GAMEMANAGER_H
 #define OTHELLO_GAMEMANAGER_H
-
+//
 
 #include "Command.h"
 #include "HandleClient.h"

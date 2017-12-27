@@ -32,6 +32,6 @@ protected:
 
 
 };
-
+//
 
 #endif //OTHELLO_COMMAND_H

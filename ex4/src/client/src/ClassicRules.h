@@ -11,7 +11,7 @@ using namespace std;
 #include "GameRules.h"
 #include "Cell.h"
 #include "Player.h"
-//#include "Coordinate.h"
+
 
 
 class ClassicRules : public GameRules{

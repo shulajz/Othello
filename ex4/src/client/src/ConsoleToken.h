@@ -1,6 +1,6 @@
 //
 // Created by shulamit on 10/30/17.
-//
+////
 
 #ifndef OTHELLO_CONSOLETOKEN_H
 #define OTHELLO_CONSOLETOKEN_H
