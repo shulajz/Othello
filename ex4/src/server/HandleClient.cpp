@@ -12,13 +12,14 @@ HandleClient::HandleClient(): commandsManager(listOfGames){
 void HandleClient :: sendCloseToEveryOne() {
     ClientData* data;
     string args;
-    commandsManager.executeCommand("killAll", args, data);
-    cout << "there is " << threads.size() << " of open process"<<endl;
+    cout << "there is " << threads.size() << " of open games"<<endl;
     for(int i = 0; i < threads.size();i++){
         pthread_cancel(threads[i]);
-        cout << "close open game "<< i + 1 << endl;
+        cout << "close open game " << i + 1 << endl;
     }
+    commandsManager.executeCommand("killAll", args, data);
 }
+
 void HandleClient::run(int clientSocket){
     if (clientSocket == -1){
         cout << "Error on accept";
@@ -41,7 +42,6 @@ void HandleClient::run(int clientSocket){
 void* HandleClient :: gateFunction(void* element) {
     ClientData* data = (ClientData*)element;
     data->handleClient->handleCommands(element);
-
 }
 
 void HandleClient::handleCommands(void* element) {

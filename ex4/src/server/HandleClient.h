@@ -15,7 +15,6 @@
 
 using namespace std;
 
-
 class HandleClient {
 public:
     HandleClient();
@@ -29,14 +28,12 @@ public:
 private:
     pthread_mutex_t handle_client_locker;
     vector<pthread_t> threads;
-    vector<Game*> listOfGames;
+    vector <Game*> listOfGames;
     CommandsManager commandsManager;
-
 };
 
 struct ClientData {
     int clientSocket;
     HandleClient* handleClient;
-
 };
 #endif //OTHELLO_HANDLECLIENT_H

@@ -28,6 +28,8 @@ bool CommandStart::execute(string args, ClientData* data){
                 cout << "Error writing to socket CommandStart" << endl;
                 return false;
             }
+            cout << "close Client" << clientSocket << endl;
+            close(clientSocket);
             return true; //dont kill the thread! cause the user got it wrong
         }
     }

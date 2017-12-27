@@ -78,6 +78,7 @@ void ReversiClient::sendMove(Coordinate input) {
         cout << "Error writing row to socket";
         exit(-1);
     }
+
 }
 int ReversiClient :: getValid() {
     int buff;
@@ -117,6 +118,7 @@ void ReversiClient::sendEnd() {
         cout <<"Error writing close to socket";
         exit(-1);
     }
+    close(clientSocket);
 }
 
 TokenValue ReversiClient::getTokenValueOfPlayer(){
@@ -169,7 +171,7 @@ void ReversiClient :: printList(Menu* subMenu) {
 void ReversiClient::checkIfServerOpen(int n){
     if(n == 0) {
         close(clientSocket);
-        cout <<"the server closed!" <<endl;
+        cout << "the server closed!" << endl;
         exit(1);
     }
 }

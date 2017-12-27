@@ -38,6 +38,7 @@ bool CommandJoin::execute(string args, ClientData* data){
             return false;//kill the thread
         }
     }
+
     //there's no such game is waiting to join of other client, write to client that its invalid
     //if so send badInput to the client.
     buffValid = BadInput;
@@ -48,7 +49,8 @@ bool CommandJoin::execute(string args, ClientData* data){
         cout << "Error writing to socket command join2" << endl;
         return false;
     }
-
+    cout << "close Client" << clientSocket << endl;
+    close(clientSocket);
     return false; //kill the thread
 }
 
