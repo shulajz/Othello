@@ -53,4 +53,3 @@ bool CommandJoin::execute(string args, ClientData* data){
     close(clientSocket);
     return false; //kill the thread
 }
-
