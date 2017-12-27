@@ -114,8 +114,7 @@ void ReversiClient::sendEnd() {
     char closeStr[6] = "close";
     int n = write(clientSocket, &closeStr, sizeof(closeStr));
     if (n == -1) {
-        cout <<"Error writing close to socket";
-        exit(-1);
+        checkIfServerOpen(n + 1);
     }
     close(clientSocket);
 }
@@ -159,7 +158,8 @@ void ReversiClient :: printList(Menu* subMenu) {
     char listOfAvailableGames[256];
     int n = read(clientSocket, &listOfAvailableGames, sizeof(listOfAvailableGames));
     if (n == -1) {
-        checkIfServerOpen(n + 1);
+        cout << "Error reading move from the socket in print list method";
+        exit(-1);
     }
     checkIfServerOpen(n);
     string buff(listOfAvailableGames);

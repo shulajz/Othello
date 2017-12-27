@@ -52,7 +52,6 @@ void RemotePlayer:: printWhatThePlayerPlayed(Coordinate coordinate,
 void RemotePlayer::sendEndOfGame(Coordinate coordinate){
     if (coordinate.row > 0) {
         client->sendMove(coordinate);
-        return;
     }
     client->sendEnd();
 }
