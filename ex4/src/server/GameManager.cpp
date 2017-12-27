@@ -33,6 +33,7 @@ void *GameManager:: gameManagerGate(void* element) {
 
 
 void GameManager:: gameManager(){
+    //void* status;
     sendValueOfClient(data1->clientSocket, data2->clientSocket);
     bool isContinue = true;
     //the game will continue until get a command of close
@@ -41,6 +42,7 @@ void GameManager:: gameManager(){
         string command1;
         string args1;
         handleClient->readCommand(game.socket1,command1,args1);
+        //pthread_join(thread, );
         isContinue = commandsManager->executeCommand(command1, args1, data1);
         if (!isContinue){break;}
         string command2;
