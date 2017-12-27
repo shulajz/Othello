@@ -111,7 +111,6 @@ void ReversiClient::sendNoMove() {
 
 void ReversiClient::sendEnd() {
     // Write End to the socket
-    int end = End;
     char closeStr[6] = "close";
     int n = write(clientSocket, &closeStr, sizeof(closeStr));
     if (n == -1) {
@@ -160,8 +159,7 @@ void ReversiClient :: printList(Menu* subMenu) {
     char listOfAvailableGames[256];
     int n = read(clientSocket, &listOfAvailableGames, sizeof(listOfAvailableGames));
     if (n == -1) {
-        cout << "Error reading move from the socket in print list method";
-        exit(-1);
+        checkIfServerOpen(n + 1);
     }
     checkIfServerOpen(n);
     string buff(listOfAvailableGames);
