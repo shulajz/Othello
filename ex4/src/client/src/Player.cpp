@@ -61,7 +61,10 @@ void Player ::printNoMoves(BoardGraphic&  m_boardGraphic){
     m_boardGraphic.printWhosMove(this->getValue());
     m_boardGraphic.printSpecialSituation(Next);
 }
+void Player :: printIdentityOfPlayer(BoardGraphic&  m_boardGraphic) {
+    m_boardGraphic.printPlayersIdentity(this->getValue());
 
+}
 void Player ::sendEndOfGame(Coordinate inputCoordinate){}
 
 

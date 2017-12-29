@@ -25,6 +25,7 @@ public:
     virtual void printThePlayersChoice(TokenValue tv, Coordinate coordinate) const;
     void printAfterRealPlayer() const;
     virtual void receivePlayersAnswer(Coordinate &input);
+    virtual void printPlayersIdentity(TokenValue tv) const;
 
 
 };

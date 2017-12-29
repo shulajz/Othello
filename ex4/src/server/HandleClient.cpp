@@ -4,6 +4,7 @@
 //
 #include <unistd.h>
 #include "HandleClient.h"
+#define SIZE_50 50
 
 HandleClient::HandleClient(): commandsManager(listOfGames){
     pthread_mutex_init(&this->handle_client_locker, 0);
@@ -57,7 +58,7 @@ void HandleClient::handleCommands(void* element) {
 
 void HandleClient :: readCommand(int clientSocket, string &command, string &args) {
     bool first_loop = true;
-    char commandFromUser[50];
+    char commandFromUser[SIZE_50];
     int n = read(clientSocket, &commandFromUser, sizeof(commandFromUser));
     if (n == -1) {
         cout<< "Error reading command from the socket" << endl;

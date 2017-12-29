@@ -6,6 +6,12 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
+#define SIZE_50 50
+#define SIZE_6 6
+#define SIZE_256 256
+
+
+
 
 
 ReversiClient::ReversiClient(const char *serverIP, int serverPort):
@@ -71,7 +77,7 @@ void ReversiClient::sendMove(Coordinate input) {
     string inputCoordinateString = stream1.str();
     string playCoordinate = "play ";
     playCoordinate += inputCoordinateString;
-    char buff[50];
+    char buff[SIZE_50];
     strcpy(buff, playCoordinate.c_str());
     int n = write(clientSocket, &buff, sizeof(buff));
     if (n == -1) {
@@ -111,7 +117,7 @@ void ReversiClient::sendNoMove() {
 
 void ReversiClient::sendEnd() {
     // Write End to the socket
-    char closeStr[6] = "close";
+    char closeStr[SIZE_6] = "close";
     int n = write(clientSocket, &closeStr, sizeof(closeStr));
     if (n == -1) {
         checkIfServerOpen(n + 1);
@@ -137,8 +143,9 @@ TokenValue ReversiClient::getTokenValueOfPlayer(){
     }
 }
 
-void ReversiClient :: sendCommand(string command, Menu* subMenu, bool &isListGames, int &validCommand) {
-    char buffer[50];
+void ReversiClient :: sendCommand(string command, Menu* subMenu,
+                                  bool &isListGames, int &validCommand) {
+    char buffer[SIZE_50];
     strcpy(buffer, command.c_str());
     int n = write(clientSocket, &buffer, sizeof(buffer));
     if (n == -1) {
@@ -155,7 +162,7 @@ void ReversiClient :: sendCommand(string command, Menu* subMenu, bool &isListGam
 }
 
 void ReversiClient :: printList(Menu* subMenu) {
-    char listOfAvailableGames[256];
+    char listOfAvailableGames[SIZE_256];
     int n = read(clientSocket, &listOfAvailableGames, sizeof(listOfAvailableGames));
     if (n == -1) {
         cout << "Error reading move from the socket in print list method";

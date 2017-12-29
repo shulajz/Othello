@@ -31,6 +31,8 @@ public:
     virtual void printThePlayersChoice(TokenValue tv, Coordinate coordinate) const;
     virtual void printAfterRealPlayer() const;
     virtual void receivePlayersAnswer(Coordinate &input) = 0;
+    virtual void printPlayersIdentity(TokenValue tv) const = 0;
+
 };
 
 #endif //OTHELLO_BOARDGRAPHIC_H

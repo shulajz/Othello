@@ -77,6 +77,12 @@ void ConsoleBoard :: printWhosMove(TokenValue tv) const{
     ConsoleToken :: drawTokenValue(tv);
     cout << " ,It's your move" << endl;
 }
+void ConsoleBoard :: printPlayersIdentity(TokenValue tv) const {
+    cout << "you are playing: ";
+    ConsoleToken :: drawTokenValue(tv);
+    cout << endl;
+
+}
 
 void ConsoleBoard :: printMoves(vector<Coordinate> validCoordinates) const{
     int i = 0;

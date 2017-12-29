@@ -7,6 +7,7 @@
 #include "CommandGetList.h"
 #include "HandleClient.h"
 #include "ReversiServer.h"
+#define SIZE_256 256
 
 using namespace std;
 
@@ -25,7 +26,7 @@ bool CommandGetList::execute(string args, ClientData* data){
     }
 
     //send the list of available games to client
-    char buff[256];
+    char buff[SIZE_256];
     strcpy(buff, listOfAvailableGames.c_str());
     int n = write(clientSocket, &buff, sizeof(buff));
     cout << "send the list of available games to client "<< clientSocket << endl;
@@ -43,5 +44,5 @@ bool CommandGetList::execute(string args, ClientData* data){
     }
     close(data->clientSocket);
     cout << "close Client" << data->clientSocket << endl;
-    return false; //kill the thread
+//    return false; //kill the thread
 }

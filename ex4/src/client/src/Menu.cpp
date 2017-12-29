@@ -10,6 +10,8 @@
 #include "RemotePlayer.h"
 #include "RealPlayer.h"
 #include "AIPlayer.h"
+#include "ConsoleToken.h"
+
 using namespace std;
 
 Menu::~Menu(){};
@@ -94,5 +96,6 @@ void Menu::chooseRemotePlayer(Player* players[2]){
     }
     players[Black] = p1;
     players[White] = p2;
+
 }
 
