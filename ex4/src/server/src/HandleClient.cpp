@@ -14,8 +14,8 @@ HandleClient::HandleClient(): commandsManager(listOfGames){
 void HandleClient :: sendCloseToEveryOne() {
     ClientData* data;
     string args;
-    cout << "there is " << threads.size() << " of open games"<<endl;
-    for(int i = 0; i < threads.size();i++){
+    cout << "there is " << threads.size() + 1 << " of open games" << endl;
+    for(int i = 0; i < threads.size() + 1;i++){
         pthread_cancel(threads[i]);
         cout << "close open game " << i + 1 << endl;
     }
