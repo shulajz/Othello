@@ -17,6 +17,6 @@ bool CommandKillAll::execute(string args, ClientData* data){
             close(listOfGames[i]->socket2);
             cout << "close client" << listOfGames[i]->socket2 << endl;
         }
+        delete(listOfGames[i]);
     }
 }
-//

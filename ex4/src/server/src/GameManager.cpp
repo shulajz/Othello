@@ -3,6 +3,8 @@
 //
 //
 #include "GameManager.h"
+#include "pthread.h"
+
 GameManager::GameManager(Game game, HandleClient* handleClient, CommandsManager* commandsManager):
         game(game), handleClient(handleClient), commandsManager(commandsManager) {
 
@@ -70,4 +72,3 @@ void GameManager::sendValueOfClient(int clientSocket1, int clientSocket2) {
         return;
     }
 }
-

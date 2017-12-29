@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include "HandleClient.h"
 #define SIZE_50 50
+#include "pthread.h"
 
 HandleClient::HandleClient(): commandsManager(listOfGames){
     pthread_mutex_init(&this->handle_client_locker, 0);
@@ -53,7 +54,7 @@ void HandleClient::handleCommands(void* element) {
     pthread_mutex_lock(&this->handle_client_locker);
     commandsManager.executeCommand(command, args, data);
     pthread_mutex_unlock(&this->handle_client_locker);
-    delete(element);
+    delete(data);
 }
 
 void HandleClient :: readCommand(int clientSocket, string &command, string &args) {

@@ -1,10 +1,13 @@
 //
 // Created by or on 12/4/17.
-////
+//
 
 #include "ReversiClient.h"
 #include <arpa/inet.h>
 #include <netdb.h>
+#include <unistd.h>
+#include <cstdlib>
+#include <sstream>
 
 #define SIZE_50 50
 #define SIZE_6 6
@@ -117,7 +120,7 @@ void ReversiClient::sendNoMove() {
 
 void ReversiClient::sendEnd() {
     // Write End to the socket
-    char closeStr[SIZE_6] = "close";
+    char closeStr[SIZE_6] = "";
     int n = write(clientSocket, &closeStr, sizeof(closeStr));
     if (n == -1) {
         checkIfServerOpen(n + 1);

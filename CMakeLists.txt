@@ -53,22 +53,28 @@ set(SOURCE_FILES ex4/src/client/src/GameFlow.cpp
         ex4/src/client/src/ConsoleMenu.cpp
         ex4/src/client/src/ConsoleMenu.h)
 
-set(SERVER ex4/src/server/ReversiServer.cpp
-        ex4/src/server/ReversiServer.h
-        ex4/src/server/main.cpp
-        ex4/src/server/Command.h
-        ex4/src/server/CommandsManager.cpp
-        ex4/src/server/CommandsManager.h
-        ex4/src/server/CommandStart.cpp
-        ex4/src/server/CommandStart.h
-        ex4/src/server/CommandJoin.cpp
-        ex4/src/server/CommandJoin.h
-        ex4/src/server/CommandGetList.cpp
-        ex4/src/server/CommandGetList.h
-        ex4/src/server/CommandClose.cpp
-        ex4/src/server/CommandClose.h
-        ex4/src/server/CommandPlay.cpp
-        ex4/src/server/CommandPlay.h ex4/src/server/HandleClient.cpp ex4/src/server/HandleClient.h ex4/src/server/GameManager.cpp ex4/src/server/GameManager.h ex4/src/server/CommandKillAll.cpp ex4/src/server/CommandKillAll.h)
+set(SERVER ex4/src/server/src/ReversiServer.cpp
+        ex4/src/server/src/ReversiServer.h
+        ex4/src/server/src/main.cpp
+        ex4/src/server/src/Command.h
+        ex4/src/server/src/CommandsManager.cpp
+        ex4/src/server/src/CommandsManager.h
+        ex4/src/server/src/CommandStart.cpp
+        ex4/src/server/src/CommandStart.h
+        ex4/src/server/src/CommandJoin.cpp
+        ex4/src/server/src/CommandJoin.h
+        ex4/src/server/src/CommandGetList.cpp
+        ex4/src/server/src/CommandGetList.h
+        ex4/src/server/src/CommandClose.cpp
+        ex4/src/server/src/CommandClose.h
+        ex4/src/server/src/CommandPlay.cpp
+        ex4/src/server/src/CommandPlay.h
+        ex4/src/server/src/HandleClient.cpp
+        ex4/src/server/src/HandleClient.h
+        ex4/src/server/src/GameManager.cpp
+        ex4/src/server/src/GameManager.h
+        ex4/src/server/src/CommandKillAll.cpp
+        ex4/src/server/src/CommandKillAll.h)
 add_test(runTests runTests)
 add_test(Server Server)
 add_executable(Server ${OTHELLO_FILES} ${SERVER})
