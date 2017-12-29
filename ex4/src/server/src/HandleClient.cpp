@@ -71,8 +71,6 @@ void HandleClient :: readCommand(int clientSocket, string &command, string &args
     while (ss >> buf) {
         tokens.push_back(buf);
     }
-    cout << tokens[0];
-    cout << clientSocket;
     cout<<"the command of client"<< clientSocket <<" is: " << tokens[0] ;
     command = tokens[0];
     for(int i = 1; i < tokens.size(); i++){

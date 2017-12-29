@@ -24,7 +24,6 @@ void RealPlayer :: doOneTurn(GameRules *gameRules, Board &board,
         //current player doesn't have a turn
         input.row = NoMove;
         input.col = NoMove;
-        printNoMoves(*boardGraphic);
 
     } else {
         bool inputValid = false;
