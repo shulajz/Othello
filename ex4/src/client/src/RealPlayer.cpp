@@ -3,7 +3,7 @@
 ////
 
 #include "RealPlayer.h"
-#include "../../server/ReversiServer.h"
+#include "../../server/src/ReversiServer.h"
 #include <iostream>
 #include <list>
 #include <limits>

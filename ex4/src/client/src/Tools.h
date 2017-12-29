@@ -7,7 +7,7 @@
 #define DIM 9
 
 #include <string>
-#include "../../server/ReversiServer.h"
+#include "../../server/src/ReversiServer.h"
 
 using namespace std;
 

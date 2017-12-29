@@ -35,6 +35,7 @@ bool CommandJoin::execute(string args, ClientData* data){
             currGame = *listOfGames[i];
             GameManager gameManager(currGame, data->handleClient, commandsManager);
             gameManager.handleGame();
+            delete(listOfGames[i]);
             return false;//kill the thread
         }
     }

@@ -1,9 +1,10 @@
 # name
 # id
 
-client.out: compileAll
-	g++ *.o -o ../../exe/client.out
+server.out: compileAll
+	g++ *.o -o ../../exe/server.out
 	rm -f *.o
 
 compileAll: src/*.h src/*.cpp
 	g++ -c src/*.cpp
+

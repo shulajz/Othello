@@ -4,6 +4,7 @@
 
 #include "ReversiServer.h"
 #include "HandleClient.h"
+#include "pthread.h"
 
 #define MAX_CONNECTED_CLIENTS 50
 
@@ -16,7 +17,7 @@ void ReversiServer::getCloseFromUser() {
     while(true) {
         string select;
         cin >> select;
-        if (select == "close"){
+        if (select == "exit"){
             break;
         }
         cin.clear();

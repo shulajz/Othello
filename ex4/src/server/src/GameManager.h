@@ -28,9 +28,8 @@ private:
     ClientData* data2;
     CommandsManager* commandsManager;
     pthread_t thread;
-
-
 };
+
 
 
 #endif //OTHELLO_GAMEMANAGER_H
