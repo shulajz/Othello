@@ -35,6 +35,7 @@ bool CommandJoin::execute(string args, ClientData* data){
             currGame = *listOfGames[i];
             GameManager gameManager(currGame, data->handleClient, commandsManager);
             gameManager.handleGame();
+            listOfGames.erase(listOfGames.begin()+i);
             delete(listOfGames[i]);
             return false;//kill the thread
         }
@@ -52,7 +53,5 @@ bool CommandJoin::execute(string args, ClientData* data){
     }
     cout << "close Client" << clientSocket << endl;
     close(clientSocket);
-//    return false; //kill the thread
+    return false; //kill the thread
 }
-
-//

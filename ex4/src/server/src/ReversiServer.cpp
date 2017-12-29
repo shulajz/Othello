@@ -4,7 +4,7 @@
 
 #include "ReversiServer.h"
 #include "HandleClient.h"
-#include "pthread.h"
+#include <pthread.h>
 
 #define MAX_CONNECTED_CLIENTS 50
 

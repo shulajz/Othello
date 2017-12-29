@@ -2,7 +2,7 @@
 # id
 
 server.out: compileAll
-	g++ *.o -o ../../exe/server.out
+	g++ *.o -o ../../exe/server.out -pthread
 	rm -f *.o
 
 compileAll: src/*.h src/*.cpp
