@@ -20,6 +20,8 @@ bool CommandClose::execute(string args,ClientData* data){
             close(listOfGames[i]->socket1);
             break;
         }
+        listOfGames.erase(listOfGames.begin()+i);
+        delete(listOfGames[i]);
     }
     return false;
 }
