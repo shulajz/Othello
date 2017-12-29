@@ -15,7 +15,6 @@ void ConsoleMenu::printWhoPlay(TokenValue tv)const{
 void ConsoleMenu:: printWrongChoice()const{
     cout<<"Illegal Input. Please try again."<<endl;
     cin.clear();
-    //cin.ignore(numeric_limits<streamsize>::max(),'\n');
 }
 
 void ConsoleMenu:: printOptionsMenu(TypeMenu typeMenu) const{

@@ -14,8 +14,8 @@ HandleClient::HandleClient(): commandsManager(listOfGames){
 void HandleClient :: sendCloseToEveryOne() {
     ClientData* data;
     string args;
-    cout << "there is " << threads.size() + 1 << " of open games" << endl;
-    for(int i = 0; i < threads.size() + 1;i++){
+    cout << "there is " << threads.size()<< " of open games" << endl;
+    for(int i = 0; i < threads.size();i++){
         pthread_cancel(threads[i]);
         cout << "close open game " << i + 1 << endl;
     }
@@ -71,7 +71,9 @@ void HandleClient :: readCommand(int clientSocket, string &command, string &args
     while (ss >> buf) {
         tokens.push_back(buf);
     }
-    cout<<"the command of client"<< clientSocket<<" is: " << tokens[0] ;
+    cout << tokens[0];
+    cout << clientSocket;
+    cout<<"the command of client"<< clientSocket <<" is: " << tokens[0] ;
     command = tokens[0];
     for(int i = 1; i < tokens.size(); i++){
         if (first_loop) {

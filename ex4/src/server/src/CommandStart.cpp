@@ -43,7 +43,7 @@ bool CommandStart::execute(string args, ClientData* data){
     }
     Game* game = new Game() ;
     game->name = args;
-    game->socket1 =clientSocket;
+    game->socket1 = clientSocket;
     game->socket2 = 0;
     game->status = Waiting;
     ///lock ?

@@ -120,7 +120,7 @@ void ReversiClient::sendNoMove() {
 
 void ReversiClient::sendEnd() {
     // Write End to the socket
-    char closeStr[SIZE_6] = "";
+    char closeStr[SIZE_6] = "close";
     int n = write(clientSocket, &closeStr, sizeof(closeStr));
     if (n == -1) {
         checkIfServerOpen(n + 1);

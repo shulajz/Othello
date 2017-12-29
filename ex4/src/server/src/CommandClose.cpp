@@ -18,8 +18,8 @@ bool CommandClose::execute(string args,ClientData* data){
             close(listOfGames[i]->socket2);
             cout << "close Client " <<listOfGames[i]->socket2 << endl;
             close(listOfGames[i]->socket1);
-            listOfGames.erase(listOfGames.begin()+i);
-            delete(listOfGames[i]);
+            delete(listOfGames[i]); //delete game
+            listOfGames.erase(listOfGames.begin()+i); //remove the game from the list
             break;
         }
     }

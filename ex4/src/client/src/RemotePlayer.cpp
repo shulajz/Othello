@@ -56,10 +56,6 @@ void RemotePlayer::sendEndOfGame(Coordinate coordinate){
     client->sendEnd();
 }
 
-void RemotePlayer::sendNoMove(){
-    client->sendNoMove();
-}
-
 void RemotePlayer::printNoMoves(BoardGraphic&  m_boardGraphic){
     m_boardGraphic.printSpecialSituation(NoMoveForTheRival);
 }
@@ -87,4 +83,3 @@ void RemotePlayer:: subMenuForTheRemotePlayer(Menu* subMenu){
     }while (valid == BadInput);
     subMenu->printSpecialSituation(WaitToJoin);
 }
-
