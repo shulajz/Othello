@@ -3,10 +3,6 @@
 ////
 
 #include "RealPlayer.h"
-#include "../../server/src/ReversiServer.h"
-#include <iostream>
-#include <list>
-#include <limits>
 
 using namespace std;
 
