@@ -43,7 +43,7 @@ public:
     string getChoose();
     /**
      * deconstructor of Menu.
-     *///
+     */////
     ~Menu();
 
     virtual void printSpecialSituation(Situation message) const = 0;

@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include "HandleClient.h"
 #define SIZE_50 50
-#include "pthread.h"
+#include <pthread.h>
 
 HandleClient::HandleClient(): commandsManager(listOfGames){
     pthread_mutex_init(&this->handle_client_locker, 0);

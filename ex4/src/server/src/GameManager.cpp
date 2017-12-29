@@ -3,7 +3,7 @@
 //
 //
 #include "GameManager.h"
-#include "pthread.h"
+#include <pthread.h>
 
 GameManager::GameManager(Game game, HandleClient* handleClient, CommandsManager* commandsManager):
         game(game), handleClient(handleClient), commandsManager(commandsManager) {
