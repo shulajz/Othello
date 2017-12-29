@@ -34,12 +34,12 @@ public:
     void checkIfServerOpen(int moveReceivedFromOtherPlayer);
     void printList( Menu* subMenu);
     ~ReversiClient();
-
+//
 private:
     const char *serverIP;
     int serverPort;
     int clientSocket;
-    TokenValue tv;
+    TokenValue tv;/
 
 };
 
