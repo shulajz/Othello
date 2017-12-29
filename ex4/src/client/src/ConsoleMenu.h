@@ -30,6 +30,8 @@ public:
     virtual void printList(string listOfAvailableGames) const;
 
     virtual void printWhoPlay(TokenValue tv)const;
+
+    void printServerClosed()const;
 };
 //
 #endif //OTHELLO_CONSOLEMENU_H

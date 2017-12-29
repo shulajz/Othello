@@ -9,7 +9,7 @@
 
 using namespace std;
 
-RemotePlayer::RemotePlayer(Menu* subMenu){
+RemotePlayer::RemotePlayer(Menu* subMenu): subMenu(subMenu){
     string ip;
     string port;
     ifstream myFile;
@@ -19,9 +19,9 @@ RemotePlayer::RemotePlayer(Menu* subMenu){
         myFile >> port;
         char *ipBuff = new char[ip.length() + 1];
         strcpy(ipBuff, ip.c_str());
-        client = new ReversiClient(ipBuff, atoi(port.c_str()));
+        client = new ReversiClient(ipBuff, atoi(port.c_str()), subMenu);
         try {
-            subMenuForTheRemotePlayer(subMenu);
+            subMenuForTheRemotePlayer();
         } catch (const char *msg) {
             cout << "Failed to connect to server. Reason:" << msg << endl;
         }
@@ -64,14 +64,14 @@ RemotePlayer::~RemotePlayer(){
     delete(client);
 }
 
-void RemotePlayer:: subMenuForTheRemotePlayer(Menu* subMenu){
+void RemotePlayer:: subMenuForTheRemotePlayer(){
     string command;
     int valid;
     bool isListGames = false;
     do {
         command = subMenu->getChoose();
         client->connectToServer();
-        client->sendCommand(command, subMenu, isListGames, valid);
+        client->sendCommand(command, isListGames, valid);
         if(!isListGames) {//if its a list we killed the socket so we don't want to read anymore
             valid = client->getValid();
             //if this is a badInput and the command is not to print list of available games

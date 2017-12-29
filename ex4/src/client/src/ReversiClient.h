@@ -14,7 +14,7 @@ using namespace std;
 
 class ReversiClient {
 public:
-    ReversiClient(const char *serverIP, int serverPort);
+    ReversiClient(const char *serverIP, int serverPort, Menu* subMenu);
     void connectToServer();
     /**
      * send a coordinate to the other player
@@ -30,9 +30,9 @@ public:
     int getValid();
     void sendEnd();
     void sendNoMove();
-    void sendCommand(string command,  Menu* subMenu, bool &isListGames, int &validCommand);
+    void sendCommand(string command, bool &isListGames, int &validCommand);
     void checkIfServerOpen(int moveReceivedFromOtherPlayer);
-    void printList( Menu* subMenu);
+    void printList();
     ~ReversiClient();
 
 private:
@@ -40,6 +40,7 @@ private:
     int serverPort;
     int clientSocket;
     TokenValue tv;
+    Menu* subMenu;
 
 };
 

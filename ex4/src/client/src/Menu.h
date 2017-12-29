@@ -57,6 +57,8 @@ public:
 
     virtual void printWhoPlay(TokenValue tv)const =0;
 
+    virtual void printServerClosed()const = 0;
+
 protected:
 
     /**

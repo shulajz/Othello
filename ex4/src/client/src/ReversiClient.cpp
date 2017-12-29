@@ -17,8 +17,8 @@
 
 
 
-ReversiClient::ReversiClient(const char *serverIP, int serverPort):
-        serverIP(serverIP), serverPort(serverPort), clientSocket(0), tv(Empty) {
+ReversiClient::ReversiClient(const char *serverIP, int serverPort, Menu* subMenu):
+        serverIP(serverIP), serverPort(serverPort), clientSocket(0), tv(Empty), subMenu(subMenu) {
 }
 
 void ReversiClient::connectToServer() {
@@ -146,7 +146,7 @@ TokenValue ReversiClient::getTokenValueOfPlayer(){
     }
 }
 
-void ReversiClient :: sendCommand(string command, Menu* subMenu,
+void ReversiClient :: sendCommand(string command,
                                   bool &isListGames, int &validCommand) {
     char buffer[SIZE_50];
     strcpy(buffer, command.c_str());
@@ -157,14 +157,14 @@ void ReversiClient :: sendCommand(string command, Menu* subMenu,
     }
     isListGames = false;
     if(command == "list_games") {
-        printList(subMenu);
+        printList();
         isListGames = true;
         validCommand = BadInput;
         close(clientSocket);
     }
 }
 
-void ReversiClient :: printList(Menu* subMenu) {
+void ReversiClient :: printList() {
     char listOfAvailableGames[SIZE_256];
     int n = read(clientSocket, &listOfAvailableGames, sizeof(listOfAvailableGames));
     if (n == -1) {
@@ -179,7 +179,7 @@ void ReversiClient :: printList(Menu* subMenu) {
 void ReversiClient::checkIfServerOpen(int n){
     if(n == 0) {
         close(clientSocket);
-        cout << "the server closed!" << endl;
+        subMenu->printServerClosed();
         exit(1);
     }
 }

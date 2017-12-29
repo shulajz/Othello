@@ -24,8 +24,9 @@ public:
     ~RemotePlayer();
 
 private:
-    void subMenuForTheRemotePlayer(Menu* subMenu);
+    void subMenuForTheRemotePlayer();
     ReversiClient* client;
+    Menu* subMenu;
 
 };
 

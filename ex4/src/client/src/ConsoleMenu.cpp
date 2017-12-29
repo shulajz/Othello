@@ -58,3 +58,7 @@ void ConsoleMenu::printList(string listOfAvailableGames) const{
         cout << listOfAvailableGames << endl;
     }
 }
+
+void ConsoleMenu::printServerClosed()const {
+    cout << "the server closed!" << endl;
+}
