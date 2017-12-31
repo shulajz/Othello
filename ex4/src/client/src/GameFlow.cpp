@@ -112,6 +112,7 @@ void GameFlow ::handleOnePlayerHasAMove(vector<Coordinate>& validCoordinates) {
     }
     needToPrint = true;
     if (inputCoordinate.row == NoMove && inputCoordinate.col == NoMove){
+        curr_player->printNoMoves(m_boardGraphic);
         needToPrint = false;
     }
 }

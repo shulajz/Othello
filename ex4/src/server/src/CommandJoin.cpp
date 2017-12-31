@@ -19,7 +19,7 @@ bool CommandJoin::execute(string args, ClientData* data){
     Game currGame;
 
     for(int i = 0; i < listOfGames.size(); i++) {
-        // in case tha args-the name of game that the user want to join exists in the list
+      // in case tha args-the name of game that the user want to join is exist in the list
         //and in status waiting create game and send it to the game manager
         //if so send goodInput to the client
         if (args == listOfGames[i]->name && listOfGames[i]->status == Waiting) {
@@ -51,5 +51,5 @@ bool CommandJoin::execute(string args, ClientData* data){
     }
     cout << "close Client" << clientSocket << endl;
     close(clientSocket);
-    return false; //kill the thread
+    //return false; //kill the thread
 }
