@@ -78,6 +78,7 @@ void Menu::chooseAiPlayer(Player* players[2]){
     players[White] = p2;
 
 }
+//
 
 void Menu::chooseRemotePlayer(Player* players[2]){
     Player* p2;

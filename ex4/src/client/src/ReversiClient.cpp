@@ -183,3 +183,4 @@ void ReversiClient::checkIfServerOpen(int n){
         exit(1);
     }
 }
+//

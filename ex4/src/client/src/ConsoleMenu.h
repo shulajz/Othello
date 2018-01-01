@@ -33,5 +33,5 @@ public:
 
     void printServerClosed()const;
 };
-//
+
 #endif //OTHELLO_CONSOLEMENU_H

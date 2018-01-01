@@ -77,3 +77,4 @@ protected:
 };
 
 #endif //OTHELLO_MENU_H
+//

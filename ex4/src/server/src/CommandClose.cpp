@@ -26,4 +26,3 @@ bool CommandClose::execute(string args,ClientData* data){
     }
     return false;
 }
-//

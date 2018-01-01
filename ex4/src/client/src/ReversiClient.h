@@ -10,7 +10,6 @@
 #include <iostream>
 using namespace std;
 
-//
 
 class ReversiClient {
 public:
@@ -34,7 +33,7 @@ public:
     void checkIfServerOpen(int moveReceivedFromOtherPlayer);
     void printList();
     ~ReversiClient();
-//
+
 private:
     const char *serverIP;
     int serverPort;

@@ -1,3 +1,723 @@
+commit 0db49b8234d17d16d4c542003a7f228cf445d9e8
+Merge: bb80c34 2d760a2
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 1 06:12:01 2018 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       ex4/src/client/src/Board.cpp
+    #       ex4/src/client/src/Tools.h
+
+commit bb80c34cf57841eafdfffd904962390a95166203
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 1 06:11:08 2018 -0800
+
+    some changes in ReversiClient
+
+commit b9ee637d67842bda09e78b311cd84b95dbd46a60
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 1 06:07:59 2018 -0800
+
+    adding HandleClient Class
+
+commit 88d6788ee3b8d904a75bae298dadf653777829c2
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 1 04:52:51 2018 -0800
+
+    adding HandleClient Class
+
+commit 6dadd4fa77178da7e3b05958f47c21eedb27c0df
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 1 04:33:44 2018 -0800
+
+    adding HandleClient Class
+
+commit 465bef9b6d546f30c85825ae252ed713beebf935
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 1 04:32:15 2018 -0800
+
+    adding HandleClient Class
+
+commit 2d760a2f188a410cac0533ff5ef4eaeec5f07490
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Jan 1 14:04:51 2018 +0200
+
+    making the server generic
+
+commit ff84dacc4e8e858d2b3c27faab8daf920e61b128
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Jan 1 13:42:53 2018 +0200
+
+    editing
+
+commit b6e41095c3c51e168bca2a393ba6a164c5a4d902
+Merge: 3476126 2f5122d
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 31 11:38:42 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       ex4/src/server/src/CommandJoin.cpp
+
+commit 567e0665aaa61ab124f179e89c022345e0425a84
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 29 12:22:11 2017 -0800
+
+    adding HandleClient Class
+
+commit 2f5122d461906cc07ce3113b834ba3e8404bba49
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 29 09:09:09 2017 -0800
+
+    adding HandleClient Class
+
+commit b64cb39786311f13aafc5e6d7917ccf50578bb30
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 29 08:39:21 2017 -0800
+
+    adding HandleClient Class
+
+commit 6c7d710f2321655d7fbe1790336e5c1c3f2e7389
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 29 06:31:06 2017 -0800
+
+    adding HandleClient Class
+
+commit 492e5e095db887ddd75791c681ef1137177ca16a
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 29 06:13:21 2017 -0800
+
+    adding HandleClient Class
+
+commit 347612654a9502e7b136d8fa0536624231bf0bd8
+Merge: 89d2630 a6662fb
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 29 15:53:23 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a6662fba539d6609dedfe46e9af1c19db4cb54cb
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 29 05:53:10 2017 -0800
+
+    adding HandleClient Class
+
+commit 89d2630b83954e941a878c0cdf1ccdef0cd459f5
+Merge: 23e6813 e5482ef
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 29 15:42:39 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit e5482efd3cb125f8071e7e30d899214cd5bedf17
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 29 05:32:28 2017 -0800
+
+    adding HandleClient Class
+
+commit 23e6813ebc8182d24697cfaa108403dc588931d2
+Merge: e7ecbde 7cb76b3
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 29 14:23:00 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 7cb76b39c8893b605bdd15660c479dc197fb6f46
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 29 04:20:41 2017 -0800
+
+    adding HandleClient Class
+
+commit 58ee52cf3d480b7f0aa9f78e1eb49d0dc181012e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 29 04:18:40 2017 -0800
+
+    adding HandleClient Class
+
+commit e7ecbde54b92a75f0f01807e53d01b8eb5f388a3
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 29 13:59:07 2017 +0200
+
+    editing
+
+commit d8bc0795e0487679d525f85e040cadc68d48af82
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 29 12:45:41 2017 +0200
+
+    editing
+
+commit e670d9373bbb9e8a618f0acaf54654815abf5bb0
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Dec 27 14:58:35 2017 -0800
+
+    adding HandleClient Class
+
+commit ad9a8507abe1edbad1e47a61cb518c5c38a035d5
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Dec 27 14:50:21 2017 -0800
+
+    adding HandleClient Class
+
+commit 49fae0d17a09e8a5c5b21206e58115939876f295
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Dec 27 13:51:11 2017 -0800
+
+    adding HandleClient Class
+
+commit 5398fa070c23b37fa7e626654612eac7fe14d9a6
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Dec 27 13:40:33 2017 -0800
+
+    adding HandleClient Class
+
+commit a6c90cb7c352dde4157e23043612e2ab05a256b5
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Dec 27 11:52:59 2017 -0800
+
+    adding HandleClient Class
+
+commit 08ca7a83632f299525b6f9e2990c87c1447a4531
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Dec 27 10:13:03 2017 -0800
+
+    adding HandleClient Class
+
+commit 5c1d02bb3c11c19ae5dd728a3ad28d87c8dc97e9
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Dec 27 08:46:22 2017 -0800
+
+    adding HandleClient Class
+
+commit b252e955aaf010f8deff1aea8e5425ea7c2c0e92
+Merge: 0f4c675 26c672f
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Dec 27 08:38:02 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       ex4/src/client/src/ReversiClient.cpp
+    #       ex4/src/server/CommandKillAll.cpp
+    #       ex4/src/server/CommandsManager.cpp
+    #       ex4/src/server/HandleClient.cpp
+    #       ex4/src/server/ReversiServer.cpp
+
+commit 0f4c67580203c16c22e9af81e22c89ff410a4b17
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Dec 27 08:32:37 2017 -0800
+
+    adding HandleClient Class
+
+commit 26c672fb88ff04f0d9c899c3808b021a84f55b98
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Wed Dec 27 11:00:13 2017 +0200
+
+    editing
+
+commit 6432d6cc153f9ab6048498c13ea35b58f3080aeb
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Wed Dec 27 10:50:20 2017 +0200
+
+    editing
+
+commit 3806ca85b353e3379157ef8bcba0c4ed257e381e
+Merge: 38ae481 359c34e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 14:57:08 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       ex4/src/server/HandleClient.cpp
+
+commit 38ae481d189413a1443dde4a491031f813b5d53c
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 14:56:50 2017 -0800
+
+    adding HandleClient Class
+
+commit 359c34ea9a639dde59ac54aa1b725744c652e67d
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 22:46:22 2017 +0200
+
+    editing
+
+commit 6a56815a9b2e88d32f9668f4cada1eea815ebe6d
+Merge: 0db750a 35caef3
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 22:46:05 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       ex4/src/server/HandleClient.cpp
+
+commit 35caef31a2274e85bb464c5962496752170f229f
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 12:40:26 2017 -0800
+
+    adding HandleClient Class
+
+commit 0db750a23f151d744b0897648f8af91853826170
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 22:39:54 2017 +0200
+
+    editing
+
+commit c9ec029be029075282e5a16918eb09f0ea35c216
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 12:25:21 2017 -0800
+
+    adding HandleClient Class
+
+commit 9b0524d16cf720d96986d79c84dcc9bf4853ec60
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 12:22:23 2017 -0800
+
+    adding HandleClient Class
+
+commit 869281b6d98f9aa46ab80d580b11101475b2ff37
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 12:16:52 2017 -0800
+
+    adding HandleClient Class
+
+commit 4f2f37033684f80c6dae826dab7c1df39535cef4
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 11:17:08 2017 -0800
+
+    adding HandleClient Class
+
+commit a96957272d5e6faf974b2b8b61a291929abe207c
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 20:28:07 2017 +0200
+
+    editing
+
+commit 6a48dab3bb67ce403ad31a39f734c49e3af7beed
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 10:17:29 2017 -0800
+
+    adding HandleClient Class
+
+commit 40b64c98fc384f7e3706a5e831df0d16e541b413
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 19:54:48 2017 +0200
+
+    adding a thread to the server
+
+commit 98878acbf11446a27e5ff0149d8304370825cd57
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 09:39:49 2017 -0800
+
+    adding HandleClient Class
+
+commit 3bb06022ad0ba3ad6d014ec975790e06057a4f5f
+Merge: 4d22e82 9a4c99e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 09:11:15 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9a4c99e6174c5a243933a3e5e08b88266b1f89e3
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 19:11:08 2017 +0200
+
+    adding a thread to the server
+
+commit 4d22e82440a23963d76d0beb7bda98e4cc028ba1
+Merge: b96a86c 1a3c384
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 09:04:45 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       ex4/src/server/HandleClient.cpp
+
+commit b96a86c5b483c8fdb25931b20ebe2d9553a93044
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 08:54:22 2017 -0800
+
+    adding HandleClient Class
+
+commit 1a3c3846d1e508ab661c701f61cc632320e86415
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 18:49:31 2017 +0200
+
+    editing
+
+commit a7e92408f0db727002bfcdfa0c054342ae65d900
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 17:01:32 2017 +0200
+
+    editing
+
+commit 7f7d788a1d999ac09e0073f6451fa1bcb07c4931
+Merge: 799fd96 6e3631b
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 17:01:18 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       ex4/src/server/HandleClient.cpp
+
+commit 799fd96188fbda0c50d18b6a780a2a1809db1e1e
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 16:59:36 2017 +0200
+
+    editing
+
+commit 6e3631b18584203a66a0fec9fe1118b98a2268d5
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 06:58:19 2017 -0800
+
+    adding HandleClient Class
+
+commit 91ccac5f5f202f6997b58b0075d25dc9eddaf9ee
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 06:55:01 2017 -0800
+
+    adding HandleClient Class
+
+commit 3d7ac980bd4731bc39b17fd4baa55fab840b8018
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 06:48:04 2017 -0800
+
+    adding HandleClient Class
+
+commit 36bff7ed4746b6df3058f660c8c229f1f4a585d2
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 06:32:43 2017 -0800
+
+    adding HandleClient Class
+
+commit d01e068464a67e9703fe883da2a9dbfe12288d28
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 06:29:03 2017 -0800
+
+    adding HandleClient Class
+
+commit 30e606dceb21ac96f10436afab28a0389d07d3f9
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 06:14:34 2017 -0800
+
+    adding HandleClient Class
+
+commit 0b9363dd95eff3b72d4d00b463fcbd870e1b914d
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 05:59:52 2017 -0800
+
+    adding HandleClient Class
+
+commit 0a3b9ddb8fdb0a3375b80e81d23f11141be9665f
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Dec 26 05:59:27 2017 -0800
+
+    adding HandleClient Class
+
+commit 3a71b3748b7f87b8a784bbafd483fc2e8e8beb66
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 00:55:41 2017 +0200
+
+    changing stuff
+
+commit f5ee8640879612e12bdacfe3d9b5928a2aff26eb
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Dec 26 00:24:09 2017 +0200
+
+    changing stuff
+
+commit ece80bde1d71139c389045f98101ae45725f40e9
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Dec 25 10:26:47 2017 -0800
+
+    adding HandleClient Class
+
+commit e8837c9a722f1ad689cdc989df7efd915a2fb3b8
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 24 23:19:41 2017 +0200
+
+    my partner and I implementing the commands and the server for multiThreading
+
+commit eb0f3cd12ef7c8e621d3ecaddd03f3fb45bede44
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 24 01:47:47 2017 +0200
+
+    editing
+
+commit df2f56c1c880e4ac895469122b91d53ef5b32aaa
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 24 01:21:44 2017 +0200
+
+    editing
+
+commit ce82160c22d1bfc60296f25fc5e20c1d73c78b36
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 24 01:13:23 2017 +0200
+
+    editing
+
+commit 4a737b66a7ffee1ff84493d4fc9fb332f6e349b1
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 22 06:21:38 2017 -0800
+
+    adding function to the remotePlayer and change the menu class
+
+commit 319db1a56117a95f7b99a785281dcec39d81651c
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 22 06:13:22 2017 -0800
+
+    adding function to the remotePlayer and change the menu class
+
+commit d4c189c0b6fb431e5e272c5037b8cfd50f5007bb
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 22 05:31:18 2017 -0800
+
+    adding function to the remotePlayer and change the menu class
+
+commit c60572fd97b91df9f59037728ca3601d5d870b88
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 22 05:21:16 2017 -0800
+
+    adding function to the remotePlayer and change the menu class
+
+commit d585af95a14242f7bab8b39f48a881dbca37edb8
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 22 05:02:30 2017 -0800
+
+    adding function to the remotePlayer and change the menu class
+
+commit cdbd2dc6d13fa3e669792f804e1cf6e76b96f257
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 22 05:00:39 2017 -0800
+
+    adding function to the remotePlayer and change the menu class
+
+commit 0c4bbc643b30e4333e48db7910295fb97da0b6e0
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Dec 22 04:10:56 2017 -0800
+
+    adding function to the remotePlayer and change the menu class
+
+commit c83dd9db9b7831d2839bc1ce5516f013fdaee5e3
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 22 11:48:35 2017 +0200
+
+    fixing a bug
+
+commit 6eb90f9e702eccc0e13cfdfa238c577c7a3f0a81
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 22 10:46:48 2017 +0200
+
+    adding command classes
+
+commit e19508ab707e41b6a76ed4bd2f4f0b355f963c72
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 22 10:43:04 2017 +0200
+
+    adding command classes
+
+commit fba704317494aef645f164da9d155a4437265db9
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Dec 22 10:42:22 2017 +0200
+
+    adding command
+
+commit d67f93aad7abceaa804ade5c9e64941a8349e896
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Wed Dec 20 18:19:40 2017 +0200
+
+    fixing the "noMove"
+
+commit f60093a8fb85a0ddc8769fc71d8253dea7b0a3da
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Dec 11 12:56:36 2017 -0800
+
+    adding makefiles to server and client and adding to exe server.out client.out and  adding setting files and log.txt
+
+commit 758c60a898082144c8419169816ab5091711df72
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Dec 11 21:05:59 2017 +0200
+
+    editing
+
+commit e836128f95053481de9c8cdf62d2889279ac3c4e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Dec 11 10:42:27 2017 -0800
+
+    adding makefiles to server and client and adding to exe server.out client.out and  adding setting files and log.txt
+
+commit f252b2145ba645fb259d6df75a098899f4dda71f
+Merge: 71d51dd 81ca2f7
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Dec 11 10:40:54 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       ex4/src/client/src/Game.cpp
+
+commit 71d51ddd0a0f12f82f19f76a75f04e315956ade6
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Dec 11 10:40:21 2017 -0800
+
+    adding makefiles to server and client and adding to exe server.out client.out and  adding setting files and log.txt
+
+commit 81ca2f78c09185a6d08578aa9e1a22ae603d52ac
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Dec 11 11:15:03 2017 +0200
+
+    d
+
+commit 348c1130271ea808fce91b8f3f2eb28326e742ea
+Merge: bab38ee 6eda898
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Dec 11 11:14:47 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       ex4/src/client/src/Game.cpp
+
+commit bab38ee909c7f976e87514571324469a63817034
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Dec 11 11:14:34 2017 +0200
+
+    d
+
+commit 6eda89850f1b960c42b1644ae63280275a00434d
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Dec 11 01:10:41 2017 -0800
+
+    adding makefiles to server and client and adding to exe server.out client.out and  adding setting files and log.txt
+
+commit 937cbcd51d27ee2a56c4ef4f0b2cb25b9da6bc4b
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Dec 11 11:01:48 2017 +0200
+
+    d
+
+commit 6229ded9a253f48f441498addbd5b46d8ee24520
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Dec 11 10:53:00 2017 +0200
+
+    d
+
+commit 84c8224e06c75440628e88893157de48abec26ff
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Dec 10 16:06:51 2017 -0800
+
+    adding makefiles to server and client and adding to exe server.out client.out and  adding setting files and log.txt
+
+commit 952c9c1bf772db7e227045899c2dd2d09bfa7be4
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 23:48:08 2017 +0200
+
+    adding EXE
+
+commit 4f89cbfc51718706732fd3148c646e9ee20c5fd2
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 19:36:32 2017 +0200
+
+    adding EXE
+
+commit 157a94c23b41014c419f1b76438d5b3773665e88
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 19:35:44 2017 +0200
+
+    updating the dir.
+
+commit efcb441f6790d6bb8d8839a678c42219bfed5a3d
+Merge: 50b1a4d 4ebaf36
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 18:47:21 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4ebaf365d1300a9ace4b443e1d2637cd46cb3a1d
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Dec 10 08:46:09 2017 -0800
+
+    adding makefiles to server and client and adding to exe server.out client.out and  adding setting files and log.txt
+
+commit 50b1a4d191fb9b15babe0c09c1c2e3cd1448ca25
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 18:31:05 2017 +0200
+
+    updating the dir.
+
+commit 8ac056e4bf197ecd0683d75576b9a8d4f344242a
+Merge: 3cfc391 6b25cc9
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Dec 10 08:29:03 2017 -0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 3cfc3916bf4aed98bf8224cf08e5ee167c4327a3
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Dec 10 08:28:48 2017 -0800
+
+    adding makefiles to server and client and adding to exe server.out client.out and  adding setting files
+
+commit 6b25cc9c136a4a8460fca06f5232bd3b548dffea
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 18:19:48 2017 +0200
+
+    updating the dir.
+
+commit 128494801096a77837bd1458ef44e06bb3c1756f
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 18:17:18 2017 +0200
+
+    updating the dir.
+
+commit 48e75f502fa7058d302add110cc0bad9f36e9940
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 18:16:48 2017 +0200
+
+    updating the dir.
+
+commit d48cbe4e00234c90b1852a84912174f8edf7cc32
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 18:15:42 2017 +0200
+
+    updating the dir.
+
+commit fb75bab2b224d12829d5161874b1b0c2afea9e89
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 18:15:18 2017 +0200
+
+    updating the dir.
+
+commit 614b48cde93d4213212ff7d06d1019719fadfb88
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 18:14:39 2017 +0200
+
+    updating the dir.
+
+commit 7ac7c48f916e6f9cb43c94b78ee9e9a2a563cd73
+Merge: a695035 950fbcb
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 18:10:06 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a695035ebe2700b2ff7aa385d547dd100a5b0604
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Dec 10 18:09:53 2017 +0200
+
+    putting files on git
+
+commit 950fbcb2c30cbfeeee6135183137fc6e37a16212
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Dec 10 07:56:24 2017 -0800
+
+    adding makefiles to server and client and adding to exe server.out client.out and  adding setting files
+
 commit 4e4b5b66b5aa690a9c12b91d3b0baa693d066bb4
 Author: Shulamit Ajzner <shulajz@gmail.com>
 Date:   Sun Dec 10 15:31:06 2017 +0200
