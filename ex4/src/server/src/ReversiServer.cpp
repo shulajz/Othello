@@ -3,13 +3,15 @@
 //
 
 #include "ReversiServer.h"
-#include "HandleClient.h"
+#include "HandleClientReversi.h"
 #include <pthread.h>
 
 #define MAX_CONNECTED_CLIENTS 50
 
-ReversiServer::ReversiServer(int port): port(port),
-                                        serverSocket(0), stopServer(false){
+ReversiServer::ReversiServer(int port, HandleClient &handleClient):
+        port(port), serverSocket(0), 
+        stopServer(false),
+        m_handleClient(handleClient){
     cout << "Server" << endl;
 }
 
@@ -22,7 +24,7 @@ void ReversiServer::getCloseFromUser() {
         }
         cin.clear();
     }
-    handleClient.sendCloseToEveryOne();
+    m_handleClient.sendCloseToEveryOne();
     stopServer = true;
     stop();
 }
@@ -74,12 +76,14 @@ void ReversiServer::serverFunc(){
         int clientSocket = accept(serverSocket, (struct
                 sockaddr *)&clientAddress1, &clientAddressLen1);
 
-        handleClient.run(clientSocket);
+        m_handleClient.run(clientSocket);
+        
     }
 }
 
 
 void ReversiServer::stop() {
     cout << "close server" << endl;
+    //pthread cancel serverthreadID?
     close(serverSocket);
 }

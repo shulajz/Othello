@@ -3,15 +3,15 @@
 //
 //
 #include <unistd.h>
-#include "HandleClient.h"
+#include "HandleClientReversi.h"
 #define SIZE_50 50
 #include <pthread.h>
 
-HandleClient::HandleClient(): commandsManager(listOfGames){
+HandleClientReversi::HandleClientReversi(): commandsManager(listOfGames){
     pthread_mutex_init(&this->handle_client_locker, 0);
 }
 
-void HandleClient :: sendCloseToEveryOne() {
+void HandleClientReversi :: sendCloseToEveryOne() {
     ClientData* data;
     string args;
     cout << "there is " << threads.size()<< " of open games" << endl;
@@ -22,7 +22,7 @@ void HandleClient :: sendCloseToEveryOne() {
     commandsManager.executeCommand("killAll", args, data);
 }
 
-void HandleClient::run(int clientSocket){
+void HandleClientReversi::run(int clientSocket){
     if (clientSocket == -1){
         cout << "Error on accept";
         exit(-1);
@@ -41,12 +41,12 @@ void HandleClient::run(int clientSocket){
     }
 }
 
-void* HandleClient :: gateFunction(void* element) {
+void* HandleClientReversi :: gateFunction(void* element) {
     ClientData* data = (ClientData*)element;
     data->handleClient->handleCommands(element);
 }
 
-void HandleClient::handleCommands(void* element) {
+void HandleClientReversi::handleCommands(void* element) {
     ClientData* data = (ClientData*)element;
     string command;
     string args;
@@ -57,7 +57,7 @@ void HandleClient::handleCommands(void* element) {
     delete(data);
 }
 
-void HandleClient :: readCommand(int clientSocket, string &command, string &args) {
+void HandleClientReversi :: readCommand(int clientSocket, string &command, string &args) {
     bool first_loop = true;
     char commandFromUser[SIZE_50];
     int n = read(clientSocket, &commandFromUser, sizeof(commandFromUser));
@@ -83,11 +83,11 @@ void HandleClient :: readCommand(int clientSocket, string &command, string &args
     cout << args << endl;
 }
 
-void HandleClient ::pushThread(pthread_t thread){
+void HandleClientReversi ::pushThread(pthread_t thread){
     threads.push_back(thread);
 }
 
-void HandleClient ::eraseThread(pthread_t thread){
+void HandleClientReversi ::eraseThread(pthread_t thread){
     for(int i = 0 ; i< threads.size(); i++){
         if (threads[i] == thread){
             threads.erase(threads.begin() + i);

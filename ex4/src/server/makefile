@@ -6,5 +6,5 @@ server.out: compileAll
 	rm -f *.o
 
 compileAll: src/*.h src/*.cpp
-	g++ -c src/*.cpp
+	g++ -c src/*.cpp 
 

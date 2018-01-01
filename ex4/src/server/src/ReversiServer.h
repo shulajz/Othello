@@ -8,7 +8,7 @@
 #include <string.h>
 #include <iostream>
 #include "vector"
-#include "HandleClient.h"
+#include "HandleClientReversi.h"
 
 
 using namespace std;
@@ -19,7 +19,7 @@ enum correctInput {
 
 class ReversiServer {
 public:
-    ReversiServer(int port);
+    ReversiServer(int port, HandleClient &handleClient);
     void start();
     void stop();
     void getCloseFromUser();
@@ -28,7 +28,7 @@ public:
 private:
     int port;
     int serverSocket; // the socket's file descriptor;
-    HandleClient handleClient;
+    HandleClient &m_handleClient;
     bool stopServer;
 
 };

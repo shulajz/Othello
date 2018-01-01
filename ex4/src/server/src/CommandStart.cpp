@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <iostream>
 #include "CommandStart.h"
-#include "HandleClient.h"
+#include "HandleClientReversi.h"
 #include "ReversiServer.h"
 
 

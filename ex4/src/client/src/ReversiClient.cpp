@@ -14,7 +14,7 @@
 #define SIZE_256 256
 
 
-
+//
 
 
 ReversiClient::ReversiClient(const char *serverIP, int serverPort, Menu* subMenu):
