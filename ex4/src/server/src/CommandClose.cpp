@@ -3,7 +3,7 @@
 ////
 
 #include "CommandClose.h"
-#include "HandleClient.h"
+#include "HandleClientReversi.h"
 
 using namespace std;
 

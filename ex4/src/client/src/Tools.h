@@ -4,7 +4,7 @@
 
 #ifndef OTHELLO_TOOLS_H
 #define OTHELLO_TOOLS_H
-#define DIM 9
+#define DIM 5
 
 #include <string>
 #include "../../server/src/ReversiServer.h"

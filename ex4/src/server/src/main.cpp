@@ -9,12 +9,13 @@
 using namespace std;
 
 int main() {
+    HandleClientReversi handleClientReversi;
     string port;
     ifstream myFile;
     myFile.open("portOnly");
     if (myFile.is_open()) {
         myFile >> port;
-        ReversiServer server(atoi(port.c_str()));
+        ReversiServer server(atoi(port.c_str()), handleClientReversi);
         try {
             server.start();
         } catch (const char *msg) {

@@ -5,8 +5,8 @@
 #include "GameManager.h"
 #include <pthread.h>
 
-GameManager::GameManager(Game game, HandleClient* handleClient, CommandsManager* commandsManager):
-        game(game), handleClient(handleClient), commandsManager(commandsManager) {
+GameManager::GameManager(Game game, HandleClientReversi* handleClient, CommandsManager* commandsManager):
+        game(game), handleClientReversi(handleClient), commandsManager(commandsManager) {
 
     data1 = new ClientData();
     data1->clientSocket = game.socket1;
@@ -23,9 +23,10 @@ void GameManager::handleGame() {
         cout << "Error: unable to create thread, " << rc << endl;
         exit(-1);
     }
-    handleClient->pushThread(thread);
+    handleClientReversi->pushThread(thread);
     cout <<"create game with the name : "<<game.name<<
-            " ,the clients are: client"<<data1->clientSocket<<" and client"<<data2->clientSocket<<endl;
+         " ,the clients are: client"<<data1->clientSocket
+         <<" and client"<<data2->clientSocket << endl;
 }
 
 void *GameManager:: gameManagerGate(void* element) {
@@ -42,18 +43,18 @@ void GameManager:: gameManager(){
     while(isContinue){
         string command1;
         string args1;
-        handleClient->readCommand(game.socket1,command1,args1);
+        handleClientReversi->readCommand(game.socket1,command1,args1);
         isContinue = commandsManager->executeCommand(command1, args1, data1);
         if (!isContinue){break;}
         string command2;
         string args2;
-        handleClient->readCommand(game.socket2,command2,args2);
+        handleClientReversi->readCommand(game.socket2,command2,args2);
         isContinue = commandsManager->executeCommand(command2, args2, data2);
     }
     cout<<"close the game :" << game.name << endl;
     delete(data1);
     delete(data2);
-    handleClient->eraseThread(thread);
+    handleClientReversi->eraseThread(thread);
 }
 
 void GameManager::sendValueOfClient(int clientSocket1, int clientSocket2) {

@@ -7,11 +7,11 @@
 //
 
 #include "Command.h"
-#include "HandleClient.h"
+#include "HandleClientReversi.h"
 
 class GameManager {
 public:
-    GameManager(Game game,HandleClient* server, CommandsManager* commandsManager);
+    GameManager(Game game,HandleClientReversi* server, CommandsManager* commandsManager);
     void handleGame();
     static void * gameManagerGate(void* element);
     /**
@@ -23,7 +23,7 @@ public:
     void  gameManager();
 private:
     Game game;
-    HandleClient* handleClient;
+    HandleClientReversi* handleClientReversi;
     ClientData* data1;
     ClientData* data2;
     CommandsManager* commandsManager;

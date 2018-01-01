@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <iostream>
 #include "CommandGetList.h"
-#include "HandleClient.h"
+#include "HandleClientReversi.h"
 #include "ReversiServer.h"
 #define SIZE_256 256
 
