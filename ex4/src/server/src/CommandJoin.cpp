@@ -51,5 +51,5 @@ bool CommandJoin::execute(string args, ClientData* data){
     }
     cout << "close Client" << clientSocket << endl;
     close(clientSocket);
-    //return false; //kill the thread
+    return false; //kill the thread
 }
