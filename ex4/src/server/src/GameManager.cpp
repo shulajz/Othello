@@ -50,7 +50,6 @@ void GameManager:: gameManager(){
         handleClient->readCommand(game.socket2,command2,args2);
         isContinue = commandsManager->executeCommand(command2, args2, data2);
     }
-    cout<<"close the game :" << game.name << endl;
     delete(data1);
     delete(data2);
     handleClient->eraseThread(thread);
