@@ -42,7 +42,7 @@ public:
      */
     string getChoose();
     /**
-     * deconstructor of Menu.
+     * destructor of Menu.
      */////
     ~Menu();
 

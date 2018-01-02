@@ -15,7 +15,7 @@ set(SOURCE_TEST_FILES ex4/src/client/gtest_src/main_test.cpp
         ex4/src/client/gtest_src/Test_classicRules.cpp
         ex4/src/client/gtest_src/Test_classicRules.h
         ex4/src/client/gtest_src/Test_AIPlayer.cpp
-        ex4/src/client/gtest_src/Test_AIPlayer.h ex4/src/client/gtest_src/Test_CommandStart.cpp ex4/src/client/gtest_src/Test_CommandStart.h)
+        ex4/src/client/gtest_src/Test_AIPlayer.h)
 
 set(OTHELLO_MAIN ex4/src/client/src/main )
 set(SOURCE_FILES ex4/src/client/src/GameFlow.cpp

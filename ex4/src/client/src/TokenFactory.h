@@ -11,7 +11,6 @@
 class TokenFactory {
 public:
     virtual Token* Create(int) = 0;
-    //
 };
 
 

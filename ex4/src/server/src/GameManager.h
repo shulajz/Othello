@@ -11,7 +11,8 @@
 
 class GameManager {
 public:
-    GameManager(Game game,HandleClientReversi* server, CommandsManager* commandsManager);
+    GameManager(Game game,HandleClientReversi* server,
+                CommandsManager* commandsManager);
     void handleGame();
     static void * gameManagerGate(void* element);
     /**
@@ -20,6 +21,9 @@ public:
     * @param clientSocket2
     */
     void sendValueOfClient(int clientSocket1, int clientSocket2);
+    /**
+     * handles the game
+     */
     void  gameManager();
 private:
     Game game;
