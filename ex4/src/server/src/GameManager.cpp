@@ -1,12 +1,16 @@
 //
 // Created by or on 12/25/17.
-//
+// This class is in charge of a single game between two clients.
 //
 #include "GameManager.h"
 #include <pthread.h>
 
-GameManager::GameManager(Game game, HandleClientReversi* handleClient, CommandsManager* commandsManager):
-        game(game), handleClientReversi(handleClient), commandsManager(commandsManager) {
+GameManager::GameManager(Game game,
+                         HandleClientReversi* handleClient,
+                         CommandsManager* commandsManager):
+        game(game),
+        handleClientReversi(handleClient),
+        commandsManager(commandsManager) {
 
     data1 = new ClientData();
     data1->clientSocket = game.socket1;
