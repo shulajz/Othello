@@ -8,10 +8,11 @@
 
 #define MAX_CONNECTED_CLIENTS 50
 
-ReversiServer::ReversiServer(int port, HandleClient &handleClient):
+ReversiServer::ReversiServer(int port, HandleClientReversi &handleClientReversi):
         port(port), serverSocket(0), 
-        stopServer(false),
-        m_handleClient(handleClient){
+        stopServer(false), pool(THREADS_NUM),
+        m_handleClient(handleClientReversi){
+
     cout << "Server" << endl;
 }
 
@@ -29,7 +30,7 @@ void ReversiServer::getCloseFromUser() {
     stop();
 }
 
-void* ReversiServer :: gateFunction(void* element) {
+void* ReversiServer :: gateFunctionServer(void* element) {
         ReversiServer* server = (ReversiServer*)element;
         try{
             server->serverFunc();
@@ -42,7 +43,7 @@ void* ReversiServer :: gateFunction(void* element) {
 
 void ReversiServer::start() {
     pthread_t thread1;
-    int rc = pthread_create(&thread1, NULL, gateFunction, this);
+    int rc = pthread_create(&thread1, NULL, gateFunctionServer, this);
     if (rc) {
         cout << "Error: unable to create thread, " << rc << endl;
             exit(-1);
@@ -75,8 +76,12 @@ void ReversiServer::serverFunc(){
         // Accept a new client connection
         int clientSocket = accept(serverSocket, (struct
                 sockaddr *)&clientAddress1, &clientAddressLen1);
-
-        m_handleClient.run(clientSocket);
+        ClientData* clientData = new ClientData();
+        clientData->clientSocket = clientSocket;
+        clientData->handleClient = &m_handleClient;
+        Task *task = new Task(HandleClientReversi :: gateFunction, (void*)clientData);
+        pool.addTask(task);
+//        m_handleClient.run(clientSocket);
         
     }
 }
@@ -84,6 +89,7 @@ void ReversiServer::serverFunc(){
 
 void ReversiServer::stop() {
     cout << "close server" << endl;
+    pool.terminate();
     //pthread cancel serverthreadID?
     close(serverSocket);
 }
