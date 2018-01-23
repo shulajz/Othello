@@ -43,6 +43,7 @@ void HandleClientReversi::run(int clientSocket){
 
 void* HandleClientReversi :: gateFunction(void* element) {
     ClientData* data = (ClientData*)element;
+//    cout << "hey1!!!!!!" << endl;
     data->handleClient->handleCommands(element);
 }
 

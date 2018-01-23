@@ -10,4 +10,5 @@ class HandleClient {
 public:
     virtual void sendCloseToEveryOne() = 0;
     virtual void run(int clientSocket) = 0;
+
 };

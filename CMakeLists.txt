@@ -74,7 +74,12 @@ set(SERVER ex4/src/server/src/ReversiServer.cpp
         ex4/src/server/src/GameManager.cpp
         ex4/src/server/src/GameManager.h
         ex4/src/server/src/CommandKillAll.cpp
-        ex4/src/server/src/CommandKillAll.h ex4/src/server/src/HandleClient.h)
+        ex4/src/server/src/CommandKillAll.h
+        ex4/src/server/src/HandleClient.h
+        ex4/src/server/src/Task.cpp
+        ex4/src/server/src/Task.h
+        ex4/src/server/src/ThreadPool.cpp
+        ex4/src/server/src/ThreadPool.h)
 add_test(runTests runTests)
 add_test(Server Server)
 add_executable(Server ${OTHELLO_FILES} ${SERVER})
