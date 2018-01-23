@@ -1,3 +1,65 @@
+commit 04ee25ea7dc0f6943758ee0beed492a656697f5c
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 23 02:41:59 2018 -0800
+
+    some changes
+
+commit 65bf9fd87ce88553dae0e1954795d8b48c3cae15
+Merge: 4fdd40f 389c686
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 23 02:32:08 2018 -0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 389c68673cf1844a12cf92b69941c38f582ea205
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 23 10:52:43 2018 +0200
+
+    adding 4 classes
+
+commit f4383346639203285b67245479c02df9f7fef9ae
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Jan 21 19:10:50 2018 +0200
+
+    adding 4 classes
+
+commit 2b93be5ab4514622e558ac265f764d3a7c0d335f
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Jan 18 15:40:01 2018 +0200
+
+    adding 4 classes
+
+commit 4fdd40fe65ea1628042cadaaafaec38db95cd3e8
+Merge: 1436c0a 323dec5
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 18 05:34:40 2018 -0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 323dec57045be45ee9feb738b49d9bb726dfe4e8
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Jan 18 15:13:35 2018 +0200
+
+    adding 4 classes
+
+commit 1436c0ab0ede7f7d4c89a05d8c0da55a7b1432db
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 8 04:49:02 2018 -0800
+
+    some changes in ReversiClient
+
+commit ffaf016daf67dbff6dff27129767ea50c60236ff
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 2 23:22:51 2018 +0200
+
+    editing
+
+commit 7a643d8ee5b2ebb8d5b0821ed14141b9437a91e0
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 1 06:39:00 2018 -0800
+
+    some changes in ReversiClient
+
 commit 0db49b8234d17d16d4c542003a7f228cf445d9e8
 Merge: bb80c34 2d760a2
 Author: Or Shaashua <orshaashua@gmail.com>
