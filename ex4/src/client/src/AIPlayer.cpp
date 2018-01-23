@@ -15,7 +15,6 @@ void AIPlayer :: doOneTurn(GameRules *gameRules, Board &board,
                    vector<Coordinate> &coordinates, Coordinate &input,
                            BoardGraphic *boardGraphic, Player *player)  {
     vector<int> minOfAllMoves;
-//    minOfAllMoves.push_back(0);
     Coordinate computerMove;
 
     for(int i = 0; i < coordinates.size(); i++) {
