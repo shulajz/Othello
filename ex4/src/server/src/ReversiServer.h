@@ -11,8 +11,8 @@
 #include "vector"
 #include "HandleClientReversi.h"
 #include "ThreadPool.h"
-#define THREADS_NUM 2
-#define TASKS_NUM 5
+#define THREADS_NUM 5
+//#define TASKS_NUM 5
 
 using namespace std;
 
@@ -34,7 +34,6 @@ private:
     HandleClientReversi &m_handleClient;
     bool stopServer;
     ThreadPool pool;
-    vector<Task> tasks;
 
 };
 
