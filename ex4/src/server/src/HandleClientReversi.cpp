@@ -9,6 +9,7 @@
 
 HandleClientReversi::HandleClientReversi(): commandsManager(listOfGames){
     pthread_mutex_init(&this->handle_client_locker, 0);
+
 }
 
 void HandleClientReversi :: sendCloseToEveryOne() {
@@ -34,6 +35,7 @@ void HandleClientReversi::run(int clientSocket){
     clientData->handleClient = this;
     //create thread that handle with the commands,
     // and after read command and execute it, the thread will ended.
+
     int rc = pthread_create(&thread1, NULL, gateFunction, (void*)clientData);
     if (rc) {
         cout << "Error: unable to create thread, " << rc << endl;
@@ -94,4 +96,8 @@ void HandleClientReversi ::eraseThread(pthread_t thread){
             threads.erase(threads.begin() + i);
         }
     }
+}
+
+HandleClient* HandleClientReversi:: getHandleClient(){
+    return this;
 }

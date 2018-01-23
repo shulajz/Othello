@@ -123,7 +123,7 @@ void Board:: calcResults(int &black, int &white) {
         }
     }
 }
-//
+
 BoardGraphic&  Board::getBoardGraphic()const{
     return this->m_boardGraphic;
 }

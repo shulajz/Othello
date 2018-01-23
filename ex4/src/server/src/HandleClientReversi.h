@@ -26,6 +26,7 @@ public:
     void readCommand(int clientSocket, string &command, string &args);
     void pushThread(pthread_t thread);
     void eraseThread(pthread_t thread);
+    HandleClient* getHandleClient();
 private:
     pthread_mutex_t handle_client_locker;
     vector<pthread_t> threads;
